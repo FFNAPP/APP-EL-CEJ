@@ -121,7 +121,7 @@ td{padding:5px 6px;border-bottom:1px solid var(--surf3);}
 .mhbtn .mhh{font-size:11px;font-weight:800;color:var(--txt-bright);}
 .mhbtn .mhv{font-size:9px;color:var(--txt-dim);margin-top:2px;}
 .meteo-summary{text-align:center;font-size:13px;font-weight:700;color:var(--txt-bright);padding:8px;background:var(--surf2);border-radius:4px;margin-bottom:10px;}
-.meteo-imgwrap{position:relative;max-width:100%;margin:0 auto;line-height:0;}
+.meteo-imgwrap{position:relative;max-width:480px;margin:0 auto;line-height:0;}
 .meteo-imgwrap img{width:100%;height:auto;display:block;border-radius:3px;}
 .meteo-imgwrap svg{position:absolute;top:0;left:0;width:100%;height:100%;pointer-events:none;}
 .meteo-legend{display:flex;justify-content:center;gap:14px;font-size:10px;color:var(--txt-dim);margin-top:6px;flex-wrap:wrap;}
@@ -131,6 +131,12 @@ td{padding:5px 6px;border-bottom:1px solid var(--surf3);}
 <body>
 
 <div class="hdr" id="hdr">
+  <div id="hdr-back" style="display:none;margin-bottom:4px;">
+    <a href="index.html" style="font-size:11px;color:rgba(255,255,255,.65);text-decoration:none;
+      border:1px solid rgba(255,255,255,.25);border-radius:4px;padding:3px 8px;display:inline-block;">
+      &#8592; Planning
+    </a>
+  </div>
   <div>
     <div class="hdr-title" id="hdr-title">Ponton CEJ 2026</div>
     <div class="hdr-sub" id="hdr-sub">Chargement...</div>
@@ -614,6 +620,7 @@ function boot(){
   buildEvTabs(); buildChips(); renderPonton(); setTop();
   window.addEventListener("resize",function(){ setTop(); renderPonton(); });
   if(EV) mUpdateForEvent(EV,G);
+  if(EV_FILTER&&EV_FILTER.length) document.getElementById("hdr-back").style.display="block";
 }
 
 

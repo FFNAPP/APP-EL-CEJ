@@ -113,7 +113,7 @@
       ]
     },
     "SCHWARZ|RAPHAEL|2008": {
-      "status": "ok",
+      "status": "aucune_perf_50m",
       "athlete": {
         "athlete_id": "5139479",
         "name": "SCHWARZ, Raphael",
@@ -124,23 +124,23 @@
       "results": {
         "200": {
           "best": null,
-          "source": "deep_dive",
-          "error": "bloc_inconnu"
+          "source": "meilleurs_temps",
+          "note": "jamais nagé en bassin 50m"
         },
         "400": {
           "best": null,
-          "source": "deep_dive",
-          "error": "bloc_inconnu"
+          "source": "meilleurs_temps",
+          "note": "jamais nagé en bassin 50m"
         },
         "800": {
           "best": null,
-          "source": "deep_dive",
-          "error": "bloc_inconnu"
+          "source": "meilleurs_temps",
+          "note": "jamais nagé en bassin 50m"
         },
         "1500": {
           "best": null,
-          "source": "deep_dive",
-          "error": "bloc_inconnu"
+          "source": "meilleurs_temps",
+          "note": "jamais nagé en bassin 50m"
         }
       },
       "events": [
@@ -1094,7 +1094,7 @@
       ]
     },
     "TJERNSBEKK|MATTIS ELIAS|2007": {
-      "status": "ok",
+      "status": "aucune_perf_50m",
       "athlete": {
         "athlete_id": "5500159",
         "name": "TJERNSBEKK, Mattis Elias",
@@ -1105,23 +1105,23 @@
       "results": {
         "200": {
           "best": null,
-          "source": "deep_dive",
-          "error": "bloc_inconnu"
+          "source": "meilleurs_temps",
+          "note": "jamais nagé en bassin 50m"
         },
         "400": {
           "best": null,
-          "source": "deep_dive",
-          "error": "bloc_inconnu"
+          "source": "meilleurs_temps",
+          "note": "jamais nagé en bassin 50m"
         },
         "800": {
           "best": null,
-          "source": "deep_dive",
-          "error": "bloc_inconnu"
+          "source": "meilleurs_temps",
+          "note": "jamais nagé en bassin 50m"
         },
         "1500": {
           "best": null,
-          "source": "deep_dive",
-          "error": "bloc_inconnu"
+          "source": "meilleurs_temps",
+          "note": "jamais nagé en bassin 50m"
         }
       },
       "events": [
@@ -1993,7 +1993,7 @@
       ]
     },
     "NOUROU|STEPHANOS|2010": {
-      "status": "ok",
+      "status": "aucune_perf_50m",
       "athlete": {
         "athlete_id": "5599433",
         "name": "NOUROU, Stephanos",
@@ -2004,23 +2004,23 @@
       "results": {
         "200": {
           "best": null,
-          "source": "deep_dive",
-          "error": "bloc_inconnu"
+          "source": "meilleurs_temps",
+          "note": "jamais nagé en bassin 50m"
         },
         "400": {
           "best": null,
-          "source": "deep_dive",
-          "error": "bloc_inconnu"
+          "source": "meilleurs_temps",
+          "note": "jamais nagé en bassin 50m"
         },
         "800": {
           "best": null,
-          "source": "deep_dive",
-          "error": "bloc_inconnu"
+          "source": "meilleurs_temps",
+          "note": "jamais nagé en bassin 50m"
         },
         "1500": {
           "best": null,
-          "source": "deep_dive",
-          "error": "bloc_inconnu"
+          "source": "meilleurs_temps",
+          "note": "jamais nagé en bassin 50m"
         }
       },
       "events": [
@@ -2196,13 +2196,1256 @@
       ]
     },
     "MAESEPP|ERIK|2009": {
-      "status": "bloc_inconnu_fiche",
+      "status": "ok",
       "athlete": {
         "athlete_id": "5015353",
         "name": "MAESEPP, Erik",
         "year": "2009",
         "nation": "EST",
         "row": "MAESEPP, Erik 2009 EST EST - Ujumise Spordiklubi"
+      },
+      "results": {
+        "200": {
+          "best": {
+            "time": "1:55.44",
+            "date": "2026-05-25",
+            "points": 689,
+            "city": null
+          },
+          "source": "meilleurs_temps",
+          "fallback": false
+        },
+        "400": {
+          "best": {
+            "time": "4:04.46",
+            "date": "2026-03-07",
+            "points": 729,
+            "city": null
+          },
+          "source": "meilleurs_temps",
+          "fallback": false
+        },
+        "800": {
+          "best": {
+            "time": "8:25.89",
+            "date": "2026-02-15",
+            "points": 713,
+            "city": null
+          },
+          "source": "meilleurs_temps",
+          "fallback": false
+        },
+        "1500": {
+          "best": {
+            "time": "16:03.65",
+            "date": "2026-05-15",
+            "points": 737,
+            "city": null
+          },
+          "source": "meilleurs_temps",
+          "fallback": false
+        }
+      },
+      "events": [
+        "Boys' 7.5km J2"
+      ]
+    },
+    "PRIKS|ROBIN|2010": {
+      "status": "ok",
+      "athlete": {
+        "athlete_id": "5320858",
+        "name": "PRIKS, Robin",
+        "year": "2010",
+        "nation": "EST",
+        "row": "PRIKS, Robin 2010 EST EST - Ujumise Spordiklubi"
+      },
+      "results": {
+        "200": {
+          "best": {
+            "time": "1:57.16",
+            "date": "2026-06-29",
+            "points": 659,
+            "city": null
+          },
+          "source": "meilleurs_temps",
+          "fallback": false
+        },
+        "400": {
+          "best": {
+            "time": "4:08.06",
+            "date": "2026-05-01",
+            "points": 698,
+            "city": null
+          },
+          "source": "meilleurs_temps",
+          "fallback": false
+        },
+        "800": {
+          "best": {
+            "time": "8:37.18",
+            "date": "2026-03-28",
+            "points": 668,
+            "city": null
+          },
+          "source": "meilleurs_temps",
+          "fallback": false
+        },
+        "1500": {
+          "best": {
+            "time": "16:30.97",
+            "date": "2026-06-29",
+            "points": 678,
+            "city": null
+          },
+          "source": "meilleurs_temps",
+          "fallback": false
+        }
+      },
+      "events": [
+        "Boys' 7.5km J2"
+      ]
+    },
+    "PARAT|TITOUAN|2009": {
+      "status": "ok",
+      "athlete": {
+        "athlete_id": "5443824",
+        "name": "PARAT, Titouan",
+        "year": "2009",
+        "nation": "FRA",
+        "row": "PARAT, Titouan 2009 FRA FRA - Cn Cévennes Alès"
+      },
+      "results": {
+        "200": {
+          "best": {
+            "time": "1:55.40",
+            "date": "2026-06-30",
+            "points": 690,
+            "city": null
+          },
+          "source": "meilleurs_temps",
+          "fallback": false
+        },
+        "400": {
+          "best": {
+            "time": "3:59.06",
+            "date": "2026-05-29",
+            "points": 780,
+            "city": null
+          },
+          "source": "meilleurs_temps",
+          "fallback": false
+        },
+        "800": {
+          "best": {
+            "time": "8:13.84",
+            "date": "2026-05-25",
+            "points": 767,
+            "city": null
+          },
+          "source": "meilleurs_temps",
+          "fallback": false
+        },
+        "1500": {
+          "best": {
+            "time": "16:03.28",
+            "date": "2026-03-13",
+            "points": 738,
+            "city": null
+          },
+          "source": "meilleurs_temps",
+          "fallback": false
+        }
+      },
+      "events": [
+        "Boys' 7.5km J2"
+      ]
+    },
+    "LIESCHKE|JONAS|2009": {
+      "status": "ok",
+      "athlete": {
+        "athlete_id": "5345379",
+        "name": "LIESCHKE, Jonas",
+        "year": "2009",
+        "nation": "GER",
+        "row": "LIESCHKE, Jonas 2009 GER GER - Hamburger SC"
+      },
+      "results": {
+        "200": {
+          "best": {
+            "time": "1:51.85",
+            "date": "2026-07-07",
+            "points": 758,
+            "city": null
+          },
+          "source": "meilleurs_temps",
+          "fallback": false
+        },
+        "400": {
+          "best": {
+            "time": "3:59.83",
+            "date": "2026-06-12",
+            "points": 772,
+            "city": null
+          },
+          "source": "meilleurs_temps",
+          "fallback": false
+        },
+        "800": {
+          "best": {
+            "time": "8:09.79",
+            "date": "2026-06-10",
+            "points": 786,
+            "city": null
+          },
+          "source": "meilleurs_temps",
+          "fallback": false
+        },
+        "1500": {
+          "best": {
+            "time": "15:32.75",
+            "date": "2026-06-09",
+            "points": 813,
+            "city": null
+          },
+          "source": "meilleurs_temps",
+          "fallback": false
+        }
+      },
+      "events": [
+        "Boys' 7.5km J2"
+      ]
+    },
+    "PREUSS|BEN DAVID|2009": {
+      "status": "ok",
+      "athlete": {
+        "athlete_id": "5272554",
+        "name": "PREUSS, Ben David",
+        "year": "2009",
+        "nation": "GER",
+        "row": "PREUSS, Ben David 2009 GER GER - SG Neukoelln Berlin"
+      },
+      "results": {
+        "200": {
+          "best": {
+            "time": "1:56.59",
+            "date": "2026-04-17",
+            "points": 669,
+            "city": null
+          },
+          "source": "meilleurs_temps",
+          "fallback": false
+        },
+        "400": {
+          "best": {
+            "time": "3:59.56",
+            "date": "2026-03-21",
+            "points": 775,
+            "city": null
+          },
+          "source": "meilleurs_temps",
+          "fallback": false
+        },
+        "800": {
+          "best": {
+            "time": "8:13.45",
+            "date": "2026-03-22",
+            "points": 769,
+            "city": null
+          },
+          "source": "meilleurs_temps",
+          "fallback": false
+        },
+        "1500": {
+          "best": {
+            "time": "15:33.75",
+            "date": "2026-06-09",
+            "points": 810,
+            "city": null
+          },
+          "source": "meilleurs_temps",
+          "fallback": false
+        }
+      },
+      "events": [
+        "Boys' 7.5km J2"
+      ]
+    },
+    "STRASSBURGER|MATTHEO|2009": {
+      "status": "ok",
+      "athlete": {
+        "athlete_id": "5269719",
+        "name": "STRASSBURGER, Mattheo",
+        "year": "2009",
+        "nation": "GER",
+        "row": "STRASSBURGER, Mattheo 2009 GER GER - STV Limbach-Oberfrohna"
+      },
+      "results": {
+        "200": {
+          "best": {
+            "time": "1:53.32",
+            "date": "2026-04-17",
+            "points": 729,
+            "city": null
+          },
+          "source": "meilleurs_temps",
+          "fallback": false
+        },
+        "400": {
+          "best": {
+            "time": "3:54.78",
+            "date": "2026-04-18",
+            "points": 823,
+            "city": null
+          },
+          "source": "meilleurs_temps",
+          "fallback": false
+        },
+        "800": {
+          "best": {
+            "time": "7:59.86",
+            "date": "2026-06-10",
+            "points": 836,
+            "city": null
+          },
+          "source": "meilleurs_temps",
+          "fallback": false
+        },
+        "1500": {
+          "best": {
+            "time": "15:23.05",
+            "date": "2026-06-09",
+            "points": 839,
+            "city": null
+          },
+          "source": "meilleurs_temps",
+          "fallback": false
+        }
+      },
+      "events": [
+        "Boys' 7.5km J2",
+        "Boys' 3km Knockout Sprint"
+      ]
+    },
+    "CHOURDAKIS|KONSTANTINOS|2009": {
+      "status": "ok",
+      "athlete": {
+        "athlete_id": "5532340",
+        "name": "CHOURDAKIS, Konstantinos",
+        "year": "2009",
+        "nation": "GRE",
+        "row": "CHOURDAKIS, Konstantinos 2009 GRE GRE - Athlitikos Omilos Tritonas Ira"
+      },
+      "results": {
+        "200": {
+          "best": {
+            "time": "1:51.25",
+            "date": "2026-06-27",
+            "points": 770,
+            "city": null
+          },
+          "source": "meilleurs_temps",
+          "fallback": false
+        },
+        "400": {
+          "best": {
+            "time": "3:51.86",
+            "date": "2026-06-28",
+            "points": 855,
+            "city": null
+          },
+          "source": "meilleurs_temps",
+          "fallback": false
+        },
+        "800": {
+          "best": {
+            "time": "7:58.93",
+            "date": "2026-05-15",
+            "points": 841,
+            "city": null
+          },
+          "source": "meilleurs_temps",
+          "fallback": false
+        },
+        "1500": {
+          "best": {
+            "time": "15:15.34",
+            "date": "2026-07-09",
+            "points": 860,
+            "city": null
+          },
+          "source": "meilleurs_temps",
+          "fallback": false
+        }
+      },
+      "events": [
+        "Boys' 7.5km J2",
+        "Boys' 3km Knockout Sprint"
+      ]
+    },
+    "KAKOULAKIS|NIKOLAOS|2010": {
+      "status": "ok",
+      "athlete": {
+        "athlete_id": "5629267",
+        "name": "KAKOULAKIS, Nikolaos",
+        "year": "2010",
+        "nation": "GRE",
+        "row": "KAKOULAKIS, Nikolaos 2010 GRE GRE - A.A.O.I."
+      },
+      "results": {
+        "200": {
+          "best": {
+            "time": "1:59.12",
+            "date": "2026-04-18",
+            "points": 627,
+            "city": null
+          },
+          "source": "meilleurs_temps",
+          "fallback": false
+        },
+        "400": {
+          "best": {
+            "time": "4:04.39",
+            "date": "2026-05-17",
+            "points": 730,
+            "city": null
+          },
+          "source": "meilleurs_temps",
+          "fallback": false
+        },
+        "800": {
+          "best": {
+            "time": "8:19.59",
+            "date": "2026-05-08",
+            "points": 741,
+            "city": null
+          },
+          "source": "meilleurs_temps",
+          "fallback": false
+        },
+        "1500": {
+          "best": {
+            "time": "16:05.79",
+            "date": "2026-05-18",
+            "points": 732,
+            "city": null
+          },
+          "source": "meilleurs_temps",
+          "fallback": false
+        }
+      },
+      "events": [
+        "Boys' 7.5km J2",
+        "Boys' 3km Knockout Sprint 14-16"
+      ]
+    },
+    "VOULAS|DIMITRIOS IASON|2009": {
+      "status": "ok",
+      "athlete": {
+        "athlete_id": "5532303",
+        "name": "VOULAS, Dimitrios Iason",
+        "year": "2009",
+        "nation": "GRE",
+        "row": "VOULAS, Dimitrios Iason 2009 GRE GRE - Noxalk"
+      },
+      "results": {
+        "200": {
+          "best": {
+            "time": "1:57.40",
+            "date": "2025-11-22",
+            "points": 655,
+            "city": null
+          },
+          "source": "meilleurs_temps",
+          "fallback": false
+        },
+        "400": {
+          "best": {
+            "time": "3:59.62",
+            "date": "2026-05-17",
+            "points": 774,
+            "city": null
+          },
+          "source": "meilleurs_temps",
+          "fallback": false
+        },
+        "800": {
+          "best": {
+            "time": "8:20.51",
+            "date": "2026-05-15",
+            "points": 737,
+            "city": null
+          },
+          "source": "meilleurs_temps",
+          "fallback": false
+        },
+        "1500": {
+          "best": {
+            "time": "15:52.65",
+            "date": "2026-04-17",
+            "points": 763,
+            "city": null
+          },
+          "source": "meilleurs_temps",
+          "fallback": false
+        }
+      },
+      "events": [
+        "Boys' 7.5km J2"
+      ]
+    },
+    "HUSZTI|MARTON|2009": {
+      "status": "ok",
+      "athlete": {
+        "athlete_id": "5208351",
+        "name": "HUSZTI, Marton",
+        "year": "2009",
+        "nation": "HUN",
+        "row": "HUSZTI, Marton 2009 HUN HUN - Darnyi Tamas Sport Club"
+      },
+      "results": {
+        "200": {
+          "best": {
+            "time": "1:54.18",
+            "date": "2026-06-05",
+            "points": 712,
+            "city": null
+          },
+          "source": "meilleurs_temps",
+          "fallback": false
+        },
+        "400": {
+          "best": {
+            "time": "4:01.72",
+            "date": "2026-04-16",
+            "points": 754,
+            "city": null
+          },
+          "source": "meilleurs_temps",
+          "fallback": false
+        },
+        "800": {
+          "best": {
+            "time": "8:10.53",
+            "date": "2026-04-16",
+            "points": 783,
+            "city": null
+          },
+          "source": "meilleurs_temps",
+          "fallback": false
+        },
+        "1500": {
+          "best": {
+            "time": "15:32.62",
+            "date": "2026-04-17",
+            "points": 813,
+            "city": null
+          },
+          "source": "meilleurs_temps",
+          "fallback": false
+        }
+      },
+      "events": [
+        "Boys' 7.5km J2",
+        "Boys' 3km Knockout Sprint"
+      ]
+    },
+    "KREISZ|BALINT|2009": {
+      "status": "ok",
+      "athlete": {
+        "athlete_id": "5271711",
+        "name": "KREISZ, Balint",
+        "year": "2009",
+        "nation": "HUN",
+        "row": "KREISZ, Balint 2009 HUN HUN - Debreceni Sport Szolgaltato Kf"
+      },
+      "results": {
+        "200": {
+          "best": {
+            "time": "1:50.97",
+            "date": "2026-06-05",
+            "points": 776,
+            "city": null
+          },
+          "source": "meilleurs_temps",
+          "fallback": false
+        },
+        "400": {
+          "best": {
+            "time": "3:54.40",
+            "date": "2026-06-04",
+            "points": 827,
+            "city": null
+          },
+          "source": "meilleurs_temps",
+          "fallback": false
+        },
+        "800": {
+          "best": {
+            "time": "8:12.12",
+            "date": "2026-06-06",
+            "points": 775,
+            "city": null
+          },
+          "source": "meilleurs_temps",
+          "fallback": false
+        },
+        "1500": {
+          "best": {
+            "time": "15:41.70",
+            "date": "2025-07-30",
+            "points": 790,
+            "city": null
+          },
+          "source": "meilleurs_temps",
+          "fallback": false
+        }
+      },
+      "events": [
+        "Boys' 7.5km J2",
+        "Boys' 3km Knockout Sprint"
+      ]
+    },
+    "MAROSSZEKI|ARMAND ATTILA|2010": {
+      "status": "introuvable",
+      "candidates": [],
+      "events": [
+        "Boys' 7.5km J2",
+        "Boys' 3km Knockout Sprint 14-16"
+      ]
+    },
+    "FOMBERG KOZA|SEAN|2010": {
+      "status": "introuvable",
+      "candidates": [],
+      "events": [
+        "Boys' 7.5km J2",
+        "Boys' 3km Knockout Sprint 14-16"
+      ]
+    },
+    "KISLIUK|DANIEL|2009": {
+      "status": "ok",
+      "athlete": {
+        "athlete_id": "5405413",
+        "name": "KISLIUK, Daniel",
+        "year": "2009",
+        "nation": "ISR",
+        "row": "KISLIUK, Daniel 2009 ISR ISR - Olymp Swimclab"
+      },
+      "results": {
+        "200": {
+          "best": {
+            "time": "1:54.35",
+            "date": "2026-04-17",
+            "points": 709,
+            "city": null
+          },
+          "source": "meilleurs_temps",
+          "fallback": false
+        },
+        "400": {
+          "best": {
+            "time": "4:01.74",
+            "date": "2026-04-18",
+            "points": 754,
+            "city": null
+          },
+          "source": "meilleurs_temps",
+          "fallback": false
+        },
+        "800": {
+          "best": {
+            "time": "8:22.99",
+            "date": "2026-04-17",
+            "points": 726,
+            "city": null
+          },
+          "source": "meilleurs_temps",
+          "fallback": false
+        },
+        "1500": {
+          "best": {
+            "time": "16:05.21",
+            "date": "2026-04-18",
+            "points": 733,
+            "city": null
+          },
+          "source": "meilleurs_temps",
+          "fallback": false
+        }
+      },
+      "events": [
+        "Boys' 7.5km J2",
+        "Boys' 3km Knockout Sprint"
+      ]
+    },
+    "CORPOLONGO|EDOARDO|2010": {
+      "status": "aucune_perf_50m",
+      "athlete": {
+        "athlete_id": "5506487",
+        "name": "CORPOLONGO, Edoardo",
+        "year": "2010",
+        "nation": "ITA",
+        "row": "CORPOLONGO, Edoardo 2010 ITA ITA - Matrix ssd - Roma"
+      },
+      "results": {
+        "200": {
+          "best": null,
+          "source": "meilleurs_temps",
+          "note": "jamais nagé en bassin 50m"
+        },
+        "400": {
+          "best": null,
+          "source": "meilleurs_temps",
+          "note": "jamais nagé en bassin 50m"
+        },
+        "800": {
+          "best": null,
+          "source": "meilleurs_temps",
+          "note": "jamais nagé en bassin 50m"
+        },
+        "1500": {
+          "best": null,
+          "source": "meilleurs_temps",
+          "note": "jamais nagé en bassin 50m"
+        }
+      },
+      "events": [
+        "Boys' 7.5km J2",
+        "Boys' 3km Knockout Sprint 14-16"
+      ]
+    },
+    "DALLE CRODE|NICOLO|2009": {
+      "status": "ok",
+      "athlete": {
+        "athlete_id": "5391793",
+        "name": "DALLE CRODE, Nicolo'",
+        "year": "2009",
+        "nation": "ITA",
+        "row": "DALLE CRODE, Nicolo' 2009 ITA ITA - Nuotatori Milanesi"
+      },
+      "results": {
+        "800": {
+          "best": {
+            "time": "8:25.25",
+            "date": "2026-06-26",
+            "points": 716,
+            "city": null
+          },
+          "source": "meilleurs_temps",
+          "fallback": false
+        },
+        "1500": {
+          "best": {
+            "time": "16:10.10",
+            "date": "2026-02-14",
+            "points": 722,
+            "city": null
+          },
+          "source": "meilleurs_temps",
+          "fallback": false
+        },
+        "200": {
+          "best": {
+            "time": "2:00.95",
+            "date": "2026-02-14",
+            "points": 599,
+            "city": "Milan"
+          },
+          "source": "deep_dive",
+          "fallback": false
+        },
+        "400": {
+          "best": {
+            "time": "4:11.54",
+            "date": "2026-06-26",
+            "points": 669,
+            "city": "Lodi"
+          },
+          "source": "deep_dive",
+          "fallback": false
+        }
+      },
+      "events": [
+        "Boys' 7.5km J2"
+      ]
+    },
+    "TAMMARO|GAETANO|2009": {
+      "status": "ok",
+      "athlete": {
+        "athlete_id": "4783793",
+        "name": "TAMMARO, Gaetano",
+        "year": "2009",
+        "nation": "ITA",
+        "row": "TAMMARO, Gaetano 2009 ITA ITA - Olimpic Nuoto Napoli ssd"
+      },
+      "results": {
+        "200": {
+          "best": {
+            "time": "1:53.56",
+            "date": "2026-05-30",
+            "points": 724,
+            "city": null
+          },
+          "source": "meilleurs_temps",
+          "fallback": false
+        },
+        "400": {
+          "best": {
+            "time": "4:03.45",
+            "date": "2026-06-13",
+            "points": 738,
+            "city": null
+          },
+          "source": "meilleurs_temps",
+          "fallback": false
+        },
+        "800": {
+          "best": {
+            "time": "8:23.11",
+            "date": "2025-08-01",
+            "points": 725,
+            "city": null
+          },
+          "source": "meilleurs_temps",
+          "fallback": false
+        },
+        "1500": {
+          "best": {
+            "time": "15:57.49",
+            "date": "2026-06-20",
+            "points": 751,
+            "city": null
+          },
+          "source": "meilleurs_temps",
+          "fallback": false
+        }
+      },
+      "events": [
+        "Boys' 7.5km J2"
+      ]
+    },
+    "NOWACKI|MIESZKO|2009": {
+      "status": "ok",
+      "athlete": {
+        "athlete_id": "5173031",
+        "name": "NOWACKI, Mieszko",
+        "year": "2009",
+        "nation": "POL",
+        "row": "NOWACKI, Mieszko 2009 POL POL - AZS UMCS Lublin"
+      },
+      "results": {
+        "400": {
+          "best": {
+            "time": "4:06.17",
+            "date": "2026-05-16",
+            "points": 714,
+            "city": null
+          },
+          "source": "meilleurs_temps",
+          "fallback": false
+        },
+        "800": {
+          "best": {
+            "time": "8:19.57",
+            "date": "2026-07-16",
+            "points": 741,
+            "city": null
+          },
+          "source": "meilleurs_temps",
+          "fallback": false
+        },
+        "1500": {
+          "best": {
+            "time": "15:53.09",
+            "date": "2026-07-19",
+            "points": 762,
+            "city": null
+          },
+          "source": "meilleurs_temps",
+          "fallback": false
+        },
+        "200": {
+          "best": {
+            "time": "1:58.16",
+            "date": "2025-07-12",
+            "points": 643,
+            "city": "Poznan"
+          },
+          "source": "deep_dive",
+          "fallback": true
+        }
+      },
+      "events": [
+        "Boys' 7.5km J2",
+        "Boys' 3km Knockout Sprint"
+      ]
+    },
+    "TARASIEWICZ|PIOTR|2009": {
+      "status": "ok",
+      "athlete": {
+        "athlete_id": "5204444",
+        "name": "TARASIEWICZ, Piotr",
+        "year": "2009",
+        "nation": "POL",
+        "row": "TARASIEWICZ, Piotr 2009 POL POL - UKP Polonia Warszawa"
+      },
+      "results": {
+        "400": {
+          "best": {
+            "time": "4:06.38",
+            "date": "2026-07-18",
+            "points": 712,
+            "city": null
+          },
+          "source": "meilleurs_temps",
+          "fallback": false
+        },
+        "800": {
+          "best": {
+            "time": "8:39.83",
+            "date": "2026-07-19",
+            "points": 657,
+            "city": null
+          },
+          "source": "meilleurs_temps",
+          "fallback": false
+        },
+        "1500": {
+          "best": {
+            "time": "16:30.12",
+            "date": "2026-03-01",
+            "points": 679,
+            "city": null
+          },
+          "source": "meilleurs_temps",
+          "fallback": false
+        },
+        "200": {
+          "best": {
+            "time": "2:04.57",
+            "date": "2026-03-07",
+            "points": 548,
+            "city": "Lublin"
+          },
+          "source": "deep_dive",
+          "fallback": false
+        }
+      },
+      "events": [
+        "Boys' 7.5km J2",
+        "Boys' 3km Knockout Sprint"
+      ]
+    },
+    "TOPA|DANIEL|2010": {
+      "status": "ok",
+      "athlete": {
+        "athlete_id": "4692467",
+        "name": "TOPA, Daniel",
+        "year": "2010",
+        "nation": "POL",
+        "row": "TOPA, Daniel 2010 POL POL - MTP KORMORAN Olsztyn"
+      },
+      "results": {
+        "200": {
+          "best": {
+            "time": "1:58.90",
+            "date": "2026-07-15",
+            "points": 631,
+            "city": null
+          },
+          "source": "meilleurs_temps",
+          "fallback": false
+        },
+        "400": {
+          "best": {
+            "time": "4:03.98",
+            "date": "2026-07-16",
+            "points": 733,
+            "city": null
+          },
+          "source": "meilleurs_temps",
+          "fallback": false
+        },
+        "800": {
+          "best": {
+            "time": "8:23.61",
+            "date": "2026-07-14",
+            "points": 723,
+            "city": null
+          },
+          "source": "meilleurs_temps",
+          "fallback": false
+        },
+        "1500": {
+          "best": {
+            "time": "15:54.41",
+            "date": "2026-07-17",
+            "points": 759,
+            "city": null
+          },
+          "source": "meilleurs_temps",
+          "fallback": false
+        }
+      },
+      "events": [
+        "Boys' 7.5km J2",
+        "Boys' 3km Knockout Sprint 14-16"
+      ]
+    },
+    "DEMIDOV|SEMEN|2009": {
+      "status": "ok",
+      "athlete": {
+        "athlete_id": "5783019",
+        "name": "DEMIDOV, Semen",
+        "year": "2009",
+        "nation": "RUS",
+        "row": "DEMIDOV, Semen 2009 RUS RUS - Perm Territory"
+      },
+      "results": {
+        "200": {
+          "best": null,
+          "source": "meilleurs_temps",
+          "note": "jamais nagé en bassin 50m"
+        },
+        "400": {
+          "best": {
+            "time": "4:03.17",
+            "date": "2026-04-19",
+            "points": 741,
+            "city": null
+          },
+          "source": "meilleurs_temps",
+          "fallback": false
+        },
+        "800": {
+          "best": {
+            "time": "8:29.17",
+            "date": "2026-04-18",
+            "points": 700,
+            "city": null
+          },
+          "source": "meilleurs_temps",
+          "fallback": false
+        },
+        "1500": {
+          "best": {
+            "time": "16:00.75",
+            "date": "2026-04-18",
+            "points": 744,
+            "city": null
+          },
+          "source": "meilleurs_temps",
+          "fallback": false
+        }
+      },
+      "events": [
+        "Boys' 7.5km J2",
+        "Boys' 3km Knockout Sprint"
+      ]
+    },
+    "FILIPETS|ALEKSANDR|2010": {
+      "status": "ok",
+      "athlete": {
+        "athlete_id": "5783034",
+        "name": "FILIPETS, Aleksandr",
+        "year": "2010",
+        "nation": "RUS",
+        "row": "FILIPETS, Aleksandr 2010 RUS RUS - Rostov Region"
+      },
+      "results": {
+        "200": {
+          "best": {
+            "time": "2:00.42",
+            "date": "2026-04-20",
+            "points": 607,
+            "city": null
+          },
+          "source": "meilleurs_temps",
+          "fallback": false
+        },
+        "400": {
+          "best": {
+            "time": "3:55.37",
+            "date": "2026-04-19",
+            "points": 817,
+            "city": null
+          },
+          "source": "meilleurs_temps",
+          "fallback": false
+        },
+        "800": {
+          "best": {
+            "time": "8:06.50",
+            "date": "2026-04-21",
+            "points": 802,
+            "city": null
+          },
+          "source": "meilleurs_temps",
+          "fallback": false
+        },
+        "1500": {
+          "best": {
+            "time": "15:23.28",
+            "date": "2026-04-18",
+            "points": 838,
+            "city": null
+          },
+          "source": "meilleurs_temps",
+          "fallback": false
+        }
+      },
+      "events": [
+        "Boys' 7.5km J2"
+      ]
+    },
+    "SEROV|ROMAN|2009": {
+      "status": "ok",
+      "athlete": {
+        "athlete_id": "5783207",
+        "name": "SEROV, Roman",
+        "year": "2009",
+        "nation": "RUS",
+        "row": "SEROV, Roman 2009 RUS RUS - Saint-Petersburg"
+      },
+      "results": {
+        "200": {
+          "best": {
+            "time": "1:57.05",
+            "date": "2026-06-06",
+            "points": 661,
+            "city": null
+          },
+          "source": "meilleurs_temps",
+          "fallback": false
+        },
+        "400": {
+          "best": {
+            "time": "4:03.95",
+            "date": "2026-04-19",
+            "points": 734,
+            "city": null
+          },
+          "source": "meilleurs_temps",
+          "fallback": false
+        },
+        "800": {
+          "best": {
+            "time": "8:19.71",
+            "date": "2026-04-21",
+            "points": 740,
+            "city": null
+          },
+          "source": "meilleurs_temps",
+          "fallback": false
+        },
+        "1500": {
+          "best": {
+            "time": "15:41.94",
+            "date": "2026-06-07",
+            "points": 789,
+            "city": null
+          },
+          "source": "meilleurs_temps",
+          "fallback": false
+        }
+      },
+      "events": [
+        "Boys' 7.5km J2"
+      ]
+    },
+    "KRANJC|NEJC|2010": {
+      "status": "ok",
+      "athlete": {
+        "athlete_id": "5345099",
+        "name": "KRANJC, Nejc",
+        "year": "2010",
+        "nation": "SLO",
+        "row": "KRANJC, Nejc 2010 SLO SLO - PK Celulozar Krsko"
+      },
+      "results": {
+        "200": {
+          "best": {
+            "time": "1:59.08",
+            "date": "2026-07-04",
+            "points": 628,
+            "city": null
+          },
+          "source": "meilleurs_temps",
+          "fallback": false
+        },
+        "400": {
+          "best": {
+            "time": "4:07.39",
+            "date": "2026-06-19",
+            "points": 703,
+            "city": null
+          },
+          "source": "meilleurs_temps",
+          "fallback": false
+        },
+        "800": {
+          "best": {
+            "time": "8:30.50",
+            "date": "2026-06-07",
+            "points": 694,
+            "city": null
+          },
+          "source": "meilleurs_temps",
+          "fallback": false
+        },
+        "1500": {
+          "best": {
+            "time": "16:13.98",
+            "date": "2026-06-21",
+            "points": 714,
+            "city": null
+          },
+          "source": "meilleurs_temps",
+          "fallback": false
+        }
+      },
+      "events": [
+        "Boys' 7.5km J2",
+        "Boys' 3km Knockout Sprint 14-16"
+      ]
+    },
+    "SOLLNER|JACY|2009": {
+      "status": "introuvable",
+      "candidates": [],
+      "events": [
+        "Boys' 7.5km J2",
+        "Boys' 3km Knockout Sprint"
+      ]
+    },
+    "THOLKING|JOSHUA|2009": {
+      "status": "introuvable",
+      "candidates": [],
+      "events": [
+        "Boys' 7.5km J2",
+        "Boys' 3km Knockout Sprint"
+      ]
+    },
+    "TIRRI|GERARDO|2009": {
+      "status": "quota_atteint",
+      "athlete": {
+        "athlete_id": "5255777",
+        "name": "TIRRI, Gerardo",
+        "year": "2009",
+        "nation": "SUI",
+        "row": "TIRRI, Gerardo 2009 SUI SUI - Lugano Aquatics"
+      },
+      "events": [
+        "Boys' 7.5km J2",
+        "Boys' 3km Knockout Sprint"
+      ]
+    },
+    "HAJKO|MARTIN|2009": {
+      "status": "bloc_inconnu_fiche",
+      "athlete": {
+        "athlete_id": "5351027",
+        "name": "HAJKO, Martin",
+        "year": "2009",
+        "nation": "SVK",
+        "row": "HAJKO, Martin 2009 SVK SVK - SPORT CLUB Senec"
       },
       "results": {
         "200": {
@@ -2228,880 +3471,12 @@
       },
       "fiche_bloquee": "bloc_inconnu",
       "events": [
-        "Boys' 7.5km J2"
-      ]
-    },
-    "PRIKS|ROBIN|2010": {
-      "status": "challenge_bloque",
-      "athlete": {
-        "athlete_id": "5320858",
-        "name": "PRIKS, Robin",
-        "year": "2010",
-        "nation": "EST",
-        "row": "PRIKS, Robin 2010 EST EST - Ujumise Spordiklubi"
-      },
-      "results": {
-        "200": {
-          "best": null,
-          "source": "deep_dive",
-          "error": "challenge"
-        },
-        "400": {
-          "best": null,
-          "source": "deep_dive",
-          "error": "challenge"
-        },
-        "800": {
-          "best": null,
-          "source": "deep_dive",
-          "error": "challenge"
-        },
-        "1500": {
-          "best": null,
-          "source": "deep_dive",
-          "error": "challenge"
-        }
-      },
-      "events": [
-        "Boys' 7.5km J2"
-      ]
-    },
-    "PARAT|TITOUAN|2009": {
-      "status": "challenge_fiche",
-      "athlete": {
-        "athlete_id": "5443824",
-        "name": "PARAT, Titouan",
-        "year": "2009",
-        "nation": "FRA",
-        "row": "PARAT, Titouan 2009 FRA FRA - Cn Cévennes Alès"
-      },
-      "results": {
-        "200": {
-          "best": null,
-          "source": "deep_dive",
-          "error": "challenge"
-        },
-        "400": {
-          "best": null,
-          "source": "deep_dive",
-          "error": "challenge"
-        },
-        "800": {
-          "best": null,
-          "source": "deep_dive",
-          "error": "challenge"
-        },
-        "1500": {
-          "best": null,
-          "source": "deep_dive",
-          "error": "challenge"
-        }
-      },
-      "fiche_bloquee": "challenge",
-      "events": [
-        "Boys' 7.5km J2"
-      ]
-    },
-    "LIESCHKE|JONAS|2009": {
-      "status": "challenge_fiche",
-      "athlete": {
-        "athlete_id": "5345379",
-        "name": "LIESCHKE, Jonas",
-        "year": "2009",
-        "nation": "GER",
-        "row": "LIESCHKE, Jonas 2009 GER GER - Hamburger SC"
-      },
-      "results": {
-        "200": {
-          "best": null,
-          "source": "deep_dive",
-          "error": "challenge"
-        },
-        "400": {
-          "best": null,
-          "source": "deep_dive",
-          "error": "challenge"
-        },
-        "800": {
-          "best": null,
-          "source": "deep_dive",
-          "error": "challenge"
-        },
-        "1500": {
-          "best": null,
-          "source": "deep_dive",
-          "error": "challenge"
-        }
-      },
-      "fiche_bloquee": "challenge",
-      "events": [
-        "Boys' 7.5km J2"
-      ]
-    },
-    "PREUSS|BEN DAVID|2009": {
-      "status": "challenge_fiche",
-      "athlete": {
-        "athlete_id": "5272554",
-        "name": "PREUSS, Ben David",
-        "year": "2009",
-        "nation": "GER",
-        "row": "PREUSS, Ben David 2009 GER GER - SG Neukoelln Berlin"
-      },
-      "results": {
-        "200": {
-          "best": null,
-          "source": "deep_dive",
-          "error": "challenge"
-        },
-        "400": {
-          "best": null,
-          "source": "deep_dive",
-          "error": "challenge"
-        },
-        "800": {
-          "best": null,
-          "source": "deep_dive",
-          "error": "challenge"
-        },
-        "1500": {
-          "best": null,
-          "source": "deep_dive",
-          "error": "challenge"
-        }
-      },
-      "fiche_bloquee": "challenge",
-      "events": [
-        "Boys' 7.5km J2"
-      ]
-    },
-    "STRASSBURGER|MATTHEO|2009": {
-      "status": "challenge_fiche",
-      "athlete": {
-        "athlete_id": "5269719",
-        "name": "STRASSBURGER, Mattheo",
-        "year": "2009",
-        "nation": "GER",
-        "row": "STRASSBURGER, Mattheo 2009 GER GER - STV Limbach-Oberfrohna"
-      },
-      "results": {
-        "200": {
-          "best": null,
-          "source": "deep_dive",
-          "error": "challenge"
-        },
-        "400": {
-          "best": null,
-          "source": "deep_dive",
-          "error": "challenge"
-        },
-        "800": {
-          "best": null,
-          "source": "deep_dive",
-          "error": "challenge"
-        },
-        "1500": {
-          "best": null,
-          "source": "deep_dive",
-          "error": "challenge"
-        }
-      },
-      "fiche_bloquee": "challenge",
-      "events": [
-        "Boys' 7.5km J2",
-        "Boys' 3km Knockout Sprint"
-      ]
-    },
-    "CHOURDAKIS|KONSTANTINOS|2009": {
-      "status": "challenge_fiche",
-      "athlete": {
-        "athlete_id": "5532340",
-        "name": "CHOURDAKIS, Konstantinos",
-        "year": "2009",
-        "nation": "GRE",
-        "row": "CHOURDAKIS, Konstantinos 2009 GRE GRE - Athlitikos Omilos Tritonas Ira"
-      },
-      "results": {
-        "200": {
-          "best": null,
-          "source": "deep_dive",
-          "error": "challenge"
-        },
-        "400": {
-          "best": null,
-          "source": "deep_dive",
-          "error": "challenge"
-        },
-        "800": {
-          "best": null,
-          "source": "deep_dive",
-          "error": "challenge"
-        },
-        "1500": {
-          "best": null,
-          "source": "deep_dive",
-          "error": "challenge"
-        }
-      },
-      "fiche_bloquee": "challenge",
-      "events": [
-        "Boys' 7.5km J2",
-        "Boys' 3km Knockout Sprint"
-      ]
-    },
-    "KAKOULAKIS|NIKOLAOS|2010": {
-      "status": "challenge_fiche",
-      "athlete": {
-        "athlete_id": "5629267",
-        "name": "KAKOULAKIS, Nikolaos",
-        "year": "2010",
-        "nation": "GRE",
-        "row": "KAKOULAKIS, Nikolaos 2010 GRE GRE - A.A.O.I."
-      },
-      "results": {
-        "200": {
-          "best": null,
-          "source": "deep_dive",
-          "error": "challenge"
-        },
-        "400": {
-          "best": null,
-          "source": "deep_dive",
-          "error": "challenge"
-        },
-        "800": {
-          "best": null,
-          "source": "deep_dive",
-          "error": "challenge"
-        },
-        "1500": {
-          "best": null,
-          "source": "deep_dive",
-          "error": "challenge"
-        }
-      },
-      "fiche_bloquee": "challenge",
-      "events": [
-        "Boys' 7.5km J2",
-        "Boys' 3km Knockout Sprint 14-16"
-      ]
-    },
-    "VOULAS|DIMITRIOS IASON|2009": {
-      "status": "challenge_fiche",
-      "athlete": {
-        "athlete_id": "5532303",
-        "name": "VOULAS, Dimitrios Iason",
-        "year": "2009",
-        "nation": "GRE",
-        "row": "VOULAS, Dimitrios Iason 2009 GRE GRE - Noxalk"
-      },
-      "results": {
-        "200": {
-          "best": null,
-          "source": "deep_dive",
-          "error": "challenge"
-        },
-        "400": {
-          "best": null,
-          "source": "deep_dive",
-          "error": "challenge"
-        },
-        "800": {
-          "best": null,
-          "source": "deep_dive",
-          "error": "challenge"
-        },
-        "1500": {
-          "best": null,
-          "source": "deep_dive",
-          "error": "challenge"
-        }
-      },
-      "fiche_bloquee": "challenge",
-      "events": [
-        "Boys' 7.5km J2"
-      ]
-    },
-    "HUSZTI|MARTON|2009": {
-      "status": "challenge_fiche",
-      "athlete": {
-        "athlete_id": "5208351",
-        "name": "HUSZTI, Marton",
-        "year": "2009",
-        "nation": "HUN",
-        "row": "HUSZTI, Marton 2009 HUN HUN - Darnyi Tamas Sport Club"
-      },
-      "results": {
-        "200": {
-          "best": null,
-          "source": "deep_dive",
-          "error": "challenge"
-        },
-        "400": {
-          "best": null,
-          "source": "deep_dive",
-          "error": "challenge"
-        },
-        "800": {
-          "best": null,
-          "source": "deep_dive",
-          "error": "challenge"
-        },
-        "1500": {
-          "best": null,
-          "source": "deep_dive",
-          "error": "challenge"
-        }
-      },
-      "fiche_bloquee": "challenge",
-      "events": [
-        "Boys' 7.5km J2",
-        "Boys' 3km Knockout Sprint"
-      ]
-    },
-    "KREISZ|BALINT|2009": {
-      "status": "challenge_fiche",
-      "athlete": {
-        "athlete_id": "5271711",
-        "name": "KREISZ, Balint",
-        "year": "2009",
-        "nation": "HUN",
-        "row": "KREISZ, Balint 2009 HUN HUN - Debreceni Sport Szolgaltato Kf"
-      },
-      "results": {
-        "200": {
-          "best": null,
-          "source": "deep_dive",
-          "error": "challenge"
-        },
-        "400": {
-          "best": null,
-          "source": "deep_dive",
-          "error": "challenge"
-        },
-        "800": {
-          "best": null,
-          "source": "deep_dive",
-          "error": "challenge"
-        },
-        "1500": {
-          "best": null,
-          "source": "deep_dive",
-          "error": "challenge"
-        }
-      },
-      "fiche_bloquee": "challenge",
-      "events": [
-        "Boys' 7.5km J2",
-        "Boys' 3km Knockout Sprint"
-      ]
-    },
-    "MAROSSZEKI|ARMAND ATTILA|2010": {
-      "status": "bloc_inconnu_recherche",
-      "events": [
-        "Boys' 7.5km J2",
-        "Boys' 3km Knockout Sprint 14-16"
-      ]
-    },
-    "FOMBERG KOZA|SEAN|2010": {
-      "status": "bloc_inconnu_recherche",
-      "events": [
-        "Boys' 7.5km J2",
-        "Boys' 3km Knockout Sprint 14-16"
-      ]
-    },
-    "KISLIUK|DANIEL|2009": {
-      "status": "challenge_fiche",
-      "athlete": {
-        "athlete_id": "5405413",
-        "name": "KISLIUK, Daniel",
-        "year": "2009",
-        "nation": "ISR",
-        "row": "KISLIUK, Daniel 2009 ISR ISR - Olymp Swimclab"
-      },
-      "results": {
-        "200": {
-          "best": null,
-          "source": "deep_dive",
-          "error": "challenge"
-        },
-        "400": {
-          "best": null,
-          "source": "deep_dive",
-          "error": "challenge"
-        },
-        "800": {
-          "best": null,
-          "source": "deep_dive",
-          "error": "challenge"
-        },
-        "1500": {
-          "best": null,
-          "source": "deep_dive",
-          "error": "challenge"
-        }
-      },
-      "fiche_bloquee": "challenge",
-      "events": [
-        "Boys' 7.5km J2",
-        "Boys' 3km Knockout Sprint"
-      ]
-    },
-    "CORPOLONGO|EDOARDO|2010": {
-      "status": "challenge_fiche",
-      "athlete": {
-        "athlete_id": "5506487",
-        "name": "CORPOLONGO, Edoardo",
-        "year": "2010",
-        "nation": "ITA",
-        "row": "CORPOLONGO, Edoardo 2010 ITA ITA - Matrix ssd - Roma"
-      },
-      "results": {
-        "200": {
-          "best": null,
-          "source": "deep_dive",
-          "error": "challenge"
-        },
-        "400": {
-          "best": null,
-          "source": "deep_dive",
-          "error": "challenge"
-        },
-        "800": {
-          "best": null,
-          "source": "deep_dive",
-          "error": "challenge"
-        },
-        "1500": {
-          "best": null,
-          "source": "deep_dive",
-          "error": "challenge"
-        }
-      },
-      "fiche_bloquee": "challenge",
-      "events": [
-        "Boys' 7.5km J2",
-        "Boys' 3km Knockout Sprint 14-16"
-      ]
-    },
-    "DALLE CRODE|NICOLO|2009": {
-      "status": "challenge_fiche",
-      "athlete": {
-        "athlete_id": "5391793",
-        "name": "DALLE CRODE, Nicolo'",
-        "year": "2009",
-        "nation": "ITA",
-        "row": "DALLE CRODE, Nicolo' 2009 ITA ITA - Nuotatori Milanesi"
-      },
-      "results": {
-        "200": {
-          "best": null,
-          "source": "deep_dive",
-          "error": "challenge"
-        },
-        "400": {
-          "best": null,
-          "source": "deep_dive",
-          "error": "challenge"
-        },
-        "800": {
-          "best": null,
-          "source": "deep_dive",
-          "error": "challenge"
-        },
-        "1500": {
-          "best": null,
-          "source": "deep_dive",
-          "error": "challenge"
-        }
-      },
-      "fiche_bloquee": "challenge",
-      "events": [
-        "Boys' 7.5km J2"
-      ]
-    },
-    "TAMMARO|GAETANO|2009": {
-      "status": "challenge_fiche",
-      "athlete": {
-        "athlete_id": "4783793",
-        "name": "TAMMARO, Gaetano",
-        "year": "2009",
-        "nation": "ITA",
-        "row": "TAMMARO, Gaetano 2009 ITA ITA - Olimpic Nuoto Napoli ssd"
-      },
-      "results": {
-        "200": {
-          "best": null,
-          "source": "deep_dive",
-          "error": "challenge"
-        },
-        "400": {
-          "best": null,
-          "source": "deep_dive",
-          "error": "challenge"
-        },
-        "800": {
-          "best": null,
-          "source": "deep_dive",
-          "error": "challenge"
-        },
-        "1500": {
-          "best": null,
-          "source": "deep_dive",
-          "error": "challenge"
-        }
-      },
-      "fiche_bloquee": "challenge",
-      "events": [
-        "Boys' 7.5km J2"
-      ]
-    },
-    "NOWACKI|MIESZKO|2009": {
-      "status": "challenge_fiche",
-      "athlete": {
-        "athlete_id": "5173031",
-        "name": "NOWACKI, Mieszko",
-        "year": "2009",
-        "nation": "POL",
-        "row": "NOWACKI, Mieszko 2009 POL POL - AZS UMCS Lublin"
-      },
-      "results": {
-        "200": {
-          "best": null,
-          "source": "deep_dive",
-          "error": "challenge"
-        },
-        "400": {
-          "best": null,
-          "source": "deep_dive",
-          "error": "challenge"
-        },
-        "800": {
-          "best": null,
-          "source": "deep_dive",
-          "error": "challenge"
-        },
-        "1500": {
-          "best": null,
-          "source": "deep_dive",
-          "error": "challenge"
-        }
-      },
-      "fiche_bloquee": "challenge",
-      "events": [
-        "Boys' 7.5km J2",
-        "Boys' 3km Knockout Sprint"
-      ]
-    },
-    "TARASIEWICZ|PIOTR|2009": {
-      "status": "challenge_fiche",
-      "athlete": {
-        "athlete_id": "5204444",
-        "name": "TARASIEWICZ, Piotr",
-        "year": "2009",
-        "nation": "POL",
-        "row": "TARASIEWICZ, Piotr 2009 POL POL - UKP Polonia Warszawa"
-      },
-      "results": {
-        "200": {
-          "best": null,
-          "source": "deep_dive",
-          "error": "challenge"
-        },
-        "400": {
-          "best": null,
-          "source": "deep_dive",
-          "error": "challenge"
-        },
-        "800": {
-          "best": null,
-          "source": "deep_dive",
-          "error": "challenge"
-        },
-        "1500": {
-          "best": null,
-          "source": "deep_dive",
-          "error": "challenge"
-        }
-      },
-      "fiche_bloquee": "challenge",
-      "events": [
-        "Boys' 7.5km J2",
-        "Boys' 3km Knockout Sprint"
-      ]
-    },
-    "TOPA|DANIEL|2010": {
-      "status": "challenge_fiche",
-      "athlete": {
-        "athlete_id": "4692467",
-        "name": "TOPA, Daniel",
-        "year": "2010",
-        "nation": "POL",
-        "row": "TOPA, Daniel 2010 POL POL - MTP KORMORAN Olsztyn"
-      },
-      "results": {
-        "200": {
-          "best": null,
-          "source": "deep_dive",
-          "error": "challenge"
-        },
-        "400": {
-          "best": null,
-          "source": "deep_dive",
-          "error": "challenge"
-        },
-        "800": {
-          "best": null,
-          "source": "deep_dive",
-          "error": "challenge"
-        },
-        "1500": {
-          "best": null,
-          "source": "deep_dive",
-          "error": "challenge"
-        }
-      },
-      "fiche_bloquee": "challenge",
-      "events": [
-        "Boys' 7.5km J2",
-        "Boys' 3km Knockout Sprint 14-16"
-      ]
-    },
-    "DEMIDOV|SEMEN|2009": {
-      "status": "challenge_fiche",
-      "athlete": {
-        "athlete_id": "5783019",
-        "name": "DEMIDOV, Semen",
-        "year": "2009",
-        "nation": "RUS",
-        "row": "DEMIDOV, Semen 2009 RUS RUS - Perm Territory"
-      },
-      "results": {
-        "200": {
-          "best": null,
-          "source": "deep_dive",
-          "error": "challenge"
-        },
-        "400": {
-          "best": null,
-          "source": "deep_dive",
-          "error": "challenge"
-        },
-        "800": {
-          "best": null,
-          "source": "deep_dive",
-          "error": "challenge"
-        },
-        "1500": {
-          "best": null,
-          "source": "deep_dive",
-          "error": "challenge"
-        }
-      },
-      "fiche_bloquee": "challenge",
-      "events": [
-        "Boys' 7.5km J2",
-        "Boys' 3km Knockout Sprint"
-      ]
-    },
-    "FILIPETS|ALEKSANDR|2010": {
-      "status": "challenge_fiche",
-      "athlete": {
-        "athlete_id": "5783034",
-        "name": "FILIPETS, Aleksandr",
-        "year": "2010",
-        "nation": "RUS",
-        "row": "FILIPETS, Aleksandr 2010 RUS RUS - Rostov Region"
-      },
-      "results": {
-        "200": {
-          "best": null,
-          "source": "deep_dive",
-          "error": "challenge"
-        },
-        "400": {
-          "best": null,
-          "source": "deep_dive",
-          "error": "challenge"
-        },
-        "800": {
-          "best": null,
-          "source": "deep_dive",
-          "error": "challenge"
-        },
-        "1500": {
-          "best": null,
-          "source": "deep_dive",
-          "error": "challenge"
-        }
-      },
-      "fiche_bloquee": "challenge",
-      "events": [
-        "Boys' 7.5km J2"
-      ]
-    },
-    "SEROV|ROMAN|2009": {
-      "status": "challenge_fiche",
-      "athlete": {
-        "athlete_id": "5783207",
-        "name": "SEROV, Roman",
-        "year": "2009",
-        "nation": "RUS",
-        "row": "SEROV, Roman 2009 RUS RUS - Saint-Petersburg"
-      },
-      "results": {
-        "200": {
-          "best": null,
-          "source": "deep_dive",
-          "error": "challenge"
-        },
-        "400": {
-          "best": null,
-          "source": "deep_dive",
-          "error": "challenge"
-        },
-        "800": {
-          "best": null,
-          "source": "deep_dive",
-          "error": "challenge"
-        },
-        "1500": {
-          "best": null,
-          "source": "deep_dive",
-          "error": "challenge"
-        }
-      },
-      "fiche_bloquee": "challenge",
-      "events": [
-        "Boys' 7.5km J2"
-      ]
-    },
-    "KRANJC|NEJC|2010": {
-      "status": "challenge_fiche",
-      "athlete": {
-        "athlete_id": "5345099",
-        "name": "KRANJC, Nejc",
-        "year": "2010",
-        "nation": "SLO",
-        "row": "KRANJC, Nejc 2010 SLO SLO - PK Celulozar Krsko"
-      },
-      "results": {
-        "200": {
-          "best": null,
-          "source": "deep_dive",
-          "error": "challenge"
-        },
-        "400": {
-          "best": null,
-          "source": "deep_dive",
-          "error": "challenge"
-        },
-        "800": {
-          "best": null,
-          "source": "deep_dive",
-          "error": "challenge"
-        },
-        "1500": {
-          "best": null,
-          "source": "deep_dive",
-          "error": "challenge"
-        }
-      },
-      "fiche_bloquee": "challenge",
-      "events": [
-        "Boys' 7.5km J2",
-        "Boys' 3km Knockout Sprint 14-16"
-      ]
-    },
-    "SOLLNER|JACY|2009": {
-      "status": "bloc_inconnu_recherche",
-      "events": [
-        "Boys' 7.5km J2",
-        "Boys' 3km Knockout Sprint"
-      ]
-    },
-    "THOLKING|JOSHUA|2009": {
-      "status": "bloc_inconnu_recherche",
-      "events": [
-        "Boys' 7.5km J2",
-        "Boys' 3km Knockout Sprint"
-      ]
-    },
-    "TIRRI|GERARDO|2009": {
-      "status": "challenge_fiche",
-      "athlete": {
-        "athlete_id": "5255777",
-        "name": "TIRRI, Gerardo",
-        "year": "2009",
-        "nation": "SUI",
-        "row": "TIRRI, Gerardo 2009 SUI SUI - Lugano Aquatics"
-      },
-      "results": {
-        "200": {
-          "best": null,
-          "source": "deep_dive",
-          "error": "challenge"
-        },
-        "400": {
-          "best": null,
-          "source": "deep_dive",
-          "error": "challenge"
-        },
-        "800": {
-          "best": null,
-          "source": "deep_dive",
-          "error": "challenge"
-        },
-        "1500": {
-          "best": null,
-          "source": "deep_dive",
-          "error": "challenge"
-        }
-      },
-      "fiche_bloquee": "challenge",
-      "events": [
-        "Boys' 7.5km J2",
-        "Boys' 3km Knockout Sprint"
-      ]
-    },
-    "HAJKO|MARTIN|2009": {
-      "status": "challenge_fiche",
-      "athlete": {
-        "athlete_id": "5351027",
-        "name": "HAJKO, Martin",
-        "year": "2009",
-        "nation": "SVK",
-        "row": "HAJKO, Martin 2009 SVK SVK - SPORT CLUB Senec"
-      },
-      "results": {
-        "200": {
-          "best": null,
-          "source": "deep_dive",
-          "error": "challenge"
-        },
-        "400": {
-          "best": null,
-          "source": "deep_dive",
-          "error": "challenge"
-        },
-        "800": {
-          "best": null,
-          "source": "deep_dive",
-          "error": "challenge"
-        },
-        "1500": {
-          "best": null,
-          "source": "deep_dive",
-          "error": "challenge"
-        }
-      },
-      "fiche_bloquee": "challenge",
-      "events": [
         "Boys' 7.5km J2",
         "Boys' 3km Knockout Sprint"
       ]
     },
     "KACANI|ADRIAN|2009": {
-      "status": "challenge_bloque",
+      "status": "bloc_inconnu_fiche",
       "athlete": {
         "athlete_id": "5157916",
         "name": "KACANI, Adrian",
@@ -3113,24 +3488,25 @@
         "200": {
           "best": null,
           "source": "deep_dive",
-          "error": "challenge"
+          "error": "bloc_inconnu"
         },
         "400": {
           "best": null,
           "source": "deep_dive",
-          "error": "challenge"
+          "error": "bloc_inconnu"
         },
         "800": {
           "best": null,
           "source": "deep_dive",
-          "error": "challenge"
+          "error": "bloc_inconnu"
         },
         "1500": {
           "best": null,
           "source": "deep_dive",
-          "error": "challenge"
+          "error": "bloc_inconnu"
         }
       },
+      "fiche_bloquee": "bloc_inconnu",
       "events": [
         "Boys' 7.5km J2"
       ]
@@ -3477,7 +3853,7 @@
       ]
     },
     "SARKANY|ZETENY|2011": {
-      "status": "http401_fiche",
+      "status": "bloc_inconnu_fiche",
       "athlete": {
         "athlete_id": "5524008",
         "name": "SARKANY, Zeteny",
@@ -3489,25 +3865,25 @@
         "200": {
           "best": null,
           "source": "deep_dive",
-          "error": "http401"
+          "error": "bloc_inconnu"
         },
         "400": {
           "best": null,
           "source": "deep_dive",
-          "error": "http401"
+          "error": "bloc_inconnu"
         },
         "800": {
           "best": null,
           "source": "deep_dive",
-          "error": "http401"
+          "error": "bloc_inconnu"
         },
         "1500": {
           "best": null,
           "source": "deep_dive",
-          "error": "http401"
+          "error": "bloc_inconnu"
         }
       },
-      "fiche_bloquee": "http401",
+      "fiche_bloquee": "bloc_inconnu",
       "events": [
         "Boys' 5km J1",
         "Boys' 3km Knockout Sprint 14-16"
@@ -3537,7 +3913,7 @@
       ]
     },
     "ADELFIO|MARCO|2011": {
-      "status": "challenge_bloque",
+      "status": "bloc_inconnu_fiche",
       "athlete": {
         "athlete_id": "5525090",
         "name": "ADELFIO, Marco",
@@ -3549,24 +3925,25 @@
         "200": {
           "best": null,
           "source": "deep_dive",
-          "error": "challenge"
+          "error": "bloc_inconnu"
         },
         "400": {
           "best": null,
           "source": "deep_dive",
-          "error": "challenge"
+          "error": "bloc_inconnu"
         },
         "800": {
           "best": null,
           "source": "deep_dive",
-          "error": "challenge"
+          "error": "bloc_inconnu"
         },
         "1500": {
           "best": null,
           "source": "deep_dive",
-          "error": "challenge"
+          "error": "bloc_inconnu"
         }
       },
+      "fiche_bloquee": "bloc_inconnu",
       "events": [
         "Boys' 5km J1"
       ]
@@ -3608,7 +3985,7 @@
       ]
     },
     "DEL GIUDICE|ALDO|2011": {
-      "status": "challenge_bloque",
+      "status": "bloc_inconnu_fiche",
       "athlete": {
         "athlete_id": "5389513",
         "name": "DEL GIUDICE, Aldo",
@@ -3620,24 +3997,25 @@
         "200": {
           "best": null,
           "source": "deep_dive",
-          "error": "challenge"
+          "error": "bloc_inconnu"
         },
         "400": {
           "best": null,
           "source": "deep_dive",
-          "error": "challenge"
+          "error": "bloc_inconnu"
         },
         "800": {
           "best": null,
           "source": "deep_dive",
-          "error": "challenge"
+          "error": "bloc_inconnu"
         },
         "1500": {
           "best": null,
           "source": "deep_dive",
-          "error": "challenge"
+          "error": "bloc_inconnu"
         }
       },
+      "fiche_bloquee": "bloc_inconnu",
       "events": [
         "Boys' 5km J1",
         "Boys' 3km Knockout Sprint 14-16"
@@ -3714,7 +4092,7 @@
       ]
     },
     "NOSOV|ALAN|2011": {
-      "status": "http401_fiche",
+      "status": "bloc_inconnu_fiche",
       "athlete": {
         "athlete_id": "5903189",
         "name": "NOSOV, Alan",
@@ -3726,25 +4104,25 @@
         "200": {
           "best": null,
           "source": "deep_dive",
-          "error": "http401"
+          "error": "bloc_inconnu"
         },
         "400": {
           "best": null,
           "source": "deep_dive",
-          "error": "http401"
+          "error": "bloc_inconnu"
         },
         "800": {
           "best": null,
           "source": "deep_dive",
-          "error": "http401"
+          "error": "bloc_inconnu"
         },
         "1500": {
           "best": null,
           "source": "deep_dive",
-          "error": "http401"
+          "error": "bloc_inconnu"
         }
       },
-      "fiche_bloquee": "http401",
+      "fiche_bloquee": "bloc_inconnu",
       "events": [
         "Boys' 5km J1",
         "Boys' 3km Knockout Sprint 14-16"
@@ -5487,7 +5865,7 @@
       ]
     },
     "GIRAUDO|VIOLA|2007": {
-      "status": "bloc_inconnu_fiche",
+      "status": "ok",
       "athlete": {
         "athlete_id": "5176659",
         "name": "GIRAUDO, Viola",
@@ -5497,24 +5875,49 @@
       },
       "results": {
         "200": {
-          "best": null,
-          "source": "deep_dive",
-          "error": "bloc_inconnu"
+          "best": {
+            "time": "2:08.13",
+            "date": "2025-02-22",
+            "points": 672,
+            "city": "San Marino (SMR)"
+          },
+          "source": "manuel (swimrankings)",
+          "fallback": true,
+          "note_methode": "record a vie releve sur la fiche ; une perf plus lente dans la fenetre n'est pas exclue"
         },
         "400": {
-          "best": null,
-          "source": "deep_dive",
-          "error": "bloc_inconnu"
+          "best": {
+            "time": "4:21.44",
+            "date": "2025-03-15",
+            "points": 729,
+            "city": "Milan"
+          },
+          "source": "manuel (swimrankings)",
+          "fallback": true,
+          "note_methode": "record a vie releve sur la fiche ; une perf plus lente dans la fenetre n'est pas exclue"
         },
         "800": {
-          "best": null,
-          "source": "deep_dive",
-          "error": "bloc_inconnu"
+          "best": {
+            "time": "8:58.89",
+            "date": "2025-02-22",
+            "points": 728,
+            "city": "San Marino (SMR)"
+          },
+          "source": "manuel (swimrankings)",
+          "fallback": true,
+          "note_methode": "record a vie releve sur la fiche ; une perf plus lente dans la fenetre n'est pas exclue"
         },
         "1500": {
-          "best": null,
-          "source": "deep_dive",
-          "error": "bloc_inconnu"
+          "best": {
+            "time": "17:19.33",
+            "date": "2024-07-19",
+            "points": 694,
+            "city": "Lodi"
+          },
+          "source": "manuel (swimrankings)",
+          "fallback": true,
+          "note": "hors fenetre 24 mois (19 jul 2024 < seuil 20 jul 2024)",
+          "note_methode": "record a vie releve sur la fiche ; une perf plus lente dans la fenetre n'est pas exclue"
         }
       },
       "fiche_bloquee": "bloc_inconnu",
@@ -5523,7 +5926,7 @@
       ]
     },
     "TERLIZZI|LUDOVICA|2007": {
-      "status": "bloc_inconnu_fiche",
+      "status": "ok",
       "athlete": {
         "athlete_id": "4005975",
         "name": "TERLIZZI, Ludovica",
@@ -5533,24 +5936,48 @@
       },
       "results": {
         "200": {
-          "best": null,
-          "source": "deep_dive",
-          "error": "bloc_inconnu"
+          "best": {
+            "time": "2:01.15",
+            "date": "2026-04-15",
+            "points": 794,
+            "city": "Riccione"
+          },
+          "source": "manuel (swimrankings)",
+          "fallback": false,
+          "note_methode": "record a vie, date dans la fenetre 12 mois"
         },
         "400": {
-          "best": null,
-          "source": "deep_dive",
-          "error": "bloc_inconnu"
+          "best": {
+            "time": "4:14.56",
+            "date": "2026-04-18",
+            "points": 790,
+            "city": "Riccione"
+          },
+          "source": "manuel (swimrankings)",
+          "fallback": false,
+          "note_methode": "record a vie, date dans la fenetre 12 mois"
         },
         "800": {
-          "best": null,
-          "source": "deep_dive",
-          "error": "bloc_inconnu"
+          "best": {
+            "time": "8:48.60",
+            "date": "2026-03-19",
+            "points": 771,
+            "city": "Livorno"
+          },
+          "source": "manuel (swimrankings)",
+          "fallback": false,
+          "note_methode": "record a vie, date dans la fenetre 12 mois"
         },
         "1500": {
-          "best": null,
-          "source": "deep_dive",
-          "error": "bloc_inconnu"
+          "best": {
+            "time": "16:50.93",
+            "date": "2025-04-15",
+            "points": 754,
+            "city": "Riccione"
+          },
+          "source": "manuel (swimrankings)",
+          "fallback": true,
+          "note_methode": "record a vie releve sur la fiche ; une perf plus lente dans la fenetre n'est pas exclue"
         }
       },
       "fiche_bloquee": "bloc_inconnu",
@@ -5744,7 +6171,7 @@
       ]
     },
     "NIKIFOROVA|DARIA|2007": {
-      "status": "challenge_bloque",
+      "status": "bloc_inconnu_fiche",
       "athlete": {
         "athlete_id": "5451423",
         "name": "NIKIFOROVA, Daria",
@@ -5756,30 +6183,31 @@
         "200": {
           "best": null,
           "source": "deep_dive",
-          "error": "challenge"
+          "error": "bloc_inconnu"
         },
         "400": {
           "best": null,
           "source": "deep_dive",
-          "error": "challenge"
+          "error": "bloc_inconnu"
         },
         "800": {
           "best": null,
           "source": "deep_dive",
-          "error": "challenge"
+          "error": "bloc_inconnu"
         },
         "1500": {
           "best": null,
           "source": "deep_dive",
-          "error": "challenge"
+          "error": "bloc_inconnu"
         }
       },
+      "fiche_bloquee": "bloc_inconnu",
       "events": [
         "Girls' 10km J3"
       ]
     },
     "MOJSILOVIC MEZNARIC|ZALA|2008": {
-      "status": "challenge_bloque",
+      "status": "bloc_inconnu_fiche",
       "athlete": {
         "athlete_id": "5213680",
         "name": "MOJSILOVIC MEZNARIC, Zala",
@@ -5791,31 +6219,32 @@
         "200": {
           "best": null,
           "source": "deep_dive",
-          "error": "challenge"
+          "error": "bloc_inconnu"
         },
         "400": {
           "best": null,
           "source": "deep_dive",
-          "error": "challenge"
+          "error": "bloc_inconnu"
         },
         "800": {
           "best": null,
           "source": "deep_dive",
-          "error": "challenge"
+          "error": "bloc_inconnu"
         },
         "1500": {
           "best": null,
           "source": "deep_dive",
-          "error": "challenge"
+          "error": "bloc_inconnu"
         }
       },
+      "fiche_bloquee": "bloc_inconnu",
       "events": [
         "Girls' 10km J3",
         "Girls' 3km Knockout Sprint"
       ]
     },
     "PEKNUSOVA|SOPHIA|2008": {
-      "status": "http401_fiche",
+      "status": "bloc_inconnu_fiche",
       "athlete": {
         "athlete_id": "4621105",
         "name": "PEKNUSOVA, Sophia",
@@ -5827,25 +6256,25 @@
         "200": {
           "best": null,
           "source": "deep_dive",
-          "error": "http401"
+          "error": "bloc_inconnu"
         },
         "400": {
           "best": null,
           "source": "deep_dive",
-          "error": "http401"
+          "error": "bloc_inconnu"
         },
         "800": {
           "best": null,
           "source": "deep_dive",
-          "error": "http401"
+          "error": "bloc_inconnu"
         },
         "1500": {
           "best": null,
           "source": "deep_dive",
-          "error": "http401"
+          "error": "bloc_inconnu"
         }
       },
-      "fiche_bloquee": "http401",
+      "fiche_bloquee": "bloc_inconnu",
       "events": [
         "Girls' 10km J3",
         "Girls' 3km Knockout Sprint"
@@ -8432,7 +8861,7 @@
       ]
     },
     "NARIN|YAREN GUL|2009": {
-      "status": "bloc_inconnu_fiche",
+      "status": "challenge_bloque",
       "athlete": {
         "athlete_id": "5818122",
         "name": "NARIN, Yaren Gul",
@@ -8454,15 +8883,14 @@
         "800": {
           "best": null,
           "source": "deep_dive",
-          "error": "bloc_inconnu"
+          "error": "challenge"
         },
         "1500": {
           "best": null,
           "source": "deep_dive",
-          "error": "bloc_inconnu"
+          "error": "challenge"
         }
       },
-      "fiche_bloquee": "bloc_inconnu",
       "events": [
         "Girls' 3km Knockout Sprint"
       ]
@@ -8582,7 +9010,7 @@
       ]
     }
   },
-  "generated_on": "2026-07-19",
+  "generated_on": "2026-07-20",
   "window_months": 12,
   "fallback_months": 24,
   "source_rows_uniques": 201,
@@ -9891,12 +10319,12 @@
   "a_retrouver": [
     {
       "cle": "SCHWARZ|RAPHAEL|2008",
-      "raison": "bloqué (ok)",
+      "raison": "aucun temps en bassin 50m sur les epreuves ciblees",
       "candidats": null
     },
     {
       "cle": "TJERNSBEKK|MATTIS ELIAS|2007",
-      "raison": "bloqué (ok)",
+      "raison": "aucun temps en bassin 50m sur les epreuves ciblees",
       "candidats": null
     },
     {
@@ -9906,152 +10334,47 @@
     },
     {
       "cle": "NOUROU|STEPHANOS|2010",
-      "raison": "bloqué (ok)",
-      "candidats": null
-    },
-    {
-      "cle": "MAESEPP|ERIK|2009",
-      "raison": "bloqué (bloc_inconnu_fiche)",
-      "candidats": null
-    },
-    {
-      "cle": "PRIKS|ROBIN|2010",
-      "raison": "bloqué (challenge_bloque)",
-      "candidats": null
-    },
-    {
-      "cle": "PARAT|TITOUAN|2009",
-      "raison": "bloqué (challenge_fiche)",
-      "candidats": null
-    },
-    {
-      "cle": "LIESCHKE|JONAS|2009",
-      "raison": "bloqué (challenge_fiche)",
-      "candidats": null
-    },
-    {
-      "cle": "PREUSS|BEN DAVID|2009",
-      "raison": "bloqué (challenge_fiche)",
-      "candidats": null
-    },
-    {
-      "cle": "STRASSBURGER|MATTHEO|2009",
-      "raison": "bloqué (challenge_fiche)",
-      "candidats": null
-    },
-    {
-      "cle": "CHOURDAKIS|KONSTANTINOS|2009",
-      "raison": "bloqué (challenge_fiche)",
-      "candidats": null
-    },
-    {
-      "cle": "KAKOULAKIS|NIKOLAOS|2010",
-      "raison": "bloqué (challenge_fiche)",
-      "candidats": null
-    },
-    {
-      "cle": "VOULAS|DIMITRIOS IASON|2009",
-      "raison": "bloqué (challenge_fiche)",
-      "candidats": null
-    },
-    {
-      "cle": "HUSZTI|MARTON|2009",
-      "raison": "bloqué (challenge_fiche)",
-      "candidats": null
-    },
-    {
-      "cle": "KREISZ|BALINT|2009",
-      "raison": "bloqué (challenge_fiche)",
+      "raison": "aucun temps en bassin 50m sur les epreuves ciblees",
       "candidats": null
     },
     {
       "cle": "MAROSSZEKI|ARMAND ATTILA|2010",
-      "raison": "bloqué (bloc_inconnu_recherche)",
+      "raison": "introuvable",
       "candidats": null
     },
     {
       "cle": "FOMBERG KOZA|SEAN|2010",
-      "raison": "bloqué (bloc_inconnu_recherche)",
-      "candidats": null
-    },
-    {
-      "cle": "KISLIUK|DANIEL|2009",
-      "raison": "bloqué (challenge_fiche)",
+      "raison": "introuvable",
       "candidats": null
     },
     {
       "cle": "CORPOLONGO|EDOARDO|2010",
-      "raison": "bloqué (challenge_fiche)",
-      "candidats": null
-    },
-    {
-      "cle": "DALLE CRODE|NICOLO|2009",
-      "raison": "bloqué (challenge_fiche)",
-      "candidats": null
-    },
-    {
-      "cle": "TAMMARO|GAETANO|2009",
-      "raison": "bloqué (challenge_fiche)",
-      "candidats": null
-    },
-    {
-      "cle": "NOWACKI|MIESZKO|2009",
-      "raison": "bloqué (challenge_fiche)",
-      "candidats": null
-    },
-    {
-      "cle": "TARASIEWICZ|PIOTR|2009",
-      "raison": "bloqué (challenge_fiche)",
-      "candidats": null
-    },
-    {
-      "cle": "TOPA|DANIEL|2010",
-      "raison": "bloqué (challenge_fiche)",
-      "candidats": null
-    },
-    {
-      "cle": "DEMIDOV|SEMEN|2009",
-      "raison": "bloqué (challenge_fiche)",
-      "candidats": null
-    },
-    {
-      "cle": "FILIPETS|ALEKSANDR|2010",
-      "raison": "bloqué (challenge_fiche)",
-      "candidats": null
-    },
-    {
-      "cle": "SEROV|ROMAN|2009",
-      "raison": "bloqué (challenge_fiche)",
-      "candidats": null
-    },
-    {
-      "cle": "KRANJC|NEJC|2010",
-      "raison": "bloqué (challenge_fiche)",
+      "raison": "aucun temps en bassin 50m sur les epreuves ciblees",
       "candidats": null
     },
     {
       "cle": "SOLLNER|JACY|2009",
-      "raison": "bloqué (bloc_inconnu_recherche)",
+      "raison": "introuvable",
       "candidats": null
     },
     {
       "cle": "THOLKING|JOSHUA|2009",
-      "raison": "bloqué (bloc_inconnu_recherche)",
+      "raison": "introuvable",
       "candidats": null
     },
     {
       "cle": "TIRRI|GERARDO|2009",
-      "raison": "bloqué (challenge_fiche)",
+      "raison": "plafond de consultation atteint — relancer demain",
       "candidats": null
     },
     {
       "cle": "HAJKO|MARTIN|2009",
-      "raison": "bloqué (challenge_fiche)",
+      "raison": "bloqué (bloc_inconnu_fiche)",
       "candidats": null
     },
     {
       "cle": "KACANI|ADRIAN|2009",
-      "raison": "bloqué (challenge_bloque)",
+      "raison": "bloqué (bloc_inconnu_fiche)",
       "candidats": null
     },
     {
@@ -10111,7 +10434,7 @@
     },
     {
       "cle": "SARKANY|ZETENY|2011",
-      "raison": "bloqué (http401_fiche)",
+      "raison": "bloqué (bloc_inconnu_fiche)",
       "candidats": null
     },
     {
@@ -10134,7 +10457,7 @@
     },
     {
       "cle": "ADELFIO|MARCO|2011",
-      "raison": "bloqué (challenge_bloque)",
+      "raison": "bloqué (bloc_inconnu_fiche)",
       "candidats": null
     },
     {
@@ -10144,7 +10467,7 @@
     },
     {
       "cle": "DEL GIUDICE|ALDO|2011",
-      "raison": "bloqué (challenge_bloque)",
+      "raison": "bloqué (bloc_inconnu_fiche)",
       "candidats": null
     },
     {
@@ -10159,7 +10482,7 @@
     },
     {
       "cle": "NOSOV|ALAN|2011",
-      "raison": "bloqué (http401_fiche)",
+      "raison": "bloqué (bloc_inconnu_fiche)",
       "candidats": null
     },
     {
@@ -10183,16 +10506,6 @@
       "candidats": null
     },
     {
-      "cle": "GIRAUDO|VIOLA|2007",
-      "raison": "bloqué (bloc_inconnu_fiche)",
-      "candidats": null
-    },
-    {
-      "cle": "TERLIZZI|LUDOVICA|2007",
-      "raison": "bloqué (bloc_inconnu_fiche)",
-      "candidats": null
-    },
-    {
       "cle": "GYLSETH-BERNTSEN|ISELIN|2008",
       "raison": "aucun temps en bassin 50m sur les epreuves ciblees",
       "candidats": null
@@ -10204,17 +10517,17 @@
     },
     {
       "cle": "NIKIFOROVA|DARIA|2007",
-      "raison": "bloqué (challenge_bloque)",
+      "raison": "bloqué (bloc_inconnu_fiche)",
       "candidats": null
     },
     {
       "cle": "MOJSILOVIC MEZNARIC|ZALA|2008",
-      "raison": "bloqué (challenge_bloque)",
+      "raison": "bloqué (bloc_inconnu_fiche)",
       "candidats": null
     },
     {
       "cle": "PEKNUSOVA|SOPHIA|2008",
-      "raison": "bloqué (http401_fiche)",
+      "raison": "bloqué (bloc_inconnu_fiche)",
       "candidats": null
     },
     {
@@ -10359,7 +10672,7 @@
     },
     {
       "cle": "NARIN|YAREN GUL|2009",
-      "raison": "bloqué (bloc_inconnu_fiche)",
+      "raison": "bloqué (challenge_bloque)",
       "candidats": null
     },
     {

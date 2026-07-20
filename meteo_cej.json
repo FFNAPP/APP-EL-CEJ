@@ -1,0 +1,61 @@
+{
+  "meta": {
+    "lieu": "Sukoró · Lac Velence",
+    "rotation_offset": 23,
+    "arrow_x": 1380,
+    "arrow_y": 430,
+    "note": "Mettre à jour avant chaque compétition. wind en km/h, dir en degrés vrais, temp en °C."
+  },
+  "windows": [
+    {
+      "id": "w_10km",
+      "label": "23/07 · 10km (10h–13h)",
+      "date": "23/07",
+      "epreuves": ["Girls' 10km J3", "Boys' 10km J3"],
+      "hours": [9, 10, 11, 12, 13],
+      "temp":  [23.2, 23.3, 23.9, 25.2, 24.6],
+      "wind":  [11.8, 19.0, 17.8, 17.8, 20.6],
+      "dir":   [257, 275, 293, 290, 294]
+    },
+    {
+      "id": "w_75km",
+      "label": "23/07 · 7,5km (15h–17h)",
+      "date": "23/07",
+      "epreuves": ["Girls' 7.5km J2", "Boys' 7.5km J2", "Girls' 7.5km J3", "Boys' 7.5km J3"],
+      "hours": [14, 15, 16, 17],
+      "temp":  [24.7, 25.2, 24.5, 23.9],
+      "wind":  [18.6, 19.4, 21.5, 19.0],
+      "dir":   [286, 292, 293, 293]
+    },
+    {
+      "id": "w_5km",
+      "label": "24/07 · 5km (10h–12h)",
+      "date": "24/07",
+      "epreuves": ["Girls' 5km J1", "Boys' 5km J1"],
+      "hours": [9, 10, 11, 12],
+      "temp":  [19.1, 20.7, 22.0, 22.9],
+      "wind":  [19.9, 20.5, 20.8, 21.1],
+      "dir":   [326, 324, 323, 323]
+    },
+    {
+      "id": "w_ko25",
+      "label": "25/07 · KO (10h–18h)",
+      "date": "25/07",
+      "epreuves": ["Boys' 3km Knockout Sprint", "Girls' 3km Knockout Sprint", "Boys' 3km Knockout Sprint 14-16", "Girls' 3km Knockout Sprint 14-16"],
+      "hours": [9, 10, 11, 12, 13, 14, 15, 16, 17],
+      "temp":  [20.1, 21.8, 23.2, 24.3, 25.2, 26.0, 26.9, 27.7, 27.8],
+      "wind":  [2.8, 5.7, 7.0, 4.5, 1.5, 2.6, 2.4, 9.0, 13.1],
+      "dir":   [207, 212, 215, 223, 306, 348, 234, 211, 209]
+    },
+    {
+      "id": "w_relay",
+      "label": "26/07 · Relais (10h–15h)",
+      "date": "26/07",
+      "epreuves": ["Mixed Relay U19", "Mixed Relay U16"],
+      "hours": [9, 10, 11, 12, 13, 14, 15],
+      "temp":  [22.5, 22.7, 22.9, 23.1, 23.1, 23.1, 23.1],
+      "wind":  [10.7, 8.1, 5.1, 3.8, 3.8, 3.8, 3.8],
+      "dir":   [149, 156, 176, 221, 221, 221, 221]
+    }
+  ]
+}

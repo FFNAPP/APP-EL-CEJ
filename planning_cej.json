@@ -1,0 +1,921 @@
+{
+  "meta": {
+    "titre": "Championnats d'Europe Juniors Eau Libre 2026",
+    "lieu": "Sukoro (Lac Velence), Hongrie",
+    "derniere_maj": "2026-07-20"
+  },
+  "membres": [
+    {
+      "id": "pierre",
+      "nom": "Pierre HUI",
+      "role": "Staff"
+    },
+    {
+      "id": "magali",
+      "nom": "Magali MERINO",
+      "role": "Staff"
+    },
+    {
+      "id": "nino",
+      "nom": "Nino LESSCHAEVE",
+      "role": "Staff"
+    },
+    {
+      "id": "lucas",
+      "nom": "Lucas DUCHATEL",
+      "role": "Staff"
+    },
+    {
+      "id": "capucine",
+      "nom": "Capucine BEGIN",
+      "role": "Staff"
+    },
+    {
+      "id": "ethan",
+      "nom": "Ethan PARKER",
+      "role": "Athlete"
+    },
+    {
+      "id": "manoli",
+      "nom": "Manoli CASSAR",
+      "role": "Athlete"
+    },
+    {
+      "id": "adrien",
+      "nom": "Adrien ESPRIET",
+      "role": "Athlete"
+    },
+    {
+      "id": "mateo",
+      "nom": "Mateo GREGOIRE-CHARMASSON",
+      "role": "Athlete"
+    },
+    {
+      "id": "rosalie",
+      "nom": "Rosalie MESMACQUE",
+      "role": "Athlete"
+    },
+    {
+      "id": "faustine",
+      "nom": "Faustine PENARD",
+      "role": "Athlete"
+    },
+    {
+      "id": "titouan",
+      "nom": "Titouan PARAT",
+      "role": "Athlete"
+    }
+  ],
+  "evenements": [
+    {
+      "id": "e01",
+      "date": "2026-07-22",
+      "type": "navette_depart",
+      "nom": "",
+      "heure_debut": "10:00",
+      "heure_fin": "12:30",
+      "detail": "",
+      "lieu": "Samorin",
+      "participants": "tous",
+      "note": "",
+      "source": "Depart 10h de Samorin - arrivee prevue a 12h30"
+    },
+    {
+      "id": "e02",
+      "date": "2026-07-22",
+      "type": "repas_hotel",
+      "nom": "",
+      "heure_debut": "20:00",
+      "heure_fin": "21:00",
+      "detail": "",
+      "lieu": "",
+      "participants": "tous",
+      "note": "",
+      "source": "Repas a l'hotel"
+    },
+    {
+      "id": "e03",
+      "date": "2026-07-22",
+      "type": "autre",
+      "nom": "Team Leader's Meeting",
+      "heure_debut": "14:00",
+      "heure_fin": "15:00",
+      "detail": "",
+      "lieu": "National kayak academie",
+      "participants": [
+        "pierre"
+      ],
+      "note": "",
+      "source": "Team Leader's Meeting 14h - National kayak academie"
+    },
+    {
+      "id": "e04",
+      "date": "2026-07-22",
+      "type": "entrainement",
+      "nom": "",
+      "heure_debut": "15:30",
+      "heure_fin": "17:00",
+      "detail": "Lac",
+      "lieu": "",
+      "participants": "tous",
+      "note": "",
+      "source": "Seance au lac - 15h30"
+    },
+    {
+      "id": "e05",
+      "date": "2026-07-22",
+      "type": "autre",
+      "nom": "Coach clinic",
+      "heure_debut": "18:00",
+      "heure_fin": "19:00",
+      "detail": "",
+      "lieu": "National Kayak Académie",
+      "participants": [
+        "pierre",
+        "magali",
+        "nino"
+      ],
+      "note": "",
+      "source": "Coach clinic - 18h-19h"
+    },
+    {
+      "id": "e06",
+      "date": "2026-07-22",
+      "type": "autre",
+      "nom": "Reunion d'equipe",
+      "heure_debut": "19:15",
+      "heure_fin": "20:00",
+      "detail": "",
+      "lieu": "Hotel",
+      "participants": "tous",
+      "note": "",
+      "source": "Reunion d'equipe - 19h15 - Hotel"
+    },
+    {
+      "id": "e07",
+      "date": "2026-07-23",
+      "type": "navette_depart",
+      "nom": "",
+      "heure_debut": "07:45",
+      "heure_fin": "08:10",
+      "detail": "10km",
+      "lieu": "",
+      "participants": [
+        "pierre",
+        "magali",
+        "capucine",
+        "ethan",
+        "manoli"
+      ],
+      "note": "",
+      "source": "Depart pour echauffement 10km - 7h45"
+    },
+    {
+      "id": "e08",
+      "date": "2026-07-23",
+      "type": "entrainement",
+      "nom": "",
+      "heure_debut": "09:00",
+      "heure_fin": "10:30",
+      "detail": "Piscine",
+      "lieu": "",
+      "participants": [
+        "nino",
+        "lucas",
+        "adrien",
+        "mateo",
+        "faustine"
+      ],
+      "note": "",
+      "source": "Entrainement piscine 9h - 10h30"
+    },
+    {
+      "id": "e10",
+      "date": "2026-07-23",
+      "type": "repas_hotel",
+      "nom": "",
+      "heure_debut": "19:00",
+      "heure_fin": "20:00",
+      "detail": "",
+      "lieu": "",
+      "participants": "tous",
+      "note": "",
+      "source": "Repas hotel post-course 10km"
+    },
+    {
+      "id": "e12",
+      "date": "2026-07-23",
+      "type": "navette_depart",
+      "nom": "",
+      "heure_debut": "12:45",
+      "heure_fin": "13:10",
+      "detail": "Vers 7,5km",
+      "lieu": "Hotel",
+      "participants": [
+        "nino",
+        "rosalie",
+        "titouan"
+      ],
+      "note": "",
+      "source": "Depart de l'hotel pour 7,5km - 12h45"
+    },
+    {
+      "id": "e13",
+      "date": "2026-07-23",
+      "type": "massage",
+      "nom": "",
+      "heure_debut": "20:00",
+      "heure_fin": "",
+      "detail": "Orga à voir avec Lucas directement",
+      "lieu": "Chambre ...",
+      "participants": [
+        "lucas",
+        "ethan",
+        "manoli",
+        "adrien",
+        "mateo",
+        "rosalie",
+        "faustine",
+        "titouan"
+      ],
+      "note": "",
+      "source": "Massage recup aprem ?"
+    },
+    {
+      "id": "e14",
+      "date": "2026-07-23",
+      "type": "entrainement",
+      "nom": "",
+      "heure_debut": "16:00",
+      "heure_fin": "18:00",
+      "detail": "Piscine",
+      "lieu": "",
+      "participants": [
+        "magali",
+        "lucas",
+        "ethan",
+        "manoli",
+        "adrien",
+        "mateo",
+        "faustine"
+      ],
+      "note": "",
+      "source": "Entrainement piscine 16h-18h"
+    },
+    {
+      "id": "e15",
+      "date": "2026-07-23",
+      "type": "navette_retour",
+      "nom": "",
+      "heure_debut": "18:00",
+      "heure_fin": "18:20",
+      "detail": "Reunion d'equipe a l'hotel",
+      "lieu": "",
+      "participants": "tous",
+      "note": "",
+      "source": "Retour hotel commun 18h - Reunion d'equipe"
+    },
+    {
+      "id": "e16",
+      "date": "2026-07-24",
+      "type": "navette_depart",
+      "nom": "",
+      "heure_debut": "07:40",
+      "heure_fin": "08:00",
+      "detail": "5K",
+      "lieu": "",
+      "participants": [
+        "pierre",
+        "magali",
+        "capucine",
+        "faustine"
+      ],
+      "note": "",
+      "source": "Depart echauffement 5K - 7h45"
+    },
+    {
+      "id": "e17",
+      "date": "2026-07-24",
+      "type": "entrainement",
+      "nom": "",
+      "heure_debut": "09:00",
+      "heure_fin": "10:30",
+      "detail": "Piscine",
+      "lieu": "",
+      "participants": [
+        "nino",
+        "adrien",
+        "mateo",
+        "rosalie"
+      ],
+      "note": "",
+      "source": "Entrainement piscine 9h-10h30"
+    },
+    {
+      "id": "e18",
+      "date": "2026-07-24",
+      "type": "entrainement",
+      "nom": "",
+      "heure_debut": "16:00",
+      "heure_fin": "17:00",
+      "detail": "Piscine",
+      "lieu": "",
+      "participants": "tous",
+      "note": "",
+      "source": "Entrainement piscine 16h-17h ?"
+    },
+    {
+      "id": "e19",
+      "date": "2026-07-24",
+      "type": "autre",
+      "nom": "Reunion d'equipe",
+      "heure_debut": "18:30",
+      "heure_fin": "19:00",
+      "detail": "",
+      "lieu": "",
+      "participants": "tous",
+      "note": "",
+      "source": "Reunion d'equipe 18h30"
+    },
+    {
+      "id": "e20",
+      "date": "2026-07-25",
+      "type": "navette_depart",
+      "nom": "",
+      "heure_debut": "07:40",
+      "heure_fin": "08:00",
+      "detail": "KO U19 Garcons",
+      "lieu": "",
+      "participants": [
+        "magali",
+        "nino",
+        "capucine",
+        "ethan",
+        "adrien",
+        "mateo"
+      ],
+      "note": "",
+      "source": "Depart echauffement KO U19 Garcons - 7h45"
+    },
+    {
+      "id": "e21",
+      "date": "2026-07-25",
+      "type": "navette_depart",
+      "nom": "",
+      "heure_debut": "09:00",
+      "heure_fin": "09:20",
+      "detail": "KO U19 Filles",
+      "lieu": "",
+      "participants": [
+        "pierre",
+        "manoli",
+        "titouan"
+      ],
+      "note": "",
+      "source": "Depart echauffement KO U19 Filles - 9h"
+    },
+    {
+      "id": "e22",
+      "date": "2026-07-25",
+      "type": "repas_hotel",
+      "nom": "",
+      "heure_debut": "19:00",
+      "heure_fin": "20:00",
+      "detail": "",
+      "lieu": "",
+      "participants": "tous",
+      "note": "",
+      "source": "Retour repas hotel"
+    },
+    {
+      "id": "e23",
+      "date": "2026-07-25",
+      "type": "navette_depart",
+      "nom": "",
+      "heure_debut": "14:00",
+      "heure_fin": "14:20",
+      "detail": "KO U16",
+      "lieu": "",
+      "participants": [
+        "lucas",
+        "rosalie",
+        "faustine"
+      ],
+      "note": "",
+      "source": "Depart echauffement KO U16 - 14h"
+    },
+    {
+      "id": "e24",
+      "date": "2026-07-25",
+      "type": "massage",
+      "nom": "",
+      "heure_debut": "20:00",
+      "heure_fin": "",
+      "detail": "Orga à voir avec Lucas",
+      "lieu": "",
+      "participants": [
+        "lucas",
+        "ethan",
+        "manoli",
+        "adrien",
+        "mateo"
+      ],
+      "note": "",
+      "source": "Massage recup aprem"
+    },
+    {
+      "id": "e25",
+      "date": "2026-07-25",
+      "type": "navette_depart",
+      "nom": "",
+      "heure_debut": "15:30",
+      "heure_fin": "15:50",
+      "detail": "Séance récup",
+      "lieu": "",
+      "participants": [
+        "magali",
+        "ethan",
+        "manoli",
+        "adrien",
+        "mateo",
+        "titouan"
+      ],
+      "note": "",
+      "source": "Depart spectateur KO ? - 15h30"
+    },
+    {
+      "id": "e26",
+      "date": "2026-07-26",
+      "type": "echauffement",
+      "nom": "",
+      "heure_debut": "07:45",
+      "heure_fin": "?",
+      "detail": "Relais",
+      "lieu": "",
+      "participants": [],
+      "note": "Aucun participant assigne dans le fichier source.",
+      "source": "Depart echauffement relais 7h45"
+    },
+    {
+      "id": "e27",
+      "date": "2026-07-26",
+      "type": "navette_depart",
+      "nom": "",
+      "heure_debut": "09:00",
+      "heure_fin": "?",
+      "detail": "Spectateurs relais",
+      "lieu": "",
+      "participants": [],
+      "note": "Aucun participant assigne dans le fichier source.",
+      "source": "Depart spectateurs relais 9h"
+    },
+    {
+      "id": "e28",
+      "date": "2026-07-26",
+      "type": "repas_hotel",
+      "nom": "",
+      "heure_debut": "",
+      "heure_fin": "",
+      "detail": "",
+      "lieu": "",
+      "participants": "tous",
+      "note": "",
+      "source": "Retour repas hotel"
+    },
+    {
+      "id": "e29",
+      "date": "2026-07-26",
+      "type": "navette_depart",
+      "nom": "",
+      "heure_debut": "18:45",
+      "heure_fin": "?",
+      "detail": "Transfert aeroport",
+      "lieu": "",
+      "participants": "tous",
+      "note": "",
+      "source": "Transfert aeroport - Decollage 18h45"
+    },
+    {
+      "id": "e30",
+      "date": "2026-07-26",
+      "type": "autre",
+      "nom": "Hotel Holiday Inn",
+      "heure_debut": "",
+      "heure_fin": "",
+      "detail": "",
+      "lieu": "",
+      "participants": [
+        "magali",
+        "lucas",
+        "pierre",
+        "manoli",
+        "ethan",
+        "faustine",
+        "mateo",
+        "titouan"
+      ],
+      "note": "",
+      "source": "Hotel holiday inn"
+    },
+    {
+      "id": "e31",
+      "date": "2026-07-27",
+      "type": "navette_depart",
+      "nom": "",
+      "heure_debut": "08:55",
+      "heure_fin": "?",
+      "detail": "Train Nimes",
+      "lieu": "",
+      "participants": [
+        "faustine",
+        "mateo",
+        "titouan"
+      ],
+      "note": "Regroupe sous \"Depart navette\" par defaut (train, pas de type dedie).",
+      "source": "Depart train nimes - 8h55"
+    },
+    {
+      "id": "e32",
+      "date": "2026-07-27",
+      "type": "navette_depart",
+      "nom": "",
+      "heure_debut": "08:48",
+      "heure_fin": "?",
+      "detail": "Train Rennes",
+      "lieu": "",
+      "participants": [
+        "pierre"
+      ],
+      "note": "Regroupe sous \"Depart navette\" par defaut (train, pas de type dedie).",
+      "source": "Depart train Rennes - 8h48"
+    },
+    {
+      "id": "e33",
+      "date": "2026-07-27",
+      "type": "navette_depart",
+      "nom": "",
+      "heure_debut": "",
+      "heure_fin": "?",
+      "detail": "Avion Nice",
+      "lieu": "",
+      "participants": [
+        "magali",
+        "lucas",
+        "ethan",
+        "manoli"
+      ],
+      "note": "Regroupe sous \"Depart navette\" par defaut (avion, pas de type dedie) ; aucun horaire dans la source.",
+      "source": "Depart avion nice"
+    },
+    {
+      "id": "e1784551769311",
+      "date": "2026-07-22",
+      "type": "navette_depart",
+      "nom": "",
+      "heure_debut": "15:00",
+      "heure_fin": "15:20",
+      "detail": "",
+      "lieu": "Hall de l'hotel",
+      "note": "",
+      "participants": "tous"
+    },
+    {
+      "id": "e1784551870429",
+      "date": "2026-07-23",
+      "type": "echauffement",
+      "nom": "",
+      "heure_debut": "08:15",
+      "heure_fin": "09:30",
+      "detail": "Préparation 10km",
+      "lieu": "",
+      "note": "",
+      "participants": [
+        "magali",
+        "ethan",
+        "manoli"
+      ]
+    },
+    {
+      "id": "e1784564710759",
+      "date": "2026-07-23",
+      "type": "navette_depart",
+      "nom": "",
+      "heure_debut": "08:30",
+      "heure_fin": "08:50",
+      "detail": "Entraînement",
+      "lieu": "Hall de l'hotel",
+      "note": "",
+      "participants": [
+        "nino",
+        "lucas",
+        "adrien",
+        "mateo",
+        "rosalie",
+        "faustine",
+        "titouan"
+      ]
+    },
+    {
+      "id": "e1784564797209",
+      "date": "2026-07-23",
+      "type": "autre",
+      "nom": "Repas sur site de compétition",
+      "heure_debut": "12:45",
+      "heure_fin": "13:30",
+      "detail": "",
+      "lieu": "",
+      "note": "",
+      "participants": [
+        "pierre",
+        "capucine"
+      ]
+    },
+    {
+      "id": "e1784564889693",
+      "date": "2026-07-23",
+      "type": "repas_hotel",
+      "nom": "",
+      "heure_debut": "12:00",
+      "heure_fin": "12:45",
+      "detail": "",
+      "lieu": "Repas hotel",
+      "note": "",
+      "participants": [
+        "nino",
+        "lucas",
+        "adrien",
+        "mateo",
+        "rosalie",
+        "faustine",
+        "titouan"
+      ]
+    },
+    {
+      "id": "e1784564964194",
+      "date": "2026-07-23",
+      "type": "repas_hotel",
+      "nom": "",
+      "heure_debut": "13:30",
+      "heure_fin": "14:15",
+      "detail": "",
+      "lieu": "Hotel",
+      "note": "",
+      "participants": [
+        "magali",
+        "lucas",
+        "ethan",
+        "manoli"
+      ]
+    },
+    {
+      "id": "e1784565034062",
+      "date": "2026-07-23",
+      "type": "navette_retour",
+      "nom": "",
+      "heure_debut": "10:45",
+      "heure_fin": "11:10",
+      "detail": "",
+      "lieu": "Piscine",
+      "note": "",
+      "participants": [
+        "nino",
+        "lucas",
+        "adrien",
+        "mateo",
+        "rosalie",
+        "faustine",
+        "titouan"
+      ]
+    },
+    {
+      "id": "e1784565121247",
+      "date": "2026-07-23",
+      "type": "navette_depart",
+      "nom": "",
+      "heure_debut": "15:45",
+      "heure_fin": "16:10",
+      "detail": "",
+      "lieu": "Hall de l'hotel",
+      "note": "",
+      "participants": [
+        "magali",
+        "lucas",
+        "ethan",
+        "manoli",
+        "adrien",
+        "mateo",
+        "faustine"
+      ]
+    },
+    {
+      "id": "e1784565268983",
+      "date": "2026-07-23",
+      "type": "autre",
+      "nom": "Réunion d'équipe",
+      "heure_debut": "18:30",
+      "heure_fin": "19:00",
+      "detail": "",
+      "lieu": "",
+      "note": "",
+      "participants": "tous"
+    },
+    {
+      "id": "e1784565375852",
+      "date": "2026-07-24",
+      "type": "repas_hotel",
+      "nom": "",
+      "heure_debut": "12:00",
+      "heure_fin": "13:00",
+      "detail": "",
+      "lieu": "",
+      "note": "",
+      "participants": "tous"
+    },
+    {
+      "id": "e1784565400636",
+      "date": "2026-07-24",
+      "type": "navette_retour",
+      "nom": "",
+      "heure_debut": "11:30",
+      "heure_fin": "11:50",
+      "detail": "",
+      "lieu": "",
+      "note": "",
+      "participants": "tous"
+    },
+    {
+      "id": "e1784566299985",
+      "date": "2026-07-24",
+      "type": "repas_hotel",
+      "nom": "",
+      "heure_debut": "19:00",
+      "heure_fin": "20:00",
+      "detail": "",
+      "lieu": "",
+      "note": "",
+      "participants": "tous"
+    },
+    {
+      "id": "e1784566387338",
+      "date": "2026-07-24",
+      "type": "massage",
+      "nom": "",
+      "heure_debut": "14:00",
+      "heure_fin": "16:00",
+      "detail": "Orga à voir avec Lucas",
+      "lieu": "Chambre..",
+      "note": "",
+      "participants": [
+        "lucas",
+        "capucine",
+        "ethan",
+        "manoli",
+        "adrien",
+        "mateo",
+        "rosalie",
+        "faustine",
+        "titouan"
+      ]
+    },
+    {
+      "id": "e1784566419854",
+      "date": "2026-07-24",
+      "type": "massage",
+      "nom": "",
+      "heure_debut": "20:00",
+      "heure_fin": "",
+      "detail": "Orga à voir avec Lucas",
+      "lieu": "",
+      "note": "",
+      "participants": [
+        "lucas",
+        "capucine",
+        "ethan",
+        "manoli",
+        "adrien",
+        "mateo",
+        "rosalie",
+        "faustine",
+        "titouan"
+      ]
+    },
+    {
+      "id": "e1784566458238",
+      "date": "2026-07-24",
+      "type": "navette_depart",
+      "nom": "",
+      "heure_debut": "15:40",
+      "heure_fin": "16:00",
+      "detail": "",
+      "lieu": "Hall de l'hotel",
+      "note": "",
+      "participants": "tous"
+    },
+    {
+      "id": "e1784566475021",
+      "date": "2026-07-24",
+      "type": "navette_retour",
+      "nom": "",
+      "heure_debut": "17:30",
+      "heure_fin": "17:50",
+      "detail": "",
+      "lieu": "",
+      "note": "",
+      "participants": "tous"
+    },
+    {
+      "id": "e1784566582739",
+      "date": "2026-07-25",
+      "type": "repas_hotel",
+      "nom": "",
+      "heure_debut": "12:00",
+      "heure_fin": "13:00",
+      "detail": "",
+      "lieu": "",
+      "note": "",
+      "participants": [
+        "lucas",
+        "rosalie",
+        "faustine"
+      ]
+    },
+    {
+      "id": "e1784566611008",
+      "date": "2026-07-25",
+      "type": "autre",
+      "nom": "Repas sur place",
+      "heure_debut": "12:30",
+      "heure_fin": "13:30",
+      "detail": "",
+      "lieu": "",
+      "note": "",
+      "participants": [
+        "pierre",
+        "nino",
+        "capucine"
+      ]
+    },
+    {
+      "id": "e1784566646724",
+      "date": "2026-07-25",
+      "type": "navette_retour",
+      "nom": "",
+      "heure_debut": "13:00",
+      "heure_fin": "13:20",
+      "detail": "",
+      "lieu": "",
+      "note": "",
+      "participants": [
+        "magali",
+        "ethan",
+        "manoli",
+        "adrien",
+        "mateo",
+        "titouan"
+      ]
+    },
+    {
+      "id": "e1784566817126",
+      "date": "2026-07-25",
+      "type": "repas_hotel",
+      "nom": "",
+      "heure_debut": "13:30",
+      "heure_fin": "14:00",
+      "detail": "",
+      "lieu": "",
+      "note": "",
+      "participants": [
+        "magali",
+        "ethan",
+        "manoli",
+        "adrien",
+        "mateo",
+        "titouan"
+      ]
+    },
+    {
+      "id": "e1784566883544",
+      "date": "2026-07-25",
+      "type": "autre",
+      "nom": "Réunion d'équipe",
+      "heure_debut": "18:30",
+      "heure_fin": "19:00",
+      "detail": "",
+      "lieu": "",
+      "note": "",
+      "participants": "tous"
+    },
+    {
+      "id": "e1784566926445",
+      "date": "2026-07-25",
+      "type": "navette_retour",
+      "nom": "",
+      "heure_debut": "18:00",
+      "heure_fin": "18:20",
+      "detail": "",
+      "lieu": "",
+      "note": "",
+      "participants": "tous"
+    }
+  ]
+}

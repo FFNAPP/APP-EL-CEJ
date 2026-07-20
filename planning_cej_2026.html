@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<title>CEJ 2026 · Planning</title>
+<style>
+:root{
+  --navy:#001E50;
+  --blue:#003DA5;
+  --red:#C8102E;
+  --gold:#C9A227;
+  --bg:#f0f3f7;
+  --surf:#ffffff;
+  --surf2:#f5f7fa;
+  --border:#dde3eb;
+  --txt:#16324d;
+  --txt-dim:#647585;
+  --txt-bright:#0d1e2d;
+  --radius:8px;
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+html,body{height:100%;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:var(--bg);color:var(--txt);}
+
+/* ── ÉCRAN SÉLECTION ── */
+#screen-select{
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  min-height:100vh;padding:24px;
+}
+.sel-logo{
+  width:56px;height:56px;background:var(--navy);border-radius:12px;
+  display:flex;align-items:center;justify-content:center;margin-bottom:20px;
+}
+.sel-logo svg{width:32px;height:32px;fill:#fff;}
+.sel-title{font-size:18px;font-weight:800;color:var(--navy);letter-spacing:-.02em;text-align:center;}
+.sel-sub{font-size:12px;color:var(--txt-dim);margin-top:4px;text-align:center;line-height:1.5;}
+.sel-card{background:var(--surf);border:1px solid var(--border);border-radius:var(--radius);
+  padding:24px;width:100%;max-width:360px;margin-top:28px;}
+.sel-label{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;
+  color:var(--txt-dim);margin-bottom:8px;}
+.sel-select{width:100%;font-size:15px;padding:10px 12px;border:1.5px solid var(--border);
+  border-radius:6px;background:var(--surf);color:var(--txt);outline:none;appearance:none;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8'%3E%3Cpath d='M0 0l6 8 6-8z' fill='%23647585'/%3E%3C/svg%3E");
+  background-repeat:no-repeat;background-position:right 12px center;}
+.sel-select:focus{border-color:var(--blue);}
+.sel-btn{margin-top:14px;width:100%;padding:12px;font-size:14px;font-weight:700;
+  background:var(--navy);color:#fff;border:none;border-radius:6px;cursor:pointer;letter-spacing:.02em;}
+.sel-btn:hover{background:var(--blue);}
+
+/* ── APP ── */
+#screen-app{display:none;flex-direction:column;min-height:100vh;}
+.app-header{
+  background:var(--navy);padding:12px 16px 10px;
+  display:flex;align-items:center;justify-content:space-between;gap:10px;
+  position:sticky;top:0;z-index:100;
+}
+.app-who{display:flex;flex-direction:column;}
+.app-name{font-size:14px;font-weight:800;color:#fff;letter-spacing:-.01em;}
+.app-role{font-size:10px;color:rgba(255,255,255,.55);text-transform:uppercase;letter-spacing:.08em;}
+.app-back{font-size:11px;color:rgba(255,255,255,.6);cursor:pointer;padding:4px 8px;
+  border:1px solid rgba(255,255,255,.25);border-radius:4px;white-space:nowrap;}
+.app-back:hover{color:#fff;border-color:#fff;}
+
+/* ── ONGLETS NAVIGATION ── */
+.app-tabs{
+  display:flex;background:var(--navy);border-top:1px solid rgba(255,255,255,.12);
+  overflow-x:auto;scrollbar-width:none;padding:0 12px;gap:2px;
+}
+.app-tabs::-webkit-scrollbar{display:none;}
+.app-tab{
+  font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;
+  color:rgba(255,255,255,.5);padding:9px 14px;cursor:pointer;white-space:nowrap;
+  border-bottom:2px solid transparent;transition:all .15s;
+}
+.app-tab.on{color:#fff;border-bottom-color:var(--red);}
+.app-tab:hover:not(.on){color:rgba(255,255,255,.8);}
+
+/* ── CONTENU ── */
+.app-body{flex:1;padding:16px;max-width:700px;width:100%;margin:0 auto;}
+
+/* ── PLANNING ── */
+.day-nav{
+  display:flex;gap:6px;overflow-x:auto;scrollbar-width:none;
+  padding-bottom:12px;margin-bottom:4px;
+}
+.day-nav::-webkit-scrollbar{display:none;}
+.day-btn{
+  flex:0 0 auto;font-size:11px;font-weight:700;padding:6px 12px;border-radius:20px;
+  border:1.5px solid var(--border);background:var(--surf);color:var(--txt-dim);
+  cursor:pointer;transition:all .15s;white-space:nowrap;
+}
+.day-btn.on{background:var(--navy);border-color:var(--navy);color:#fff;}
+.day-btn.today{border-color:var(--red);}
+.day-btn.today.on{background:var(--red);border-color:var(--red);}
+
+.day-block{margin-bottom:8px;}
+.day-heading{
+  font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;
+  color:var(--txt-dim);padding:8px 0 6px;
+}
+.ev-card{
+  background:var(--surf);border:1px solid var(--border);border-radius:var(--radius);
+  padding:10px 12px;margin-bottom:6px;display:flex;gap:12px;align-items:flex-start;
+  border-left:3px solid transparent;
+}
+.ev-card.navette_depart,.ev-card.navette_retour{border-left-color:#2b578f;}
+.ev-card.entrainement{border-left-color:#227a63;}
+.ev-card.echauffement{border-left-color:#b5651d;}
+.ev-card.course{border-left-color:var(--red);}
+.ev-card.repas_hotel{border-left-color:#8a6a14;}
+.ev-card.massage{border-left-color:#6b3fa0;}
+.ev-card.autre{border-left-color:#5b6b7a;}
+.ev-time{font-size:12px;font-weight:700;color:var(--txt-dim);white-space:nowrap;min-width:44px;padding-top:1px;}
+.ev-body{flex:1;}
+.ev-chip{
+  display:inline-block;font-size:9px;font-weight:700;padding:2px 7px;border-radius:8px;
+  text-transform:uppercase;letter-spacing:.04em;margin-bottom:4px;
+}
+.chip-navette_depart,.chip-navette_retour{background:#e4ecf7;color:#2b578f;}
+.chip-entrainement{background:#e2f3ee;color:#227a63;}
+.chip-echauffement{background:#fdecd8;color:#b5651d;}
+.chip-course{background:#fbe4e1;color:var(--red);}
+.chip-repas_hotel{background:#f5efe0;color:#8a6a14;}
+.chip-massage{background:#efe6f5;color:#6b3fa0;}
+.chip-autre{background:#eef1f5;color:#5b6b7a;}
+.ev-label{font-size:13px;font-weight:600;color:var(--txt-bright);line-height:1.3;}
+.ev-detail{font-size:11px;color:var(--txt-dim);margin-top:2px;}
+.ev-lieu{font-size:11px;color:var(--txt-dim);margin-top:2px;}
+.ev-copart{font-size:10px;color:var(--txt-dim);margin-top:4px;line-height:1.5;}
+
+/* ── VUE ÉQUIPE (grille) ── */
+.team-grid{overflow-x:auto;-webkit-overflow-scrolling:touch;}
+.team-table{min-width:600px;border-collapse:collapse;width:100%;}
+.team-table th{
+  font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;
+  color:var(--txt-dim);padding:6px 8px;border-bottom:2px solid var(--border);
+  text-align:left;white-space:nowrap;background:var(--bg);position:sticky;top:0;
+}
+.team-table td{
+  font-size:11px;padding:6px 8px;border-bottom:1px solid var(--border);
+  vertical-align:top;
+}
+.team-table tr:nth-child(even) td{background:var(--surf2);}
+.team-table td:first-child{font-weight:700;color:var(--txt-bright);white-space:nowrap;}
+
+/* ── PONTONS ── */
+.ponton-links{display:flex;flex-direction:column;gap:8px;margin-top:4px;}
+.ponton-link{
+  display:flex;align-items:center;justify-content:space-between;
+  background:var(--surf);border:1px solid var(--border);border-radius:var(--radius);
+  padding:14px 16px;text-decoration:none;color:var(--txt-bright);
+  transition:border-color .15s,box-shadow .15s;
+}
+.ponton-link:hover{border-color:var(--blue);box-shadow:0 2px 8px rgba(0,61,165,.1);}
+.ponton-link-info{display:flex;flex-direction:column;gap:3px;}
+.ponton-link-title{font-size:13px;font-weight:700;}
+.ponton-link-sub{font-size:11px;color:var(--txt-dim);}
+.ponton-link-arrow{font-size:18px;color:var(--txt-dim);}
+.section-title{
+  font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;
+  color:var(--txt-dim);margin-bottom:10px;padding-bottom:6px;
+  border-bottom:2px solid var(--border);
+}
+.now-badge{
+  display:inline-block;font-size:9px;font-weight:800;padding:2px 6px;border-radius:4px;
+  background:var(--red);color:#fff;text-transform:uppercase;letter-spacing:.06em;
+  margin-left:8px;vertical-align:middle;
+}
+</style>
+</head>
+<body>
+
+<!-- ÉCRAN SÉLECTION -->
+<div id="screen-select">
+  <div class="sel-logo">
+    <svg viewBox="0 0 24 24"><path d="M13 2L3 14h9l-1 8 10-12h-9z"/></svg>
+  </div>
+  <div class="sel-title">CEJ Eau Libre 2026</div>
+  <div class="sel-sub">Sukoró · Lac Velence · 22–27 juillet 2026</div>
+  <div class="sel-card">
+    <div class="sel-label">Qui êtes-vous ?</div>
+    <select class="sel-select" id="member-select">
+      <option value="">— Sélectionner —</option>
+    </select>
+    <button class="sel-btn" onclick="login()">Accéder au planning</button>
+  </div>
+</div>
+
+<!-- APP -->
+<div id="screen-app">
+  <div class="app-header">
+    <div class="app-who">
+      <div class="app-name" id="app-name">—</div>
+      <div class="app-role" id="app-role">—</div>
+    </div>
+    <div class="app-back" onclick="logout()">↩ Changer</div>
+  </div>
+  <div class="app-tabs" id="app-tabs"></div>
+  <div class="app-body" id="app-body"></div>
+</div>
+
+<script>
+var DATA = null;
+var ME = null;
+
+var TYPE_LABELS = {
+  navette_depart:"Départ navette", navette_retour:"Retour navette",
+  entrainement:"Entraînement", echauffement:"Échauffement",
+  course:"Course", repas_hotel:"Repas hôtel", massage:"Massage", autre:"Autre"
+};
+
+var JOURS_FR = ["Dim","Lun","Mar","Mer","Jeu","Ven","Sam"];
+var MOIS_FR  = ["jan","fév","mar","avr","mai","jun","jul","août","sep","oct","nov","déc"];
+
+function fmtDate(iso){
+  var d = new Date(iso+"T12:00:00");
+  return JOURS_FR[d.getDay()]+" "+d.getDate()+" "+MOIS_FR[d.getMonth()];
+}
+function todayISO(){
+  var d = new Date();
+  return d.getFullYear()+"-"+(String(d.getMonth()+1).padStart(2,"0"))+"-"+(String(d.getDate()).padStart(2,"0"));
+}
+function typeLabel(t){ return TYPE_LABELS[t]||t; }
+function esc(s){ return String(s==null?"":s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;"); }
+
+function evTitle(ev){
+  if(ev.nom && ev.nom.trim()) return ev.nom.trim();
+  if(ev.detail && ev.detail.trim()) return ev.detail.trim();
+  if(ev.source && ev.source.trim()){
+    // Nettoyer la source : retirer les heures en fin
+    return ev.source.replace(/\s*[-–]\s*\d{1,2}h\d{0,2}(\s*-\s*\d{1,2}h\d{0,2})?$/,'').trim();
+  }
+  return typeLabel(ev.type);
+}
+
+function concerns(ev, memberId){
+  if(ev.participants === "tous") return true;
+  if(Array.isArray(ev.participants)) return ev.participants.indexOf(memberId) !== -1;
+  return false;
+}
+
+function coParticipants(ev, memberId){
+  if(ev.participants === "tous") return [];
+  if(!Array.isArray(ev.participants)) return [];
+  return ev.participants.filter(function(id){ return id !== memberId; });
+}
+
+function memberName(id){
+  var m = DATA.membres.find(function(m){ return m.id===id; });
+  return m ? m.nom : id;
+}
+
+function sortedDates(){
+  var ds = {};
+  DATA.evenements.forEach(function(e){ ds[e.date]=1; });
+  return Object.keys(ds).sort();
+}
+
+/* Trouver le jour à afficher par défaut */
+function activeDay(dates){
+  var today = todayISO();
+  if(dates.indexOf(today) !== -1) return today;  // aujourd'hui dans les dates
+  // Premier jour futur
+  for(var i=0;i<dates.length;i++){ if(dates[i] >= today) return dates[i]; }
+  // Sinon le dernier jour
+  return dates[dates.length-1];
+}
+
+/* ── RENDU D'UNE CARTE ÉVÉNEMENT ── */
+function renderCard(ev, memberId){
+  var title = evTitle(ev);
+  var copart = memberId ? coParticipants(ev, memberId) : [];
+  var h = '<div class="ev-card '+esc(ev.type)+'">';
+  h += '<div class="ev-time">'+(ev.heure_debut||"")+'</div>';
+  h += '<div class="ev-body">';
+  h += '<span class="ev-chip chip-'+esc(ev.type)+'">'+esc(typeLabel(ev.type))+'</span>';
+  h += '<div class="ev-label">'+esc(title)+'</div>';
+  if(ev.detail && ev.detail !== title) h += '<div class="ev-detail">'+esc(ev.detail)+'</div>';
+  if(ev.lieu) h += '<div class="ev-lieu">📍 '+esc(ev.lieu)+'</div>';
+  if(ev.note) h += '<div class="ev-detail" style="color:var(--red)">'+esc(ev.note)+'</div>';
+  if(copart.length){
+    h += '<div class="ev-copart">Avec : '+copart.map(function(id){ return esc(memberName(id)); }).join(", ")+'</div>';
+  }
+  if(ev.participants==="tous" && memberId){
+    h += '<div class="ev-copart">Tout le groupe</div>';
+  }
+  h += '</div></div>';
+  return h;
+}
+
+/* ── VUE PLANNING PERSO ── */
+var currentDay = null;
+
+function renderPlanning(memberId){
+  var dates = sortedDates();
+  var today = todayISO();
+  if(!currentDay) currentDay = activeDay(dates);
+
+  var h = '<div class="day-nav" id="day-nav">';
+  dates.forEach(function(d){
+    var isToday = d === today;
+    var isOn = d === currentDay;
+    h += '<button class="day-btn'+(isOn?" on":"")+(isToday?" today":"")
+      +'" onclick="switchDay(\''+d+'\')">'
+      +fmtDate(d)+(isToday?' <span class="now-badge">Auj</span>':'')
+      +'</button>';
+  });
+  h += '</div><div id="day-content"></div>';
+
+  document.getElementById("app-body").innerHTML = h;
+  renderDayContent(memberId);
+
+  // Scroll au bouton actif
+  setTimeout(function(){
+    var nav = document.getElementById("day-nav");
+    var btn = nav && nav.querySelector(".day-btn.on");
+    if(btn) btn.scrollIntoView({inline:"center",block:"nearest"});
+  }, 50);
+}
+
+function renderDayContent(memberId){
+  var evs = DATA.evenements.filter(function(e){
+    return e.date === currentDay && concerns(e, memberId);
+  }).sort(function(a,b){ return (a.heure_debut||"").localeCompare(b.heure_debut||""); });
+
+  var today = todayISO();
+  var now = new Date();
+  var nowMin = now.getHours()*60 + now.getMinutes();
+
+  var h = '<div class="day-block">';
+  h += '<div class="day-heading">'+fmtDate(currentDay)+'</div>';
+  if(!evs.length){
+    h += '<div style="color:var(--txt-dim);font-size:13px;padding:12px 0">Aucun événement ce jour.</div>';
+  }
+  evs.forEach(function(ev){
+    // Surligner l'événement en cours si c'est aujourd'hui
+    var highlight = "";
+    if(currentDay === today && ev.heure_debut && ev.heure_fin && ev.heure_fin !== "?"){
+      var hd = ev.heure_debut.split(":"); var hf = ev.heure_fin.split(":");
+      var startMin = parseInt(hd[0])*60+parseInt(hd[1]);
+      var endMin   = parseInt(hf[0])*60+parseInt(hf[1]);
+      if(nowMin >= startMin && nowMin < endMin) highlight = ' style="box-shadow:0 0 0 2px var(--red);"';
+    }
+    h += renderCard(ev, memberId).replace('<div class="ev-card', '<div'+highlight+' class="ev-card');
+  });
+  h += '</div>';
+  document.getElementById("day-content").innerHTML = h;
+}
+
+function switchDay(d){
+  currentDay = d;
+  var nav = document.getElementById("day-nav");
+  if(!nav) return;
+  nav.querySelectorAll(".day-btn").forEach(function(b){ b.classList.remove("on"); });
+  var idx = sortedDates().indexOf(d);
+  if(nav.children[idx]) nav.children[idx].classList.add("on");
+  renderDayContent(ME.id);
+}
+
+/* ── VUE ÉQUIPE ── */
+function renderEquipe(){
+  var dates = sortedDates();
+  var today = todayISO();
+  if(!currentDay) currentDay = activeDay(dates);
+
+  var h = '<div class="day-nav" id="day-nav-team">';
+  dates.forEach(function(d){
+    var isToday = d === today;
+    var isOn = d === currentDay;
+    h += '<button class="day-btn'+(isOn?" on":"")+(isToday?" today":"")
+      +'" onclick="switchEquipeDay(\''+d+'\')">'
+      +fmtDate(d)+(isToday?' <span class="now-badge">Auj</span>':'')
+      +'</button>';
+  });
+  h += '</div><div id="equipe-content"></div>';
+
+  document.getElementById("app-body").innerHTML = h;
+  renderEquipeContent();
+
+  setTimeout(function(){
+    var nav = document.getElementById("day-nav-team");
+    var btn = nav && nav.querySelector(".day-btn.on");
+    if(btn) btn.scrollIntoView({inline:"center",block:"nearest"});
+  }, 50);
+}
+
+function renderEquipeContent(){
+  var evs = DATA.evenements.filter(function(e){ return e.date === currentDay; })
+    .sort(function(a,b){ return (a.heure_debut||"").localeCompare(b.heure_debut||""); });
+  var membres = DATA.membres;
+
+  var h = '<div class="team-grid"><table class="team-table"><thead><tr>';
+  h += '<th>Heure</th><th>Événement</th>';
+  membres.forEach(function(m){ h += '<th>'+esc(m.nom.split(" ")[0])+'</th>'; });
+  h += '</tr></thead><tbody>';
+
+  evs.forEach(function(ev){
+    h += '<tr><td style="white-space:nowrap">'+esc(ev.heure_debut||"")+'</td>';
+    h += '<td><span class="ev-chip chip-'+esc(ev.type)+'">'+esc(typeLabel(ev.type))+'</span> '+esc(evTitle(ev))+'</td>';
+    membres.forEach(function(m){
+      h += '<td style="text-align:center;">'+(concerns(ev, m.id)?'✓':'')+'</td>';
+    });
+    h += '</tr>';
+  });
+  h += '</tbody></table></div>';
+  document.getElementById("equipe-content").innerHTML = h;
+}
+
+function switchEquipeDay(d){
+  currentDay = d;
+  var nav = document.getElementById("day-nav-team");
+  if(!nav) return;
+  nav.querySelectorAll(".day-btn").forEach(function(b){ b.classList.remove("on"); });
+  var idx = sortedDates().indexOf(d);
+  if(nav.children[idx]) nav.children[idx].classList.add("on");
+  renderEquipeContent();
+}
+
+/* ── VUE PONTONS ── */
+function renderPontons(){
+  var isAthlete = ME.role === "Athlete";
+  var h = '';
+
+  if(isAthlete){
+    h += '<div class="section-title">Tes épreuves</div>';
+    h += '<div class="ponton-links">';
+    h += '<a class="ponton-link" href="ponton_cej_2026.html" target="_blank">';
+    h += '<div class="ponton-link-info"><div class="ponton-link-title">Ponton CEJ 2026</div>';
+    h += '<div class="ponton-link-sub">10km · 7,5km · 5km · KO Sprint</div></div>';
+    h += '<div class="ponton-link-arrow">→</div></a>';
+    h += '</div>';
+
+  } else {
+    h += '<div class="section-title">Tous les pontons</div>';
+    h += '<div class="ponton-links">';
+    h += '<a class="ponton-link" href="ponton_cej_2026.html" target="_blank">';
+    h += '<div class="ponton-link-info"><div class="ponton-link-title">Ponton CEJ 2026</div>';
+    h += '<div class="ponton-link-sub">Startlists complètes · historiques nageurs · météo</div></div>';
+    h += '<div class="ponton-link-arrow">→</div></a>';
+
+    h += '</div>';
+  }
+  document.getElementById("app-body").innerHTML = h;
+}
+
+/* ── ONGLETS ── */
+var CURRENT_TAB = "planning";
+
+function buildTabs(){
+  var isStaff = ME.role !== "Athlete";
+  var tabs = [
+    {id:"planning", label:"Mon planning"},
+  ];
+  if(isStaff) tabs.push({id:"equipe", label:"Équipe"});
+  tabs.push({id:"pontons", label:"Pontons"});
+
+  var h = "";
+  tabs.forEach(function(t){
+    h += '<div class="app-tab'+(t.id===CURRENT_TAB?" on":"")
+      +'" onclick="switchTab(\''+t.id+'\')">'+t.label+'</div>';
+  });
+  document.getElementById("app-tabs").innerHTML = h;
+}
+
+function switchTab(id){
+  CURRENT_TAB = id;
+  currentDay = null;
+  buildTabs();
+  if(id==="planning") renderPlanning(ME.id);
+  else if(id==="equipe") renderEquipe();
+  else if(id==="pontons") renderPontons();
+}
+
+/* ── LOGIN / LOGOUT ── */
+function login(){
+  var sel = document.getElementById("member-select");
+  var id = sel.value;
+  if(!id) return;
+  ME = DATA.membres.find(function(m){ return m.id===id; });
+  if(!ME) return;
+
+  document.getElementById("app-name").textContent = ME.nom;
+  document.getElementById("app-role").textContent = ME.role;
+  CURRENT_TAB = "planning";
+  currentDay = null;
+  buildTabs();
+  renderPlanning(ME.id);
+  document.getElementById("screen-select").style.display = "none";
+  document.getElementById("screen-app").style.display = "flex";
+  document.getElementById("screen-app").style.flexDirection = "column";
+
+  // Mémoriser la sélection
+  try{ localStorage.setItem("cej_member_id", id); } catch(e){}
+}
+
+function logout(){
+  ME = null; CURRENT_TAB = "planning"; currentDay = null;
+  document.getElementById("screen-select").style.display = "flex";
+  document.getElementById("screen-app").style.display = "none";
+}
+
+/* ── INIT ── */
+function boot(){
+  // Peupler la liste déroulante
+  var sel = document.getElementById("member-select");
+  DATA.membres.forEach(function(m){
+    var opt = document.createElement("option");
+    opt.value = m.id;
+    opt.textContent = m.nom + " (" + m.role + ")";
+    sel.appendChild(opt);
+  });
+
+  // Restaurer la sélection précédente
+  try{
+    var saved = localStorage.getItem("cej_member_id");
+    if(saved) sel.value = saved;
+  } catch(e){}
+}
+
+fetch("planning_cej.json")
+  .then(function(r){ return r.json(); })
+  .then(function(d){ DATA = d; boot(); })
+  .catch(function(e){
+    document.getElementById("screen-select").innerHTML +=
+      '<p style="color:red;margin-top:12px;font-size:12px">Erreur : planning_cej.json introuvable.</p>';
+  });
+</script>
+</body>
+</html>

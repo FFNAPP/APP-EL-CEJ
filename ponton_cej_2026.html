@@ -62,10 +62,7 @@ body{font-family:'Helvetica Neue',Arial,system-ui,-apple-system,sans-serif;font-
 .close-label{font-size:12px;font-weight:800;text-transform:uppercase;letter-spacing:.04em;color:#fff;}
 .close-btn{background:transparent;border:1px solid rgba(255,255,255,.3);color:#fff;border-radius:3px;
   padding:2px 9px;font-size:14px;cursor:pointer;line-height:1.4;}
-.panel-vtabs{display:flex;border-bottom:1px solid var(--border);}
-.panel-vtab{flex:1;text-align:center;padding:8px 4px;font-size:11px;font-weight:700;text-transform:uppercase;
-  letter-spacing:.05em;color:var(--txt-dim);cursor:pointer;border-bottom:2px solid transparent;}
-.panel-vtab.on{color:var(--ffn-blue);border-bottom-color:var(--ffn-blue);}
+
 
 .fiche{padding:14px 14px 24px;animation:fadeIn .2s ease;}
 @keyframes fadeIn{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
@@ -88,6 +85,19 @@ table{width:100%;border-collapse:collapse;font-size:11.5px;}
 th{text-align:left;font-size:9px;text-transform:uppercase;letter-spacing:.08em;color:var(--txt-dim);
   font-weight:700;padding:5px 6px;border-bottom:1px solid var(--border);}
 td{padding:5px 6px;border-bottom:1px solid var(--surf3);}
+.el-list{display:flex;flex-direction:column;gap:6px;}
+.el-card{background:var(--surf2);border-radius:5px;padding:8px 10px;border-left:3px solid var(--ffn-blue);}
+.el-card.ko{border-left-color:var(--ffn-red);}
+.el-card-top{display:flex;justify-content:space-between;align-items:baseline;gap:6px;flex-wrap:wrap;}
+.el-comp{font-size:11px;font-weight:700;color:var(--txt-bright);}
+.el-ev{font-size:10px;color:var(--txt-dim);}
+.el-card-bot{display:flex;justify-content:space-between;align-items:baseline;margin-top:4px;}
+.el-rang{font-size:16px;font-weight:800;color:var(--ffn-blue);}
+.el-rang.ko{color:var(--ffn-red);}
+.el-temps{font-size:13px;font-weight:700;color:var(--txt-bright);}
+.el-phase{font-size:9px;color:var(--txt-dim);margin-top:2px;}
+.el-q{font-size:9px;font-weight:800;color:green;margin-left:3px;}
+.el-status{font-size:12px;font-style:italic;color:var(--txt-dim);}
 .tag{display:inline-block;font-size:9px;font-weight:700;padding:2px 7px;border-radius:10px;
   background:var(--surf3);color:var(--ffn-blue);margin:0 4px 4px 0;}
 .p-empty{display:flex;flex-direction:column;align-items:center;justify-content:center;height:60%;gap:10px;
@@ -183,10 +193,7 @@ td{padding:5px 6px;border-bottom:1px solid var(--surf3);}
       <span class="close-label" id="panel-title">Fiche nageur</span>
       <button class="close-btn" onclick="closePanel()">&#10005;</button>
     </div>
-    <div class="panel-vtabs">
-      <div class="panel-vtab on" id="pvtab-profil" onclick="setPanelView('profil')">Profil</div>
-      <div class="panel-vtab" id="pvtab-hist" onclick="setPanelView('hist')">Historique</div>
-    </div>
+
     <div id="pempty" class="p-empty">S&#233;lectionner un nageur sur le ponton</div>
     <div id="fiche-content"></div>
   </div>
@@ -207,7 +214,7 @@ var ORDRE_EV = ["10km J3","7.5km J2","7.5km J3","5km J1",
                 "3km Knockout Sprint","3km Knockout Sprint 14-16"];
 var DIST = ["200","400","800","1500"];
 
-var DATA=null, HISTO={}, HISTO_JR=null, G="Girls", EV=null, SEL=null, NOC_FILT=null, PANEL_VIEW="profil";
+var DATA=null, HISTO={}, HISTO_JR=null, G="Girls", EV=null, EV_FILTER=null, SEL=null, NOC_FILT=null, PANEL_VIEW="profil";
 
 /* =====================================================================
    UTILS
@@ -289,14 +296,18 @@ function switchGenre(g){
 }
 function buildEvTabs(){
   var evs=listeEvents(G);
-  if(!EV||evs.indexOf(EV)<0) EV=evs[0];
+  /* Si filtre actif (accès depuis planning), ne montrer que les épreuves concernées */
+  if(EV_FILTER&&EV_FILTER.length){
+    evs=evs.filter(function(e){ return EV_FILTER.indexOf(e)!==-1; });
+  }
+  if(!EV||evs.indexOf(EV)<0) EV=evs[0]||null;
   var h="";
   evs.forEach(function(e){
-    h+='<div class="ev-tab'+(e===EV?" on":"")+'" onclick="switchEv(\''+e.replace(/'/g,"\\'")+'\')">'
-      +esc(evShort(e))+'</div>';
+    h+='<div class="ev-tab'+(e===EV?' on':'')+'" onclick="switchEv(\''+e.replace(/'/g,"\\'")+'\')">'      +esc(evShort(e))+'</div>';
   });
   document.getElementById("ev-tabs").innerHTML=h;
 }
+
 function switchEv(e){ EV=e; NOC_FILT=null; closePanel(); buildEvTabs(); buildChips(); renderPonton(); setTop(); mUpdateForEvent(EV,G); }
 function buildChips(){
   var d=engages(EV), nocs=[];
@@ -445,11 +456,9 @@ function closePanel(){
   document.getElementById("pempty").style.display="flex";
 }
 function setPanelView(v){
-  PANEL_VIEW=v;
-  document.getElementById("pvtab-profil").classList.toggle("on",v==="profil");
-  document.getElementById("pvtab-hist").classList.toggle("on",v==="hist");
+  PANEL_VIEW="profil";
   if(!SEL) return;
-  if(v==="profil") renderProfil(SEL); else renderHisto(SEL);
+  renderProfil(SEL);
 }
 
 function renderProfil(cle){
@@ -483,7 +492,53 @@ function renderProfil(cle){
   });
   h+='</div>';
   if(s.status!=="ok") h+='<div class="tsub" style="margin-top:6px">Statut de r\u00e9cup\u00e9ration : '+esc(s.status)+'</div>';
-  h+='</div></div>';
+  h+='</div>';
+  /* --- Historique inline en cartes --- */
+  var hi=HISTO[cle];
+  var hjr=hjrFind(cle);
+  if(hi&&hi.length){
+    h+='<div class="sect"><div class="sect-title">Historique CEJ / CMJ</div><div class="el-list">';
+    hi.slice().sort(function(x,y){ return String(y.d||"").localeCompare(String(x.d||"")); })
+      .forEach(function(e){
+        var isStatus=!e.r&&e.s;
+        h+='<div class="el-card">'
+         +'<div class="el-card-top"><span class="el-comp">'+esc(e.l)+'</span><span class="el-ev">'+esc(e.d)+' \u00b7 '+esc(e.e)+'</span></div>'
+         +'<div class="el-card-bot">'
+         +(isStatus?'<span class="el-status">'+esc(e.s)+'</span>'
+           :'<span class="el-rang">'+esc(e.r)+(e.n?' <span style="font-size:10px;font-weight:400;color:var(--txt-dim)">/ '+e.n+'</span>':'')+'</span>')
+         +'<span class="el-temps">'+esc(e.t||'')+'</span>'
+         +'</div></div>';
+      });
+    h+='</div></div>';
+  }
+  if(hjr&&hjr.length){
+    h+='<div class="sect"><div class="sect-title">Palmar\u00e8s junior EL</div><div class="el-list">';
+    hjr.slice().sort(function(x,y){
+      var dy=String(y.d||"").localeCompare(String(x.d||""));
+      if(dy!==0) return dy;
+      var po={"Final":0,"Semi-final":1,"First Round":2,"Preliminary":3};
+      return (po[x.phase]||9)-(po[y.phase]||9);
+    }).forEach(function(e){
+      var isKO=!!e.phase;
+      var isStatus=!e.r&&e.s;
+      h+='<div class="el-card'+(isKO?' ko':'')+'">'
+       +'<div class="el-card-top"><span class="el-comp">'+esc(e.l)+'</span><span class="el-ev">'+esc(e.d)+' \u00b7 '+esc(e.e)+'</span></div>';
+      if(isKO){
+        var qSpan=e.q===true?' <span class="el-q">Q</span>':e.q===false?' <span style="font-size:9px;color:#999">\u2014</span>':'';
+        h+='<div class="el-phase">'+esc(e.phase)+(e.heat?' ('+esc(e.heat)+')':'')+qSpan+'</div>';
+      }
+      h+='<div class="el-card-bot">'
+       +(isStatus?'<span class="el-status">'+esc(e.s)+'</span>'
+         :'<span class="el-rang'+(isKO?' ko':'')+'">'+(e.r||'\u2014')+(e.n?' <span style="font-size:10px;font-weight:400;color:var(--txt-dim)">/ '+e.n+'</span>':'')+'</span>')
+       +'<span class="el-temps">'+esc(e.t||'')+'</span>'
+       +'</div></div>';
+    });
+    h+='</div></div>';
+  }
+  if((!hi||!hi.length)&&(!hjr||!hjr.length)){
+    h+='<div class="sect"><div class="tsub">Aucun palmar\u00e8s EL disponible.</div></div>';
+  }
+  h+='</div>';
   document.getElementById("fiche-content").innerHTML=h;
 }
 
@@ -546,8 +601,19 @@ function boot(){
   document.getElementById("hdr-title").textContent=CONFIG.titre;
   document.getElementById("hdr-sub").textContent=
     CONFIG.sous_titre+"  \u00b7  donn\u00e9es bassin du "+fmtDate(DATA.generated_on);
+  /* Lire les paramètres URL ?g=Girls&evs=ev1|ev2 */
+  try{
+    var params=new URLSearchParams(window.location.search);
+    var pg=params.get('g'); var pevs=params.get('evs');
+    if(pg==='Girls'||pg==='Boys') G=pg;
+    if(pevs){
+      EV_FILTER=pevs.split('|').map(function(s){ return decodeURIComponent(s); });
+      EV=EV_FILTER[0];
+    }
+  }catch(e){}
   buildEvTabs(); buildChips(); renderPonton(); setTop();
   window.addEventListener("resize",function(){ setTop(); renderPonton(); });
+  if(EV) mUpdateForEvent(EV,G);
 }
 
 

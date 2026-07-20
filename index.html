@@ -417,31 +417,82 @@ function switchEquipeDay(d){
 }
 
 /* ── VUE PONTONS ── */
+var PERFS_DATA = null;
+
+function evShortLabel(ev){
+  return ev.replace(/^(Boys|Girls)' /,'').replace(/7\.5km J3/,'7.5km J2');
+}
+
+function athleteEvents(memberId){
+  if(!PERFS_DATA) return null;
+  var membre = DATA.membres.find(function(m){ return m.id===memberId; });
+  if(!membre) return null;
+  var parts = membre.nom.split(' ');
+  var nom = parts.slice(1).join('-').toUpperCase();
+  var sw = PERFS_DATA.swimmers;
+  for(var k in sw){
+    if(k.split('|')[0] === nom) return sw[k].events || [];
+  }
+  return [];
+}
+
+function pontonUrl(evs){
+  /* evs = tableau ou string */
+  var arr = Array.isArray(evs) ? evs : [evs];
+  var g = arr[0].startsWith("Girls") ? "Girls" : "Boys";
+  var evsParam = arr.map(function(e){ return encodeURIComponent(e); }).join('|');
+  return "ponton_cej_2026.html?g="+g+"&evs="+evsParam;
+}
+
 function renderPontons(){
   var isAthlete = ME.role === "Athlete";
   var h = '';
 
   if(isAthlete){
-    h += '<div class="section-title">Tes épreuves</div>';
-    h += '<div class="ponton-links">';
-    h += '<a class="ponton-link" href="ponton_cej_2026.html" target="_blank">';
-    h += '<div class="ponton-link-info"><div class="ponton-link-title">Ponton CEJ 2026</div>';
-    h += '<div class="ponton-link-sub">10km · 7,5km · 5km · KO Sprint</div></div>';
-    h += '<div class="ponton-link-arrow">→</div></a>';
-    h += '</div>';
-
+    var evs = athleteEvents(ME.id);
+    if(evs && evs.length){
+      var url = pontonUrl(evs);
+      var labels = evs.map(function(e){ return esc(evShortLabel(e)); }).join(' \u00b7 ');
+      var g = evs[0].startsWith("Girls") ? "Filles" : "Gar\u00e7ons";
+      h += '<div class="section-title">Mes \u00e9preuves</div>';
+      h += '<div class="ponton-links">';
+      h += '<a class="ponton-link" href="'+url+'" target="_blank">';
+      h += '<div class="ponton-link-info">';
+      h += '<div class="ponton-link-title">'+labels+'</div>';
+      h += '<div class="ponton-link-sub">'+g+' \u00b7 Ponton CEJ 2026</div>';
+      h += '</div><div class="ponton-link-arrow">\u2192</div></a>';
+      h += '</div>';
+    } else if(PERFS_DATA === null){
+      h += '<div style="color:var(--txt-dim);font-size:13px">Chargement...</div>';
+    } else {
+      h += '<div style="color:var(--txt-dim);font-size:13px">Aucune \u00e9preuve trouv\u00e9e.</div>';
+      h += '<div class="ponton-links" style="margin-top:12px">';
+      h += '<a class="ponton-link" href="ponton_cej_2026.html" target="_blank">';
+      h += '<div class="ponton-link-info"><div class="ponton-link-title">Ponton CEJ 2026</div>';
+      h += '<div class="ponton-link-sub">Toutes \u00e9preuves</div></div>';
+      h += '<div class="ponton-link-arrow">\u2192</div></a></div>';
+    }
   } else {
     h += '<div class="section-title">Tous les pontons</div>';
     h += '<div class="ponton-links">';
-    h += '<a class="ponton-link" href="ponton_cej_2026.html" target="_blank">';
-    h += '<div class="ponton-link-info"><div class="ponton-link-title">Ponton CEJ 2026</div>';
-    h += '<div class="ponton-link-sub">Startlists complètes · historiques nageurs · météo</div></div>';
-    h += '<div class="ponton-link-arrow">→</div></a>';
-
+    var epreuves = [
+      ["Girls\u2019 10km J3","10km Filles"],["Boys\u2019 10km J3","10km Gar\u00e7ons"],
+      ["Girls\u2019 7.5km J3","7.5km Filles"],["Boys\u2019 7.5km J2","7.5km Gar\u00e7ons"],
+      ["Girls\u2019 5km J1","5km Filles"],["Boys\u2019 5km J1","5km Gar\u00e7ons"],
+      ["Girls\u2019 3km Knockout Sprint","KO Sprint Filles U19"],["Boys\u2019 3km Knockout Sprint","KO Sprint Gar\u00e7ons U19"],
+      ["Girls\u2019 3km Knockout Sprint 14-16","KO Sprint Filles U16"],["Boys\u2019 3km Knockout Sprint 14-16","KO Sprint Gar\u00e7ons U16"]
+    ];
+    epreuves.forEach(function(ep){
+      h += '<a class="ponton-link" href="'+pontonUrl(ep[0])+'" target="_blank">';
+      h += '<div class="ponton-link-info"><div class="ponton-link-title">'+esc(ep[1])+'</div>';
+      h += '<div class="ponton-link-sub">Ponton CEJ 2026</div></div>';
+      h += '<div class="ponton-link-arrow">\u2192</div></a>';
+    });
     h += '</div>';
   }
   document.getElementById("app-body").innerHTML = h;
 }
+
 
 /* ── ONGLETS ── */
 var CURRENT_TAB = "planning";
@@ -519,7 +570,13 @@ function boot(){
 
 fetch("planning_cej.json")
   .then(function(r){ return r.json(); })
-  .then(function(d){ DATA = d; boot(); })
+  .then(function(d){
+    DATA = d;
+    return fetch("perfs_cej.json")
+      .then(function(r){ return r.ok ? r.json() : null; })
+      .catch(function(){ return null; });
+  })
+  .then(function(perf){ PERFS_DATA = perf; boot(); })
   .catch(function(e){
     document.getElementById("screen-select").innerHTML +=
       '<p style="color:red;margin-top:12px;font-size:12px">Erreur : planning_cej.json introuvable.</p>';

@@ -3425,7 +3425,7 @@
       ]
     },
     "TIRRI|GERARDO|2009": {
-      "status": "quota_atteint",
+      "status": "ok",
       "athlete": {
         "athlete_id": "5255777",
         "name": "TIRRI, Gerardo",
@@ -3433,13 +3433,55 @@
         "nation": "SUI",
         "row": "TIRRI, Gerardo 2009 SUI SUI - Lugano Aquatics"
       },
+      "results": {
+        "200": {
+          "best": {
+            "time": "1:54.05",
+            "date": "2026-07-10",
+            "points": 715,
+            "city": "Lausanne"
+          },
+          "source": "deep_dive",
+          "fallback": false
+        },
+        "400": {
+          "best": {
+            "time": "4:03.91",
+            "date": "2026-07-09",
+            "points": 734,
+            "city": "Lausanne"
+          },
+          "source": "deep_dive",
+          "fallback": false
+        },
+        "800": {
+          "best": {
+            "time": "8:36.76",
+            "date": "2025-12-19",
+            "points": 669,
+            "city": "Sursee"
+          },
+          "source": "deep_dive",
+          "fallback": false
+        },
+        "1500": {
+          "best": {
+            "time": "16:11.73",
+            "date": "2025-12-19",
+            "points": 719,
+            "city": "Sursee"
+          },
+          "source": "deep_dive",
+          "fallback": false
+        }
+      },
       "events": [
         "Boys' 7.5km J2",
         "Boys' 3km Knockout Sprint"
       ]
     },
     "HAJKO|MARTIN|2009": {
-      "status": "bloc_inconnu_fiche",
+      "status": "ok",
       "athlete": {
         "athlete_id": "5351027",
         "name": "HAJKO, Martin",
@@ -3449,34 +3491,53 @@
       },
       "results": {
         "200": {
-          "best": null,
-          "source": "deep_dive",
-          "error": "bloc_inconnu"
+          "best": {
+            "time": "1:59.91",
+            "date": "2026-05-01",
+            "points": 615,
+            "city": null
+          },
+          "source": "meilleurs_temps",
+          "fallback": false
         },
         "400": {
-          "best": null,
-          "source": "deep_dive",
-          "error": "bloc_inconnu"
+          "best": {
+            "time": "4:16.13",
+            "date": "2026-05-30",
+            "points": 634,
+            "city": null
+          },
+          "source": "meilleurs_temps",
+          "fallback": false
         },
         "800": {
-          "best": null,
-          "source": "deep_dive",
-          "error": "bloc_inconnu"
+          "best": {
+            "time": "8:54.36",
+            "date": "2026-06-26",
+            "points": 605,
+            "city": null
+          },
+          "source": "meilleurs_temps",
+          "fallback": false
         },
         "1500": {
-          "best": null,
-          "source": "deep_dive",
-          "error": "bloc_inconnu"
+          "best": {
+            "time": "16:54.72",
+            "date": "2026-06-26",
+            "points": 631,
+            "city": null
+          },
+          "source": "meilleurs_temps",
+          "fallback": false
         }
       },
-      "fiche_bloquee": "bloc_inconnu",
       "events": [
         "Boys' 7.5km J2",
         "Boys' 3km Knockout Sprint"
       ]
     },
     "KACANI|ADRIAN|2009": {
-      "status": "bloc_inconnu_fiche",
+      "status": "ok",
       "athlete": {
         "athlete_id": "5157916",
         "name": "KACANI, Adrian",
@@ -3486,33 +3547,52 @@
       },
       "results": {
         "200": {
-          "best": null,
-          "source": "deep_dive",
-          "error": "bloc_inconnu"
+          "best": {
+            "time": "2:03.40",
+            "date": "2026-06-26",
+            "points": 564,
+            "city": null
+          },
+          "source": "meilleurs_temps",
+          "fallback": false
         },
         "400": {
-          "best": null,
-          "source": "deep_dive",
-          "error": "bloc_inconnu"
+          "best": {
+            "time": "4:20.15",
+            "date": "2026-06-28",
+            "points": 605,
+            "city": null
+          },
+          "source": "meilleurs_temps",
+          "fallback": false
         },
         "800": {
-          "best": null,
-          "source": "deep_dive",
-          "error": "bloc_inconnu"
+          "best": {
+            "time": "8:58.60",
+            "date": "2026-06-26",
+            "points": 591,
+            "city": null
+          },
+          "source": "meilleurs_temps",
+          "fallback": false
         },
         "1500": {
-          "best": null,
-          "source": "deep_dive",
-          "error": "bloc_inconnu"
+          "best": {
+            "time": "16:58.97",
+            "date": "2026-06-26",
+            "points": 623,
+            "city": null
+          },
+          "source": "meilleurs_temps",
+          "fallback": false
         }
       },
-      "fiche_bloquee": "bloc_inconnu",
       "events": [
         "Boys' 7.5km J2"
       ]
     },
     "ER|CEMIL CANKAT|2010": {
-      "status": "bloc_inconnu_fiche",
+      "status": "ok",
       "athlete": {
         "athlete_id": "5704394",
         "name": "ER, Cemil Cankat",
@@ -3522,34 +3602,53 @@
       },
       "results": {
         "200": {
-          "best": null,
-          "source": "deep_dive",
-          "error": "bloc_inconnu"
+          "best": {
+            "time": "1:55.54",
+            "date": "2026-05-22",
+            "points": 688,
+            "city": null
+          },
+          "source": "meilleurs_temps",
+          "fallback": false
         },
         "400": {
-          "best": null,
-          "source": "deep_dive",
-          "error": "bloc_inconnu"
+          "best": {
+            "time": "3:57.94",
+            "date": "2026-04-19",
+            "points": 791,
+            "city": null
+          },
+          "source": "meilleurs_temps",
+          "fallback": false
         },
         "800": {
-          "best": null,
-          "source": "deep_dive",
-          "error": "bloc_inconnu"
+          "best": {
+            "time": "8:13.65",
+            "date": "2026-05-21",
+            "points": 768,
+            "city": null
+          },
+          "source": "meilleurs_temps",
+          "fallback": false
         },
         "1500": {
-          "best": null,
-          "source": "deep_dive",
-          "error": "bloc_inconnu"
+          "best": {
+            "time": "15:38.61",
+            "date": "2026-04-18",
+            "points": 798,
+            "city": null
+          },
+          "source": "meilleurs_temps",
+          "fallback": false
         }
       },
-      "fiche_bloquee": "bloc_inconnu",
       "events": [
         "Boys' 7.5km J2",
         "Boys' 3km Knockout Sprint 14-16"
       ]
     },
     "KARADAYI|KAAN|2010": {
-      "status": "bloc_inconnu_fiche",
+      "status": "ok",
       "athlete": {
         "athlete_id": "5704439",
         "name": "KARADAYI, Kaan",
@@ -3558,34 +3657,53 @@
         "row": "KARADAYI, Kaan 2010 TUR TUR - Galatasaray Spor Kulubu"
       },
       "results": {
-        "200": {
-          "best": null,
-          "source": "deep_dive",
-          "error": "bloc_inconnu"
-        },
         "400": {
-          "best": null,
-          "source": "deep_dive",
-          "error": "bloc_inconnu"
+          "best": {
+            "time": "4:13.04",
+            "date": "2025-12-20",
+            "points": 657,
+            "city": null
+          },
+          "source": "meilleurs_temps",
+          "fallback": false
         },
         "800": {
-          "best": null,
-          "source": "deep_dive",
-          "error": "bloc_inconnu"
+          "best": {
+            "time": "8:32.15",
+            "date": "2026-05-21",
+            "points": 687,
+            "city": null
+          },
+          "source": "meilleurs_temps",
+          "fallback": false
         },
         "1500": {
-          "best": null,
+          "best": {
+            "time": "16:11.28",
+            "date": "2026-04-18",
+            "points": 720,
+            "city": null
+          },
+          "source": "meilleurs_temps",
+          "fallback": false
+        },
+        "200": {
+          "best": {
+            "time": "2:03.35",
+            "date": "2026-04-19",
+            "points": 565,
+            "city": "Edirne"
+          },
           "source": "deep_dive",
-          "error": "bloc_inconnu"
+          "fallback": false
         }
       },
-      "fiche_bloquee": "bloc_inconnu",
       "events": [
         "Boys' 7.5km J2"
       ]
     },
     "RODRIGUEZ JUSTO|PEDRO|2011": {
-      "status": "bloc_inconnu_fiche",
+      "status": "ok",
       "athlete": {
         "athlete_id": "5718665",
         "name": "RODRIGUEZ JUSTO, Pedro",
@@ -3595,34 +3713,53 @@
       },
       "results": {
         "200": {
-          "best": null,
-          "source": "deep_dive",
-          "error": "bloc_inconnu"
+          "best": {
+            "time": "1:58.89",
+            "date": "2026-06-27",
+            "points": 631,
+            "city": null
+          },
+          "source": "meilleurs_temps",
+          "fallback": false
         },
         "400": {
-          "best": null,
-          "source": "deep_dive",
-          "error": "bloc_inconnu"
+          "best": {
+            "time": "4:13.60",
+            "date": "2026-06-07",
+            "points": 653,
+            "city": null
+          },
+          "source": "meilleurs_temps",
+          "fallback": false
         },
         "800": {
-          "best": null,
-          "source": "deep_dive",
-          "error": "bloc_inconnu"
+          "best": {
+            "time": "8:51.72",
+            "date": "2026-06-06",
+            "points": 614,
+            "city": null
+          },
+          "source": "meilleurs_temps",
+          "fallback": false
         },
         "1500": {
-          "best": null,
-          "source": "deep_dive",
-          "error": "bloc_inconnu"
+          "best": {
+            "time": "17:20.51",
+            "date": "2026-07-03",
+            "points": 585,
+            "city": null
+          },
+          "source": "meilleurs_temps",
+          "fallback": false
         }
       },
-      "fiche_bloquee": "bloc_inconnu",
       "events": [
         "Boys' 5km J1",
         "Boys' 3km Knockout Sprint 14-16"
       ]
     },
     "SIMON GARRIDO|GUILLERMO|2012": {
-      "status": "bloc_inconnu_fiche",
+      "status": "ok",
       "athlete": {
         "athlete_id": "5811290",
         "name": "SIMON GARRIDO, Guillermo",
@@ -3632,34 +3769,53 @@
       },
       "results": {
         "200": {
-          "best": null,
-          "source": "deep_dive",
-          "error": "bloc_inconnu"
+          "best": {
+            "time": "2:07.25",
+            "date": "2026-06-27",
+            "points": 515,
+            "city": null
+          },
+          "source": "meilleurs_temps",
+          "fallback": false
         },
         "400": {
-          "best": null,
-          "source": "deep_dive",
-          "error": "bloc_inconnu"
+          "best": {
+            "time": "4:18.59",
+            "date": "2026-06-07",
+            "points": 616,
+            "city": null
+          },
+          "source": "meilleurs_temps",
+          "fallback": false
         },
         "800": {
-          "best": null,
-          "source": "deep_dive",
-          "error": "bloc_inconnu"
+          "best": {
+            "time": "8:42.18",
+            "date": "2026-07-19",
+            "points": 649,
+            "city": null
+          },
+          "source": "meilleurs_temps",
+          "fallback": false
         },
         "1500": {
-          "best": null,
-          "source": "deep_dive",
-          "error": "bloc_inconnu"
+          "best": {
+            "time": "16:25.88",
+            "date": "2026-07-17",
+            "points": 688,
+            "city": null
+          },
+          "source": "meilleurs_temps",
+          "fallback": false
         }
       },
-      "fiche_bloquee": "bloc_inconnu",
       "events": [
         "Boys' 5km J1",
         "Boys' 3km Knockout Sprint 14-16"
       ]
     },
     "AMMAR|AKRAM|2011": {
-      "status": "bloc_inconnu_fiche",
+      "status": "ok",
       "athlete": {
         "athlete_id": "5162814",
         "name": "AMMAR, Akram",
@@ -3669,33 +3825,52 @@
       },
       "results": {
         "200": {
-          "best": null,
-          "source": "deep_dive",
-          "error": "bloc_inconnu"
+          "best": {
+            "time": "2:00.91",
+            "date": "2026-02-22",
+            "points": 600,
+            "city": null
+          },
+          "source": "meilleurs_temps",
+          "fallback": false
         },
         "400": {
-          "best": null,
-          "source": "deep_dive",
-          "error": "bloc_inconnu"
+          "best": {
+            "time": "4:07.49",
+            "date": "2026-06-12",
+            "points": 703,
+            "city": null
+          },
+          "source": "meilleurs_temps",
+          "fallback": false
         },
         "800": {
-          "best": null,
-          "source": "deep_dive",
-          "error": "bloc_inconnu"
+          "best": {
+            "time": "8:35.51",
+            "date": "2026-06-10",
+            "points": 674,
+            "city": null
+          },
+          "source": "meilleurs_temps",
+          "fallback": false
         },
         "1500": {
-          "best": null,
-          "source": "deep_dive",
-          "error": "bloc_inconnu"
+          "best": {
+            "time": "16:39.04",
+            "date": "2026-06-09",
+            "points": 661,
+            "city": null
+          },
+          "source": "meilleurs_temps",
+          "fallback": false
         }
       },
-      "fiche_bloquee": "bloc_inconnu",
       "events": [
         "Boys' 5km J1"
       ]
     },
     "ENGMANN|MORITZ|2011": {
-      "status": "bloc_inconnu_fiche",
+      "status": "aucune_perf_50m",
       "athlete": {
         "athlete_id": "5613042",
         "name": "ENGMANN, Moritz",
@@ -3706,32 +3881,31 @@
       "results": {
         "200": {
           "best": null,
-          "source": "deep_dive",
-          "error": "bloc_inconnu"
+          "source": "meilleurs_temps",
+          "note": "jamais nagé en bassin 50m"
         },
         "400": {
           "best": null,
-          "source": "deep_dive",
-          "error": "bloc_inconnu"
+          "source": "meilleurs_temps",
+          "note": "jamais nagé en bassin 50m"
         },
         "800": {
           "best": null,
-          "source": "deep_dive",
-          "error": "bloc_inconnu"
+          "source": "meilleurs_temps",
+          "note": "jamais nagé en bassin 50m"
         },
         "1500": {
           "best": null,
-          "source": "deep_dive",
-          "error": "bloc_inconnu"
+          "source": "meilleurs_temps",
+          "note": "jamais nagé en bassin 50m"
         }
       },
-      "fiche_bloquee": "bloc_inconnu",
       "events": [
         "Boys' 5km J1"
       ]
     },
     "LAADRAOUI|MOHAMED|2011": {
-      "status": "bloc_inconnu_fiche",
+      "status": "aucune_perf_50m",
       "athlete": {
         "athlete_id": "5502990",
         "name": "LAADRAOUI, Mohamed",
@@ -3742,39 +3916,54 @@
       "results": {
         "200": {
           "best": null,
-          "source": "deep_dive",
-          "error": "bloc_inconnu"
+          "source": "meilleurs_temps",
+          "note": "jamais nagé en bassin 50m"
         },
         "400": {
           "best": null,
-          "source": "deep_dive",
-          "error": "bloc_inconnu"
+          "source": "meilleurs_temps",
+          "note": "jamais nagé en bassin 50m"
         },
         "800": {
           "best": null,
-          "source": "deep_dive",
-          "error": "bloc_inconnu"
+          "source": "meilleurs_temps",
+          "note": "jamais nagé en bassin 50m"
         },
         "1500": {
           "best": null,
-          "source": "deep_dive",
-          "error": "bloc_inconnu"
+          "source": "meilleurs_temps",
+          "note": "jamais nagé en bassin 50m"
         }
       },
-      "fiche_bloquee": "bloc_inconnu",
       "events": [
         "Boys' 5km J1"
       ]
     },
     "CHOURDAKIS|DIMITRIOS|2011": {
-      "status": "bloc_inconnu_recherche",
+      "status": "introuvable",
+      "candidates": [
+        {
+          "athlete_id": "5312466",
+          "name": "CHOURDAKIS, Emmanouil",
+          "year": "1972",
+          "nation": "GRE",
+          "row": "CHOURDAKIS, Emmanouil 1972 GRE"
+        },
+        {
+          "athlete_id": "5532340",
+          "name": "CHOURDAKIS, Konstantinos",
+          "year": "2009",
+          "nation": "GRE",
+          "row": "CHOURDAKIS, Konstantinos 2009 GRE GRE - Athlitikos Omilos Tritonas Ira"
+        }
+      ],
       "events": [
         "Boys' 5km J1",
         "Boys' 3km Knockout Sprint 14-16"
       ]
     },
     "PANTERIS|IOANNIS|2011": {
-      "status": "bloc_inconnu_fiche",
+      "status": "ok",
       "athlete": {
         "athlete_id": "5812445",
         "name": "PANTERIS, Ioannis",
@@ -3784,34 +3973,53 @@
       },
       "results": {
         "200": {
-          "best": null,
-          "source": "deep_dive",
-          "error": "bloc_inconnu"
+          "best": {
+            "time": "2:00.61",
+            "date": "2026-02-15",
+            "points": 604,
+            "city": null
+          },
+          "source": "meilleurs_temps",
+          "fallback": false
         },
         "400": {
-          "best": null,
-          "source": "deep_dive",
-          "error": "bloc_inconnu"
+          "best": {
+            "time": "4:06.77",
+            "date": "2026-06-19",
+            "points": 709,
+            "city": null
+          },
+          "source": "meilleurs_temps",
+          "fallback": false
         },
         "800": {
-          "best": null,
-          "source": "deep_dive",
-          "error": "bloc_inconnu"
+          "best": {
+            "time": "8:31.40",
+            "date": "2026-02-14",
+            "points": 691,
+            "city": null
+          },
+          "source": "meilleurs_temps",
+          "fallback": false
         },
         "1500": {
-          "best": null,
-          "source": "deep_dive",
-          "error": "bloc_inconnu"
+          "best": {
+            "time": "16:04.64",
+            "date": "2026-06-21",
+            "points": 735,
+            "city": null
+          },
+          "source": "meilleurs_temps",
+          "fallback": false
         }
       },
-      "fiche_bloquee": "bloc_inconnu",
       "events": [
         "Boys' 5km J1",
         "Boys' 3km Knockout Sprint 14-16"
       ]
     },
     "GENEST|MATTEO|2011": {
-      "status": "bloc_inconnu_fiche",
+      "status": "ok",
       "athlete": {
         "athlete_id": "5523952",
         "name": "GENEST, Matteo",
@@ -3821,39 +4029,108 @@
       },
       "results": {
         "200": {
-          "best": null,
-          "source": "deep_dive",
-          "error": "bloc_inconnu"
+          "best": {
+            "time": "1:56.81",
+            "date": "2026-03-28",
+            "points": 665,
+            "city": null
+          },
+          "source": "meilleurs_temps",
+          "fallback": false
         },
         "400": {
-          "best": null,
-          "source": "deep_dive",
-          "error": "bloc_inconnu"
+          "best": {
+            "time": "4:07.72",
+            "date": "2025-11-29",
+            "points": 701,
+            "city": null
+          },
+          "source": "meilleurs_temps",
+          "fallback": false
         },
         "800": {
-          "best": null,
-          "source": "deep_dive",
-          "error": "bloc_inconnu"
+          "best": {
+            "time": "8:32.11",
+            "date": "2026-04-15",
+            "points": 688,
+            "city": null
+          },
+          "source": "meilleurs_temps",
+          "fallback": false
         },
         "1500": {
-          "best": null,
-          "source": "deep_dive",
-          "error": "bloc_inconnu"
+          "best": {
+            "time": "16:13.51",
+            "date": "2026-06-03",
+            "points": 715,
+            "city": null
+          },
+          "source": "meilleurs_temps",
+          "fallback": false
         }
       },
-      "fiche_bloquee": "bloc_inconnu",
       "events": [
         "Boys' 5km J1"
       ]
     },
     "PANNONHALMI|LAZAR ELEMER|2011": {
-      "status": "bloc_inconnu_recherche",
+      "status": "ok",
+      "athlete": {
+        "athlete_id": "5271712",
+        "name": "PANNONHALMI, Lazar",
+        "year": "2011",
+        "nation": "HUN",
+        "row": "PANNONHALMI, Lazar 2011 HUN HUN - Uni Gyuse"
+      },
+      "results": {
+        "200": {
+          "best": {
+            "time": "1:55.30",
+            "date": "2026-06-05",
+            "points": 692,
+            "city": null
+          },
+          "source": "meilleurs_temps",
+          "fallback": false
+        },
+        "400": {
+          "best": {
+            "time": "4:04.39",
+            "date": "2026-06-04",
+            "points": 730,
+            "city": null
+          },
+          "source": "meilleurs_temps",
+          "fallback": false
+        },
+        "800": {
+          "best": {
+            "time": "8:20.19",
+            "date": "2026-06-06",
+            "points": 738,
+            "city": null
+          },
+          "source": "meilleurs_temps",
+          "fallback": false
+        },
+        "1500": {
+          "best": {
+            "time": "15:52.16",
+            "date": "2026-06-03",
+            "points": 764,
+            "city": null
+          },
+          "source": "meilleurs_temps",
+          "fallback": false
+        }
+      },
+      "note": "trouve via 'nom seul' - a verifier",
       "events": [
         "Boys' 5km J1"
       ]
     },
     "SARKANY|ZETENY|2011": {
-      "status": "bloc_inconnu_fiche",
+      "status": "ok",
       "athlete": {
         "athlete_id": "5524008",
         "name": "SARKANY, Zeteny",
@@ -3863,34 +4140,98 @@
       },
       "results": {
         "200": {
-          "best": null,
-          "source": "deep_dive",
-          "error": "bloc_inconnu"
+          "best": {
+            "time": "1:55.25",
+            "date": "2025-11-30",
+            "points": 693,
+            "city": null
+          },
+          "source": "meilleurs_temps",
+          "fallback": false
         },
         "400": {
-          "best": null,
-          "source": "deep_dive",
-          "error": "bloc_inconnu"
+          "best": {
+            "time": "3:56.53",
+            "date": "2026-04-19",
+            "points": 805,
+            "city": null
+          },
+          "source": "meilleurs_temps",
+          "fallback": false
         },
         "800": {
-          "best": null,
-          "source": "deep_dive",
-          "error": "bloc_inconnu"
+          "best": {
+            "time": "8:01.05",
+            "date": "2026-04-16",
+            "points": 830,
+            "city": null
+          },
+          "source": "meilleurs_temps",
+          "fallback": false
         },
         "1500": {
-          "best": null,
-          "source": "deep_dive",
-          "error": "bloc_inconnu"
+          "best": {
+            "time": "15:22.57",
+            "date": "2026-04-18",
+            "points": 840,
+            "city": null
+          },
+          "source": "meilleurs_temps",
+          "fallback": false
         }
       },
-      "fiche_bloquee": "bloc_inconnu",
       "events": [
         "Boys' 5km J1",
         "Boys' 3km Knockout Sprint 14-16"
       ]
     },
     "NINIO MEITAL|MICHAEL|2011": {
-      "status": "bloc_inconnu_recherche",
+      "status": "ok",
+      "athlete": {
+        "athlete_id": "5587541",
+        "name": "NINIO, Michael",
+        "year": "2011",
+        "nation": "ISR",
+        "row": "NINIO, Michael 2011 ISR"
+      },
+      "results": {
+        "200": {
+          "best": null,
+          "source": "meilleurs_temps",
+          "note": "jamais nagé en bassin 50m"
+        },
+        "400": {
+          "best": {
+            "time": "4:13.23",
+            "date": "2026-05-25",
+            "points": 656,
+            "city": null
+          },
+          "source": "meilleurs_temps",
+          "fallback": false
+        },
+        "800": {
+          "best": {
+            "time": "8:42.75",
+            "date": "2026-05-27",
+            "points": 646,
+            "city": null
+          },
+          "source": "meilleurs_temps",
+          "fallback": false
+        },
+        "1500": {
+          "best": {
+            "time": "16:44.74",
+            "date": "2026-05-23",
+            "points": 650,
+            "city": null
+          },
+          "source": "meilleurs_temps",
+          "fallback": false
+        }
+      },
+      "note": "trouve via '1er mot du nom' - a verifier",
       "events": [
         "Boys' 5km J1",
         "Boys' 3km Knockout Sprint 14-16"
@@ -3913,7 +4254,7 @@
       ]
     },
     "ADELFIO|MARCO|2011": {
-      "status": "bloc_inconnu_fiche",
+      "status": "aucune_perf_50m",
       "athlete": {
         "athlete_id": "5525090",
         "name": "ADELFIO, Marco",
@@ -3924,32 +4265,31 @@
       "results": {
         "200": {
           "best": null,
-          "source": "deep_dive",
-          "error": "bloc_inconnu"
+          "source": "meilleurs_temps",
+          "note": "jamais nagé en bassin 50m"
         },
         "400": {
           "best": null,
-          "source": "deep_dive",
-          "error": "bloc_inconnu"
+          "source": "meilleurs_temps",
+          "note": "jamais nagé en bassin 50m"
         },
         "800": {
           "best": null,
-          "source": "deep_dive",
-          "error": "bloc_inconnu"
+          "source": "meilleurs_temps",
+          "note": "jamais nagé en bassin 50m"
         },
         "1500": {
           "best": null,
-          "source": "deep_dive",
-          "error": "bloc_inconnu"
+          "source": "meilleurs_temps",
+          "note": "jamais nagé en bassin 50m"
         }
       },
-      "fiche_bloquee": "bloc_inconnu",
       "events": [
         "Boys' 5km J1"
       ]
     },
     "ARDITO|MANFREDI|2011": {
-      "status": "bloc_inconnu_fiche",
+      "status": "aucune_perf_50m",
       "athlete": {
         "athlete_id": "5525098",
         "name": "ARDITO, Manfredi",
@@ -3960,32 +4300,31 @@
       "results": {
         "200": {
           "best": null,
-          "source": "deep_dive",
-          "error": "bloc_inconnu"
+          "source": "meilleurs_temps",
+          "note": "jamais nagé en bassin 50m"
         },
         "400": {
           "best": null,
-          "source": "deep_dive",
-          "error": "bloc_inconnu"
+          "source": "meilleurs_temps",
+          "note": "jamais nagé en bassin 50m"
         },
         "800": {
           "best": null,
-          "source": "deep_dive",
-          "error": "bloc_inconnu"
+          "source": "meilleurs_temps",
+          "note": "jamais nagé en bassin 50m"
         },
         "1500": {
           "best": null,
-          "source": "deep_dive",
-          "error": "bloc_inconnu"
+          "source": "meilleurs_temps",
+          "note": "jamais nagé en bassin 50m"
         }
       },
-      "fiche_bloquee": "bloc_inconnu",
       "events": [
         "Boys' 5km J1"
       ]
     },
     "DEL GIUDICE|ALDO|2011": {
-      "status": "bloc_inconnu_fiche",
+      "status": "ok",
       "athlete": {
         "athlete_id": "5389513",
         "name": "DEL GIUDICE, Aldo",
@@ -3995,34 +4334,69 @@
       },
       "results": {
         "200": {
-          "best": null,
-          "source": "deep_dive",
-          "error": "bloc_inconnu"
+          "best": {
+            "time": "2:02.67",
+            "date": "2026-05-31",
+            "points": 574,
+            "city": null
+          },
+          "source": "meilleurs_temps",
+          "fallback": false
         },
         "400": {
-          "best": null,
-          "source": "deep_dive",
-          "error": "bloc_inconnu"
+          "best": {
+            "time": "4:11.86",
+            "date": "2026-06-17",
+            "points": 667,
+            "city": null
+          },
+          "source": "meilleurs_temps",
+          "fallback": false
         },
         "800": {
-          "best": null,
-          "source": "deep_dive",
-          "error": "bloc_inconnu"
+          "best": {
+            "time": "8:35.38",
+            "date": "2026-06-18",
+            "points": 675,
+            "city": null
+          },
+          "source": "meilleurs_temps",
+          "fallback": false
         },
         "1500": {
-          "best": null,
-          "source": "deep_dive",
-          "error": "bloc_inconnu"
+          "best": {
+            "time": "16:31.50",
+            "date": "2026-06-20",
+            "points": 677,
+            "city": null
+          },
+          "source": "meilleurs_temps",
+          "fallback": false
         }
       },
-      "fiche_bloquee": "bloc_inconnu",
       "events": [
         "Boys' 5km J1",
         "Boys' 3km Knockout Sprint 14-16"
       ]
     },
     "KACZMAREK|MIKOLAJ PIOTR|2011": {
-      "status": "bloc_inconnu_recherche",
+      "status": "ambigu",
+      "matches": [
+        {
+          "athlete_id": "5231562",
+          "name": "KACZMAREK, Aleksander",
+          "year": "2011",
+          "nation": "POL",
+          "row": "KACZMAREK, Aleksander 2011 POL POL - KS POSNANIA Poznan"
+        },
+        {
+          "athlete_id": "5502313",
+          "name": "KACZMAREK, Anastazja",
+          "year": "2011",
+          "nation": "POL",
+          "row": "KACZMAREK, Anastazja 2011 POL POL - UKS Olimp Gorzow Wlkp."
+        }
+      ],
       "events": [
         "Boys' 5km J1",
         "Boys' 3km Knockout Sprint 14-16"
@@ -4085,14 +4459,191 @@
       ]
     },
     "PROKOP|WOJCIECH MIROSLAW|2011": {
-      "status": "bloc_inconnu_recherche",
+      "status": "introuvable",
+      "candidates": [
+        {
+          "athlete_id": "4779441",
+          "name": "BLAZEK, Prokop",
+          "year": "2003",
+          "nation": "CZE",
+          "row": "BLAZEK, Prokop 2003 CZE CZE - TJ Frenstat pod Radhostem"
+        },
+        {
+          "athlete_id": "5103381",
+          "name": "CIHLAR, Prokop",
+          "year": "2006",
+          "nation": "CZE",
+          "row": "CIHLAR, Prokop 2006 CZE CZE - TJ Vodni stavby Praha"
+        },
+        {
+          "athlete_id": "5532035",
+          "name": "DIMITROS, Prokopios",
+          "year": "2008",
+          "nation": "GRE",
+          "row": "DIMITROS, Prokopios 2008 GRE GRE - Athlitikos Syllogos Kollegiou"
+        },
+        {
+          "athlete_id": "5742427",
+          "name": "FLACHS, Prokop",
+          "year": "2012",
+          "nation": "CZE",
+          "row": "FLACHS, Prokop 2012 CZE CZE - PSK Olymp Praha"
+        },
+        {
+          "athlete_id": "5783537",
+          "name": "GAVRILOVS, Prokops",
+          "year": "2015",
+          "nation": "LAT",
+          "row": "GAVRILOVS, Prokops 2015 LAT LAT - Jelgavas SPS"
+        },
+        {
+          "athlete_id": "4475431",
+          "name": "GIANNIS, Konstadinos-Prokopi",
+          "year": "1998",
+          "nation": "GRE",
+          "row": "GIANNIS, Konstadinos-Prokopi 1998 GRE GRE - Anoargyr"
+        },
+        {
+          "athlete_id": "4124400",
+          "name": "KALIMERIS, Prokopios",
+          "year": "1992",
+          "nation": "GRE",
+          "row": "KALIMERIS, Prokopios 1992 GRE GRE - Akmspkoz"
+        },
+        {
+          "athlete_id": "5063730",
+          "name": "MARTINEK, Prokop",
+          "year": "1999",
+          "nation": "CZE",
+          "row": "MARTINEK, Prokop 1999 CZE CZE - SK Motorlet Praha"
+        },
+        {
+          "athlete_id": "4737794",
+          "name": "PANCHENKO-PROKOPIEV, Gleb",
+          "year": "1999",
+          "nation": "EST",
+          "row": "PANCHENKO-PROKOPIEV, Gleb 1999 EST EST - Sillamae Ujumisklubi Kalev"
+        },
+        {
+          "athlete_id": "4688999",
+          "name": "PROKOP, Alicja",
+          "year": "1997",
+          "nation": "POL",
+          "row": "PROKOP, Alicja 1997 POL POL - KS Olimpia Lublin"
+        },
+        {
+          "athlete_id": "5466392",
+          "name": "PROKOP, Andrzej",
+          "year": "2013",
+          "nation": "POL",
+          "row": "PROKOP, Andrzej 2013 POL POL - MKS DELFINEK Lukow"
+        },
+        {
+          "athlete_id": "5762715",
+          "name": "PROKOP, Ania",
+          "year": "2012",
+          "nation": "POL",
+          "row": "PROKOP, Ania 2012 POL POL - Atut Czestochowa"
+        },
+        {
+          "athlete_id": "4857155",
+          "name": "PROKOP, Anna Karina",
+          "year": "1999",
+          "nation": "GER",
+          "row": "PROKOP, Anna Karina 1999 GER GER - SG Essen"
+        },
+        {
+          "athlete_id": "5455129",
+          "name": "PROKOP, Antonina",
+          "year": "2010",
+          "nation": "POL",
+          "row": "PROKOP, Antonina 2010 POL POL - UKS SKARPA Lublin"
+        },
+        {
+          "athlete_id": "5688543",
+          "name": "PROKOP, Barbara",
+          "year": "2014",
+          "nation": "POL",
+          "row": "PROKOP, Barbara 2014 POL POL - MKP Szczecin"
+        },
+        {
+          "athlete_id": "5903320",
+          "name": "PROKOP, Bartosz",
+          "year": "2017",
+          "nation": "POL",
+          "row": "PROKOP, Bartosz 2017 POL POL - Vega Dobrodzien"
+        },
+        {
+          "athlete_id": "4850656",
+          "name": "PROKOP, Bartosz",
+          "year": "2002",
+          "nation": "POL",
+          "row": "PROKOP, Bartosz 2002 POL POL - UKS Manta Kochlowice Ruda Slas"
+        },
+        {
+          "athlete_id": "4274207",
+          "name": "PROKOP, Bojan",
+          "year": "1981",
+          "nation": "CRO",
+          "row": "PROKOP, Bojan 1981 CRO CRO - Primorje"
+        },
+        {
+          "athlete_id": "5629676",
+          "name": "PROKOP, Eduard",
+          "year": "2010",
+          "nation": "CZE",
+          "row": "PROKOP, Eduard 2010 CZE"
+        },
+        {
+          "athlete_id": "5103051",
+          "name": "PROKOP, Franciszek",
+          "year": "2006",
+          "nation": "POL",
+          "row": "PROKOP, Franciszek 2006 POL POL - UKS POLONEZ Wyszkow"
+        },
+        {
+          "athlete_id": "5455130",
+          "name": "PROKOP, Ignacy",
+          "year": "2010",
+          "nation": "POL",
+          "row": "PROKOP, Ignacy 2010 POL POL - UKS SP5 Swim Lublin"
+        },
+        {
+          "athlete_id": "5210251",
+          "name": "PROKOP, Jakub",
+          "year": "2005",
+          "nation": "POL",
+          "row": "PROKOP, Jakub 2005 POL POL - MKS DELFINEK Lukow"
+        },
+        {
+          "athlete_id": "4370179",
+          "name": "PROKOP, Jan",
+          "year": "1998",
+          "nation": "CZE",
+          "row": "PROKOP, Jan 1998 CZE CZE - SC Plavec.areal Pardubice"
+        },
+        {
+          "athlete_id": "5132439",
+          "name": "PROKOP, Joseph S",
+          "year": "1999",
+          "nation": "USA",
+          "row": "PROKOP, Joseph S 1999 USA USA - Premier Aquatics Club of Klein"
+        },
+        {
+          "athlete_id": "5113876",
+          "name": "PROKOP, Julia",
+          "year": "2006",
+          "nation": "POL",
+          "row": "PROKOP, Julia 2006 POL POL - Siodemka Sopot"
+        }
+      ],
       "events": [
         "Boys' 5km J1",
         "Boys' 3km Knockout Sprint 14-16"
       ]
     },
     "NOSOV|ALAN|2011": {
-      "status": "bloc_inconnu_fiche",
+      "status": "ok",
       "athlete": {
         "athlete_id": "5903189",
         "name": "NOSOV, Alan",
@@ -4102,27 +4653,46 @@
       },
       "results": {
         "200": {
-          "best": null,
-          "source": "deep_dive",
-          "error": "bloc_inconnu"
+          "best": {
+            "time": "2:00.01",
+            "date": "2026-04-20",
+            "points": 613,
+            "city": null
+          },
+          "source": "meilleurs_temps",
+          "fallback": false
         },
         "400": {
-          "best": null,
-          "source": "deep_dive",
-          "error": "bloc_inconnu"
+          "best": {
+            "time": "4:09.26",
+            "date": "2026-04-19",
+            "points": 688,
+            "city": null
+          },
+          "source": "meilleurs_temps",
+          "fallback": false
         },
         "800": {
-          "best": null,
-          "source": "deep_dive",
-          "error": "bloc_inconnu"
+          "best": {
+            "time": "8:32.29",
+            "date": "2026-04-21",
+            "points": 687,
+            "city": null
+          },
+          "source": "meilleurs_temps",
+          "fallback": false
         },
         "1500": {
-          "best": null,
-          "source": "deep_dive",
-          "error": "bloc_inconnu"
+          "best": {
+            "time": "16:03.96",
+            "date": "2026-04-18",
+            "points": 736,
+            "city": null
+          },
+          "source": "meilleurs_temps",
+          "fallback": false
         }
       },
-      "fiche_bloquee": "bloc_inconnu",
       "events": [
         "Boys' 5km J1",
         "Boys' 3km Knockout Sprint 14-16"
@@ -4876,7 +5446,8 @@
       ]
     },
     "HAFELINGER|JANNIK|2010": {
-      "status": "bloc_inconnu_recherche",
+      "status": "introuvable",
+      "candidates": [],
       "events": [
         "Boys' 3km Knockout Sprint 14-16"
       ]
@@ -4992,7 +5563,184 @@
       ]
     },
     "VARGA|ZSOMBOR HUBA|2010": {
-      "status": "bloc_inconnu_recherche",
+      "status": "introuvable",
+      "candidates": [
+        {
+          "athlete_id": "5888164",
+          "name": "ABAD VARGAS, Julia",
+          "year": "2018",
+          "nation": "ESP",
+          "row": "ABAD VARGAS, Julia 2018 ESP ESP - P. San Agustin"
+        },
+        {
+          "athlete_id": "5409216",
+          "name": "ABARCA VARGAS, Sira",
+          "year": "2015",
+          "nation": "ESP",
+          "row": "ABARCA VARGAS, Sira 2015 ESP ESP - G.E.Nautics De Roses"
+        },
+        {
+          "athlete_id": "5591281",
+          "name": "ABRIN VARGAS, Habibi Monserr",
+          "year": "2005",
+          "nation": "MEX",
+          "row": "ABRIN VARGAS, Habibi Monserr 2005 MEX MEX - Nuevo Leon"
+        },
+        {
+          "athlete_id": "4236652",
+          "name": "ANDRADE, Vasco Vargas",
+          "year": "1994",
+          "nation": "POR",
+          "row": "ANDRADE, Vasco Vargas 1994 POR POR - Naval da Horta"
+        },
+        {
+          "athlete_id": "4203933",
+          "name": "ARRIAGA VARGAS, Jonathan",
+          "year": "1991",
+          "nation": "ESP",
+          "row": "ARRIAGA VARGAS, Jonathan 1991 ESP ESP - C.N. Prat Llobregat"
+        },
+        {
+          "athlete_id": "4347208",
+          "name": "ARRIAGA VARGAS, Kilian",
+          "year": "1996",
+          "nation": "ESP",
+          "row": "ARRIAGA VARGAS, Kilian 1996 ESP ESP - C.N. Prat Llobregat"
+        },
+        {
+          "athlete_id": "5130460",
+          "name": "ARTEAGA VARGAS, Eimy",
+          "year": "2002",
+          "nation": "ESP",
+          "row": "ARTEAGA VARGAS, Eimy 2002 ESP ESP - Club Natacion Marina-Cartagena \"Ancora\""
+        },
+        {
+          "athlete_id": "5327811",
+          "name": "BOSCH VARGAS, Roger",
+          "year": "2017",
+          "nation": "ESP",
+          "row": "BOSCH VARGAS, Roger 2017 ESP ESP - C.N. Minorisa"
+        },
+        {
+          "athlete_id": "5781867",
+          "name": "CARNEIRO, Santiago Vargas",
+          "year": "2015",
+          "nation": "POR",
+          "row": "CARNEIRO, Santiago Vargas 2015 POR POR - Natacao de Fafe"
+        },
+        {
+          "athlete_id": "5477348",
+          "name": "CARRETERO VARGAS, Helena",
+          "year": "2009",
+          "nation": "ESP",
+          "row": "CARRETERO VARGAS, Helena 2009 ESP ESP - C.N. Axarquia"
+        },
+        {
+          "athlete_id": "4497652",
+          "name": "CHAVES VARGAS, Dennis",
+          "year": "1974",
+          "nation": "CRC",
+          "row": "CHAVES VARGAS, Dennis 1974 CRC"
+        },
+        {
+          "athlete_id": "4825748",
+          "name": "CONSUEGRA VARGAS, Carmen",
+          "year": "1997",
+          "nation": "ESP",
+          "row": "CONSUEGRA VARGAS, Carmen 1997 ESP ESP - Navial"
+        },
+        {
+          "athlete_id": "4433885",
+          "name": "CONSUEGRA VARGAS, Ma del Carmen",
+          "year": "1997",
+          "nation": "ESP",
+          "row": "CONSUEGRA VARGAS, Ma del Carmen 1997 ESP ESP - Navial"
+        },
+        {
+          "athlete_id": "4345076",
+          "name": "COSTA VARGAS, Daniel",
+          "year": "1994",
+          "nation": "ESP",
+          "row": "COSTA VARGAS, Daniel 1994 ESP ESP - C.N. Cornella"
+        },
+        {
+          "athlete_id": "5099078",
+          "name": "CUETO VARGAS, Ashley Michell",
+          "year": "1998",
+          "nation": "MEX",
+          "row": "CUETO VARGAS, Ashley Michell 1998 MEX"
+        },
+        {
+          "athlete_id": "4185128",
+          "name": "DAVID, Varga",
+          "year": "1989",
+          "nation": "HUN",
+          "row": "DAVID, Varga 1989 HUN HUN - Tatabanyai Vizmu SE"
+        },
+        {
+          "athlete_id": "5492142",
+          "name": "DE ALFREDO VARGAS, Ricardo",
+          "year": "2006",
+          "nation": "ESP",
+          "row": "DE ALFREDO VARGAS, Ricardo 2006 ESP ESP - C.N. Sabadell"
+        },
+        {
+          "athlete_id": "5541545",
+          "name": "DE LA TORRE VARGAS, Daniel",
+          "year": "2009",
+          "nation": "ESP",
+          "row": "DE LA TORRE VARGAS, Daniel 2009 ESP ESP - C.N. San Fernando De Henares"
+        },
+        {
+          "athlete_id": "4383361",
+          "name": "DE LA VARGA VALLCORB, Fco. Javier",
+          "year": "1962",
+          "nation": "ESP",
+          "row": "DE LA VARGA VALLCORB, Fco. Javier 1962 ESP ESP - A. Master Baleares"
+        },
+        {
+          "athlete_id": "4736613",
+          "name": "DE VARGAS, Kylian",
+          "year": "2003",
+          "nation": "FRA",
+          "row": "DE VARGAS, Kylian 2003 FRA FRA - Ems Bron"
+        },
+        {
+          "athlete_id": "4645277",
+          "name": "DE VARGAS, Sophie",
+          "year": "1980",
+          "nation": "FRA",
+          "row": "DE VARGAS, Sophie 1980 FRA FRA - Cmo Vénissieux"
+        },
+        {
+          "athlete_id": "5399446",
+          "name": "DIAZ VARGAS, Erick Elian",
+          "year": "2009",
+          "nation": "ITA",
+          "row": "DIAZ VARGAS, Erick Elian 2009 ITA ITA - Stelle Marine ssd"
+        },
+        {
+          "athlete_id": "5447283",
+          "name": "DIEZ VARGAS, Rafael",
+          "year": "2012",
+          "nation": "ESP",
+          "row": "DIEZ VARGAS, Rafael 2012 ESP ESP - C.D. Natacion Andujar"
+        },
+        {
+          "athlete_id": "5256252",
+          "name": "EGUIDON VARGAS, Iraia",
+          "year": "2009",
+          "nation": "ESP",
+          "row": "EGUIDON VARGAS, Iraia 2009 ESP ESP - C.N. Menditxo"
+        },
+        {
+          "athlete_id": "5708588",
+          "name": "EGUIDON VARGAS, Maren",
+          "year": "2013",
+          "nation": "ESP",
+          "row": "EGUIDON VARGAS, Maren 2013 ESP ESP - C.N. Menditxo"
+        }
+      ],
       "events": [
         "Boys' 3km Knockout Sprint 14-16"
       ]
@@ -6171,7 +6919,7 @@
       ]
     },
     "NIKIFOROVA|DARIA|2007": {
-      "status": "bloc_inconnu_fiche",
+      "status": "aucune_perf_50m",
       "athlete": {
         "athlete_id": "5451423",
         "name": "NIKIFOROVA, Daria",
@@ -6182,32 +6930,31 @@
       "results": {
         "200": {
           "best": null,
-          "source": "deep_dive",
-          "error": "bloc_inconnu"
+          "source": "meilleurs_temps",
+          "note": "jamais nagé en bassin 50m"
         },
         "400": {
           "best": null,
           "source": "deep_dive",
-          "error": "bloc_inconnu"
+          "fallback": false
         },
         "800": {
           "best": null,
           "source": "deep_dive",
-          "error": "bloc_inconnu"
+          "fallback": false
         },
         "1500": {
           "best": null,
           "source": "deep_dive",
-          "error": "bloc_inconnu"
+          "fallback": false
         }
       },
-      "fiche_bloquee": "bloc_inconnu",
       "events": [
         "Girls' 10km J3"
       ]
     },
     "MOJSILOVIC MEZNARIC|ZALA|2008": {
-      "status": "bloc_inconnu_fiche",
+      "status": "ok",
       "athlete": {
         "athlete_id": "5213680",
         "name": "MOJSILOVIC MEZNARIC, Zala",
@@ -6217,34 +6964,53 @@
       },
       "results": {
         "200": {
-          "best": null,
-          "source": "deep_dive",
-          "error": "bloc_inconnu"
-        },
-        "400": {
-          "best": null,
-          "source": "deep_dive",
-          "error": "bloc_inconnu"
+          "best": {
+            "time": "2:08.72",
+            "date": "2026-03-29",
+            "points": 662,
+            "city": null
+          },
+          "source": "meilleurs_temps",
+          "fallback": false
         },
         "800": {
-          "best": null,
-          "source": "deep_dive",
-          "error": "bloc_inconnu"
+          "best": {
+            "time": "9:25.56",
+            "date": "2026-03-14",
+            "points": 629,
+            "city": null
+          },
+          "source": "meilleurs_temps",
+          "fallback": false
         },
         "1500": {
-          "best": null,
+          "best": {
+            "time": "17:52.63",
+            "date": "2026-03-14",
+            "points": 631,
+            "city": null
+          },
+          "source": "meilleurs_temps",
+          "fallback": false
+        },
+        "400": {
+          "best": {
+            "time": "4:34.34",
+            "date": "2025-08-01",
+            "points": 631,
+            "city": "Ljubljana"
+          },
           "source": "deep_dive",
-          "error": "bloc_inconnu"
+          "fallback": false
         }
       },
-      "fiche_bloquee": "bloc_inconnu",
       "events": [
         "Girls' 10km J3",
         "Girls' 3km Knockout Sprint"
       ]
     },
     "PEKNUSOVA|SOPHIA|2008": {
-      "status": "bloc_inconnu_fiche",
+      "status": "ok",
       "athlete": {
         "athlete_id": "4621105",
         "name": "PEKNUSOVA, Sophia",
@@ -6254,27 +7020,46 @@
       },
       "results": {
         "200": {
-          "best": null,
-          "source": "deep_dive",
-          "error": "bloc_inconnu"
+          "best": {
+            "time": "2:11.39",
+            "date": "2026-05-31",
+            "points": 623,
+            "city": null
+          },
+          "source": "meilleurs_temps",
+          "fallback": false
         },
         "400": {
-          "best": null,
-          "source": "deep_dive",
-          "error": "bloc_inconnu"
+          "best": {
+            "time": "4:32.58",
+            "date": "2026-05-30",
+            "points": 643,
+            "city": null
+          },
+          "source": "meilleurs_temps",
+          "fallback": false
         },
         "800": {
-          "best": null,
-          "source": "deep_dive",
-          "error": "bloc_inconnu"
+          "best": {
+            "time": "9:27.86",
+            "date": "2026-05-01",
+            "points": 622,
+            "city": null
+          },
+          "source": "meilleurs_temps",
+          "fallback": false
         },
         "1500": {
-          "best": null,
-          "source": "deep_dive",
-          "error": "bloc_inconnu"
+          "best": {
+            "time": "17:58.88",
+            "date": "2026-05-03",
+            "points": 621,
+            "city": null
+          },
+          "source": "meilleurs_temps",
+          "fallback": false
         }
       },
-      "fiche_bloquee": "bloc_inconnu",
       "events": [
         "Girls' 10km J3",
         "Girls' 3km Knockout Sprint"
@@ -6981,7 +7766,7 @@
       ]
     },
     "BARTALOS|ANNA|2010": {
-      "status": "bloc_inconnu_fiche",
+      "status": "ok",
       "athlete": {
         "athlete_id": "4570340",
         "name": "BARTALOS, Anna",
@@ -6990,28 +7775,47 @@
         "row": "BARTALOS, Anna 2010 HUN HUN - Balaton"
       },
       "results": {
-        "200": {
-          "best": null,
-          "source": "deep_dive",
-          "error": "bloc_inconnu"
-        },
         "400": {
-          "best": null,
-          "source": "deep_dive",
-          "error": "bloc_inconnu"
+          "best": {
+            "time": "4:16.04",
+            "date": "2026-06-04",
+            "points": 776,
+            "city": null
+          },
+          "source": "meilleurs_temps",
+          "fallback": false
         },
         "800": {
-          "best": null,
-          "source": "deep_dive",
-          "error": "bloc_inconnu"
+          "best": {
+            "time": "8:39.75",
+            "date": "2026-06-06",
+            "points": 811,
+            "city": null
+          },
+          "source": "meilleurs_temps",
+          "fallback": false
         },
         "1500": {
-          "best": null,
+          "best": {
+            "time": "16:40.35",
+            "date": "2026-04-16",
+            "points": 779,
+            "city": null
+          },
+          "source": "meilleurs_temps",
+          "fallback": false
+        },
+        "200": {
+          "best": {
+            "time": "2:07.71",
+            "date": "2025-04-11",
+            "points": 678,
+            "city": "Kaposvar"
+          },
           "source": "deep_dive",
-          "error": "bloc_inconnu"
+          "fallback": true
         }
       },
-      "fiche_bloquee": "bloc_inconnu",
       "events": [
         "Girls' 7.5km J3",
         "Girls' 3km Knockout Sprint 14-16"
@@ -7130,14 +7934,109 @@
       ]
     },
     "ANDROVIC|REBEKA GITEL|2009": {
-      "status": "bloc_inconnu_recherche",
+      "status": "ok",
+      "athlete": {
+        "athlete_id": "5343106",
+        "name": "ANDROVIC, Rebeka",
+        "year": "2009",
+        "nation": "ISR",
+        "row": "ANDROVIC, Rebeka 2009 ISR ISR - Olymp Swimclab"
+      },
+      "results": {
+        "400": {
+          "best": {
+            "time": "4:27.83",
+            "date": "2026-05-25",
+            "points": 678,
+            "city": null
+          },
+          "source": "meilleurs_temps",
+          "fallback": false
+        },
+        "800": {
+          "best": {
+            "time": "9:12.59",
+            "date": "2026-05-27",
+            "points": 675,
+            "city": null
+          },
+          "source": "meilleurs_temps",
+          "fallback": false
+        },
+        "1500": {
+          "best": {
+            "time": "17:50.05",
+            "date": "2026-05-23",
+            "points": 636,
+            "city": null
+          },
+          "source": "meilleurs_temps",
+          "fallback": false
+        },
+        "200": {
+          "best": {
+            "time": "2:11.56",
+            "date": "2026-05-26",
+            "points": 620,
+            "city": "Netanya"
+          },
+          "source": "deep_dive",
+          "fallback": false
+        }
+      },
+      "note": "trouve via 'nom seul' - a verifier",
       "events": [
         "Girls' 7.5km J3",
         "Girls' 3km Knockout Sprint"
       ]
     },
     "KOHEN HARFENIST|ZOHAR|2009": {
-      "status": "bloc_inconnu_recherche",
+      "status": "ok",
+      "athlete": {
+        "athlete_id": "5494627",
+        "name": "KOHENHARFENIST, Zohar",
+        "year": "2009",
+        "nation": "ISR",
+        "row": "KOHENHARFENIST, Zohar 2009 ISR ISR - Osso Swimming"
+      },
+      "results": {
+        "200": {
+          "best": {
+            "time": "2:06.79",
+            "date": "2026-05-26",
+            "points": 693,
+            "city": null
+          },
+          "source": "meilleurs_temps",
+          "fallback": false
+        },
+        "400": {
+          "best": {
+            "time": "4:28.13",
+            "date": "2026-05-25",
+            "points": 676,
+            "city": null
+          },
+          "source": "meilleurs_temps",
+          "fallback": false
+        },
+        "800": {
+          "best": {
+            "time": "9:10.39",
+            "date": "2026-05-27",
+            "points": 683,
+            "city": null
+          },
+          "source": "meilleurs_temps",
+          "fallback": false
+        },
+        "1500": {
+          "best": null,
+          "source": "deep_dive",
+          "fallback": false
+        }
+      },
+      "note": "trouve via '1er mot du nom' - a verifier",
       "events": [
         "Girls' 7.5km J3",
         "Girls' 3km Knockout Sprint"
@@ -7199,7 +8098,56 @@
       ]
     },
     "BIAGI|SOFIA|2010": {
-      "status": "bloc_inconnu_recherche",
+      "status": "ok",
+      "athlete": {
+        "athlete_id": "5372161",
+        "name": "BIAGI, Sofia",
+        "year": "2010",
+        "nation": "ITA",
+        "row": "BIAGI, Sofia 2010 ITA ITA - H. Sport ssd - Firenze"
+      },
+      "results": {
+        "800": {
+          "best": {
+            "time": "8:46.47",
+            "date": "2025-08-07",
+            "points": 780,
+            "city": null
+          },
+          "source": "meilleurs_temps",
+          "fallback": false
+        },
+        "1500": {
+          "best": {
+            "time": "16:48.74",
+            "date": "2026-06-26",
+            "points": 759,
+            "city": null
+          },
+          "source": "meilleurs_temps",
+          "fallback": false
+        },
+        "200": {
+          "best": {
+            "time": "2:02.93",
+            "date": "2025-08-06",
+            "points": 760,
+            "city": "Chianciano Terme"
+          },
+          "source": "deep_dive",
+          "fallback": false
+        },
+        "400": {
+          "best": {
+            "time": "4:15.59",
+            "date": "2026-04-18",
+            "points": 781,
+            "city": "Riccione"
+          },
+          "source": "deep_dive",
+          "fallback": false
+        }
+      },
       "events": [
         "Girls' 7.5km J3",
         "Girls' 3km Knockout Sprint 14-16"
@@ -7540,7 +8488,56 @@
       ]
     },
     "FONTANA|SOFIA|2010": {
-      "status": "bloc_inconnu_recherche",
+      "status": "ok",
+      "athlete": {
+        "athlete_id": "5387515",
+        "name": "FONTANA, Sofia",
+        "year": "2010",
+        "nation": "SUI",
+        "row": "FONTANA, Sofia 2010 SUI SUI - Turrita Nuoto"
+      },
+      "results": {
+        "200": {
+          "best": {
+            "time": "2:10.76",
+            "date": "2026-06-27",
+            "points": 632,
+            "city": null
+          },
+          "source": "meilleurs_temps",
+          "fallback": false
+        },
+        "400": {
+          "best": {
+            "time": "4:29.57",
+            "date": "2025-12-20",
+            "points": 665,
+            "city": null
+          },
+          "source": "meilleurs_temps",
+          "fallback": false
+        },
+        "800": {
+          "best": {
+            "time": "9:24.18",
+            "date": "2026-07-11",
+            "points": 634,
+            "city": null
+          },
+          "source": "meilleurs_temps",
+          "fallback": false
+        },
+        "1500": {
+          "best": {
+            "time": "17:55.96",
+            "date": "2026-07-12",
+            "points": 626,
+            "city": null
+          },
+          "source": "meilleurs_temps",
+          "fallback": false
+        }
+      },
       "events": [
         "Girls' 7.5km J3",
         "Girls' 3km Knockout Sprint"
@@ -7919,7 +8916,56 @@
       ]
     },
     "BONDARENKO SOLTS|SOFIA|2012": {
-      "status": "bloc_inconnu_recherche",
+      "status": "ok",
+      "athlete": {
+        "athlete_id": "5596421",
+        "name": "BONDARENKO SOLTS, Sofia",
+        "year": "2012",
+        "nation": "ESP",
+        "row": "BONDARENKO SOLTS, Sofia 2012 ESP ESP - Club Natacion C.M.D. Horadada"
+      },
+      "results": {
+        "200": {
+          "best": {
+            "time": "2:10.06",
+            "date": "2026-03-01",
+            "points": 642,
+            "city": null
+          },
+          "source": "meilleurs_temps",
+          "fallback": false
+        },
+        "400": {
+          "best": {
+            "time": "4:25.99",
+            "date": "2026-03-22",
+            "points": 692,
+            "city": null
+          },
+          "source": "meilleurs_temps",
+          "fallback": false
+        },
+        "800": {
+          "best": {
+            "time": "9:07.74",
+            "date": "2026-03-21",
+            "points": 693,
+            "city": null
+          },
+          "source": "meilleurs_temps",
+          "fallback": false
+        },
+        "1500": {
+          "best": {
+            "time": "17:25.96",
+            "date": "2026-07-18",
+            "points": 681,
+            "city": null
+          },
+          "source": "meilleurs_temps",
+          "fallback": false
+        }
+      },
       "events": [
         "Girls' 5km J1",
         "Girls' 3km Knockout Sprint 14-16"
@@ -8183,7 +9229,37 @@
       ]
     },
     "MEGALOOIKONOMOU|EFFROSYN|2011": {
-      "status": "bloc_inconnu_recherche",
+      "status": "aucune_perf_50m",
+      "athlete": {
+        "athlete_id": "5703187",
+        "name": "MEGALOOIKONOMOU, Eyfrosyni",
+        "year": "2011",
+        "nation": "GRE",
+        "row": "MEGALOOIKONOMOU, Eyfrosyni 2011 GRE GRE - Aopf"
+      },
+      "results": {
+        "200": {
+          "best": null,
+          "source": "meilleurs_temps",
+          "note": "jamais nagé en bassin 50m"
+        },
+        "400": {
+          "best": null,
+          "source": "meilleurs_temps",
+          "note": "jamais nagé en bassin 50m"
+        },
+        "800": {
+          "best": null,
+          "source": "meilleurs_temps",
+          "note": "jamais nagé en bassin 50m"
+        },
+        "1500": {
+          "best": null,
+          "source": "meilleurs_temps",
+          "note": "jamais nagé en bassin 50m"
+        }
+      },
+      "note": "trouve via 'nom seul' - a verifier",
       "events": [
         "Girls' 5km J1",
         "Girls' 3km Knockout Sprint 14-16"
@@ -8351,14 +9427,15 @@
       ]
     },
     "AGLEUTIN|RENATA|2011": {
-      "status": "bloc_inconnu_recherche",
+      "status": "introuvable",
+      "candidates": [],
       "events": [
         "Girls' 5km J1",
         "Girls' 3km Knockout Sprint 14-16"
       ]
     },
     "LEVI|AYALA|2011": {
-      "status": "bloc_inconnu_fiche",
+      "status": "aucune_perf_50m",
       "athlete": {
         "athlete_id": "5603722",
         "name": "LEVI, Ayala",
@@ -8369,40 +9446,216 @@
       "results": {
         "200": {
           "best": null,
-          "source": "deep_dive",
-          "error": "bloc_inconnu"
+          "source": "meilleurs_temps",
+          "note": "jamais nagé en bassin 50m"
         },
         "400": {
           "best": null,
-          "source": "deep_dive",
-          "error": "bloc_inconnu"
+          "source": "meilleurs_temps",
+          "note": "jamais nagé en bassin 50m"
         },
         "800": {
           "best": null,
-          "source": "deep_dive",
-          "error": "bloc_inconnu"
+          "source": "meilleurs_temps",
+          "note": "jamais nagé en bassin 50m"
         },
         "1500": {
           "best": null,
-          "source": "deep_dive",
-          "error": "bloc_inconnu"
+          "source": "meilleurs_temps",
+          "note": "jamais nagé en bassin 50m"
         }
       },
-      "fiche_bloquee": "bloc_inconnu",
       "events": [
         "Girls' 5km J1",
         "Girls' 3km Knockout Sprint 14-16"
       ]
     },
     "RITTER|KAYLA MOLLIE|2011": {
-      "status": "bloc_inconnu_recherche",
+      "status": "introuvable",
+      "candidates": [
+        {
+          "athlete_id": "5645534",
+          "name": "BLUM-RITTER, Peter",
+          "year": "2012",
+          "nation": "AUT",
+          "row": "BLUM-RITTER, Peter 2012 AUT AUT - SC Woergl"
+        },
+        {
+          "athlete_id": "5126302",
+          "name": "BOEHM-RITTER, Birgit",
+          "year": "1977",
+          "nation": "AUT",
+          "row": "BOEHM-RITTER, Birgit 1977 AUT AUT - SU Neusiedl"
+        },
+        {
+          "athlete_id": "5596876",
+          "name": "CONVERSANI RITTER, Gabriel",
+          "year": "2007",
+          "nation": "BRA",
+          "row": "CONVERSANI RITTER, Gabriel 2007 BRA BRA - Aquafoz"
+        },
+        {
+          "athlete_id": "4038689",
+          "name": "RITTER, Adam",
+          "year": "1985",
+          "nation": "USA",
+          "row": "RITTER, Adam 1985 USA USA - Tucson Ford Dealers Aquatics"
+        },
+        {
+          "athlete_id": "4100389",
+          "name": "RITTER, Alexandra",
+          "year": "1993",
+          "nation": "GER",
+          "row": "RITTER, Alexandra 1993 GER GER - Hamburger SC"
+        },
+        {
+          "athlete_id": "4608134",
+          "name": "RITTER, Alexandre",
+          "year": "2002",
+          "nation": "FRA",
+          "row": "RITTER, Alexandre 2002 FRA FRA - Kaysersberg Natation"
+        },
+        {
+          "athlete_id": "5554863",
+          "name": "RITTER, Alicia",
+          "year": "2010",
+          "nation": "GER",
+          "row": "RITTER, Alicia 2010 GER GER - Lintforter SC 1957"
+        },
+        {
+          "athlete_id": "4850878",
+          "name": "RITTER, Amelie",
+          "year": "2003",
+          "nation": "GER",
+          "row": "RITTER, Amelie 2003 GER GER - Dresdner SC 1898"
+        },
+        {
+          "athlete_id": "5398612",
+          "name": "RITTER, Amelie",
+          "year": "2009",
+          "nation": "GER",
+          "row": "RITTER, Amelie 2009 GER GER - Anklamer Peenerobben"
+        },
+        {
+          "athlete_id": "4000451",
+          "name": "RITTER, Amelie",
+          "year": "2001",
+          "nation": "FRA",
+          "row": "RITTER, Amelie 2001 FRA FRA - C.N Du Florival"
+        },
+        {
+          "athlete_id": "5185513",
+          "name": "RITTER, Andrew",
+          "year": "1977",
+          "nation": "AUS",
+          "row": "RITTER, Andrew 1977 AUS AUS - TSA Masters Inc"
+        },
+        {
+          "athlete_id": "4054802",
+          "name": "RITTER, Angela",
+          "year": "1982",
+          "nation": "CAN",
+          "row": "RITTER, Angela 1982 CAN"
+        },
+        {
+          "athlete_id": "4019518",
+          "name": "RITTER, Anja",
+          "year": "1985",
+          "nation": "GER",
+          "row": "RITTER, Anja 1985 GER GER - SG Tbg/Fssv"
+        },
+        {
+          "athlete_id": "4144894",
+          "name": "RITTER, Anja",
+          "year": "1964",
+          "nation": "GER",
+          "row": "RITTER, Anja 1964 GER GER - SG Stadtwerke Muenchen"
+        },
+        {
+          "athlete_id": "5027050",
+          "name": "RITTER, Ann-Kristin",
+          "year": "2004",
+          "nation": "GER",
+          "row": "RITTER, Ann-Kristin 2004 GER GER - Sc JFK Schule Berlin"
+        },
+        {
+          "athlete_id": "5751567",
+          "name": "RITTER, Anna",
+          "year": "2015",
+          "nation": "GER",
+          "row": "RITTER, Anna 2015 GER GER - TSV Bad Saulgau"
+        },
+        {
+          "athlete_id": "5086664",
+          "name": "RITTER, Anne",
+          "year": "2004",
+          "nation": "GER",
+          "row": "RITTER, Anne 2004 GER GER - SK Kaiserslautern"
+        },
+        {
+          "athlete_id": "5195845",
+          "name": "RITTER, Anton",
+          "year": "2005",
+          "nation": "GER",
+          "row": "RITTER, Anton 2005 GER GER - PSV Schwerin"
+        },
+        {
+          "athlete_id": "4757586",
+          "name": "RITTER, Antonia",
+          "year": "1998",
+          "nation": "GER",
+          "row": "RITTER, Antonia 1998 GER GER - TSV Neu-Ulm"
+        },
+        {
+          "athlete_id": "5290016",
+          "name": "RITTER, Artin",
+          "year": "2009",
+          "nation": "AUT",
+          "row": "RITTER, Artin 2009 AUT AUT - Tiroler Wassersportverein"
+        },
+        {
+          "athlete_id": "4091520",
+          "name": "RITTER, Aurica",
+          "year": "1994",
+          "nation": "GER",
+          "row": "RITTER, Aurica 1994 GER GER - Hofheimer SC"
+        },
+        {
+          "athlete_id": "4061872",
+          "name": "RITTER, Benjamin",
+          "year": "1983",
+          "nation": "GER",
+          "row": "RITTER, Benjamin 1983 GER GER - TV Kempten"
+        },
+        {
+          "athlete_id": "4016935",
+          "name": "RITTER, Brigitte",
+          "year": "1981",
+          "nation": "SUI",
+          "row": "RITTER, Brigitte 1981 SUI SUI - Schwimmklub Langnau"
+        },
+        {
+          "athlete_id": "5373280",
+          "name": "RITTER, Carla",
+          "year": "2007",
+          "nation": "GER",
+          "row": "RITTER, Carla 2007 GER GER - SV Teuto-Riesenbeck"
+        },
+        {
+          "athlete_id": "5551313",
+          "name": "RITTER, Catherine S",
+          "year": "2007",
+          "nation": "USA",
+          "row": "RITTER, Catherine S 2007 USA USA - Fanwood-Scotch Plains YMCA"
+        }
+      ],
       "events": [
         "Girls' 5km J1",
         "Girls' 3km Knockout Sprint 14-16"
       ]
     },
     "MALTINI|BEATRICE|2012": {
-      "status": "bloc_inconnu_fiche",
+      "status": "ok",
       "athlete": {
         "athlete_id": "5649578",
         "name": "MALTINI, Beatrice",
@@ -8412,33 +9665,52 @@
       },
       "results": {
         "200": {
-          "best": null,
-          "source": "deep_dive",
-          "error": "bloc_inconnu"
+          "best": {
+            "time": "2:11.77",
+            "date": "2026-05-31",
+            "points": 617,
+            "city": null
+          },
+          "source": "meilleurs_temps",
+          "fallback": false
         },
         "400": {
-          "best": null,
-          "source": "deep_dive",
-          "error": "bloc_inconnu"
+          "best": {
+            "time": "4:29.99",
+            "date": "2026-05-20",
+            "points": 662,
+            "city": null
+          },
+          "source": "meilleurs_temps",
+          "fallback": false
         },
         "800": {
-          "best": null,
-          "source": "deep_dive",
-          "error": "bloc_inconnu"
+          "best": {
+            "time": "9:17.48",
+            "date": "2026-06-21",
+            "points": 657,
+            "city": null
+          },
+          "source": "meilleurs_temps",
+          "fallback": false
         },
         "1500": {
-          "best": null,
-          "source": "deep_dive",
-          "error": "bloc_inconnu"
+          "best": {
+            "time": "17:34.46",
+            "date": "2026-05-21",
+            "points": 665,
+            "city": null
+          },
+          "source": "meilleurs_temps",
+          "fallback": false
         }
       },
-      "fiche_bloquee": "bloc_inconnu",
       "events": [
         "Girls' 5km J1"
       ]
     },
     "SIBILATO|CATERINA|2011": {
-      "status": "bloc_inconnu_fiche",
+      "status": "ok",
       "athlete": {
         "athlete_id": "5475890",
         "name": "SIBILATO, Caterina",
@@ -8448,34 +9720,53 @@
       },
       "results": {
         "200": {
-          "best": null,
+          "best": {
+            "time": "2:11.58",
+            "date": "2025-04-27",
+            "points": 620,
+            "city": "Brescia"
+          },
           "source": "deep_dive",
-          "error": "bloc_inconnu"
+          "fallback": true
         },
         "400": {
-          "best": null,
+          "best": {
+            "time": "4:34.45",
+            "date": "2026-05-02",
+            "points": 630,
+            "city": "Lodi"
+          },
           "source": "deep_dive",
-          "error": "bloc_inconnu"
+          "fallback": false
         },
         "800": {
-          "best": null,
+          "best": {
+            "time": "9:27.06",
+            "date": "2026-06-25",
+            "points": 624,
+            "city": "Lodi"
+          },
           "source": "deep_dive",
-          "error": "bloc_inconnu"
+          "fallback": false
         },
         "1500": {
-          "best": null,
+          "best": {
+            "time": "18:13.27",
+            "date": "2025-08-01",
+            "points": 596,
+            "city": "Chianciano Terme"
+          },
           "source": "deep_dive",
-          "error": "bloc_inconnu"
+          "fallback": false
         }
       },
-      "fiche_bloquee": "bloc_inconnu",
       "events": [
         "Girls' 5km J1",
         "Girls' 3km Knockout Sprint 14-16"
       ]
     },
     "SOLARI|VALENTINA|2011": {
-      "status": "bloc_inconnu_fiche",
+      "status": "ok",
       "athlete": {
         "athlete_id": "5419145",
         "name": "SOLARI, Valentina",
@@ -8484,35 +9775,54 @@
         "row": "SOLARI, Valentina 2011 ITA ITA - Superba Nuoto ssd"
       },
       "results": {
-        "200": {
-          "best": null,
-          "source": "deep_dive",
-          "error": "bloc_inconnu"
-        },
         "400": {
-          "best": null,
-          "source": "deep_dive",
-          "error": "bloc_inconnu"
+          "best": {
+            "time": "4:29.45",
+            "date": "2026-06-13",
+            "points": 666,
+            "city": null
+          },
+          "source": "meilleurs_temps",
+          "fallback": false
         },
         "800": {
-          "best": null,
-          "source": "deep_dive",
-          "error": "bloc_inconnu"
+          "best": {
+            "time": "9:06.42",
+            "date": "2025-08-02",
+            "points": 698,
+            "city": null
+          },
+          "source": "meilleurs_temps",
+          "fallback": false
         },
         "1500": {
-          "best": null,
+          "best": {
+            "time": "17:23.27",
+            "date": "2025-08-01",
+            "points": 686,
+            "city": null
+          },
+          "source": "meilleurs_temps",
+          "fallback": false
+        },
+        "200": {
+          "best": {
+            "time": "2:11.18",
+            "date": "2026-06-21",
+            "points": 626,
+            "city": "Genova"
+          },
           "source": "deep_dive",
-          "error": "bloc_inconnu"
+          "fallback": false
         }
       },
-      "fiche_bloquee": "bloc_inconnu",
       "events": [
         "Girls' 5km J1",
         "Girls' 3km Knockout Sprint 14-16"
       ]
     },
     "BARCZAK|KAROLINA|2011": {
-      "status": "bloc_inconnu_fiche",
+      "status": "ok",
       "athlete": {
         "athlete_id": "4330767",
         "name": "BARCZAK, Karolina",
@@ -8521,49 +9831,134 @@
         "row": "BARCZAK, Karolina 2011 POL POL - MTP KORMORAN Olsztyn"
       },
       "results": {
-        "200": {
-          "best": null,
-          "source": "deep_dive",
-          "error": "bloc_inconnu"
-        },
         "400": {
-          "best": null,
-          "source": "deep_dive",
-          "error": "bloc_inconnu"
+          "best": {
+            "time": "4:31.95",
+            "date": "2026-07-13",
+            "points": 648,
+            "city": null
+          },
+          "source": "meilleurs_temps",
+          "fallback": false
         },
         "800": {
-          "best": null,
-          "source": "deep_dive",
-          "error": "bloc_inconnu"
+          "best": {
+            "time": "9:17.03",
+            "date": "2026-07-11",
+            "points": 659,
+            "city": null
+          },
+          "source": "meilleurs_temps",
+          "fallback": false
         },
         "1500": {
-          "best": null,
+          "best": {
+            "time": "17:34.83",
+            "date": "2026-07-11",
+            "points": 664,
+            "city": null
+          },
+          "source": "meilleurs_temps",
+          "fallback": false
+        },
+        "200": {
+          "best": {
+            "time": "2:17.12",
+            "date": "2025-04-12",
+            "points": 548,
+            "city": "Olsztyn"
+          },
           "source": "deep_dive",
-          "error": "bloc_inconnu"
+          "fallback": true
         }
       },
-      "fiche_bloquee": "bloc_inconnu",
       "events": [
         "Girls' 5km J1",
         "Girls' 3km Knockout Sprint 14-16"
       ]
     },
     "BOMBA|JULIA BEATA|2011": {
-      "status": "bloc_inconnu_recherche",
+      "status": "ok",
+      "athlete": {
+        "athlete_id": "5341063",
+        "name": "BOMBA, Julia",
+        "year": "2011",
+        "nation": "POL",
+        "row": "BOMBA, Julia 2011 POL POL - CSiR MOS Dabrowa Gornicza"
+      },
+      "results": {
+        "200": {
+          "best": {
+            "time": "2:10.68",
+            "date": "2026-07-13",
+            "points": 633,
+            "city": null
+          },
+          "source": "meilleurs_temps",
+          "fallback": false
+        },
+        "400": {
+          "best": {
+            "time": "4:33.48",
+            "date": "2025-11-29",
+            "points": 637,
+            "city": null
+          },
+          "source": "meilleurs_temps",
+          "fallback": false
+        },
+        "800": {
+          "best": {
+            "time": "9:17.88",
+            "date": "2026-07-11",
+            "points": 656,
+            "city": null
+          },
+          "source": "meilleurs_temps",
+          "fallback": false
+        },
+        "1500": {
+          "best": {
+            "time": "17:30.11",
+            "date": "2026-07-11",
+            "points": 673,
+            "city": null
+          },
+          "source": "meilleurs_temps",
+          "fallback": false
+        }
+      },
+      "note": "trouve via 'nom seul' - a verifier",
       "events": [
         "Girls' 5km J1",
         "Girls' 3km Knockout Sprint 14-16"
       ]
     },
     "NIKIEL|EMILIA NATALIA|2011": {
-      "status": "bloc_inconnu_recherche",
+      "status": "ambigu",
+      "matches": [
+        {
+          "athlete_id": "5448025",
+          "name": "NIKIEL, Emilia",
+          "year": "2011",
+          "nation": "POL",
+          "row": "NIKIEL, Emilia 2011 POL POL - MKS Park Wodny Tarnowskie Gory"
+        },
+        {
+          "athlete_id": "5486476",
+          "name": "NIKIEL, Jakub",
+          "year": "2011",
+          "nation": "POL",
+          "row": "NIKIEL, Jakub 2011 POL POL - UKS Nowy Klub Plywacki Bielsko"
+        }
+      ],
       "events": [
         "Girls' 5km J1",
         "Girls' 3km Knockout Sprint 14-16"
       ]
     },
     "GUSEVA|KIRA|2012": {
-      "status": "bloc_inconnu_fiche",
+      "status": "quota_atteint",
       "athlete": {
         "athlete_id": "5897845",
         "name": "GUSEVA, Kira",
@@ -8571,29 +9966,6 @@
         "nation": "RUS",
         "row": "GUSEVA, Kira 2012 RUS RUS - Yaroslavl Region"
       },
-      "results": {
-        "200": {
-          "best": null,
-          "source": "deep_dive",
-          "error": "bloc_inconnu"
-        },
-        "400": {
-          "best": null,
-          "source": "deep_dive",
-          "error": "bloc_inconnu"
-        },
-        "800": {
-          "best": null,
-          "source": "deep_dive",
-          "error": "bloc_inconnu"
-        },
-        "1500": {
-          "best": null,
-          "source": "deep_dive",
-          "error": "bloc_inconnu"
-        }
-      },
-      "fiche_bloquee": "bloc_inconnu",
       "events": [
         "Girls' 5km J1",
         "Girls' 3km Knockout Sprint 14-16"
@@ -9010,7 +10382,7 @@
       ]
     }
   },
-  "generated_on": "2026-07-20",
+  "generated_on": "2026-07-21",
   "window_months": 12,
   "fallback_months": 24,
   "source_rows_uniques": 201,
@@ -10027,7 +11399,7 @@
     },
     {
       "nom": "BIAGI",
-      "prenom": "Soﬁa",
+      "prenom": "Sofia",
       "annee": "2010",
       "nation": "ITA",
       "events": [
@@ -10077,7 +11449,7 @@
     },
     {
       "nom": "FONTANA",
-      "prenom": "Soﬁa",
+      "prenom": "Sofia",
       "annee": "2010",
       "nation": "SUI",
       "events": [
@@ -10147,7 +11519,7 @@
     },
     {
       "nom": "BONDARENKO SOLTS",
-      "prenom": "Soﬁa",
+      "prenom": "Sofia",
       "annee": "2012",
       "nation": "ESP",
       "events": [
@@ -10363,84 +11735,34 @@
       "candidats": null
     },
     {
-      "cle": "TIRRI|GERARDO|2009",
-      "raison": "plafond de consultation atteint — relancer demain",
-      "candidats": null
-    },
-    {
-      "cle": "HAJKO|MARTIN|2009",
-      "raison": "bloqué (bloc_inconnu_fiche)",
-      "candidats": null
-    },
-    {
-      "cle": "KACANI|ADRIAN|2009",
-      "raison": "bloqué (bloc_inconnu_fiche)",
-      "candidats": null
-    },
-    {
-      "cle": "ER|CEMIL CANKAT|2010",
-      "raison": "bloqué (bloc_inconnu_fiche)",
-      "candidats": null
-    },
-    {
-      "cle": "KARADAYI|KAAN|2010",
-      "raison": "bloqué (bloc_inconnu_fiche)",
-      "candidats": null
-    },
-    {
-      "cle": "RODRIGUEZ JUSTO|PEDRO|2011",
-      "raison": "bloqué (bloc_inconnu_fiche)",
-      "candidats": null
-    },
-    {
-      "cle": "SIMON GARRIDO|GUILLERMO|2012",
-      "raison": "bloqué (bloc_inconnu_fiche)",
-      "candidats": null
-    },
-    {
-      "cle": "AMMAR|AKRAM|2011",
-      "raison": "bloqué (bloc_inconnu_fiche)",
-      "candidats": null
-    },
-    {
       "cle": "ENGMANN|MORITZ|2011",
-      "raison": "bloqué (bloc_inconnu_fiche)",
+      "raison": "aucun temps en bassin 50m sur les epreuves ciblees",
       "candidats": null
     },
     {
       "cle": "LAADRAOUI|MOHAMED|2011",
-      "raison": "bloqué (bloc_inconnu_fiche)",
+      "raison": "aucun temps en bassin 50m sur les epreuves ciblees",
       "candidats": null
     },
     {
       "cle": "CHOURDAKIS|DIMITRIOS|2011",
-      "raison": "bloqué (bloc_inconnu_recherche)",
-      "candidats": null
-    },
-    {
-      "cle": "PANTERIS|IOANNIS|2011",
-      "raison": "bloqué (bloc_inconnu_fiche)",
-      "candidats": null
-    },
-    {
-      "cle": "GENEST|MATTEO|2011",
-      "raison": "bloqué (bloc_inconnu_fiche)",
-      "candidats": null
-    },
-    {
-      "cle": "PANNONHALMI|LAZAR ELEMER|2011",
-      "raison": "bloqué (bloc_inconnu_recherche)",
-      "candidats": null
-    },
-    {
-      "cle": "SARKANY|ZETENY|2011",
-      "raison": "bloqué (bloc_inconnu_fiche)",
-      "candidats": null
-    },
-    {
-      "cle": "NINIO MEITAL|MICHAEL|2011",
-      "raison": "bloqué (bloc_inconnu_recherche)",
-      "candidats": null
+      "raison": "introuvable",
+      "candidats": [
+        {
+          "athlete_id": "5312466",
+          "name": "CHOURDAKIS, Emmanouil",
+          "year": "1972",
+          "nation": "GRE",
+          "row": "CHOURDAKIS, Emmanouil 1972 GRE"
+        },
+        {
+          "athlete_id": "5532340",
+          "name": "CHOURDAKIS, Konstantinos",
+          "year": "2009",
+          "nation": "GRE",
+          "row": "CHOURDAKIS, Konstantinos 2009 GRE GRE - Athlitikos Omilos Tritonas Ira"
+        }
+      ]
     },
     {
       "cle": "WEISS|DOR|2011",
@@ -10457,33 +11779,214 @@
     },
     {
       "cle": "ADELFIO|MARCO|2011",
-      "raison": "bloqué (bloc_inconnu_fiche)",
+      "raison": "aucun temps en bassin 50m sur les epreuves ciblees",
       "candidats": null
     },
     {
       "cle": "ARDITO|MANFREDI|2011",
-      "raison": "bloqué (bloc_inconnu_fiche)",
-      "candidats": null
-    },
-    {
-      "cle": "DEL GIUDICE|ALDO|2011",
-      "raison": "bloqué (bloc_inconnu_fiche)",
+      "raison": "aucun temps en bassin 50m sur les epreuves ciblees",
       "candidats": null
     },
     {
       "cle": "KACZMAREK|MIKOLAJ PIOTR|2011",
-      "raison": "bloqué (bloc_inconnu_recherche)",
-      "candidats": null
+      "raison": "plusieurs correspondances",
+      "candidats": [
+        {
+          "athlete_id": "5231562",
+          "name": "KACZMAREK, Aleksander",
+          "year": "2011",
+          "nation": "POL",
+          "row": "KACZMAREK, Aleksander 2011 POL POL - KS POSNANIA Poznan"
+        },
+        {
+          "athlete_id": "5502313",
+          "name": "KACZMAREK, Anastazja",
+          "year": "2011",
+          "nation": "POL",
+          "row": "KACZMAREK, Anastazja 2011 POL POL - UKS Olimp Gorzow Wlkp."
+        }
+      ]
     },
     {
       "cle": "PROKOP|WOJCIECH MIROSLAW|2011",
-      "raison": "bloqué (bloc_inconnu_recherche)",
-      "candidats": null
-    },
-    {
-      "cle": "NOSOV|ALAN|2011",
-      "raison": "bloqué (bloc_inconnu_fiche)",
-      "candidats": null
+      "raison": "introuvable",
+      "candidats": [
+        {
+          "athlete_id": "4779441",
+          "name": "BLAZEK, Prokop",
+          "year": "2003",
+          "nation": "CZE",
+          "row": "BLAZEK, Prokop 2003 CZE CZE - TJ Frenstat pod Radhostem"
+        },
+        {
+          "athlete_id": "5103381",
+          "name": "CIHLAR, Prokop",
+          "year": "2006",
+          "nation": "CZE",
+          "row": "CIHLAR, Prokop 2006 CZE CZE - TJ Vodni stavby Praha"
+        },
+        {
+          "athlete_id": "5532035",
+          "name": "DIMITROS, Prokopios",
+          "year": "2008",
+          "nation": "GRE",
+          "row": "DIMITROS, Prokopios 2008 GRE GRE - Athlitikos Syllogos Kollegiou"
+        },
+        {
+          "athlete_id": "5742427",
+          "name": "FLACHS, Prokop",
+          "year": "2012",
+          "nation": "CZE",
+          "row": "FLACHS, Prokop 2012 CZE CZE - PSK Olymp Praha"
+        },
+        {
+          "athlete_id": "5783537",
+          "name": "GAVRILOVS, Prokops",
+          "year": "2015",
+          "nation": "LAT",
+          "row": "GAVRILOVS, Prokops 2015 LAT LAT - Jelgavas SPS"
+        },
+        {
+          "athlete_id": "4475431",
+          "name": "GIANNIS, Konstadinos-Prokopi",
+          "year": "1998",
+          "nation": "GRE",
+          "row": "GIANNIS, Konstadinos-Prokopi 1998 GRE GRE - Anoargyr"
+        },
+        {
+          "athlete_id": "4124400",
+          "name": "KALIMERIS, Prokopios",
+          "year": "1992",
+          "nation": "GRE",
+          "row": "KALIMERIS, Prokopios 1992 GRE GRE - Akmspkoz"
+        },
+        {
+          "athlete_id": "5063730",
+          "name": "MARTINEK, Prokop",
+          "year": "1999",
+          "nation": "CZE",
+          "row": "MARTINEK, Prokop 1999 CZE CZE - SK Motorlet Praha"
+        },
+        {
+          "athlete_id": "4737794",
+          "name": "PANCHENKO-PROKOPIEV, Gleb",
+          "year": "1999",
+          "nation": "EST",
+          "row": "PANCHENKO-PROKOPIEV, Gleb 1999 EST EST - Sillamae Ujumisklubi Kalev"
+        },
+        {
+          "athlete_id": "4688999",
+          "name": "PROKOP, Alicja",
+          "year": "1997",
+          "nation": "POL",
+          "row": "PROKOP, Alicja 1997 POL POL - KS Olimpia Lublin"
+        },
+        {
+          "athlete_id": "5466392",
+          "name": "PROKOP, Andrzej",
+          "year": "2013",
+          "nation": "POL",
+          "row": "PROKOP, Andrzej 2013 POL POL - MKS DELFINEK Lukow"
+        },
+        {
+          "athlete_id": "5762715",
+          "name": "PROKOP, Ania",
+          "year": "2012",
+          "nation": "POL",
+          "row": "PROKOP, Ania 2012 POL POL - Atut Czestochowa"
+        },
+        {
+          "athlete_id": "4857155",
+          "name": "PROKOP, Anna Karina",
+          "year": "1999",
+          "nation": "GER",
+          "row": "PROKOP, Anna Karina 1999 GER GER - SG Essen"
+        },
+        {
+          "athlete_id": "5455129",
+          "name": "PROKOP, Antonina",
+          "year": "2010",
+          "nation": "POL",
+          "row": "PROKOP, Antonina 2010 POL POL - UKS SKARPA Lublin"
+        },
+        {
+          "athlete_id": "5688543",
+          "name": "PROKOP, Barbara",
+          "year": "2014",
+          "nation": "POL",
+          "row": "PROKOP, Barbara 2014 POL POL - MKP Szczecin"
+        },
+        {
+          "athlete_id": "5903320",
+          "name": "PROKOP, Bartosz",
+          "year": "2017",
+          "nation": "POL",
+          "row": "PROKOP, Bartosz 2017 POL POL - Vega Dobrodzien"
+        },
+        {
+          "athlete_id": "4850656",
+          "name": "PROKOP, Bartosz",
+          "year": "2002",
+          "nation": "POL",
+          "row": "PROKOP, Bartosz 2002 POL POL - UKS Manta Kochlowice Ruda Slas"
+        },
+        {
+          "athlete_id": "4274207",
+          "name": "PROKOP, Bojan",
+          "year": "1981",
+          "nation": "CRO",
+          "row": "PROKOP, Bojan 1981 CRO CRO - Primorje"
+        },
+        {
+          "athlete_id": "5629676",
+          "name": "PROKOP, Eduard",
+          "year": "2010",
+          "nation": "CZE",
+          "row": "PROKOP, Eduard 2010 CZE"
+        },
+        {
+          "athlete_id": "5103051",
+          "name": "PROKOP, Franciszek",
+          "year": "2006",
+          "nation": "POL",
+          "row": "PROKOP, Franciszek 2006 POL POL - UKS POLONEZ Wyszkow"
+        },
+        {
+          "athlete_id": "5455130",
+          "name": "PROKOP, Ignacy",
+          "year": "2010",
+          "nation": "POL",
+          "row": "PROKOP, Ignacy 2010 POL POL - UKS SP5 Swim Lublin"
+        },
+        {
+          "athlete_id": "5210251",
+          "name": "PROKOP, Jakub",
+          "year": "2005",
+          "nation": "POL",
+          "row": "PROKOP, Jakub 2005 POL POL - MKS DELFINEK Lukow"
+        },
+        {
+          "athlete_id": "4370179",
+          "name": "PROKOP, Jan",
+          "year": "1998",
+          "nation": "CZE",
+          "row": "PROKOP, Jan 1998 CZE CZE - SC Plavec.areal Pardubice"
+        },
+        {
+          "athlete_id": "5132439",
+          "name": "PROKOP, Joseph S",
+          "year": "1999",
+          "nation": "USA",
+          "row": "PROKOP, Joseph S 1999 USA USA - Premier Aquatics Club of Klein"
+        },
+        {
+          "athlete_id": "5113876",
+          "name": "PROKOP, Julia",
+          "year": "2006",
+          "nation": "POL",
+          "row": "PROKOP, Julia 2006 POL POL - Siodemka Sopot"
+        }
+      ]
     },
     {
       "cle": "ULIANYCHEV|MAKAR|2011",
@@ -10492,13 +11995,189 @@
     },
     {
       "cle": "HAFELINGER|JANNIK|2010",
-      "raison": "bloqué (bloc_inconnu_recherche)",
+      "raison": "introuvable",
       "candidats": null
     },
     {
       "cle": "VARGA|ZSOMBOR HUBA|2010",
-      "raison": "bloqué (bloc_inconnu_recherche)",
-      "candidats": null
+      "raison": "introuvable",
+      "candidats": [
+        {
+          "athlete_id": "5888164",
+          "name": "ABAD VARGAS, Julia",
+          "year": "2018",
+          "nation": "ESP",
+          "row": "ABAD VARGAS, Julia 2018 ESP ESP - P. San Agustin"
+        },
+        {
+          "athlete_id": "5409216",
+          "name": "ABARCA VARGAS, Sira",
+          "year": "2015",
+          "nation": "ESP",
+          "row": "ABARCA VARGAS, Sira 2015 ESP ESP - G.E.Nautics De Roses"
+        },
+        {
+          "athlete_id": "5591281",
+          "name": "ABRIN VARGAS, Habibi Monserr",
+          "year": "2005",
+          "nation": "MEX",
+          "row": "ABRIN VARGAS, Habibi Monserr 2005 MEX MEX - Nuevo Leon"
+        },
+        {
+          "athlete_id": "4236652",
+          "name": "ANDRADE, Vasco Vargas",
+          "year": "1994",
+          "nation": "POR",
+          "row": "ANDRADE, Vasco Vargas 1994 POR POR - Naval da Horta"
+        },
+        {
+          "athlete_id": "4203933",
+          "name": "ARRIAGA VARGAS, Jonathan",
+          "year": "1991",
+          "nation": "ESP",
+          "row": "ARRIAGA VARGAS, Jonathan 1991 ESP ESP - C.N. Prat Llobregat"
+        },
+        {
+          "athlete_id": "4347208",
+          "name": "ARRIAGA VARGAS, Kilian",
+          "year": "1996",
+          "nation": "ESP",
+          "row": "ARRIAGA VARGAS, Kilian 1996 ESP ESP - C.N. Prat Llobregat"
+        },
+        {
+          "athlete_id": "5130460",
+          "name": "ARTEAGA VARGAS, Eimy",
+          "year": "2002",
+          "nation": "ESP",
+          "row": "ARTEAGA VARGAS, Eimy 2002 ESP ESP - Club Natacion Marina-Cartagena \"Ancora\""
+        },
+        {
+          "athlete_id": "5327811",
+          "name": "BOSCH VARGAS, Roger",
+          "year": "2017",
+          "nation": "ESP",
+          "row": "BOSCH VARGAS, Roger 2017 ESP ESP - C.N. Minorisa"
+        },
+        {
+          "athlete_id": "5781867",
+          "name": "CARNEIRO, Santiago Vargas",
+          "year": "2015",
+          "nation": "POR",
+          "row": "CARNEIRO, Santiago Vargas 2015 POR POR - Natacao de Fafe"
+        },
+        {
+          "athlete_id": "5477348",
+          "name": "CARRETERO VARGAS, Helena",
+          "year": "2009",
+          "nation": "ESP",
+          "row": "CARRETERO VARGAS, Helena 2009 ESP ESP - C.N. Axarquia"
+        },
+        {
+          "athlete_id": "4497652",
+          "name": "CHAVES VARGAS, Dennis",
+          "year": "1974",
+          "nation": "CRC",
+          "row": "CHAVES VARGAS, Dennis 1974 CRC"
+        },
+        {
+          "athlete_id": "4825748",
+          "name": "CONSUEGRA VARGAS, Carmen",
+          "year": "1997",
+          "nation": "ESP",
+          "row": "CONSUEGRA VARGAS, Carmen 1997 ESP ESP - Navial"
+        },
+        {
+          "athlete_id": "4433885",
+          "name": "CONSUEGRA VARGAS, Ma del Carmen",
+          "year": "1997",
+          "nation": "ESP",
+          "row": "CONSUEGRA VARGAS, Ma del Carmen 1997 ESP ESP - Navial"
+        },
+        {
+          "athlete_id": "4345076",
+          "name": "COSTA VARGAS, Daniel",
+          "year": "1994",
+          "nation": "ESP",
+          "row": "COSTA VARGAS, Daniel 1994 ESP ESP - C.N. Cornella"
+        },
+        {
+          "athlete_id": "5099078",
+          "name": "CUETO VARGAS, Ashley Michell",
+          "year": "1998",
+          "nation": "MEX",
+          "row": "CUETO VARGAS, Ashley Michell 1998 MEX"
+        },
+        {
+          "athlete_id": "4185128",
+          "name": "DAVID, Varga",
+          "year": "1989",
+          "nation": "HUN",
+          "row": "DAVID, Varga 1989 HUN HUN - Tatabanyai Vizmu SE"
+        },
+        {
+          "athlete_id": "5492142",
+          "name": "DE ALFREDO VARGAS, Ricardo",
+          "year": "2006",
+          "nation": "ESP",
+          "row": "DE ALFREDO VARGAS, Ricardo 2006 ESP ESP - C.N. Sabadell"
+        },
+        {
+          "athlete_id": "5541545",
+          "name": "DE LA TORRE VARGAS, Daniel",
+          "year": "2009",
+          "nation": "ESP",
+          "row": "DE LA TORRE VARGAS, Daniel 2009 ESP ESP - C.N. San Fernando De Henares"
+        },
+        {
+          "athlete_id": "4383361",
+          "name": "DE LA VARGA VALLCORB, Fco. Javier",
+          "year": "1962",
+          "nation": "ESP",
+          "row": "DE LA VARGA VALLCORB, Fco. Javier 1962 ESP ESP - A. Master Baleares"
+        },
+        {
+          "athlete_id": "4736613",
+          "name": "DE VARGAS, Kylian",
+          "year": "2003",
+          "nation": "FRA",
+          "row": "DE VARGAS, Kylian 2003 FRA FRA - Ems Bron"
+        },
+        {
+          "athlete_id": "4645277",
+          "name": "DE VARGAS, Sophie",
+          "year": "1980",
+          "nation": "FRA",
+          "row": "DE VARGAS, Sophie 1980 FRA FRA - Cmo Vénissieux"
+        },
+        {
+          "athlete_id": "5399446",
+          "name": "DIAZ VARGAS, Erick Elian",
+          "year": "2009",
+          "nation": "ITA",
+          "row": "DIAZ VARGAS, Erick Elian 2009 ITA ITA - Stelle Marine ssd"
+        },
+        {
+          "athlete_id": "5447283",
+          "name": "DIEZ VARGAS, Rafael",
+          "year": "2012",
+          "nation": "ESP",
+          "row": "DIEZ VARGAS, Rafael 2012 ESP ESP - C.D. Natacion Andujar"
+        },
+        {
+          "athlete_id": "5256252",
+          "name": "EGUIDON VARGAS, Iraia",
+          "year": "2009",
+          "nation": "ESP",
+          "row": "EGUIDON VARGAS, Iraia 2009 ESP ESP - C.N. Menditxo"
+        },
+        {
+          "athlete_id": "5708588",
+          "name": "EGUIDON VARGAS, Maren",
+          "year": "2013",
+          "nation": "ESP",
+          "row": "EGUIDON VARGAS, Maren 2013 ESP ESP - C.N. Menditxo"
+        }
+      ]
     },
     {
       "cle": "MADLER|SOPHIE|2007",
@@ -10517,17 +12196,7 @@
     },
     {
       "cle": "NIKIFOROVA|DARIA|2007",
-      "raison": "bloqué (bloc_inconnu_fiche)",
-      "candidats": null
-    },
-    {
-      "cle": "MOJSILOVIC MEZNARIC|ZALA|2008",
-      "raison": "bloqué (bloc_inconnu_fiche)",
-      "candidats": null
-    },
-    {
-      "cle": "PEKNUSOVA|SOPHIA|2008",
-      "raison": "bloqué (bloc_inconnu_fiche)",
+      "raison": "aucun temps en bassin 50m sur les epreuves ciblees",
       "candidats": null
     },
     {
@@ -10536,38 +12205,8 @@
       "candidats": null
     },
     {
-      "cle": "BARTALOS|ANNA|2010",
-      "raison": "bloqué (bloc_inconnu_fiche)",
-      "candidats": null
-    },
-    {
-      "cle": "ANDROVIC|REBEKA GITEL|2009",
-      "raison": "bloqué (bloc_inconnu_recherche)",
-      "candidats": null
-    },
-    {
-      "cle": "KOHEN HARFENIST|ZOHAR|2009",
-      "raison": "bloqué (bloc_inconnu_recherche)",
-      "candidats": null
-    },
-    {
-      "cle": "BIAGI|SOFIA|2010",
-      "raison": "bloqué (bloc_inconnu_recherche)",
-      "candidats": null
-    },
-    {
-      "cle": "FONTANA|SOFIA|2010",
-      "raison": "bloqué (bloc_inconnu_recherche)",
-      "candidats": null
-    },
-    {
       "cle": "DURANDT|SHARLI|2011",
       "raison": "aucun temps en bassin 50m sur les epreuves ciblees",
-      "candidats": null
-    },
-    {
-      "cle": "BONDARENKO SOLTS|SOFIA|2012",
-      "raison": "bloqué (bloc_inconnu_recherche)",
       "candidats": null
     },
     {
@@ -10577,57 +12216,223 @@
     },
     {
       "cle": "MEGALOOIKONOMOU|EFFROSYN|2011",
-      "raison": "bloqué (bloc_inconnu_recherche)",
+      "raison": "aucun temps en bassin 50m sur les epreuves ciblees",
       "candidats": null
     },
     {
       "cle": "AGLEUTIN|RENATA|2011",
-      "raison": "bloqué (bloc_inconnu_recherche)",
+      "raison": "introuvable",
       "candidats": null
     },
     {
       "cle": "LEVI|AYALA|2011",
-      "raison": "bloqué (bloc_inconnu_fiche)",
+      "raison": "aucun temps en bassin 50m sur les epreuves ciblees",
       "candidats": null
     },
     {
       "cle": "RITTER|KAYLA MOLLIE|2011",
-      "raison": "bloqué (bloc_inconnu_recherche)",
-      "candidats": null
-    },
-    {
-      "cle": "MALTINI|BEATRICE|2012",
-      "raison": "bloqué (bloc_inconnu_fiche)",
-      "candidats": null
-    },
-    {
-      "cle": "SIBILATO|CATERINA|2011",
-      "raison": "bloqué (bloc_inconnu_fiche)",
-      "candidats": null
-    },
-    {
-      "cle": "SOLARI|VALENTINA|2011",
-      "raison": "bloqué (bloc_inconnu_fiche)",
-      "candidats": null
-    },
-    {
-      "cle": "BARCZAK|KAROLINA|2011",
-      "raison": "bloqué (bloc_inconnu_fiche)",
-      "candidats": null
-    },
-    {
-      "cle": "BOMBA|JULIA BEATA|2011",
-      "raison": "bloqué (bloc_inconnu_recherche)",
-      "candidats": null
+      "raison": "introuvable",
+      "candidats": [
+        {
+          "athlete_id": "5645534",
+          "name": "BLUM-RITTER, Peter",
+          "year": "2012",
+          "nation": "AUT",
+          "row": "BLUM-RITTER, Peter 2012 AUT AUT - SC Woergl"
+        },
+        {
+          "athlete_id": "5126302",
+          "name": "BOEHM-RITTER, Birgit",
+          "year": "1977",
+          "nation": "AUT",
+          "row": "BOEHM-RITTER, Birgit 1977 AUT AUT - SU Neusiedl"
+        },
+        {
+          "athlete_id": "5596876",
+          "name": "CONVERSANI RITTER, Gabriel",
+          "year": "2007",
+          "nation": "BRA",
+          "row": "CONVERSANI RITTER, Gabriel 2007 BRA BRA - Aquafoz"
+        },
+        {
+          "athlete_id": "4038689",
+          "name": "RITTER, Adam",
+          "year": "1985",
+          "nation": "USA",
+          "row": "RITTER, Adam 1985 USA USA - Tucson Ford Dealers Aquatics"
+        },
+        {
+          "athlete_id": "4100389",
+          "name": "RITTER, Alexandra",
+          "year": "1993",
+          "nation": "GER",
+          "row": "RITTER, Alexandra 1993 GER GER - Hamburger SC"
+        },
+        {
+          "athlete_id": "4608134",
+          "name": "RITTER, Alexandre",
+          "year": "2002",
+          "nation": "FRA",
+          "row": "RITTER, Alexandre 2002 FRA FRA - Kaysersberg Natation"
+        },
+        {
+          "athlete_id": "5554863",
+          "name": "RITTER, Alicia",
+          "year": "2010",
+          "nation": "GER",
+          "row": "RITTER, Alicia 2010 GER GER - Lintforter SC 1957"
+        },
+        {
+          "athlete_id": "4850878",
+          "name": "RITTER, Amelie",
+          "year": "2003",
+          "nation": "GER",
+          "row": "RITTER, Amelie 2003 GER GER - Dresdner SC 1898"
+        },
+        {
+          "athlete_id": "5398612",
+          "name": "RITTER, Amelie",
+          "year": "2009",
+          "nation": "GER",
+          "row": "RITTER, Amelie 2009 GER GER - Anklamer Peenerobben"
+        },
+        {
+          "athlete_id": "4000451",
+          "name": "RITTER, Amelie",
+          "year": "2001",
+          "nation": "FRA",
+          "row": "RITTER, Amelie 2001 FRA FRA - C.N Du Florival"
+        },
+        {
+          "athlete_id": "5185513",
+          "name": "RITTER, Andrew",
+          "year": "1977",
+          "nation": "AUS",
+          "row": "RITTER, Andrew 1977 AUS AUS - TSA Masters Inc"
+        },
+        {
+          "athlete_id": "4054802",
+          "name": "RITTER, Angela",
+          "year": "1982",
+          "nation": "CAN",
+          "row": "RITTER, Angela 1982 CAN"
+        },
+        {
+          "athlete_id": "4019518",
+          "name": "RITTER, Anja",
+          "year": "1985",
+          "nation": "GER",
+          "row": "RITTER, Anja 1985 GER GER - SG Tbg/Fssv"
+        },
+        {
+          "athlete_id": "4144894",
+          "name": "RITTER, Anja",
+          "year": "1964",
+          "nation": "GER",
+          "row": "RITTER, Anja 1964 GER GER - SG Stadtwerke Muenchen"
+        },
+        {
+          "athlete_id": "5027050",
+          "name": "RITTER, Ann-Kristin",
+          "year": "2004",
+          "nation": "GER",
+          "row": "RITTER, Ann-Kristin 2004 GER GER - Sc JFK Schule Berlin"
+        },
+        {
+          "athlete_id": "5751567",
+          "name": "RITTER, Anna",
+          "year": "2015",
+          "nation": "GER",
+          "row": "RITTER, Anna 2015 GER GER - TSV Bad Saulgau"
+        },
+        {
+          "athlete_id": "5086664",
+          "name": "RITTER, Anne",
+          "year": "2004",
+          "nation": "GER",
+          "row": "RITTER, Anne 2004 GER GER - SK Kaiserslautern"
+        },
+        {
+          "athlete_id": "5195845",
+          "name": "RITTER, Anton",
+          "year": "2005",
+          "nation": "GER",
+          "row": "RITTER, Anton 2005 GER GER - PSV Schwerin"
+        },
+        {
+          "athlete_id": "4757586",
+          "name": "RITTER, Antonia",
+          "year": "1998",
+          "nation": "GER",
+          "row": "RITTER, Antonia 1998 GER GER - TSV Neu-Ulm"
+        },
+        {
+          "athlete_id": "5290016",
+          "name": "RITTER, Artin",
+          "year": "2009",
+          "nation": "AUT",
+          "row": "RITTER, Artin 2009 AUT AUT - Tiroler Wassersportverein"
+        },
+        {
+          "athlete_id": "4091520",
+          "name": "RITTER, Aurica",
+          "year": "1994",
+          "nation": "GER",
+          "row": "RITTER, Aurica 1994 GER GER - Hofheimer SC"
+        },
+        {
+          "athlete_id": "4061872",
+          "name": "RITTER, Benjamin",
+          "year": "1983",
+          "nation": "GER",
+          "row": "RITTER, Benjamin 1983 GER GER - TV Kempten"
+        },
+        {
+          "athlete_id": "4016935",
+          "name": "RITTER, Brigitte",
+          "year": "1981",
+          "nation": "SUI",
+          "row": "RITTER, Brigitte 1981 SUI SUI - Schwimmklub Langnau"
+        },
+        {
+          "athlete_id": "5373280",
+          "name": "RITTER, Carla",
+          "year": "2007",
+          "nation": "GER",
+          "row": "RITTER, Carla 2007 GER GER - SV Teuto-Riesenbeck"
+        },
+        {
+          "athlete_id": "5551313",
+          "name": "RITTER, Catherine S",
+          "year": "2007",
+          "nation": "USA",
+          "row": "RITTER, Catherine S 2007 USA USA - Fanwood-Scotch Plains YMCA"
+        }
+      ]
     },
     {
       "cle": "NIKIEL|EMILIA NATALIA|2011",
-      "raison": "bloqué (bloc_inconnu_recherche)",
-      "candidats": null
+      "raison": "plusieurs correspondances",
+      "candidats": [
+        {
+          "athlete_id": "5448025",
+          "name": "NIKIEL, Emilia",
+          "year": "2011",
+          "nation": "POL",
+          "row": "NIKIEL, Emilia 2011 POL POL - MKS Park Wodny Tarnowskie Gory"
+        },
+        {
+          "athlete_id": "5486476",
+          "name": "NIKIEL, Jakub",
+          "year": "2011",
+          "nation": "POL",
+          "row": "NIKIEL, Jakub 2011 POL POL - UKS Nowy Klub Plywacki Bielsko"
+        }
+      ]
     },
     {
       "cle": "GUSEVA|KIRA|2012",
-      "raison": "bloqué (bloc_inconnu_fiche)",
+      "raison": "plafond de consultation atteint — relancer demain",
       "candidats": null
     },
     {

@@ -297,9 +297,20 @@ function sorted(){
    ONGLETS
    ===================================================================== */
 function switchGenre(g){
-  G=g; EV=null; NOC_FILT=null; closePanel();
+  /* Conserver l'épreuve équivalente dans le nouveau genre si elle existe */
+  var prevShort = EV ? evShort(EV) : null;
+  G=g; NOC_FILT=null; closePanel();
   document.getElementById("tf").classList.toggle("on",g==="Girls");
   document.getElementById("th").classList.toggle("on",g==="Boys");
+  /* Chercher l'épreuve du même type dans le nouveau genre */
+  if(prevShort){
+    var prefix = g==="Girls" ? "Girls' " : "Boys' ";
+    var candidate = prefix + prevShort;
+    var evs = listeEvents(g);
+    EV = evs.indexOf(candidate)!==-1 ? candidate : null;
+  } else {
+    EV = null;
+  }
   buildEvTabs(); buildChips(); renderPonton(); setTop();
   if(EV) mUpdateForEvent(EV,G);
 }
@@ -625,7 +636,7 @@ function boot(){
   buildEvTabs(); buildChips(); renderPonton(); setTop();
   window.addEventListener("resize",function(){ setTop(); renderPonton(); });
   if(EV) mUpdateForEvent(EV,G);
-  if(EV_FILTER&&EV_FILTER.length) document.getElementById("hdr-back").style.display="block";
+  if((EV_FILTER&&EV_FILTER.length)||new URLSearchParams(window.location.search).get('ev')) document.getElementById("hdr-back").style.display="block";
 }
 
 

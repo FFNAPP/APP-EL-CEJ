@@ -436,10 +436,11 @@ function athleteEvents(memberId){
   return [];
 }
 
-function pontonUrl(evs){
-  /* evs = tableau ou string */
+function pontonUrl(evs, staff){
+  /* evs = tableau ou string, staff=true -> navigation libre */
   var arr = Array.isArray(evs) ? evs : [evs];
   var g = arr[0].startsWith("Girls") ? "Girls" : "Boys";
+  if(staff) return "ponton_cej_2026.html?g="+g;
   var evsParam = arr.map(function(e){ return encodeURIComponent(e); }).join('|');
   return "ponton_cej_2026.html?g="+g+"&evs="+evsParam;
 }
@@ -483,7 +484,7 @@ function renderPontons(){
       ["Girls' 3km Knockout Sprint 14-16","KO Sprint Filles U16"],["Boys' 3km Knockout Sprint 14-16","KO Sprint Gar\u00e7ons U16"]
     ];
     epreuves.forEach(function(ep){
-      h += '<a class="ponton-link" href="'+pontonUrl(ep[0])+'">';
+      h += '<a class="ponton-link" href="'+pontonUrl(ep[0], true)+'">';
       h += '<div class="ponton-link-info"><div class="ponton-link-title">'+esc(ep[1])+'</div>';
       h += '<div class="ponton-link-sub">Ponton CEJ 2026</div></div>';
       h += '<div class="ponton-link-arrow">\u2192</div></a>';

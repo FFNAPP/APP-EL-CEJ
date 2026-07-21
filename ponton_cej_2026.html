@@ -270,9 +270,12 @@ function engages(ev){
   for(var k in DATA.swimmers){
     var s=DATA.swimmers[k];
     if((s.events||[]).indexOf(ev)>=0){
+      var a=s.athlete||{};
       var b15=bestOf(s,"1500");
-      out.push({cle:k, sw:s, nom:nomCourt(s.athlete.name), noc:s.athlete.nation||"",
-                annee:s.athlete.year||"", v1500:vit(s,"1500"), v400:vit(s,"400"),
+      out.push({cle:k, sw:s,
+                nom:a.name?nomCourt(a.name):k.split("|").slice(0,2).join(" "),
+                noc:a.nation||"", annee:a.year||"",
+                v1500:vit(s,"1500"), v400:vit(s,"400"),
                 pts:b15?b15.best.points:null, fb:b15?!!b15.fallback:false});
     }
   }

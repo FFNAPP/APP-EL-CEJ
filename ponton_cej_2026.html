@@ -610,14 +610,16 @@ function boot(){
   document.getElementById("hdr-title").textContent=CONFIG.titre;
   document.getElementById("hdr-sub").textContent=
     CONFIG.sous_titre+"  \u00b7  donn\u00e9es bassin du "+fmtDate(DATA.generated_on);
-  /* Lire les paramètres URL ?g=Girls&evs=ev1|ev2 */
+  /* Lire les paramètres URL ?g=Girls&evs=ev1|ev2 (filtre athlète) ou ?g=Girls&ev=ev1 (staff) */
   try{
     var params=new URLSearchParams(window.location.search);
-    var pg=params.get('g'); var pevs=params.get('evs');
+    var pg=params.get('g'); var pevs=params.get('evs'); var pev=params.get('ev');
     if(pg==='Girls'||pg==='Boys') G=pg;
     if(pevs){
       EV_FILTER=pevs.split('|').map(function(s){ return decodeURIComponent(s); });
       EV=EV_FILTER[0];
+    } else if(pev){
+      EV=decodeURIComponent(pev); /* staff : épreuve initiale, pas de filtre */
     }
   }catch(e){}
   buildEvTabs(); buildChips(); renderPonton(); setTop();

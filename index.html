@@ -437,10 +437,11 @@ function athleteEvents(memberId){
 }
 
 function pontonUrl(evs, staff){
-  /* evs = tableau ou string, staff=true -> navigation libre */
+  /* evs = tableau ou string
+     staff=true -> navigation libre (pas de filtre, mais genre+ev initiaux) */
   var arr = Array.isArray(evs) ? evs : [evs];
   var g = arr[0].startsWith("Girls") ? "Girls" : "Boys";
-  if(staff) return "ponton_cej_2026.html?g="+g;
+  if(staff) return "ponton_cej_2026.html?g="+g+"&ev="+encodeURIComponent(arr[0]);
   var evsParam = arr.map(function(e){ return encodeURIComponent(e); }).join('|');
   return "ponton_cej_2026.html?g="+g+"&evs="+evsParam;
 }

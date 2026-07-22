@@ -280,8 +280,8 @@
       "date": "2026-07-24",
       "type": "navette_depart",
       "nom": "",
-      "heure_debut": "07:40",
-      "heure_fin": "08:00",
+      "heure_debut": "07:45",
+      "heure_fin": "08:05",
       "detail": "5K",
       "lieu": "",
       "participants": [
@@ -342,8 +342,8 @@
       "date": "2026-07-25",
       "type": "navette_depart",
       "nom": "",
-      "heure_debut": "07:40",
-      "heure_fin": "08:00",
+      "heure_debut": "07:45",
+      "heure_fin": "08:05",
       "detail": "KO U19 Garcons",
       "lieu": "",
       "participants": [
@@ -442,32 +442,6 @@
       ],
       "note": "",
       "source": "Depart spectateur KO ? - 15h30"
-    },
-    {
-      "id": "e26",
-      "date": "2026-07-26",
-      "type": "echauffement",
-      "nom": "",
-      "heure_debut": "07:45",
-      "heure_fin": "?",
-      "detail": "Relais",
-      "lieu": "",
-      "participants": [],
-      "note": "Aucun participant assigne dans le fichier source.",
-      "source": "Depart echauffement relais 7h45"
-    },
-    {
-      "id": "e27",
-      "date": "2026-07-26",
-      "type": "navette_depart",
-      "nom": "",
-      "heure_debut": "09:00",
-      "heure_fin": "?",
-      "detail": "Spectateurs relais",
-      "lieu": "",
-      "participants": [],
-      "note": "Aucun participant assigne dans le fichier source.",
-      "source": "Depart spectateurs relais 9h"
     },
     {
       "id": "e28",
@@ -662,7 +636,6 @@
       "note": "",
       "participants": [
         "magali",
-        "lucas",
         "ethan",
         "manoli"
       ]
@@ -804,8 +777,8 @@
       "date": "2026-07-24",
       "type": "navette_depart",
       "nom": "",
-      "heure_debut": "15:40",
-      "heure_fin": "16:00",
+      "heure_debut": "15:45",
+      "heure_fin": "16:05",
       "detail": "",
       "lieu": "Hall de l'hotel",
       "note": "",
@@ -916,6 +889,34 @@
       "lieu": "",
       "note": "",
       "participants": "tous"
+    },
+    {
+      "id": "e1784700909383",
+      "date": "2026-07-22",
+      "type": "navette_retour",
+      "nom": "",
+      "heure_debut": "17:30",
+      "heure_fin": "17:50",
+      "detail": "",
+      "lieu": "Académie de kayak",
+      "note": "",
+      "participants": "tous"
+    },
+    {
+      "id": "e1784701030150",
+      "date": "2026-07-23",
+      "type": "navette_retour",
+      "nom": "",
+      "heure_debut": "13:00",
+      "heure_fin": "13:20",
+      "detail": "",
+      "lieu": "Académie de kayak",
+      "note": "",
+      "participants": [
+        "magali",
+        "ethan",
+        "manoli"
+      ]
     }
   ]
 }

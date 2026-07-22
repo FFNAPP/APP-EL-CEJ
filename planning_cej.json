@@ -554,22 +554,6 @@
       "participants": "tous"
     },
     {
-      "id": "e1784551870429",
-      "date": "2026-07-23",
-      "type": "echauffement",
-      "nom": "",
-      "heure_debut": "08:15",
-      "heure_fin": "09:30",
-      "detail": "Préparation 10km",
-      "lieu": "",
-      "note": "",
-      "participants": [
-        "magali",
-        "ethan",
-        "manoli"
-      ]
-    },
-    {
       "id": "e1784564710759",
       "date": "2026-07-23",
       "type": "navette_depart",
@@ -916,6 +900,301 @@
         "magali",
         "ethan",
         "manoli"
+      ]
+    },
+    {
+      "id": "e1784736222391",
+      "date": "2026-07-23",
+      "type": "course",
+      "nom": "",
+      "heure_debut": "10:00",
+      "heure_fin": "12:00",
+      "detail": "",
+      "lieu": "",
+      "note": "",
+      "participants": [
+        "magali",
+        "ethan",
+        "manoli"
+      ]
+    },
+    {
+      "id": "e1784736264776",
+      "date": "2026-07-23",
+      "type": "course",
+      "nom": "",
+      "heure_debut": "15:00",
+      "heure_fin": "17:00",
+      "detail": "",
+      "lieu": "",
+      "note": "",
+      "participants": [
+        "nino",
+        "rosalie",
+        "titouan"
+      ]
+    },
+    {
+      "id": "e1784736285162",
+      "date": "2026-07-24",
+      "type": "course",
+      "nom": "",
+      "heure_debut": "10:00",
+      "heure_fin": "11:30",
+      "detail": "",
+      "lieu": "",
+      "note": "",
+      "participants": [
+        "faustine"
+      ]
+    },
+    {
+      "id": "e1784736337754",
+      "date": "2026-07-24",
+      "type": "course",
+      "nom": "",
+      "heure_debut": "10:00",
+      "heure_fin": "11:00",
+      "detail": "",
+      "lieu": "",
+      "note": "",
+      "participants": [
+        "magali",
+        "nino",
+        "ethan",
+        "adrien",
+        "mateo"
+      ]
+    },
+    {
+      "id": "e1784736363453",
+      "date": "2026-07-25",
+      "type": "course",
+      "nom": "",
+      "heure_debut": "11:30",
+      "heure_fin": "12:30",
+      "detail": "",
+      "lieu": "",
+      "note": "",
+      "participants": [
+        "magali",
+        "manoli"
+      ]
+    },
+    {
+      "id": "e1784736409737",
+      "date": "2026-07-25",
+      "type": "course",
+      "nom": "",
+      "heure_debut": "16:30",
+      "heure_fin": "17:30",
+      "detail": "",
+      "lieu": "",
+      "note": "",
+      "participants": [
+        "nino",
+        "rosalie",
+        "faustine"
+      ]
+    },
+    {
+      "id": "e1784736482118",
+      "date": "2026-07-23",
+      "type": "autre",
+      "nom": "Enregistrement",
+      "heure_debut": "08:00",
+      "heure_fin": "09:15",
+      "detail": "Pièce d'identité + Accréditation + Xsens à présenter",
+      "lieu": "Tente",
+      "note": "",
+      "participants": [
+        "ethan",
+        "manoli"
+      ]
+    },
+    {
+      "id": "e1784736516154",
+      "date": "2026-07-23",
+      "type": "autre",
+      "nom": "Enregistrement",
+      "heure_debut": "13:00",
+      "heure_fin": "14:15",
+      "detail": "Pièce d'identité + Accréditation + Xsens à présenter",
+      "lieu": "Tente",
+      "note": "",
+      "participants": [
+        "rosalie",
+        "titouan"
+      ]
+    },
+    {
+      "id": "e1784736562469",
+      "date": "2026-07-24",
+      "type": "autre",
+      "nom": "Enregistrement",
+      "heure_debut": "08:00",
+      "heure_fin": "09:15",
+      "detail": "Pièce d'identité + Accréditation + Xsens à présenter",
+      "lieu": "Tente",
+      "note": "",
+      "participants": [
+        "faustine"
+      ]
+    },
+    {
+      "id": "e1784736632306",
+      "date": "2026-07-25",
+      "type": "autre",
+      "nom": "Enregistrement",
+      "heure_debut": "08:00",
+      "heure_fin": "09:15",
+      "detail": "Pièce d'identité + Accréditation + Xsens à présenter",
+      "lieu": "Tente",
+      "note": "",
+      "participants": [
+        "ethan",
+        "adrien",
+        "mateo"
+      ]
+    },
+    {
+      "id": "e1784736657604",
+      "date": "2026-07-25",
+      "type": "autre",
+      "nom": "Enregistrement",
+      "heure_debut": "10:00",
+      "heure_fin": "11:00",
+      "detail": "Pièce d'identité + Accréditation + Xsens à présenter",
+      "lieu": "Tente",
+      "note": "",
+      "participants": [
+        "manoli"
+      ]
+    },
+    {
+      "id": "e1784736684138",
+      "date": "2026-07-25",
+      "type": "autre",
+      "nom": "Enregistrement",
+      "heure_debut": "15:00",
+      "heure_fin": "16:00",
+      "detail": "Pièce d'identité + Accréditation + Xsens à présenter",
+      "lieu": "Tente",
+      "note": "",
+      "participants": [
+        "rosalie",
+        "faustine"
+      ]
+    },
+    {
+      "id": "e1784736751639",
+      "date": "2026-07-23",
+      "type": "autre",
+      "nom": "Briefing course",
+      "heure_debut": "09:35",
+      "heure_fin": "09:55",
+      "detail": "",
+      "lieu": "",
+      "note": "",
+      "participants": [
+        "pierre",
+        "magali",
+        "capucine",
+        "ethan",
+        "manoli"
+      ]
+    },
+    {
+      "id": "e1784736785556",
+      "date": "2026-07-23",
+      "type": "autre",
+      "nom": "Briefing course",
+      "heure_debut": "14:35",
+      "heure_fin": "14:55",
+      "detail": "",
+      "lieu": "",
+      "note": "",
+      "participants": [
+        "pierre",
+        "nino",
+        "lucas",
+        "capucine",
+        "rosalie",
+        "titouan"
+      ]
+    },
+    {
+      "id": "e1784736815025",
+      "date": "2026-07-24",
+      "type": "autre",
+      "nom": "Briefing course",
+      "heure_debut": "09:35",
+      "heure_fin": "09:55",
+      "detail": "",
+      "lieu": "",
+      "note": "",
+      "participants": [
+        "pierre",
+        "magali",
+        "lucas",
+        "capucine",
+        "faustine"
+      ]
+    },
+    {
+      "id": "e1784736845807",
+      "date": "2026-07-25",
+      "type": "autre",
+      "nom": "Briefing course",
+      "heure_debut": "09:35",
+      "heure_fin": "09:55",
+      "detail": "",
+      "lieu": "",
+      "note": "",
+      "participants": [
+        "pierre",
+        "magali",
+        "nino",
+        "capucine",
+        "ethan",
+        "adrien",
+        "mateo"
+      ]
+    },
+    {
+      "id": "e1784736877840",
+      "date": "2026-07-25",
+      "type": "autre",
+      "nom": "Briefing course",
+      "heure_debut": "11:05",
+      "heure_fin": "11:25",
+      "detail": "",
+      "lieu": "",
+      "note": "",
+      "participants": [
+        "pierre",
+        "magali",
+        "capucine",
+        "manoli"
+      ]
+    },
+    {
+      "id": "e1784736911792",
+      "date": "2026-07-25",
+      "type": "autre",
+      "nom": "Briefing course",
+      "heure_debut": "16:05",
+      "heure_fin": "16:25",
+      "detail": "",
+      "lieu": "",
+      "note": "",
+      "participants": [
+        "pierre",
+        "nino",
+        "lucas",
+        "capucine",
+        "rosalie",
+        "faustine"
       ]
     }
   ]

@@ -277,7 +277,8 @@ function engages(ev){
                 nom:a.name?nomCourt(a.name):k.split("|").slice(0,2).join(" "),
                 noc:a.nation||"", annee:a.year||"",
                 v1500:vit(s,"1500"), v400:vit(s,"400"),
-                pts:b15?b15.best.points:null, fb:b15?!!b15.fallback:false});
+                pts:b15?b15.best.points:null, fb:b15?!!b15.fallback:false,
+                bib:(s.bibs&&s.bibs[ev]!=null)?s.bibs[ev]:null});
     }
   }
   return out;

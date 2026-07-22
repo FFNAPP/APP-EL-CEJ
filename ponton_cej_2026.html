@@ -285,7 +285,12 @@ function sorted(){
   var d=engages(EV);
   if(NOC_FILT) d=d.filter(function(x){ return x.noc===NOC_FILT; });
   var s=document.getElementById("sort").value;
-  if(s==="v15") d.sort(function(a,b){ return (b.v1500||0)-(a.v1500||0)||a.nom.localeCompare(b.nom); });
+  if(s==="bib") d.sort(function(a,b){
+    if(a.bib==null&&b.bib==null) return a.nom.localeCompare(b.nom);
+    if(a.bib==null) return 1; if(b.bib==null) return -1;
+    return a.bib-b.bib;
+  });
+  else if(s==="v15") d.sort(function(a,b){ return (b.v1500||0)-(a.v1500||0)||a.nom.localeCompare(b.nom); });
   else if(s==="v400") d.sort(function(a,b){ return (b.v400||0)-(a.v400||0)||a.nom.localeCompare(b.nom); });
   else if(s==="pts") d.sort(function(a,b){ return (b.pts||0)-(a.pts||0)||a.nom.localeCompare(b.nom); });
   else if(s==="noc") d.sort(function(a,b){ return a.noc.localeCompare(b.noc)||a.nom.localeCompare(b.nom); });

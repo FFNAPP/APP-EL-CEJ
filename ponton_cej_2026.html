@@ -632,6 +632,8 @@ function boot(){
     } else if(pev){
       EV=decodeURIComponent(pev); /* staff : épreuve initiale, pas de filtre */
     }
+    var pheat=params.get('heat');
+    if(pheat) KO_HEAT=parseInt(pheat)||1;
   }catch(e){}
   buildEvTabs(); buildChips(); renderPonton(); setTop();
   window.addEventListener("resize",function(){ setTop(); renderPonton(); });

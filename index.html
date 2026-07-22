@@ -443,7 +443,26 @@ function pontonUrl(evs, staff){
   var g = arr[0].startsWith("Girls") ? "Girls" : "Boys";
   if(staff) return "ponton_cej_2026.html?g="+g+"&ev="+encodeURIComponent(arr[0]);
   var evsParam = arr.map(function(e){ return encodeURIComponent(e); }).join('|');
-  return "ponton_cej_2026.html?g="+g+"&evs="+evsParam;
+  var url = "ponton_cej_2026.html?g="+g+"&evs="+evsParam;
+  /* Si une seule épreuve KO et heat connu, ajouter le paramètre */
+  if(arr.length===1 && arr[0].indexOf("Knockout")!==-1 && PERFS_DATA){
+    var heat = getAthleteHeat(ME.id, arr[0]);
+    if(heat) url += "&heat="+heat;
+  }
+  return url;
+}
+
+function getAthleteHeat(memberId, ev){
+  if(!PERFS_DATA) return null;
+  var parts = DATA.membres.find(function(m){ return m.id===memberId; });
+  if(!parts) return null;
+  var nom = parts.nom.split(' ').slice(1).join('-').toUpperCase();
+  var sw = PERFS_DATA.swimmers;
+  for(var k in sw){
+    if(k.split('|')[0]===nom && sw[k].ko_heat && sw[k].ko_heat[ev]!=null)
+      return sw[k].ko_heat[ev];
+  }
+  return null;
 }
 
 function renderPontons(){

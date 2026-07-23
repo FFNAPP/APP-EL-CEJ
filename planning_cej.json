@@ -949,24 +949,6 @@
       ]
     },
     {
-      "id": "e1784736337754",
-      "date": "2026-07-24",
-      "type": "course",
-      "nom": "",
-      "heure_debut": "10:00",
-      "heure_fin": "11:00",
-      "detail": "",
-      "lieu": "",
-      "note": "",
-      "participants": [
-        "magali",
-        "nino",
-        "ethan",
-        "adrien",
-        "mateo"
-      ]
-    },
-    {
       "id": "e1784736363453",
       "date": "2026-07-25",
       "type": "course",
@@ -1195,6 +1177,23 @@
         "capucine",
         "rosalie",
         "faustine"
+      ]
+    },
+    {
+      "id": "e1784829971494",
+      "date": "2026-07-24",
+      "type": "navette_depart",
+      "nom": "",
+      "heure_debut": "08:45",
+      "heure_fin": "09:05",
+      "detail": "",
+      "lieu": "",
+      "note": "",
+      "participants": [
+        "nino",
+        "adrien",
+        "mateo",
+        "rosalie"
       ]
     }
   ]

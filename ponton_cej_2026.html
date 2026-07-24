@@ -30,6 +30,9 @@ body{font-family:'Helvetica Neue',Arial,system-ui,-apple-system,sans-serif;font-
 .ev-tabs{display:flex;background:#002070;position:fixed;z-index:299;left:0;right:0;
   border-bottom:2px solid var(--ffn-red);gap:6px;padding:6px 14px;overflow-x:auto;scrollbar-width:none;}
 .ev-tabs::-webkit-scrollbar{display:none;}
+.heat-tabs{display:flex;gap:6px;padding:4px 12px;background:rgba(0,0,0,0.15);}
+.heat-tab{padding:4px 14px;border-radius:4px;font-size:12px;font-weight:700;cursor:pointer;color:#7aaecf;background:rgba(122,174,207,0.1);border:1px solid rgba(122,174,207,0.3);letter-spacing:.04em;}
+.heat-tab.on{background:#1a6fa8;color:#fff;border-color:#1a6fa8;}
 .ev-tab{padding:7px 12px;font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:.05em;
   color:rgba(255,255,255,.5);cursor:pointer;transition:all .2s;border-radius:4px;
   border:2px solid transparent;background:transparent;white-space:nowrap;}
@@ -148,6 +151,7 @@ td{padding:5px 6px;border-bottom:1px solid var(--surf3);}
 </div>
 
 <div class="ev-tabs" id="ev-tabs"></div>
+<div class="heat-tabs" id="heat-tabs" style="display:none;"></div>
 
 <div class="filters" id="fbar">
   <span class="flabel">Tri :</span>
@@ -221,7 +225,7 @@ var ORDRE_EV = ["10km J3","7.5km J2","7.5km J3","5km J1",
                 "3km Knockout Sprint","3km Knockout Sprint 14-16"];
 var DIST = ["200","400","800","1500"];
 
-var DATA=null, HISTO={}, HISTO_JR=null, G="Girls", EV=null, EV_FILTER=null, SEL=null, NOC_FILT=null, PANEL_VIEW="profil";
+var DATA=null, HISTO={}, HISTO_JR=null, G="Girls", EV=null, EV_FILTER=null, SEL=null, NOC_FILT=null, PANEL_VIEW="profil", KO_HEAT=0;
 
 /* =====================================================================
    UTILS
@@ -271,6 +275,10 @@ function engages(ev){
   for(var k in DATA.swimmers){
     var s=DATA.swimmers[k];
     if((s.events||[]).indexOf(ev)>=0){
+      if(isKoEv(ev)&&KO_HEAT!==0){
+        var sh=(s.ko_heat||{})[ev];
+        if(sh!==KO_HEAT) continue;
+      }
       var a=s.athlete||{};
       var b15=bestOf(s,"1500");
       out.push({cle:k, sw:s,
@@ -321,6 +329,24 @@ function switchGenre(g){
   buildEvTabs(); buildChips(); renderPonton(); setTop();
   if(EV) mUpdateForEvent(EV,G);
 }
+function isKoEv(ev){ return ev.indexOf("Knockout")>=0; }
+
+function buildHeatTabs(){
+  var div=document.getElementById("heat-tabs");
+  if(!div) return;
+  if(!isKoEv(EV)){ div.style.display="none"; return; }
+  div.style.display="flex";
+  var h='<div class="heat-tab'+(KO_HEAT===0?" on":"")
+    +'" onclick="switchHeat(0)">Toutes</div>';
+  h+='<div class="heat-tab'+(KO_HEAT===1?" on":"")
+    +'" onclick="switchHeat(1)">Serie 1</div>';
+  h+='<div class="heat-tab'+(KO_HEAT===2?" on":"")
+    +'" onclick="switchHeat(2)">Serie 2</div>';
+  div.innerHTML=h;
+}
+
+function switchHeat(h){ KO_HEAT=h; buildHeatTabs(); renderPonton(); }
+
 function buildEvTabs(){
   var evs=listeEvents(G);
   /* Si filtre actif (accès depuis planning), ne montrer que les épreuves concernées */
@@ -333,9 +359,10 @@ function buildEvTabs(){
     h+='<div class="ev-tab'+(e===EV?' on':'')+'" onclick="switchEv(\''+e.replace(/'/g,"\\'")+'\')">'      +esc(evShort(e))+'</div>';
   });
   document.getElementById("ev-tabs").innerHTML=h;
+  buildHeatTabs();
 }
 
-function switchEv(e){ EV=e; NOC_FILT=null; closePanel(); buildEvTabs(); buildChips(); renderPonton(); setTop(); mUpdateForEvent(EV,G); }
+function switchEv(e){ EV=e; NOC_FILT=null; KO_HEAT=0; closePanel(); buildEvTabs(); buildChips(); renderPonton(); setTop(); mUpdateForEvent(EV,G); }
 function buildChips(){
   var d=engages(EV), nocs=[];
   d.forEach(function(x){ if(nocs.indexOf(x.noc)<0) nocs.push(x.noc); });

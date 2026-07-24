@@ -213,9 +213,19 @@ html,body{height:100%;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sa
 .di-pos{background:#d4edda;color:#1a7a34;}
 .di-neg{background:#f8d7da;color:#b01020;}
 .di-neu{background:#e8edf2;color:#5b6b7a;}
+/* ── TOOLTIP GRAPHIQUE ── */
+#analyse-tooltip{
+  position:fixed;pointer-events:none;z-index:200;
+  background:var(--navy);color:#fff;border-radius:6px;
+  padding:7px 11px;font-size:11px;font-weight:600;line-height:1.5;
+  box-shadow:0 4px 16px rgba(0,0,0,.25);
+  opacity:0;transition:opacity .12s;white-space:nowrap;
+}
+#analyse-tooltip.show{opacity:1;}
 </style>
 </head>
 <body>
+<div id="analyse-tooltip"></div>
 
 <!-- ÉCRAN SÉLECTION -->
 <div id="screen-select">
@@ -607,8 +617,9 @@ function analyseGetRows(evFilter){
       if(!r) return;
       if(ANALYSE_NOC.length>0 && ANALYSE_NOC.indexOf(noc)===-1) return;
       var nom = a.name ? a.name.split(",")[0].trim() : k.split("|").slice(0,2).join(" ");
+      var year = a.year || k.split("|")[2] || "?";
       rows.push({
-        noc:noc, nom:nom, ev:ev,
+        noc:noc, nom:nom, year:year, ev:ev,
         rang:r.rank, n:r.n, finish:r.finish, date:r.date,
         rv:r.rv, di:r.di
       });
@@ -668,7 +679,7 @@ function renderAnalyse(){
     +'" onclick="switchAnalyseNoc(null)">Toutes</span>';
   allNocs.forEach(function(n){
     main += '<span class="analyse-noc-chip'+(ANALYSE_NOC.indexOf(n)!==-1?" on":"")
-      +'" onclick="switchAnalyseNoc(\''+n+'\')">'+esc(n)+'</span>';
+      +'" onclick="switchAnalyseNoc(\''+n+'\')">'+nocFlag(n)+" "+esc(n)+'</span>';
   });
   main += '</div>';
 
@@ -686,42 +697,59 @@ function renderAnalyse(){
     '<div class="analyse-layout">'+sidebar+main+'</div>';
 }
 
+/* Drapeaux par code NOC (émoji unicode) */
+var NOC_FLAGS = {
+  "AUT":"🇦🇹","BEL":"🇧🇪","BLR":"🇧🇾","BUL":"🇧🇬","CRO":"🇭🇷","CYP":"🇨🇾",
+  "CZE":"🇨🇿","DEN":"🇩🇰","ESP":"🇪🇸","EST":"🇪🇪","FIN":"🇫🇮","FRA":"🇫🇷",
+  "GBR":"🇬🇧","GER":"🇩🇪","GRE":"🇬🇷","HUN":"🇭🇺","IRL":"🇮🇪","ISL":"🇮🇸",
+  "ISR":"🇮🇱","ITA":"🇮🇹","LAT":"🇱🇻","LTU":"🇱🇹","LUX":"🇱🇺","MKD":"🇲🇰",
+  "MLT":"🇲🇹","MNE":"🇲🇪","NED":"🇳🇱","NOR":"🇳🇴","POL":"🇵🇱","POR":"🇵🇹",
+  "ROU":"🇷🇴","RUS":"🇷🇺","SLO":"🇸🇮","SRB":"🇷🇸","SUI":"🇨🇭","SVK":"🇸🇰",
+  "SWE":"🇸🇪","TUR":"🇹🇷","UKR":"🇺🇦"
+};
+function nocFlag(n){ return NOC_FLAGS[n]||""; }
+
+/* Données pour tooltip — stockées dans le scope global au moment du rendu */
+var _CHART_ROWS = [];
+
 function buildAnalyseChart(){
-  var rows = analyseGetRows(ANALYSE_EV).filter(function(r){ return r.rv!=null&&r.di!=null; });
+  _CHART_ROWS = analyseGetRows(ANALYSE_EV).filter(function(r){ return r.rv!=null&&r.di!=null; });
+  var rows = _CHART_ROWS;
   var n = Math.max(rows.length,2);
   var W = 520, H = 320, pad = 46;
   var cw=W-pad*2, ch=H-pad*2;
   var xOf=function(v){ return pad+(v-1)/(n-1)*cw; };
   var yOf=function(v){ return pad+(v-1)/(n-1)*ch; };
 
-  var svg = '<svg xmlns="http://www.w3.org/2000/svg" id="analyse-chart-svg" viewBox="0 0 '+W+' '+H+'">';
+  var svg = '<svg xmlns="http://www.w3.org/2000/svg" id="analyse-chart-svg"'
+    +' viewBox="0 0 '+W+' '+H+'"'
+    +' style="cursor:crosshair;"'
+    +' onmousemove="chartMouseMove(event,'+W+','+H+','+pad+','+cw+','+ch+','+n+')"'
+    +' onmouseleave="chartHideTooltip()">';
   svg += '<rect width="'+W+'" height="'+H+'" fill="var(--surf)"/>';
-  /* Zones de couleur légères */
   svg += '<polygon points="'+pad+','+pad+' '+(pad+cw)+','+(pad+ch)+' '+pad+','+(pad+ch)+'"'
     +' fill="rgba(200,16,46,.04)"/>';
   svg += '<polygon points="'+pad+','+pad+' '+(pad+cw)+','+(pad)+' '+(pad+cw)+','+(pad+ch)+'"'
     +' fill="rgba(26,122,52,.04)"/>';
-  /* Diagonale */
   svg += '<line x1="'+pad+'" y1="'+pad+'" x2="'+(pad+cw)+'" y2="'+(pad+ch)
     +'" stroke="rgba(0,30,80,.18)" stroke-width="1.5" stroke-dasharray="6,3"/>';
-  /* Points */
-  rows.forEach(function(r){
+  rows.forEach(function(r, i){
     var x=xOf(r.rv), y=yOf(r.rang);
     var di=r.di||0;
     var col=di>3?'#1a7a34':di<-3?'#b01020':'#5b6b7a';
     var isFRA = r.noc==="FRA";
     svg += '<circle cx="'+x.toFixed(1)+'" cy="'+y.toFixed(1)+'"'
-      +' r="'+(isFRA?6:4.5)+'" fill="'+col+'"'
-      +' stroke="'+(isFRA?'var(--navy)':'none')+'" stroke-width="'+(isFRA?2:0)+'"'
-      +' opacity="0.88"/>';
+      +' r="'+(isFRA?7:5)+'" fill="'+col+'"'
+      +' stroke="'+(isFRA?'var(--navy)':'rgba(255,255,255,.6)')+'" stroke-width="'+(isFRA?2:1)+'"'
+      +' opacity="0.92"'
+      +' data-i="'+i+'"/>';
     if(r.rang<=5 || isFRA || Math.abs(di)>=7){
-      var lbl = r.noc+" "+r.nom.substring(0,10);
-      svg += '<text x="'+(x+7).toFixed(1)+'" y="'+(y+4).toFixed(1)
-        +'" font-size="8" font-family="sans-serif" fill="'+col
-        +'" font-weight="'+(isFRA?700:400)+'">'+esc(lbl)+'</text>';
+      var lbl = nocFlag(r.noc)+" "+r.nom.split(",")[0].substring(0,12);
+      svg += '<text x="'+(x+8).toFixed(1)+'" y="'+(y+4).toFixed(1)
+        +'" font-size="8.5" font-family="sans-serif" fill="'+col
+        +'" font-weight="'+(isFRA?700:500)+'">'+esc(lbl)+'</text>';
     }
   });
-  /* Axes */
   svg += '<line x1="'+pad+'" y1="'+pad+'" x2="'+pad+'" y2="'+(pad+ch)
     +'" stroke="var(--border)" stroke-width="1.5"/>';
   svg += '<line x1="'+pad+'" y1="'+(pad+ch)+'" x2="'+(pad+cw)+'" y2="'+(pad+ch)
@@ -735,7 +763,7 @@ function buildAnalyseChart(){
   var evTitle = CEJ_EV_LABEL[ANALYSE_EV]||ANALYSE_EV;
   return '<div class="analyse-chart-box">'
     +'<div class="analyse-chart-title">Indice EL · '+esc(evTitle)+'</div>'
-    +'<div class="analyse-chart-sub">Diagonale = indice 0 · Triangle vert (haut-gauche) = profil eau libre · Rouge (bas-droite) = profil piscine</div>'
+    +'<div class="analyse-chart-sub">Diagonale = indice 0 · Haut-gauche = profil eau libre · Bas-droite = profil piscine · Survoler pour détail</div>'
     +svg
     +'<div class="analyse-legend">'
     +'<span><span class="analyse-legend-dot" style="background:#1a7a34"></span>Profil eau libre (&gt;+3)</span>'
@@ -745,67 +773,117 @@ function buildAnalyseChart(){
     +'</div>';
 }
 
+function chartMouseMove(evt, W, H, pad, cw, ch, n){
+  var svg = document.getElementById("analyse-chart-svg");
+  if(!svg) return;
+  var rect = svg.getBoundingClientRect();
+  /* Coordonnées dans l'espace viewBox */
+  var scaleX = W / rect.width;
+  var scaleY = H / rect.height;
+  var mx = (evt.clientX - rect.left) * scaleX;
+  var my = (evt.clientY - rect.top) * scaleY;
+  /* Trouver le point le plus proche */
+  var xOf=function(v){ return pad+(v-1)/(n-1)*cw; };
+  var yOf=function(v){ return pad+(v-1)/(n-1)*ch; };
+  var best=null, bestDist=Infinity;
+  _CHART_ROWS.forEach(function(r){
+    var cx=xOf(r.rv), cy=yOf(r.rang);
+    var d=Math.sqrt((mx-cx)*(mx-cx)+(my-cy)*(my-cy));
+    if(d<bestDist){ bestDist=d; best=r; }
+  });
+  var tip = document.getElementById("analyse-tooltip");
+  if(!tip) return;
+  if(!best || bestDist>18){
+    tip.classList.remove("show"); return;
+  }
+  var di=best.di!=null?best.di:null;
+  var diTxt=di===null?"—":(di>0?"+":"")+di;
+  var flag=nocFlag(best.noc);
+  tip.innerHTML = flag+" <strong>"+esc(best.nom)+"</strong> ("+esc(best.noc)+")"
+    +"<br>Rang : <strong>"+best.rang+"</strong>/"+best.n
+    +" &nbsp;·&nbsp; Rg V1500 : <strong>"+(best.rv!=null?best.rv:"—")+"</strong>"
+    +" &nbsp;·&nbsp; Indice : <strong>"+diTxt+"</strong>"
+    +"<br>Temps : "+esc(best.finish||"—");
+  /* Positionner le tooltip près du curseur, dans la fenêtre */
+  var tx = evt.clientX+14, ty = evt.clientY-10;
+  if(tx+220>window.innerWidth) tx = evt.clientX-230;
+  if(ty+60>window.innerHeight) ty = evt.clientY-70;
+  tip.style.left=tx+"px"; tip.style.top=ty+"px";
+  tip.classList.add("show");
+}
+function chartHideTooltip(){
+  var tip=document.getElementById("analyse-tooltip");
+  if(tip) tip.classList.remove("show");
+}
+
 function buildAnalyseTable(){
   var rows = analyseGetRows(ANALYSE_EV);
   var isAll = ANALYSE_EV === "ALL";
 
-  /* Grouper par nation puis tri rang dans chaque épreuve */
+  /* Grouper par nation > nageur unique (dédupliqué sur nom+noc) */
   var byNoc = {};
-  rows.forEach(function(r){
-    if(!byNoc[r.noc]) byNoc[r.noc]={};
-    if(!byNoc[r.noc][r.nom]) byNoc[r.noc][r.nom]=[];
-    byNoc[r.noc][r.nom].push(r);
-  });
+  /* Pour vue ALL : on veut une seule ligne par nageur avec son indice moyen */
+  if(isAll){
+    /* Construire map cle -> {noc, nom, year, indices:[]} */
+    var byKey = {};
+    var sw = PERFS_DATA ? PERFS_DATA.swimmers : {};
+    for(var k in sw){
+      var s = sw[k];
+      var cr = s.cej_results;
+      if(!cr || Object.keys(cr).length===0) continue;
+      var a = s.athlete||{};
+      var noc = a.nation || k.split("|")[2] || "?";
+      if(ANALYSE_NOC.length>0 && ANALYSE_NOC.indexOf(noc)===-1) continue;
+      var nom = a.name ? a.name.split(",")[0].trim() : k.split("|").slice(0,2).join(" ");
+      var year = a.year || k.split("|")[2] || "?";
+      /* Indices de toutes les épreuves disputées */
+      var indices = [];
+      CEJ_EV_INTERNAL.forEach(function(ev){
+        if(cr[ev] && cr[ev].di!=null) indices.push(cr[ev].di);
+      });
+      if(!byNoc[noc]) byNoc[noc]=[];
+      byNoc[noc].push({nom:nom, year:year, indices:indices});
+    }
+  } else {
+    rows.forEach(function(r){
+      if(!byNoc[r.noc]) byNoc[r.noc]=[];
+      /* Éviter doublons */
+      if(!byNoc[r.noc].find(function(x){ return x.nom===r.nom; }))
+        byNoc[r.noc].push({nom:r.nom, year:r.year||"?", rang:r.rang, n:r.n, finish:r.finish, rv:r.rv, di:r.di});
+    });
+  }
   var nocs = Object.keys(byNoc).sort();
-
-  /* Colonnes : si ALL, une colonne par épreuve abrégée ; sinon rang/temps/rv/di */
-  var evAbrev = {
-    "Boys' 10km J3":"B10",
-    "Girls' 10km J3":"F10",
-    "Boys' 7.5km J2":"B7.5",
-    "Girls' 7.5km J2":"F7.5",
-    "Boys' 5km J1":"B5",
-    "Girls' 5km J1":"F5"
-  };
 
   var h = '<div class="analyse-table-box">'
     +'<div class="analyse-table-title">'
-    +(isAll?"Tableau global toutes épreuves — par nation":"Tableau · "+esc(CEJ_EV_LABEL[ANALYSE_EV]||ANALYSE_EV))
+    +(isAll?"Tableau global — par nation":"Tableau · "+esc(CEJ_EV_LABEL[ANALYSE_EV]||ANALYSE_EV))
     +'</div>'
     +'<div class="analyse-table-wrap"><table class="analyse-table"><thead><tr>'
-    +'<th>Nation</th><th>Nageur</th>';
+    +'<th>Nation</th><th>Nageur</th><th>Année naiss.</th>';
 
   if(isAll){
-    CEJ_EV_INTERNAL.forEach(function(ev){
-      h += '<th title="'+esc(CEJ_EV_LABEL[ev])+'">'+esc(evAbrev[ev]||ev)+'<br><span style="font-size:8px;font-weight:400;opacity:.7;">Rg / Ind</span></th>';
-    });
+    h += '<th>Indice EL moyen</th>';
   } else {
     h += '<th>Rang</th><th>Temps</th><th>Rg V1500</th><th>Indice EL</th>';
   }
   h += '</tr></thead><tbody>';
 
   nocs.forEach(function(noc){
-    var noms = Object.keys(byNoc[noc]).sort();
-    noms.forEach(function(nom, ni){
+    var athletes = byNoc[noc].slice().sort(function(a,b){ return a.nom.localeCompare(b.nom); });
+    athletes.forEach(function(r, ni){
       h += '<tr>';
-      h += '<td class="noc-cell">'+(ni===0?esc(noc):"")+'</td>';
-      h += '<td>'+esc(nom)+'</td>';
+      h += '<td class="noc-cell">'+(ni===0?nocFlag(noc)+" "+esc(noc):"")+'</td>';
+      h += '<td>'+esc(r.nom)+'</td>';
+      h += '<td style="text-align:center;color:var(--txt-dim);">'+esc(r.year||"?")+'</td>';
       if(isAll){
-        CEJ_EV_INTERNAL.forEach(function(ev){
-          var r = byNoc[noc][nom].find(function(x){ return x.ev===ev; });
-          if(!r){
-            h += '<td style="color:var(--txt-dim);text-align:center;">—</td>';
-          } else {
-            var di=r.di!=null?r.di:null;
-            var diCls=di===null?"di-neu":di>3?"di-pos":di<-3?"di-neg":"di-neu";
-            var diTxt=di===null?"—":(di>0?"+":"")+di;
-            h += '<td style="text-align:center;">'
-              +'<span style="font-weight:700;">'+r.rang+'</span>'
-              +' <span class="di-badge '+diCls+'">'+diTxt+'</span></td>';
-          }
-        });
+        var avg = r.indices.length>0
+          ? Math.round(r.indices.reduce(function(s,v){return s+v;},0)/r.indices.length)
+          : null;
+        var diCls=avg===null?"di-neu":avg>3?"di-pos":avg<-3?"di-neg":"di-neu";
+        var diTxt=avg===null?"—":(avg>0?"+":"")+avg;
+        h += '<td style="text-align:center;"><span class="di-badge '+diCls+'">'+diTxt+'</span>'
+          +(r.indices.length>1?' <span style="font-size:9px;color:var(--txt-dim);">('+r.indices.length+' ép.)</span>':"")          +'</td>';
       } else {
-        var r = byNoc[noc][nom][0];
         var di=r.di!=null?r.di:null;
         var diCls=di===null?"di-neu":di>3?"di-pos":di<-3?"di-neg":"di-neu";
         var diTxt=di===null?"—":(di>0?"+":"")+di;

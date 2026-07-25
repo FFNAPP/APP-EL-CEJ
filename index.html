@@ -233,14 +233,25 @@ html,body{height:100%;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sa
   .analyse-ev-label-genre{width:100%;margin-top:4px;padding:4px 0 0;}
   .analyse-ev-label-genre:first-child{margin-top:0;}
   .analyse-main{padding:12px 10px;gap:12px;}
-  .analyse-table{font-size:10px;min-width:480px;}
+  .analyse-table{font-size:10px;}
   .analyse-table th{padding:5px 6px;font-size:8.5px;}
   .analyse-table td{padding:4px 6px;}
-  .analyse-table th:first-child,.analyse-table td:first-child{
+  /* Tableau "Toutes épreuves" : 4 colonnes, doit tenir sans scroll horizontal
+     dans les deux orientations -> largeur fixe + retour à la ligne des noms */
+  .analyse-table-all{table-layout:fixed;width:100%;min-width:0;}
+  .analyse-table-all th,.analyse-table-all td{white-space:normal;word-break:break-word;}
+  .analyse-table-all th:nth-child(1),.analyse-table-all td:nth-child(1){width:17%;}
+  .analyse-table-all th:nth-child(2),.analyse-table-all td:nth-child(2){width:41%;}
+  .analyse-table-all th:nth-child(3),.analyse-table-all td:nth-child(3){width:15%;text-align:center;}
+  .analyse-table-all th:nth-child(4),.analyse-table-all td:nth-child(4){width:27%;}
+  /* Tableau par épreuve : 7 colonnes, reste scrollable horizontalement mais
+     garde la nation visible pendant le défilement */
+  .analyse-table-detail{min-width:480px;}
+  .analyse-table-detail th:first-child,.analyse-table-detail td:first-child{
     position:sticky;left:0;background:var(--surf);box-shadow:1px 0 0 var(--border);
   }
-  .analyse-table th:first-child{background:var(--navy);}
-  .analyse-table tr:nth-child(even) td:first-child{background:var(--surf2);}
+  .analyse-table-detail th:first-child{background:var(--navy);}
+  .analyse-table-detail tr:nth-child(even) td:first-child{background:var(--surf2);}
   #analyse-tooltip{font-size:10px;padding:6px 9px;max-width:220px;white-space:normal;}
 }
 </style>
@@ -632,7 +643,7 @@ function analyseGetRows(evFilter){
     var cr = s.cej_results;
     if(!cr) continue;
     var a = s.athlete||{};
-    var noc = a.nation || k.split("|")[2] || "?";
+    var noc = a.nation || "?";
     evList.forEach(function(ev){
       var r = cr[ev];
       if(!r) return;
@@ -657,7 +668,7 @@ function analyseAllNocs(){
     for(var k in sw){
       var cr = sw[k].cej_results;
       if(cr&&cr[ev]){
-        var noc = (sw[k].athlete&&sw[k].athlete.nation)||k.split("|")[2]||"?";
+        var noc = (sw[k].athlete&&sw[k].athlete.nation)||"?";
         nocs[noc]=1;
       }
     }
@@ -859,7 +870,7 @@ function buildAnalyseTable(){
       var cr = s.cej_results;
       if(!cr || Object.keys(cr).length===0) continue;
       var a = s.athlete||{};
-      var noc = a.nation || k.split("|")[2] || "?";
+      var noc = a.nation || "?";
       if(ANALYSE_NOC.length>0 && ANALYSE_NOC.indexOf(noc)===-1) continue;
       var nom = a.name ? a.name.split(",")[0].trim() : k.split("|").slice(0,2).join(" ");
       var year = a.year || k.split("|")[2] || "?";
@@ -885,7 +896,7 @@ function buildAnalyseTable(){
     +'<div class="analyse-table-title">'
     +(isAll?"Tableau global — par nation":"Tableau · "+esc(CEJ_EV_LABEL[ANALYSE_EV]||ANALYSE_EV))
     +'</div>'
-    +'<div class="analyse-table-wrap"><table class="analyse-table"><thead><tr>'
+    +'<div class="analyse-table-wrap"><table class="analyse-table'+(isAll?" analyse-table-all":" analyse-table-detail")+'"><thead><tr>'
     +'<th>Nation</th><th>Nageur</th><th>Année naiss.</th>';
 
   if(isAll){

@@ -213,6 +213,14 @@ html,body{height:100%;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sa
 .di-pos{background:#d4edda;color:#1a7a34;}
 .di-neg{background:#f8d7da;color:#b01020;}
 .di-neu{background:#e8edf2;color:#5b6b7a;}
+/* Moyenne indice EL par nation */
+.analyse-natavg-sub{font-size:9px;color:var(--txt-dim);margin:-4px 0 10px;line-height:1.4;}
+.analyse-natavg-list{display:flex;flex-direction:column;gap:0;}
+.analyse-natavg-row{display:flex;align-items:center;gap:8px;padding:5px 2px;border-bottom:1px solid var(--border);}
+.analyse-natavg-row:last-child{border-bottom:none;}
+.analyse-natavg-rank{font-size:9px;font-weight:700;color:var(--txt-dim);width:16px;flex-shrink:0;}
+.analyse-natavg-noc{font-size:11px;font-weight:700;color:var(--navy);flex:1;}
+.analyse-natavg-n{font-size:9px;color:var(--txt-dim);white-space:nowrap;}
 /* ── TOOLTIP GRAPHIQUE ── */
 #analyse-tooltip{
   position:fixed;pointer-events:none;z-index:200;
@@ -720,6 +728,9 @@ function renderAnalyse(){
     main += buildAnalyseChart();
   }
 
+  /* Moyenne par nation */
+  main += buildAnalyseNatAvg();
+
   /* Tableau */
   main += buildAnalyseTable();
 
@@ -852,6 +863,48 @@ function chartMouseMove(evt, W, H, pad, cw, ch, n){
 function chartHideTooltip(){
   var tip=document.getElementById("analyse-tooltip");
   if(tip) tip.classList.remove("show");
+}
+
+/* Moyenne écrêtée : chaque indice individuel est plafonné à ±cap avant d'être
+   moyenné, pour qu'une contre-performance ou une perf exceptionnelle isolée
+   ne pèse pas plus que les autres dans la moyenne d'une nation. */
+function robustAvg(vals, cap){
+  if(!vals || !vals.length) return null;
+  cap = cap==null?10:cap;
+  var sum=0;
+  for(var i=0;i<vals.length;i++){ sum += Math.max(-cap, Math.min(cap, vals[i])); }
+  return sum/vals.length;
+}
+
+function buildAnalyseNatAvg(){
+  var CAP=10;
+  var byNoc={};
+  analyseGetRows(ANALYSE_EV).forEach(function(r){
+    if(r.di==null) return;
+    (byNoc[r.noc]=byNoc[r.noc]||[]).push(r.di);
+  });
+  var nocs = Object.keys(byNoc);
+  if(!nocs.length) return "";
+  var list = nocs.map(function(noc){
+    return { noc:noc, n:byNoc[noc].length, avg:robustAvg(byNoc[noc],CAP) };
+  });
+  list.sort(function(a,b){ return b.avg-a.avg; });
+  var h='<div class="analyse-table-box">'
+    +'<div class="analyse-table-title">Moyenne indice EL par nation</div>'
+    +'<div class="analyse-natavg-sub">Indices individuels plafonnés à ±'+CAP+' avant moyenne, pour qu’une contre-performance ou une performance exceptionnelle isolée ne pèse pas plus que les autres.</div>'
+    +'<div class="analyse-natavg-list">';
+  list.forEach(function(r,i){
+    var cls=r.avg>3?"di-pos":r.avg<-3?"di-neg":"di-neu";
+    var txt=(r.avg>0?"+":"")+r.avg.toFixed(1);
+    h+='<div class="analyse-natavg-row">'
+      +'<span class="analyse-natavg-rank">'+(i+1)+'</span>'
+      +'<span class="analyse-natavg-noc">'+nocFlag(r.noc)+' '+esc(r.noc)+'</span>'
+      +'<span class="analyse-natavg-n">'+r.n+' perf.</span>'
+      +'<span class="di-badge '+cls+'">'+txt+'</span>'
+      +'</div>';
+  });
+  h+='</div></div>';
+  return h;
 }
 
 function buildAnalyseTable(){

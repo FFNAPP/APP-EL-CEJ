@@ -269,6 +269,7 @@ function ptsColor(p,pmin,pmax){
    SELECTIONS
    ===================================================================== */
 function listeEvents(genre){
+  if(!DATA||!DATA.swimmers) return [];
   var set={};
   for(var k in DATA.swimmers){
     var e=DATA.swimmers[k].events||[];
@@ -694,6 +695,7 @@ function renderHisto(cle){
    INIT
    ===================================================================== */
 function boot(){
+  if(!DATA){ document.getElementById("hdr-sub").textContent="Erreur : fichier de données introuvable (perfs_cej.json)"; return; }
   document.getElementById("hdr-title").textContent=CONFIG.titre;
   document.getElementById("hdr-sub").textContent=
     CONFIG.sous_titre+"  \u00b7  donn\u00e9es bassin du "+fmtDate(DATA.generated_on);

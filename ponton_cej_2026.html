@@ -345,7 +345,7 @@ function switchGenre(g){
   buildEvTabs(); buildChips(); renderPonton(); setTop();
   if(EV) mUpdateForEvent(EV,G);
 }
-function isKoEv(ev){ return ev.indexOf("Knockout")>=0; }
+function isKoEv(ev){ return !!ev && ev.indexOf("Knockout")>=0; }
 
 function buildHeatTabs(){
   var div=document.getElementById("heat-tabs");
@@ -411,6 +411,11 @@ function setTop(){
    PONTON (barres verticales)
    ===================================================================== */
 function renderPonton(){
+  if(!EV){
+    document.getElementById("ponton-info").textContent="Aucune épreuve disponible";
+    document.getElementById("hist-container").innerHTML="";
+    return;
+  }
   var d=sorted();
   var tot=engages(EV);
   var nbV=tot.filter(function(x){ return x.v1500; }).length;

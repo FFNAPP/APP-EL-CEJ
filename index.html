@@ -992,11 +992,11 @@ function boot(){
   } catch(e){}
 }
 
-fetch("planning_cej.json")
+fetch("planning_cej.json",{cache:"no-store"})
   .then(function(r){ return r.json(); })
   .then(function(d){
     DATA = d;
-    return fetch("perfs_cej.json")
+    return fetch("perfs_cej.json",{cache:"no-store"})
       .then(function(r){ return r.ok ? r.json() : null; })
       .catch(function(){ return null; });
   })

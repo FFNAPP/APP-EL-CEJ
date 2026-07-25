@@ -809,22 +809,22 @@ function mUpdateForEvent(ev,genre){
   mRenderHours(w);
 }
 
-fetch(CONFIG.fichier_perfs).then(function(r){ return r.json(); })
+fetch(CONFIG.fichier_perfs,{cache:"no-store"}).then(function(r){ return r.json(); })
   .then(function(j){
     DATA=j;
-    return fetch(CONFIG.fichier_histo)
+    return fetch(CONFIG.fichier_histo,{cache:"no-store"})
       .then(function(r){ return r.ok?r.json():{}; })
       .catch(function(){ return {}; });
   })
   .then(function(hj){
     HISTO=hj||{};
-    return fetch('histo_juniors.json')
+    return fetch('histo_juniors.json',{cache:"no-store"})
       .then(function(r){ return r.ok?r.json():null; })
       .catch(function(){ return null; });
   })
   .then(function(hjr){
     HISTO_JR=hjr||null;
-    return fetch('meteo_cej.json')
+    return fetch('meteo_cej.json',{cache:"no-store"})
       .then(function(r){ return r.ok?r.json():null; })
       .catch(function(){ return null; });
   })

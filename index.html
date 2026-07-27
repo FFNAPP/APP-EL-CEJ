@@ -630,7 +630,9 @@ var ANALYSE_NOC = [];     /* [] = tous */
 var CEJ_EV_INTERNAL = [
   "Boys' 10km J3","Girls' 10km J3",
   "Boys' 7.5km J2","Girls' 7.5km J2",
-  "Boys' 5km J1","Girls' 5km J1"
+  "Boys' 5km J1","Girls' 5km J1",
+  "Boys' 3km Knockout Sprint","Girls' 3km Knockout Sprint",
+  "Boys' 3km Knockout Sprint 14-16","Girls' 3km Knockout Sprint 14-16"
 ];
 var CEJ_EV_LABEL = {
   "Boys' 10km J3":"10km Garçons 18-19",
@@ -638,7 +640,11 @@ var CEJ_EV_LABEL = {
   "Boys' 7.5km J2":"7.5km Garçons 16-17",
   "Girls' 7.5km J2":"7.5km Filles 16-17",
   "Boys' 5km J1":"5km Garçons 14-15",
-  "Girls' 5km J1":"5km Filles 14-15"
+  "Girls' 5km J1":"5km Filles 14-15",
+  "Boys' 3km Knockout Sprint":"KO Sprint Garçons 17-19",
+  "Girls' 3km Knockout Sprint":"KO Sprint Filles 17-19",
+  "Boys' 3km Knockout Sprint 14-16":"KO Sprint Garçons 14-16",
+  "Girls' 3km Knockout Sprint 14-16":"KO Sprint Filles 14-16"
 };
 
 function analyseGetRows(evFilter){
@@ -696,13 +702,13 @@ function renderAnalyse(){
   sidebar += '<button class="analyse-ev-btn'+(ANALYSE_EV==="ALL"?" on":"")
     +'" onclick="switchAnalyseEv(\'ALL\')">Toutes épreuves</button>';
   sidebar += '<div class="analyse-ev-label-genre" style="margin-top:8px">Garçons</div>';
-  ["Boys' 10km J3","Boys' 7.5km J2","Boys' 5km J1"].forEach(function(ev){
+  ["Boys' 10km J3","Boys' 7.5km J2","Boys' 5km J1","Boys' 3km Knockout Sprint","Boys' 3km Knockout Sprint 14-16"].forEach(function(ev){
     sidebar += '<button class="analyse-ev-btn'+(ANALYSE_EV===ev?" on":"")
       +'" onclick="switchAnalyseEv(\''+ev.replace(/'/g,"\\'")+'\')">'
       +esc(CEJ_EV_LABEL[ev])+'</button>';
   });
   sidebar += '<div class="analyse-ev-label-genre" style="margin-top:8px">Filles</div>';
-  ["Girls' 10km J3","Girls' 7.5km J2","Girls' 5km J1"].forEach(function(ev){
+  ["Girls' 10km J3","Girls' 7.5km J2","Girls' 5km J1","Girls' 3km Knockout Sprint","Girls' 3km Knockout Sprint 14-16"].forEach(function(ev){
     sidebar += '<button class="analyse-ev-btn'+(ANALYSE_EV===ev?" on":"")
       +'" onclick="switchAnalyseEv(\''+ev.replace(/'/g,"\\'")+'\')">'
       +esc(CEJ_EV_LABEL[ev])+'</button>';

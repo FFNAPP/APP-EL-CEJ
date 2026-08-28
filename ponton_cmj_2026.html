@@ -1,0 +1,826 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,viewport-fit=cover">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<title>Ponton CMJ 2026 - Eau Libre</title>
+<style>
+:root{
+  --ffn-blue:#003087;--ffn-red:#C8102E;--ffn-light:#c6ddf0;
+  --bg:#f0f5fb;--surf:#fff;--surf2:#eef3fa;--surf3:#e4edf8;
+  --border:#d0dce8;--txt:#1a2a4a;--txt-dim:#6b7f9e;--txt-bright:#0a1628;
+  --gold:#b8860b;--panel-w:min(380px,92vw);
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent;}
+html,body{min-height:100%;overflow-x:hidden;background:var(--bg);color:var(--txt);}
+body{font-family:'Helvetica Neue',Arial,system-ui,-apple-system,sans-serif;font-size:14px;-webkit-font-smoothing:antialiased;}
+
+.hdr{display:flex;align-items:center;justify-content:space-between;gap:10px;
+  padding:max(env(safe-area-inset-top),10px) 16px 8px;
+  background:var(--ffn-blue);border-bottom:3px solid var(--ffn-red);
+  position:fixed;top:0;left:0;right:0;z-index:300;}
+.hdr-title{font-size:clamp(12px,3.5vw,17px);font-weight:800;text-transform:uppercase;letter-spacing:.04em;color:#fff;line-height:1;}
+.hdr-sub{font-size:10px;color:rgba(255,255,255,.55);letter-spacing:.06em;text-transform:uppercase;margin-top:3px;}
+.tabs{display:flex;gap:4px;flex-shrink:0;}
+.tab{font-size:12px;font-weight:700;text-transform:uppercase;padding:6px 13px;border-radius:3px;
+  border:1.5px solid rgba(255,255,255,.25);background:transparent;color:rgba(255,255,255,.55);cursor:pointer;transition:all .18s;white-space:nowrap;}
+.tab.on{background:var(--ffn-red);border-color:var(--ffn-red);color:#fff;}
+
+.ev-tabs{display:flex;background:#002070;position:fixed;z-index:299;left:0;right:0;
+  border-bottom:2px solid var(--ffn-red);gap:6px;padding:6px 14px;overflow-x:auto;scrollbar-width:none;}
+.ev-tabs::-webkit-scrollbar{display:none;}
+.heat-tabs{display:flex;gap:6px;padding:4px 12px;background:rgba(0,0,0,0.15);position:fixed;left:0;right:0;z-index:298;overflow-x:auto;scrollbar-width:none;}
+.heat-tab{padding:4px 14px;border-radius:4px;font-size:12px;font-weight:700;cursor:pointer;color:#7aaecf;background:rgba(122,174,207,0.1);border:1px solid rgba(122,174,207,0.3);letter-spacing:.04em;}
+.heat-tab.on{background:#1a6fa8;color:#fff;border-color:#1a6fa8;}
+.ev-tab{padding:7px 12px;font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:.05em;
+  color:rgba(255,255,255,.5);cursor:pointer;transition:all .2s;border-radius:4px;
+  border:2px solid transparent;background:transparent;white-space:nowrap;}
+.ev-tab.on{color:#fff;background:var(--ffn-red);border-color:var(--ffn-red);}
+.ev-tab:hover:not(.on){background:rgba(255,255,255,.1);color:#fff;}
+
+.filters{display:flex;align-items:center;gap:6px;flex-wrap:nowrap;padding:6px 14px;
+  background:#e8f0f8;border-bottom:1px solid var(--border);
+  position:fixed;z-index:298;left:0;right:0;overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none;}
+.filters::-webkit-scrollbar{display:none;}
+.flabel{font-size:10px;text-transform:uppercase;letter-spacing:.08em;color:var(--txt-dim);font-weight:700;white-space:nowrap;}
+.fsel{background:var(--surf);border:1px solid var(--border);color:var(--txt);padding:4px 8px;border-radius:3px;font-size:11px;cursor:pointer;font-family:inherit;}
+.chip{font-size:10px;padding:3px 9px;border-radius:20px;border:1.5px solid var(--border);background:var(--surf);color:var(--txt-dim);cursor:pointer;transition:all .15s;white-space:nowrap;font-family:inherit;}
+.chip.on{background:var(--ffn-blue);border-color:var(--ffn-blue);color:#fff;}
+
+.main-layout{display:flex;height:100%;}
+.left-col{flex:1;overflow-y:auto;overflow-x:auto;-webkit-overflow-scrolling:touch;padding:12px 10px calc(env(safe-area-inset-bottom)+30px);}
+.ponton-info{font-size:11px;color:var(--txt-dim);margin-bottom:8px;text-transform:uppercase;letter-spacing:.05em;}
+
+.panel-overlay{position:fixed;inset:0;background:rgba(0,30,80,.45);z-index:400;opacity:0;pointer-events:none;transition:opacity .25s;}
+.panel-overlay.show{opacity:1;pointer-events:all;}
+.panel{position:fixed;right:0;top:0;bottom:0;width:var(--panel-w);
+  background:var(--surf);border-left:2px solid var(--ffn-blue);
+  overflow-y:auto;-webkit-overflow-scrolling:touch;z-index:401;
+  transform:translateX(100%);transition:transform .28s cubic-bezier(.4,0,.2,1);
+  padding-bottom:calc(env(safe-area-inset-bottom)+16px);}
+.panel.show{transform:translateX(0);}
+.panel-close{display:flex;align-items:center;justify-content:space-between;padding:10px 14px;
+  background:var(--ffn-blue);position:sticky;top:0;z-index:5;}
+.close-label{font-size:12px;font-weight:800;text-transform:uppercase;letter-spacing:.04em;color:#fff;}
+.close-btn{background:transparent;border:1px solid rgba(255,255,255,.3);color:#fff;border-radius:3px;
+  padding:2px 9px;font-size:14px;cursor:pointer;line-height:1.4;}
+
+
+.fiche{padding:14px 14px 24px;animation:fadeIn .2s ease;}
+@keyframes fadeIn{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+.fiche-hdr{display:flex;gap:10px;align-items:flex-start;margin-bottom:14px;padding-bottom:12px;border-bottom:1px solid var(--border);}
+.bib-badge{width:46px;height:46px;border-radius:4px;flex-shrink:0;display:flex;align-items:center;justify-content:center;
+  font-size:13px;font-weight:800;color:#fff;background:var(--ffn-blue);}
+.fiche-name{font-size:14px;font-weight:800;text-transform:uppercase;letter-spacing:.02em;color:var(--txt-bright);line-height:1.15;}
+.fiche-meta{font-size:11px;color:var(--txt-dim);margin-top:3px;}
+.sect-title{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--ffn-blue);
+  padding-bottom:5px;margin-bottom:7px;border-bottom:2px solid var(--ffn-blue);}
+.sect{margin-bottom:16px;}
+.tgrid{display:grid;grid-template-columns:1fr 1fr;gap:5px;}
+.tcell{background:var(--surf2);border-radius:3px;padding:6px 8px;}
+.tlabel{font-size:9px;text-transform:uppercase;letter-spacing:.1em;color:var(--txt-dim);font-weight:600;}
+.tval{font-size:16px;font-weight:800;color:var(--txt-bright);margin-top:1px;}
+.tval.na{color:#b3c2d4;font-weight:600;}
+.tsub{font-size:9px;color:var(--txt-dim);margin-top:1px;}
+.fb{color:var(--gold);}
+table{width:100%;border-collapse:collapse;font-size:11.5px;}
+th{text-align:left;font-size:9px;text-transform:uppercase;letter-spacing:.08em;color:var(--txt-dim);
+  font-weight:700;padding:5px 6px;border-bottom:1px solid var(--border);}
+td{padding:5px 6px;border-bottom:1px solid var(--surf3);}
+.el-list{display:flex;flex-direction:column;gap:6px;}
+.el-card{background:var(--surf2);border-radius:5px;padding:8px 10px;border-left:3px solid var(--ffn-blue);}
+.el-card.ko{border-left-color:var(--ffn-red);}
+.el-card-top{display:flex;justify-content:space-between;align-items:baseline;gap:6px;flex-wrap:wrap;}
+.el-comp{font-size:11px;font-weight:700;color:var(--txt-bright);}
+.el-ev{font-size:10px;color:var(--txt-dim);}
+.el-card-bot{display:flex;justify-content:space-between;align-items:baseline;margin-top:4px;}
+.el-rang{font-size:16px;font-weight:800;color:var(--ffn-blue);}
+.el-rang.ko{color:var(--ffn-red);}
+.el-temps{font-size:13px;font-weight:700;color:var(--txt-bright);}
+.el-phase{font-size:9px;color:var(--txt-dim);margin-top:2px;}
+.el-q{font-size:9px;font-weight:800;color:green;margin-left:3px;}
+.el-status{font-size:12px;font-style:italic;color:var(--txt-dim);}
+.tag{display:inline-block;font-size:9px;font-weight:700;padding:2px 7px;border-radius:10px;
+  background:var(--surf3);color:var(--ffn-blue);margin:0 4px 4px 0;}
+.p-empty{display:flex;flex-direction:column;align-items:center;justify-content:center;height:60%;gap:10px;
+  color:var(--txt-dim);font-size:12px;text-align:center;padding:24px;}
+::-webkit-scrollbar{width:4px;height:4px;}
+::-webkit-scrollbar-track{background:var(--bg);}
+::-webkit-scrollbar-thumb{background:var(--border);border-radius:2px;}
+
+/* MODULE MÉTÉO */
+.meteo-section{margin-top:28px;border-top:2px solid var(--ffn-blue);padding-top:16px;}
+.meteo-title{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--ffn-blue);padding-bottom:5px;margin-bottom:10px;border-bottom:2px solid var(--ffn-blue);}
+.meteo-card{background:var(--surf);border:1px solid var(--border);border-radius:6px;padding:12px;}
+.meteo-tabs{display:flex;flex-wrap:wrap;gap:5px;margin-bottom:10px;}
+.mtab{font-size:11px;font-weight:700;padding:5px 10px;border-radius:4px;border:1.5px solid var(--border);background:var(--surf2);color:var(--txt-dim);cursor:pointer;transition:all .15s;white-space:nowrap;}
+.mtab.on{background:var(--ffn-blue);border-color:var(--ffn-blue);color:#fff;}
+.mtab:hover:not(.on){background:var(--surf3);}
+.meteo-hours{display:flex;gap:5px;overflow-x:auto;padding-bottom:5px;margin-bottom:10px;}
+.mhbtn{min-width:72px;flex:0 0 auto;background:var(--surf2);border:1.5px solid var(--border);border-radius:4px;padding:6px 5px;text-align:center;cursor:pointer;font-family:inherit;transition:all .15s;}
+.mhbtn.on{border-color:var(--ffn-red);background:#fff0ee;}
+.mhbtn:hover:not(.on){background:var(--surf3);}
+.mhbtn .mhh{font-size:11px;font-weight:800;color:var(--txt-bright);}
+.mhbtn .mhv{font-size:9px;color:var(--txt-dim);margin-top:2px;}
+.meteo-summary{text-align:center;font-size:13px;font-weight:700;color:var(--txt-bright);padding:8px;background:var(--surf2);border-radius:4px;margin-bottom:10px;}
+.meteo-imgwrap{position:relative;max-width:480px;margin:0 auto;line-height:0;}
+.meteo-imgwrap img{width:100%;height:auto;display:block;border-radius:3px;}
+.meteo-imgwrap svg{position:absolute;top:0;left:0;width:100%;height:100%;pointer-events:none;}
+.meteo-legend{display:flex;justify-content:center;gap:14px;font-size:10px;color:var(--txt-dim);margin-top:6px;flex-wrap:wrap;}
+.meteo-note{font-size:10px;color:var(--txt-dim);text-align:center;margin-top:8px;line-height:1.5;}
+/* ===== RÉSULTATS CEJ ===== */
+.cej-card{background:var(--surf2);border-radius:5px;padding:8px 10px;border-left:3px solid #e8a000;margin-bottom:5px;}
+.cej-card-top{display:flex;justify-content:space-between;align-items:baseline;gap:6px;flex-wrap:wrap;}
+.cej-ev{font-size:11px;font-weight:700;color:var(--txt-bright);}
+.cej-date{font-size:10px;color:var(--txt-dim);}
+.cej-card-bot{display:flex;justify-content:space-between;align-items:baseline;margin-top:4px;}
+.cej-rang{font-size:16px;font-weight:800;color:#e8a000;}
+.cej-temps{font-size:13px;font-weight:700;color:var(--txt-bright);}
+.cej-di{font-size:11px;font-weight:700;padding:2px 6px;border-radius:10px;}
+.cej-di.pos{background:#d4edda;color:#28a745;}
+.cej-di.neg{background:#f8d7da;color:#dc3545;}
+.cej-di.neu{background:var(--surf3);color:#6b7f9e;}
+/* ===== ONGLET STAFF ===== */
+</style>
+</head>
+<body>
+
+<div class="hdr" id="hdr">
+  <div id="hdr-back" style="display:none;margin-bottom:4px;">
+    <a href="index.html" style="font-size:11px;color:rgba(255,255,255,.65);text-decoration:none;
+      border:1px solid rgba(255,255,255,.25);border-radius:4px;padding:3px 8px;display:inline-block;">
+      &#8592; Planning
+    </a>
+  </div>
+  <div>
+    <div class="hdr-title" id="hdr-title">Ponton CMJ 2026</div>
+    <div class="hdr-sub" id="hdr-sub">Chargement...</div>
+  </div>
+  <div class="tabs">
+    <button class="tab on" id="tf" onclick="switchGenre('Girls')">Filles</button>
+    <button class="tab" id="th" onclick="switchGenre('Boys')">Gar&ccedil;ons</button>
+  </div>
+</div>
+
+<div class="ev-tabs" id="ev-tabs"></div>
+<div class="heat-tabs" id="heat-tabs" style="display:none;"></div>
+
+<div class="filters" id="fbar">
+  <span class="flabel">Tri :</span>
+  <select class="fsel" id="sort" onchange="renderPonton()">
+    <option value="bib" selected>Dossard (BIB)</option>
+    <option value="v15">Vitesse 1500</option>
+    <option value="v400">Vitesse 400</option>
+    <option value="pts">Points 1500</option>
+    <option value="noc">Nation</option>
+    <option value="nom">Nom</option>
+  </select>
+  <span class="flabel">Nation :</span>
+  <div id="chips" style="display:flex;gap:4px;flex-wrap:nowrap;"></div>
+</div>
+
+<div class="main-layout" id="main-layout">
+  <div class="left-col">
+    <div class="ponton-info" id="ponton-info"></div>
+    <div id="hist-container" style="width:100%;"></div>
+    <!-- ===== MODULE MÉTÉO ===== -->
+    <div class="meteo-section" id="meteo-section" style="display:none">
+      <div class="meteo-title">M&#233;t&#233;o parcours &middot; Sukor&#243; &middot; Lac Velence</div>
+      <div class="meteo-card">
+        <div class="meteo-win-label" id="meteo-win-label" style="font-size:11px;font-weight:700;color:var(--ffn-blue);margin-bottom:8px;"></div>
+        <div class="meteo-hours" id="mhours"></div>
+        <div class="meteo-summary" id="msummary">&nbsp;</div>
+        <div class="meteo-imgwrap" id="meteo-imgwrap">
+          <img id="meteo-img" src="" alt="Plan du parcours &middot; Sukor&#243;">
+          <svg viewBox="0 0 2226 1132" preserveAspectRatio="none">
+            <g id="mwindGroup"></g>
+            <g transform="translate(2140,1060) rotate(-23)">
+              <line x1="0" y1="30" x2="0" y2="-30" stroke="#0a1628" stroke-width="4"/>
+              <polygon points="0,-42 -14,-15 14,-15" fill="#0a1628"/>
+            </g>
+            <text x="2140" y="1115" text-anchor="middle" font-size="24" fill="#0a1628" font-family="Arial,sans-serif">N (approx.)</text>
+          </svg>
+        </div>
+        <div class="meteo-legend">
+          <span>Fl&#232;che = direction vers laquelle souffle le vent</span>
+          <span>Barbules&#160;: trait long 10&#160;kt &middot; court 5&#160;kt &middot; triangle 50&#160;kt</span>
+        </div>
+        <div class="meteo-note">Pr&#233;visions Open-Meteo &mdash; mise &#224; jour manuelle via meteo_cej.json</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="panel-overlay" id="overlay" onclick="closePanel()"></div>
+  <div class="panel" id="panel">
+    <div class="panel-close">
+      <span class="close-label" id="panel-title">Fiche nageur</span>
+      <button class="close-btn" onclick="closePanel()">&#10005;</button>
+    </div>
+
+    <div id="pempty" class="p-empty">S&#233;lectionner un nageur sur le ponton</div>
+    <div id="fiche-content"></div>
+  </div>
+</div>
+
+<script>
+/* =====================================================================
+   CONFIG
+   ===================================================================== */
+var CONFIG = {
+  titre: "Ponton CMJ 2026 \u00b7 Eau Libre",
+  sous_titre: "Championnats du Monde Juniors \u00b7 Santa Fe \u00b7 FFN Service Performance",
+  fichier_perfs: "perfs_complet_2026.json",
+  fichier_histo: "histo_cej.json"
+};
+
+var ORDRE_EV = ["18-19 Years 10km","16-17 Years 7,5km","3km Knockout Sprint"];
+var DIST = ["200","400","800","1500"];
+
+var DATA=null, HISTO={}, HISTO_JR=null, G="Girls", EV=null, EV_FILTER=null, SEL=null, NOC_FILT=null, PANEL_VIEW="profil", KO_HEAT=0;
+
+/* =====================================================================
+   UTILS
+   ===================================================================== */
+function sec(t){
+  if(!t) return null;
+  var p=String(t).split(":");
+  if(p.length===2) return parseInt(p[0],10)*60+parseFloat(p[1]);
+  if(p.length===3) return parseInt(p[0],10)*3600+parseInt(p[1],10)*60+parseFloat(p[2]);
+  return parseFloat(t);
+}
+function bestOf(sw,d){ var r=(sw.results||{})[d]; return (r&&r.best)?r:null; }
+function vit(sw,d){ var b=bestOf(sw,d); var s=b?sec(b.best.time):null; return s?(+d)/s:null; }
+function fmtDate(s){ if(!s) return ""; var p=String(s).split("-"); return p.length===3?p[2]+"/"+p[1]+"/"+p[0]:s; }
+function genreOf(ev){ return ev.indexOf("Girls")===0?"Girls":"Boys"; }
+function evShort(ev){ return ev.replace(/^(Boys|Girls) /,""); }
+function esc(s){ return String(s==null?"":s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/"/g,"&quot;"); }
+function nomCourt(n){ return String(n).split(",")[0].trim(); }
+
+/* couleur barre : points 1500 (bleu clair -> marine) */
+function ptsColor(p,pmin,pmax){
+  if(p==null) return "#c7d5e6";
+  var t=(pmax>pmin)?Math.max(0,Math.min(1,(p-pmin)/(pmax-pmin))):0.5;
+  return "rgb("+Math.round(109-t*109)+","+Math.round(168-t*120)+","+Math.round(212-t*76)+")";
+}
+
+/* =====================================================================
+   SELECTIONS
+   ===================================================================== */
+function listeEvents(genre){
+  if(!DATA||!DATA.swimmers) return [];
+  var set={};
+  for(var k in DATA.swimmers){
+    var e=DATA.swimmers[k].events||[];
+    for(var i=0;i<e.length;i++) if(genreOf(e[i])===genre && ORDRE_EV.indexOf(evShort(e[i]))!==-1) set[e[i]]=1;
+  }
+  var out=Object.keys(set);
+  out.sort(function(a,b){
+    var ia=ORDRE_EV.indexOf(evShort(a)), ib=ORDRE_EV.indexOf(evShort(b));
+    if(ia<0) ia=99;
+    if(ib<0) ib=99;
+    return ia-ib||a.localeCompare(b);
+  });
+  return out;
+}
+function engages(ev){
+  var out=[];
+  for(var k in DATA.swimmers){
+    var s=DATA.swimmers[k];
+    if((s.events||[]).indexOf(ev)>=0){
+      if(isKoEv(ev)&&KO_HEAT!==0){
+        var sh=(s.ko_heat||{})[ev];
+        if(sh!==KO_HEAT) continue;
+      }
+      var a=s.athlete||{};
+      var b15=bestOf(s,"1500");
+      out.push({cle:k, sw:s,
+                nom:a.name?nomCourt(a.name):k.split("|").slice(0,2).join(" "),
+                noc:a.nation||"", annee:a.year||"",
+                v1500:vit(s,"1500"), v400:vit(s,"400"),
+                pts:b15?b15.best.points:null, fb:b15?!!b15.fallback:false,
+                bib:(s.bibs&&s.bibs[ev]!=null)?s.bibs[ev]:null});
+    }
+  }
+  return out;
+}
+function sorted(){
+  var d=engages(EV);
+  if(NOC_FILT) d=d.filter(function(x){ return x.noc===NOC_FILT; });
+  var s=document.getElementById("sort").value;
+  if(s==="bib") d.sort(function(a,b){
+    if(a.bib==null&&b.bib==null) return a.nom.localeCompare(b.nom);
+    if(a.bib==null) return 1; if(b.bib==null) return -1;
+    return a.bib-b.bib;
+  });
+  else if(s==="v15") d.sort(function(a,b){ return (b.v1500||0)-(a.v1500||0)||a.nom.localeCompare(b.nom); });
+  else if(s==="v400") d.sort(function(a,b){ return (b.v400||0)-(a.v400||0)||a.nom.localeCompare(b.nom); });
+  else if(s==="pts") d.sort(function(a,b){ return (b.pts||0)-(a.pts||0)||a.nom.localeCompare(b.nom); });
+  else if(s==="noc") d.sort(function(a,b){ return a.noc.localeCompare(b.noc)||a.nom.localeCompare(b.nom); });
+  else d.sort(function(a,b){ return a.nom.localeCompare(b.nom); });
+  return d;
+}
+
+/* =====================================================================
+   ONGLETS
+   ===================================================================== */
+
+
+function switchGenre(g){
+  /* Conserver l'épreuve équivalente dans le nouveau genre si elle existe */
+  var prevShort = EV ? evShort(EV) : null;
+  G=g; NOC_FILT=null; closePanel();
+  document.getElementById("tf").classList.toggle("on",g==="Girls");
+  document.getElementById("th").classList.toggle("on",g==="Boys");
+  /* Chercher l'épreuve du même type dans le nouveau genre */
+  if(prevShort){
+    var prefix = g==="Girls" ? "Girls' " : "Boys' ";
+    var candidate = prefix + prevShort;
+    var evs = listeEvents(g);
+    EV = evs.indexOf(candidate)!==-1 ? candidate : null;
+  } else {
+    EV = null;
+  }
+  buildEvTabs(); buildChips(); renderPonton(); setTop();
+  if(EV) mUpdateForEvent(EV,G);
+}
+function isKoEv(ev){ return !!ev && ev.indexOf("Knockout")>=0; }
+
+function buildHeatTabs(){
+  var div=document.getElementById("heat-tabs");
+  if(!div) return;
+  if(!isKoEv(EV)){ div.style.display="none"; return; }
+  div.style.display="flex";
+  var h='<div class="heat-tab'+(KO_HEAT===0?" on":"")
+    +'" onclick="switchHeat(0)">Toutes</div>';
+  h+='<div class="heat-tab'+(KO_HEAT===1?" on":"")
+    +'" onclick="switchHeat(1)">Serie 1</div>';
+  h+='<div class="heat-tab'+(KO_HEAT===2?" on":"")
+    +'" onclick="switchHeat(2)">Serie 2</div>';
+  div.innerHTML=h;
+}
+
+function switchHeat(h){ KO_HEAT=h; buildHeatTabs(); setTop(); renderPonton(); }
+
+function buildEvTabs(){
+  var evs=listeEvents(G);
+  /* Si filtre actif (accès depuis planning), ne montrer que les épreuves concernées */
+  if(EV_FILTER&&EV_FILTER.length){
+    evs=evs.filter(function(e){ return EV_FILTER.indexOf(e)!==-1; });
+  }
+  if(!EV||evs.indexOf(EV)<0) EV=evs[0]||null;
+  var h="";
+  evs.forEach(function(e){
+    h+='<div class="ev-tab'+(e===EV?' on':'')+'" onclick="switchEv(\''+e.replace(/'/g,"\\'")+'\')">'      +esc(evShort(e))+'</div>';
+  });
+  document.getElementById("ev-tabs").innerHTML=h;
+  buildHeatTabs();
+}
+
+function switchEv(e){ EV=e; NOC_FILT=null; KO_HEAT=0; closePanel(); buildEvTabs(); buildChips(); renderPonton(); setTop(); mUpdateForEvent(EV,G); }
+function buildChips(){
+  var d=engages(EV), nocs=[];
+  d.forEach(function(x){ if(nocs.indexOf(x.noc)<0) nocs.push(x.noc); });
+  nocs.sort();
+  var w=document.getElementById("chips");
+  w.innerHTML="";
+  function mk(lbl,noc){
+    var b=document.createElement("button");
+    b.className="chip"+(NOC_FILT===noc?" on":"");
+    b.textContent=lbl;
+    b.onclick=function(){ NOC_FILT=(NOC_FILT===noc?null:noc); buildChips(); renderPonton(); };
+    w.appendChild(b);
+  }
+  mk("Tous",null);
+  nocs.forEach(function(n){ mk(n,n); });
+}
+function setTop(){
+  var hh=document.getElementById("hdr").offsetHeight;
+  var eh=document.getElementById("ev-tabs").offsetHeight;
+  var ht=document.getElementById("heat-tabs");
+  var hth=(ht&&ht.style.display!=="none")?ht.offsetHeight:0;
+  var fh=document.getElementById("fbar").offsetHeight;
+  document.getElementById("ev-tabs").style.top=hh+"px";
+  ht.style.top=(hh+eh)+"px";
+  document.getElementById("fbar").style.top=(hh+eh+hth)+"px";
+  document.getElementById("main-layout").style.paddingTop=(hh+eh+hth+fh)+"px";
+}
+
+/* =====================================================================
+   PONTON (barres verticales)
+   ===================================================================== */
+function renderPonton(){
+  if(!EV){
+    document.getElementById("ponton-info").textContent="Aucune épreuve disponible";
+    document.getElementById("hist-container").innerHTML="";
+    return;
+  }
+  var d=sorted();
+  var tot=engages(EV);
+  var nbV=tot.filter(function(x){ return x.v1500; }).length;
+  document.getElementById("ponton-info").textContent=
+    evShort(EV)+"  \u00b7  "+tot.length+" engag\u00e9s  \u00b7  "+nbV+" avec temps 1500m"
+    +(NOC_FILT?"  \u00b7  "+NOC_FILT:"");
+
+  var cont=document.getElementById("hist-container");
+  var W=Math.max(cont.clientWidth||600, d.length*16+90);
+  var marginL=48,marginR=12,marginT=28,marginB=125;
+  var chartW=W-marginL-marginR, chartH=240;
+  var svgH=chartH+marginT+marginB;
+
+  var allV=[];
+  d.forEach(function(x){ if(x.v1500) allV.push(x.v1500); if(x.v400) allV.push(x.v400); });
+  var vMin=allV.length?Math.max(1.00,Math.min.apply(null,allV)-0.05):1.00;
+  var vMax=allV.length?Math.min(2.20,Math.max.apply(null,allV)+0.05):2.20;
+  var allP=d.map(function(x){ return x.pts; }).filter(function(p){ return p!=null; });
+  var pMin=allP.length?Math.min.apply(null,allP):0;
+  var pMax=allP.length?Math.max.apply(null,allP):1;
+
+  var n=Math.max(d.length,1);
+  var gap=chartW/n;
+  var barW=Math.max(6,Math.min(28,gap-3));
+  var yScale=function(v){ return chartH-((v-vMin)/(vMax-vMin))*chartH; };
+  var xC=function(i){ return marginL+gap*i+gap/2; };
+
+  var ticks=[], t=Math.ceil(vMin*10)/10;
+  while(t<=vMax+0.001){ ticks.push(+t.toFixed(2)); t=+(t+0.1).toFixed(2); }
+
+  var svg='<svg xmlns="http://www.w3.org/2000/svg" width="'+W+'" viewBox="0 0 '+W+' '+svgH+'" style="display:block">';
+  svg+='<rect width="'+W+'" height="'+svgH+'" fill="#f5f8fc"/>';
+  svg+='<rect x="'+marginL+'" y="'+marginT+'" width="'+chartW+'" height="'+chartH+'" fill="white" rx="2"/>';
+
+  ticks.forEach(function(v){
+    var y=marginT+yScale(v);
+    svg+='<line x1="'+marginL+'" y1="'+y+'" x2="'+(marginL+chartW)+'" y2="'+y+'" stroke="#dde5f0" stroke-width="1" stroke-dasharray="3,2"/>';
+    svg+='<text x="'+(marginL-5)+'" y="'+(y+4)+'" text-anchor="end" font-family="Arial,sans-serif" font-size="9" fill="#6b7f9e">'+v.toFixed(1)+'</text>';
+  });
+  svg+='<text transform="rotate(-90,16,'+(marginT+chartH/2)+')" x="16" y="'+(marginT+chartH/2)+'" text-anchor="middle" font-family="Arial,sans-serif" font-size="10" fill="#6b7f9e" font-weight="600">Vitesse (m/s)</text>';
+
+  d.forEach(function(ng,i){
+    var cx=xC(i), isSel=(ng.cle===SEL), isFR=(ng.noc==="FRA");
+    var stroke=(isSel||isFR)?"#C8102E":"#7aaecf";
+    var sw=(isSel||isFR)?1.5:0.8;
+    var click=' style="cursor:pointer" onclick="tap(\''+ng.cle.replace(/'/g,"\\'")+'\')"';
+
+    if(isSel) svg+='<rect x="'+(cx-gap/2)+'" y="'+marginT+'" width="'+gap+'" height="'+chartH+'" fill="rgba(200,16,46,0.06)"/>';
+
+    if(ng.v1500){
+      var bY=marginT+yScale(ng.v1500), bH=chartH-yScale(ng.v1500);
+      svg+='<rect x="'+(cx-barW/2)+'" y="'+bY+'" width="'+barW+'" height="'+bH+'"'
+        +' fill="'+ptsColor(ng.pts,pMin,pMax)+'" stroke="'+stroke+'" stroke-width="'+sw+'" rx="1"'+click+'/>';
+      if(ng.fb) svg+='<circle cx="'+cx+'" cy="'+(bY-7)+'" r="2.5" fill="#b8860b"/>';
+    } else {
+      svg+='<rect x="'+(cx-barW/2)+'" y="'+(marginT+chartH-8)+'" width="'+barW+'" height="8"'
+        +' fill="#e6ecf4" stroke="#c5d4e8" stroke-width="0.8" stroke-dasharray="2,2" rx="1"'+click+'/>';
+    }
+    if(ng.v400){
+      var dy=marginT+yScale(ng.v400);
+      var base=ng.v1500?(marginT+yScale(ng.v1500)):(marginT+chartH);
+      svg+='<line x1="'+cx+'" y1="'+dy+'" x2="'+cx+'" y2="'+base+'" stroke="#003087" stroke-width="1" stroke-dasharray="3,2"/>';
+      svg+='<circle cx="'+cx+'" cy="'+dy+'" r="3.5" fill="#003087"'+click+'/>';
+    }
+    svg+='<rect x="'+(cx-gap/2)+'" y="'+marginT+'" width="'+gap+'" height="'+chartH+'" fill="transparent"'+click+'/>';
+
+    svg+='<text x="'+cx+'" y="'+(marginT+chartH+13)+'" text-anchor="middle" font-family="Arial,sans-serif" font-size="8.5" fill="'
+      +(isFR?"#C8102E":"#6b7f9e")+'" font-weight="'+(isFR?"700":"400")+'">'+esc(ng.noc)+'</text>';
+    var nm=esc(ng.nom.length>17?ng.nom.slice(0,16)+".":ng.nom);
+    var ny=marginT+chartH+30;
+    svg+='<text transform="rotate(-55,'+cx+','+ny+')" x="'+cx+'" y="'+ny+'" text-anchor="end"'
+      +' font-family="Arial,sans-serif" font-size="8.5" fill="'+((isSel||isFR)?"#C8102E":"#4a5f7a")+'"'
+      +' font-weight="'+((isSel||isFR)?"700":"400")+'"'+click+'>'+nm+'</text>';
+  });
+
+  svg+='<rect x="'+marginL+'" y="'+marginT+'" width="'+chartW+'" height="'+chartH+'" fill="none" stroke="#c5d4e8" stroke-width="1" rx="2"/>';
+
+  var LY=marginT+chartH+112, LX=marginL;
+  svg+='<rect x="'+(LX-4)+'" y="'+(LY-14)+'" width="'+(chartW+8)+'" height="26" rx="4" fill="#eef3fa" stroke="#d0dce8" stroke-width="0.8"/>';
+  svg+='<rect x="'+LX+'" y="'+(LY-10)+'" width="12" height="12" rx="1" fill="#6da8d4" stroke="#7aaecf" stroke-width="0.8"/>';
+  svg+='<text x="'+(LX+16)+'" y="'+LY+'" font-family="Arial,sans-serif" font-size="9.5" fill="#1a2a4a" font-weight="600">Vitesse 1500</text>';
+  var sx=LX+108;
+  svg+='<line x1="'+sx+'" y1="'+(LY-6)+'" x2="'+sx+'" y2="'+(LY+2)+'" stroke="#003087" stroke-width="1.2" stroke-dasharray="2.5,2"/>';
+  svg+='<circle cx="'+sx+'" cy="'+(LY-8)+'" r="3.5" fill="#003087"/>';
+  svg+='<text x="'+(sx+9)+'" y="'+LY+'" font-family="Arial,sans-serif" font-size="9.5" fill="#1a2a4a" font-weight="600">Vitesse 400</text>';
+  svg+='<circle cx="'+(LX+220)+'" cy="'+(LY-4)+'" r="2.5" fill="#b8860b"/>';
+  svg+='<text x="'+(LX+228)+'" y="'+LY+'" font-family="Arial,sans-serif" font-size="9.5" fill="#b8860b" font-weight="600">Temps hors 12 mois</text>';
+  svg+='<text x="'+(LX+chartW-4)+'" y="'+LY+'" text-anchor="end" font-family="Arial,sans-serif" font-size="9" fill="#7aaecf" font-style="italic">cliquer pour la fiche</text>';
+  svg+='</svg>';
+
+  cont.innerHTML=svg;
+  cont.style.minWidth=W+"px";
+}
+
+/* =====================================================================
+   PANNEAU
+   ===================================================================== */
+function tap(cle){
+  if(SEL===cle){ closePanel(); return; }
+  SEL=cle; PANEL_VIEW="profil";
+  renderPonton();
+  var sw=DATA.swimmers[cle];
+  var title=sw&&sw.athlete&&sw.athlete.name ? nomCourt(sw.athlete.name) : cle.split("|").slice(0,2).join(" ");
+  document.getElementById("panel-title").textContent=title;
+  document.getElementById("pempty").style.display="none";
+  document.getElementById("overlay").classList.add("show");
+  document.getElementById("panel").classList.add("show");
+  setPanelView("profil");
+}
+function closePanel(){
+  SEL=null;
+  if(DATA&&EV) renderPonton();
+  document.getElementById("overlay").classList.remove("show");
+  document.getElementById("panel").classList.remove("show");
+  document.getElementById("fiche-content").innerHTML="";
+  document.getElementById("pempty").style.display="flex";
+}
+function setPanelView(v){
+  PANEL_VIEW="profil";
+  if(!SEL) return;
+  renderProfil(SEL);
+}
+
+function renderProfil(cle){
+  var s=DATA.swimmers[cle];
+  if(!s){ document.getElementById("fiche-content").innerHTML='<div class="p-empty">Profil non disponible.</div>'; return; }
+  var a=s.athlete||{name:cle.split("|").slice(0,2).join(", "), nation:"", year:"", row:""};
+  var h='<div class="fiche">';
+  h+='<div class="fiche-hdr"><div class="bib-badge">'+esc(a.nation||"")+'</div><div>'
+   +'<div class="fiche-name">'+esc(nomCourt(a.name||cle))+'</div>'
+   +'<div class="fiche-meta">'+esc(a.year||"")+'  \u00b7  '+esc(a.nation||"")+'</div>'
+   +'<div class="fiche-meta">'+esc(a.row||"")+'</div></div></div>';
+
+  h+='<div class="sect"><div class="sect-title">\u00c9preuves engag\u00e9es</div>';
+  (s.events||[]).forEach(function(e){ h+='<span class="tag">'+esc(evShort(e))+'</span>'; });
+  h+='</div>';
+
+  h+='<div class="sect"><div class="sect-title">Meilleurs temps bassin 50m</div><div class="tgrid">';
+  DIST.forEach(function(dd){
+    var b=bestOf(s,dd);
+    if(b){
+      var v=vit(s,dd);
+      h+='<div class="tcell"><div class="tlabel">'+dd+' NL</div>'
+       +'<div class="tval'+(b.fallback?" fb":"")+'">'+esc(b.best.time)+'</div>'
+       +'<div class="tsub">'+(b.best.points?b.best.points+" pts \u00b7 ":"")+(v?v.toFixed(3)+" m/s":"")+'</div>'
+       +'<div class="tsub">'+fmtDate(b.best.date)+(b.best.city?" \u00b7 "+esc(b.best.city):"")
+       +(b.fallback?' <span class="fb">(hors 12 mois)</span>':"")+'</div></div>';
+    } else {
+      h+='<div class="tcell"><div class="tlabel">'+dd+' NL</div>'
+       +'<div class="tval na">\u2014</div><div class="tsub">non disponible</div></div>';
+    }
+  });
+  h+='</div>';
+  if(s.status!=="ok") h+='<div class="tsub" style="margin-top:6px">Statut de r\u00e9cup\u00e9ration : '+esc(s.status)+'</div>';
+  h+='</div>';
+  /* --- Historique inline en cartes --- */
+  var hi=HISTO[cle];
+  var hjr=hjrFind(cle);
+  if(hi&&hi.length){
+    h+='<div class="sect"><div class="sect-title">Historique CEJ / CMJ</div><div class="el-list">';
+    hi.slice().sort(function(x,y){ return String(y.d||"").localeCompare(String(x.d||"")); })
+      .forEach(function(e){
+        var isStatus=!e.r&&e.s;
+        h+='<div class="el-card">'
+         +'<div class="el-card-top"><span class="el-comp">'+esc(e.l)+'</span><span class="el-ev">'+esc(e.d)+' \u00b7 '+esc(e.e)+'</span></div>'
+         +'<div class="el-card-bot">'
+         +(isStatus?'<span class="el-status">'+esc(e.s)+'</span>'
+           :'<span class="el-rang">'+esc(e.r)+(e.n?' <span style="font-size:10px;font-weight:400;color:var(--txt-dim)">/ '+e.n+'</span>':'')+'</span>')
+         +'<span class="el-temps">'+esc(e.t||'')+'</span>'
+         +'</div></div>';
+      });
+    h+='</div></div>';
+  }
+  if(hjr&&hjr.length){
+    h+='<div class="sect"><div class="sect-title">Palmar\u00e8s junior EL</div><div class="el-list">';
+    hjr.slice().sort(function(x,y){
+      var dy=String(y.d||"").localeCompare(String(x.d||""));
+      if(dy!==0) return dy;
+      var po={"Final":0,"Semi-final":1,"First Round":2,"Preliminary":3};
+      return (po[x.phase]||9)-(po[y.phase]||9);
+    }).forEach(function(e){
+      var isKO=!!e.phase;
+      var isStatus=!e.r&&e.s;
+      h+='<div class="el-card'+(isKO?' ko':'')+'">'
+       +'<div class="el-card-top"><span class="el-comp">'+esc(e.l)+'</span><span class="el-ev">'+esc(e.d)+' \u00b7 '+esc(e.e)+'</span></div>';
+      if(isKO){
+        var qSpan=e.q===true?' <span class="el-q">Q</span>':e.q===false?' <span style="font-size:9px;color:#999">\u2014</span>':'';
+        h+='<div class="el-phase">'+esc(e.phase)+(e.heat?' ('+esc(e.heat)+')':'')+qSpan+'</div>';
+      }
+      h+='<div class="el-card-bot">'
+       +(isStatus?'<span class="el-status">'+esc(e.s)+'</span>'
+         :'<span class="el-rang'+(isKO?' ko':'')+'">'+(e.r||'\u2014')+(e.n?' <span style="font-size:10px;font-weight:400;color:var(--txt-dim)">/ '+e.n+'</span>':'')+'</span>')
+       +'<span class="el-temps">'+esc(e.t||'')+'</span>'
+       +'</div></div>';
+    });
+    h+='</div></div>';
+  }
+  if((!hi||!hi.length)&&(!hjr||!hjr.length)){
+    h+='<div class="sect"><div class="tsub">Aucun palmar\u00e8s EL disponible.</div></div>';
+  }
+  /* --- Résultats CEJ / CMJ 2026 --- */
+  var cejRes=s.cej_results;
+  if(cejRes&&Object.keys(cejRes).length>0){
+    h+='<div class="sect"><div class="sect-title">R\u00e9sultats CEJ / CMJ 2026</div><div class="el-list">';
+    Object.keys(cejRes).forEach(function(evKey){
+      var cr=cejRes[evKey];
+      var di=cr.di!=null?cr.di:null;
+      var diCls=di===null?"neu":di>3?"pos":di<-3?"neg":"neu";
+      var diTxt=di===null?"":((di>0?"+":"")+di);
+      var evLabel=evKey.replace(/^(Boys'|Girls') /,"").replace(/J\d$/,"").trim();
+      h+='<div class="cej-card">'
+       +'<div class="cej-card-top">'
+       +'<span class="cej-ev">'+esc(evLabel)+'</span>'
+       +'<span class="cej-date">'+esc(cr.date||"")+'</span>'
+       +'</div>'
+       +'<div class="cej-card-bot">'
+       +'<span class="cej-rang">'+esc(cr.rank)
+       +'<span style="font-size:10px;font-weight:400;color:var(--txt-dim);"> / '+esc(cr.n)+'</span></span>'
+       +'<span class="cej-temps">'+esc(cr.finish||"")+'</span>'
+       +(diTxt?'<span class="cej-di '+diCls+'">'+diTxt+'</span>':"")       +'</div>'
+       +(cr.rv!=null?'<div style="font-size:9px;color:var(--txt-dim);margin-top:2px;">Rg vitesse 1500m : '+cr.rv+'</div>':"")       +'</div>';
+    });
+    h+='</div></div>';
+  }
+  h+='</div>';
+  document.getElementById("fiche-content").innerHTML=h;
+}
+
+function hjrFind(cle){
+  if(typeof HISTO_JR==="undefined"||!HISTO_JR) return null;
+  if(HISTO_JR[cle]) return HISTO_JR[cle];
+  var b3=cle.split("|").slice(0,3).join("|");
+  for(var k in HISTO_JR){ if(k.split("|").slice(0,3).join("|")===b3) return HISTO_JR[k]; }
+  var b2=cle.split("|").slice(0,2).join("|");
+  for(var k in HISTO_JR){ if(k.split("|").slice(0,2).join("|")===b2) return HISTO_JR[k]; }
+  return null;
+}
+function renderHisto(cle){
+  var hi=HISTO[cle];
+  var hjr=hjrFind(cle);
+  var h='<div class="fiche">';
+  if(hi&&hi.length){
+    h+='<div class="sect"><div class="sect-title">Historique CEJ / CMJ</div>';
+    h+='<table><tr><th>Ann\u00e9e</th><th>Comp\u00e9tition</th><th>\u00c9preuve</th><th>Rang</th><th>Temps</th></tr>';
+    hi.slice().sort(function(x,y){ return String(y.d||"").localeCompare(String(x.d||"")); })
+      .forEach(function(e){
+        h+='<tr><td>'+esc(e.d)+'</td><td>'+esc(e.l)+'</td><td>'+esc(e.e)+'</td>'
+         +'<td>'+esc(e.r)+(e.n?" / "+esc(e.n):"")+'</td><td>'+esc(e.t||e.s||"\u2014")+'</td></tr>';
+      });
+    h+='</table></div>';
+  }
+  if(hjr&&hjr.length){
+    h+='<div class="sect"><div class="sect-title">Palmar\u00e8s junior EL</div>';
+    h+='<table><tr><th>Ann\u00e9e</th><th>Comp\u00e9tition</th><th>\u00c9preuve</th><th>Phase</th><th>Rang</th><th>Temps</th></tr>';
+    hjr.slice().sort(function(x,y){
+      var dy=String(y.d||"").localeCompare(String(x.d||""));
+      if(dy!==0) return dy;
+      var po={"Final":0,"Semi-final":1,"First Round":2,"Preliminary":3};
+      return (po[x.phase]||9)-(po[y.phase]||9);
+    }).forEach(function(e){
+      var rg=e.r?(esc(e.r)+(e.n?" / "+esc(e.n):"")):(e.s?'<em>'+esc(e.s)+'</em>':"\u2014");
+      var ph="";
+      if(e.phase){
+        ph=esc(e.phase);
+        if(e.heat) ph+=' <span style="font-size:9px;color:var(--txt-dim)">('+esc(e.heat)+')</span>';
+        if(e.q===true) ph+=' <span style="color:green;font-weight:700">Q</span>';
+        else if(e.q===false) ph+=' <span style="color:#999">\u2014</span>';
+      }
+      h+='<tr><td>'+esc(e.d)+'</td><td>'+esc(e.l)+'</td><td>'+esc(e.e)+'</td>'
+       +'<td>'+ph+'</td><td>'+rg+'</td><td>'+esc(e.t||"\u2014")+'</td></tr>';
+    });
+    h+='</table></div>';
+  }
+  if((!hi||!hi.length)&&(!hjr||!hjr.length)){
+    h+='<div class="sect"><div class="tsub">Aucun palmar\u00e8s EL disponible.</div></div>';
+  }
+  h+='</div>';
+  document.getElementById("fiche-content").innerHTML=h;
+}
+
+/* =====================================================================
+   INIT
+   ===================================================================== */
+function boot(){
+  if(!DATA){ document.getElementById("hdr-sub").textContent="Erreur : fichier de données introuvable (perfs_cej.json)"; return; }
+  document.getElementById("hdr-title").textContent=CONFIG.titre;
+  document.getElementById("hdr-sub").textContent=
+    CONFIG.sous_titre+"  \u00b7  donn\u00e9es bassin du "+fmtDate(DATA.generated_on);
+  /* Lire les paramètres URL ?g=Girls&evs=ev1|ev2 (filtre athlète) ou ?g=Girls&ev=ev1 (staff) */
+  try{
+    var params=new URLSearchParams(window.location.search);
+    var pg=params.get('g'); var pevs=params.get('evs'); var pev=params.get('ev');
+    if(pg==='Girls'||pg==='Boys') G=pg;
+    if(pevs){
+      EV_FILTER=pevs.split('|').map(function(s){ return decodeURIComponent(s); });
+      EV=EV_FILTER[0];
+    } else if(pev){
+      EV=decodeURIComponent(pev); /* staff : épreuve initiale, pas de filtre */
+    }
+    var pheat=params.get('heat');
+    if(pheat) KO_HEAT=parseInt(pheat)||1;
+  }catch(e){}
+  buildEvTabs(); buildChips(); renderPonton(); setTop();
+  window.addEventListener("resize",function(){ setTop(); renderPonton(); });
+  if(EV) mUpdateForEvent(EV,G);
+  if((EV_FILTER&&EV_FILTER.length)||new URLSearchParams(window.location.search).get('ev')) document.getElementById("hdr-back").style.display="block";
+}
+
+
+/* =====================================================================
+   MODULE MÉTÉO (lazy-load image)
+   ===================================================================== */
+var METEO_ROTATION_OFFSET = 348;
+var METEO_ARROW_X = 1380;
+var METEO_ARROW_Y = 430;
+var METEO_WINDOWS = null; /* chargé depuis meteo_cej.json */
+var METEO_IMG_LOADED = false;
+var METEO_IMG_SRC = '';
+
+function mDirCard(d){
+  var c=['N','NNE','NE','ENE','E','ESE','SE','SSE','S','SSO','SO','OSO','O','ONO','NO','NNO'];
+  return c[Math.round(((d%360)+360)%360/22.5)%16];
+}
+function mWindArrow(x,y,fromDegLocal,kt,col){
+  var len=220, rad=((fromDegLocal+180)%360)*Math.PI/180;
+  var dx=Math.sin(rad), dy=-Math.cos(rad);
+  var ex=x+dx*len, ey=y+dy*len, px=-dy, py=dx, s='';
+  s+='<line x1="'+x+'" y1="'+y+'" x2="'+ex+'" y2="'+ey+'" stroke="'+col+'" stroke-width="7" stroke-linecap="round"/>';
+  var ah=34, aw=17;
+  s+='<polygon points="'+ex+','+ey+' '+(ex-dx*ah+px*aw)+','+(ey-dy*ah+py*aw)+' '+(ex-dx*ah-px*aw)+','+(ey-dy*ah-py*aw)+'" fill="'+col+'"/>';
+  var rem=kt, bx=x, by=y, blen=50, bstep=24;
+  while(rem>=50){var nx=bx+dx*bstep,ny=by+dy*bstep;s+='<polygon points="'+bx+','+by+' '+nx+','+ny+' '+(bx+px*blen)+','+(by+py*blen)+'" fill="'+col+'"/>';bx=nx;by=ny;rem-=50;}
+  while(rem>=10){s+='<line x1="'+bx+'" y1="'+by+'" x2="'+(bx+px*blen)+'" y2="'+(by+py*blen)+'" stroke="'+col+'" stroke-width="4" stroke-linecap="round"/>';bx+=dx*bstep;by+=dy*bstep;rem-=10;}
+  if(rem>=5){s+='<line x1="'+bx+'" y1="'+by+'" x2="'+(bx+px*blen*0.55)+'" y2="'+(by+py*blen*0.55)+'" stroke="'+col+'" stroke-width="4" stroke-linecap="round"/>';}
+  return s;
+}
+function mSetWind(w,idx){
+  var localFrom=((w.dir[idx]+180-METEO_ROTATION_OFFSET)%360+360)%360;
+  var kt=w.wind[idx]/1.852;
+  var wg=document.getElementById('mwindGroup');
+  if(wg) wg.innerHTML=mWindArrow(METEO_ARROW_X,METEO_ARROW_Y,localFrom,kt,'#C8102E');
+  var s=document.getElementById('msummary');
+  if(s) s.textContent=w.date+' à '+w.hours[idx]+'h — vent '+Math.round(w.wind[idx])+' km/h '+mDirCard(w.dir[idx])+' ('+w.dir[idx]+'°) — '+w.temp[idx].toFixed(1)+'°C';
+}
+function mRenderHours(w){
+  var el=document.getElementById('mhours');
+  if(!el) return;
+  el.innerHTML='';
+  w.hours.forEach(function(h,i){
+    var btn=document.createElement('button');
+    btn.className='mhbtn';
+    btn.innerHTML='<div class="mhh">'+h+'h</div><div class="mhv">'+Math.round(w.wind[i])+' km/h '+mDirCard(w.dir[i])+'</div>';
+    btn.onclick=function(){el.querySelectorAll('.mhbtn').forEach(function(b){b.classList.remove('on');});btn.classList.add('on');mSetWind(w,i);};
+    el.appendChild(btn);
+  });
+  if(el.firstChild){el.firstChild.classList.add('on');mSetWind(w,0);}
+}
+function mFindWindow(ev,genre){
+  if(!METEO_WINDOWS) return null;
+  var short=evShort(ev||'');
+  var fullEv=(genre==='Girls'?"Girls' ":"Boys' ")+short;
+  /* Recherche exacte d'abord */
+  for(var i=0;i<METEO_WINDOWS.length;i++){
+    var ep=METEO_WINDOWS[i].epreuves||[];
+    for(var j=0;j<ep.length;j++){
+      if(ep[j]===fullEv||ep[j]===ev) return METEO_WINDOWS[i];
+    }
+  }
+  /* Recherche partielle */
+  for(var i=0;i<METEO_WINDOWS.length;i++){
+    var ep=METEO_WINDOWS[i].epreuves||[];
+    for(var j=0;j<ep.length;j++){
+      if(ep[j].indexOf(short)>=0||short.indexOf(ep[j])>=0) return METEO_WINDOWS[i];
+    }
+  }
+  return METEO_WINDOWS[0];
+}
+function mUpdateForEvent(ev,genre){
+  /* Météo désactivée pour le CMJ (pas de données/plan Santa Fe) */
+}
+
+fetch(CONFIG.fichier_perfs,{cache:"no-store"}).then(function(r){ return r.json(); })
+  .then(function(j){
+    DATA=j;
+    return fetch(CONFIG.fichier_histo,{cache:"no-store"})
+      .then(function(r){ return r.ok?r.json():{}; })
+      .catch(function(){ return {}; });
+  })
+  .then(function(hj){
+    HISTO=hj||{};
+    return fetch('histo_juniors.json',{cache:"no-store"})
+      .then(function(r){ return r.ok?r.json():null; })
+      .catch(function(){ return null; });
+  })
+  .then(function(hjr){
+    HISTO_JR=hjr||null;
+    return fetch('meteo_cmj.json',{cache:"no-store"})
+      .then(function(r){ return r.ok?r.json():null; })
+      .catch(function(){ return null; });
+  })
+  .then(function(mj){
+    if(mj&&mj.windows){ METEO_WINDOWS=mj.windows; }
+    boot();
+    if(EV) mUpdateForEvent(EV,G);
+  })
+  .catch(function(e){ document.getElementById("hdr-sub").textContent="Erreur de chargement : "+e; });
+</script>
+</body>
+</html>

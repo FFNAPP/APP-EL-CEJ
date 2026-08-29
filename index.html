@@ -129,6 +129,13 @@ td{padding:5px 6px;border-bottom:1px solid var(--surf3);}
 .meteo-imgwrap svg{position:absolute;top:0;left:0;width:100%;height:100%;pointer-events:none;}
 .meteo-legend{display:flex;justify-content:center;gap:14px;font-size:10px;color:var(--txt-dim);margin-top:6px;flex-wrap:wrap;}
 .meteo-note{font-size:10px;color:var(--txt-dim);text-align:center;margin-top:8px;line-height:1.5;}
+
+/* MODULE PLAN DE COURSE */
+.coursemap-section{margin-top:28px;border-top:2px solid var(--ffn-blue);padding-top:16px;}
+.coursemap-title{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--ffn-blue);padding-bottom:5px;margin-bottom:10px;border-bottom:2px solid var(--ffn-blue);}
+.coursemap-card{background:var(--surf);border:1px solid var(--border);border-radius:6px;padding:12px;}
+.coursemap-imgwrap{max-width:520px;margin:0 auto;line-height:0;}
+.coursemap-imgwrap img{width:100%;height:auto;display:block;border-radius:3px;}
 /* ===== RÉSULTATS CEJ ===== */
 .cej-card{background:var(--surf2);border-radius:5px;padding:8px 10px;border-left:3px solid #e8a000;margin-bottom:5px;}
 .cej-card-top{display:flex;justify-content:space-between;align-items:baseline;gap:6px;flex-wrap:wrap;}
@@ -184,6 +191,15 @@ td{padding:5px 6px;border-bottom:1px solid var(--surf3);}
   <div class="left-col">
     <div class="ponton-info" id="ponton-info"></div>
     <div id="hist-container" style="width:100%;"></div>
+    <!-- ===== MODULE PLAN DE COURSE ===== -->
+    <div class="coursemap-section" id="coursemap-section" style="display:none">
+      <div class="coursemap-title" id="coursemap-title"></div>
+      <div class="coursemap-card">
+        <div class="coursemap-imgwrap">
+          <img id="coursemap-img" src="" alt="Plan du parcours">
+        </div>
+      </div>
+    </div>
     <!-- ===== MODULE MÉTÉO ===== -->
     <div class="meteo-section" id="meteo-section" style="display:none">
       <div class="meteo-title">M&#233;t&#233;o parcours &middot; Sukor&#243; &middot; Lac Velence</div>
@@ -792,8 +808,21 @@ function mFindWindow(ev,genre){
   }
   return METEO_WINDOWS[0];
 }
+var COURSE_MAPS = {
+  "3km Knockout Sprint": {file:"course_3km.jpg", label:"Plan du parcours · 3km Knockout Sprint"},
+  "16-17 Years 7,5km": {file:"course_75km.jpg", label:"Plan du parcours · 7,5km"},
+  "18-19 Years 10km": {file:"course_10km.jpg", label:"Plan du parcours · 10km"}
+};
 function mUpdateForEvent(ev,genre){
-  /* Météo désactivée pour le CMJ (pas de données/plan Santa Fe) */
+  /* Météo désactivée pour le CMJ (pas de données/plan de vent Santa Fe) */
+  var sec=document.getElementById('coursemap-section');
+  if(!sec) return;
+  var cm = ev ? COURSE_MAPS[evShort(ev)] : null;
+  if(!cm){ sec.style.display='none'; return; }
+  document.getElementById('coursemap-title').textContent = cm.label;
+  var img = document.getElementById('coursemap-img');
+  if(img.getAttribute('data-loaded')!==cm.file){ img.src=cm.file; img.setAttribute('data-loaded',cm.file); }
+  sec.style.display='block';
 }
 
 fetch(CONFIG.fichier_perfs,{cache:"no-store"}).then(function(r){ return r.json(); })

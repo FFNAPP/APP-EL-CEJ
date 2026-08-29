@@ -1,0 +1,555 @@
+{
+  "meta": {
+    "titre": "Championnats du Monde Juniors Eau Libre 2026",
+    "lieu": "Santa Fe, Argentine",
+    "derniere_maj": "2026-08-29"
+  },
+  "membres": [
+    {
+      "id": "pierre",
+      "nom": "Pierre HUI",
+      "role": "Staff"
+    },
+    {
+      "id": "magali",
+      "nom": "Magali MERINO",
+      "role": "Staff"
+    },
+    {
+      "id": "kevin",
+      "nom": "Kevin DEHENDIN",
+      "role": "Staff"
+    },
+    {
+      "id": "valerie",
+      "nom": "Valérie LABBEE",
+      "role": "Staff"
+    },
+    {
+      "id": "ethan",
+      "nom": "Ethan PARKER",
+      "role": "Athlete"
+    },
+    {
+      "id": "manoli",
+      "nom": "Manoli CASSAR",
+      "role": "Athlete"
+    },
+    {
+      "id": "titouan",
+      "nom": "Titouan PARAT",
+      "role": "Athlete"
+    }
+  ],
+  "evenements": [
+    {
+      "id": "e01",
+      "date": "2026-09-01",
+      "type": "autre",
+      "nom": "Trajet Buenos Aires → Santa Fe / arrivée piscine",
+      "heure_debut": "",
+      "heure_fin": "",
+      "detail": "",
+      "lieu": "",
+      "participants": "tous",
+      "note": "",
+      "source": "Trajet BA - SF / arrivée piscine"
+    },
+    {
+      "id": "e02",
+      "date": "2026-09-01",
+      "type": "entrainement",
+      "nom": "",
+      "heure_debut": "17:30",
+      "heure_fin": "19:00",
+      "detail": "Piscine",
+      "lieu": "",
+      "participants": "tous",
+      "note": "",
+      "source": "Séance 17:30 - 19:00"
+    },
+    {
+      "id": "e03",
+      "date": "2026-09-01",
+      "type": "navette_retour",
+      "nom": "",
+      "heure_debut": "19:15",
+      "heure_fin": "19:35",
+      "detail": "",
+      "lieu": "Hôtel",
+      "participants": "tous",
+      "note": "",
+      "source": "Navette vers l'hôtel 19:15"
+    },
+    {
+      "id": "e04",
+      "date": "2026-09-02",
+      "type": "navette_depart",
+      "nom": "",
+      "heure_debut": "08:40",
+      "heure_fin": "",
+      "detail": "Piscine",
+      "lieu": "",
+      "participants": "tous",
+      "note": "",
+      "source": "Navette piscine 8:40"
+    },
+    {
+      "id": "e05",
+      "date": "2026-09-02",
+      "type": "entrainement",
+      "nom": "",
+      "heure_debut": "09:30",
+      "heure_fin": "11:00",
+      "detail": "Piscine",
+      "lieu": "",
+      "participants": "tous",
+      "note": "",
+      "source": "Séance 9:30-11:00"
+    },
+    {
+      "id": "e06",
+      "date": "2026-09-02",
+      "type": "autre",
+      "nom": "Visite site de compétition",
+      "heure_debut": "11:00",
+      "heure_fin": "",
+      "detail": "",
+      "lieu": "",
+      "participants": "tous",
+      "note": "",
+      "source": "\"Visite site de compétition\" 11:00"
+    },
+    {
+      "id": "e07",
+      "date": "2026-09-02",
+      "type": "navette_retour",
+      "nom": "",
+      "heure_debut": "11:15",
+      "heure_fin": "11:35",
+      "detail": "",
+      "lieu": "",
+      "participants": "tous",
+      "note": "Horaire à confirmer : 11h15 ou 12h15 selon le fichier source.",
+      "source": "Navette retour 11:15 ou 12:15"
+    },
+    {
+      "id": "e08",
+      "date": "2026-09-02",
+      "type": "navette_depart",
+      "nom": "",
+      "heure_debut": "16:40",
+      "heure_fin": "17:00",
+      "detail": "Piscine",
+      "lieu": "",
+      "participants": "tous",
+      "note": "",
+      "source": "Navette piscine 16:40"
+    },
+    {
+      "id": "e09",
+      "date": "2026-09-02",
+      "type": "entrainement",
+      "nom": "",
+      "heure_debut": "17:30",
+      "heure_fin": "19:00",
+      "detail": "Piscine",
+      "lieu": "",
+      "participants": "tous",
+      "note": "",
+      "source": "Séance 17:30-19:00"
+    },
+    {
+      "id": "e10",
+      "date": "2026-09-02",
+      "type": "navette_retour",
+      "nom": "",
+      "heure_debut": "19:15",
+      "heure_fin": "19:35",
+      "detail": "",
+      "lieu": "",
+      "participants": "tous",
+      "note": "",
+      "source": "Navette retour 19:15"
+    },
+    {
+      "id": "e11",
+      "date": "2026-09-03",
+      "type": "navette_depart",
+      "nom": "",
+      "heure_debut": "06:40",
+      "heure_fin": "07:00",
+      "detail": "10km Hommes",
+      "lieu": "",
+      "participants": [
+        "pierre",
+        "magali",
+        "valerie",
+        "ethan"
+      ],
+      "note": "",
+      "source": "Navette 10km H 6:40 Ethan + Pierre + Magali + Valérie"
+    },
+    {
+      "id": "e12",
+      "date": "2026-09-03",
+      "type": "navette_depart",
+      "nom": "",
+      "heure_debut": "08:40",
+      "heure_fin": "09:00",
+      "detail": "Piscine",
+      "lieu": "",
+      "participants": [
+        "kevin",
+        "manoli",
+        "titouan"
+      ],
+      "note": "",
+      "source": "Navette piscine 8:40 Titouan + Kévin + Manoli"
+    },
+    {
+      "id": "e13",
+      "date": "2026-09-03",
+      "type": "course",
+      "nom": "",
+      "heure_debut": "09:00",
+      "heure_fin": "11:00",
+      "detail": "10km",
+      "lieu": "",
+      "participants": [
+        "ethan"
+      ],
+      "note": "",
+      "source": "Départ course 9:00 Ethan"
+    },
+    {
+      "id": "e14",
+      "date": "2026-09-03",
+      "type": "entrainement",
+      "nom": "",
+      "heure_debut": "09:30",
+      "heure_fin": "11:00",
+      "detail": "Piscine",
+      "lieu": "",
+      "participants": [
+        "titouan",
+        "kevin"
+      ],
+      "note": "",
+      "source": "Séance piscine 9:30-11:00 Titouan + Kevin"
+    },
+    {
+      "id": "e15",
+      "date": "2026-09-03",
+      "type": "navette_retour",
+      "nom": "",
+      "heure_debut": "12:00",
+      "heure_fin": "12:20",
+      "detail": "",
+      "lieu": "",
+      "participants": [
+        "kevin",
+        "ethan",
+        "titouan"
+      ],
+      "note": "",
+      "source": "Navette retour Ethan + Titouan + Kévin 12:00"
+    },
+    {
+      "id": "e16",
+      "date": "2026-09-03",
+      "type": "course",
+      "nom": "",
+      "heure_debut": "12:00",
+      "heure_fin": "14:00",
+      "detail": "10km",
+      "lieu": "",
+      "participants": [
+        "manoli"
+      ],
+      "note": "",
+      "source": "Départ course Manoli 12:00"
+    },
+    {
+      "id": "e17",
+      "date": "2026-09-03",
+      "type": "navette_retour",
+      "nom": "",
+      "heure_debut": "15:00",
+      "heure_fin": "15:20",
+      "detail": "",
+      "lieu": "Hôtel",
+      "participants": [
+        "pierre",
+        "magali",
+        "valerie",
+        "manoli"
+      ],
+      "note": "",
+      "source": "Retour navette hotel 15:00 Manoli + Magali + Pierre + Valérie"
+    },
+    {
+      "id": "e18",
+      "date": "2026-09-03",
+      "type": "navette_depart",
+      "nom": "",
+      "heure_debut": "16:40",
+      "heure_fin": "17:00",
+      "detail": "Piscine",
+      "lieu": "",
+      "participants": [
+        "magali",
+        "valerie",
+        "ethan",
+        "manoli"
+      ],
+      "note": "",
+      "source": "Navette piscine Magali + Ethan + Manoli + Valérie 16:40"
+    },
+    {
+      "id": "e19",
+      "date": "2026-09-03",
+      "type": "entrainement",
+      "nom": "",
+      "heure_debut": "17:30",
+      "heure_fin": "19:00",
+      "detail": "Piscine",
+      "lieu": "",
+      "participants": [
+        "magali",
+        "ethan",
+        "manoli",
+        "valerie"
+      ],
+      "note": "",
+      "source": "Séance 17:30-19:00"
+    },
+    {
+      "id": "e20",
+      "date": "2026-09-03",
+      "type": "navette_retour",
+      "nom": "",
+      "heure_debut": "19:15",
+      "heure_fin": "19:35",
+      "detail": "",
+      "lieu": "",
+      "participants": [
+        "magali",
+        "valerie",
+        "ethan",
+        "manoli"
+      ],
+      "note": "",
+      "source": "Navette retour 19:15"
+    },
+    {
+      "id": "e21",
+      "date": "2026-09-04",
+      "type": "navette_depart",
+      "nom": "",
+      "heure_debut": "06:40",
+      "heure_fin": "07:00",
+      "detail": "7,5km",
+      "lieu": "",
+      "participants": [
+        "pierre",
+        "magali",
+        "valerie",
+        "titouan"
+      ],
+      "note": "",
+      "source": "Navette 7,5km 6:40 Titouan + Pierre + Magali + Valérie"
+    },
+    {
+      "id": "e22",
+      "date": "2026-09-04",
+      "type": "autre",
+      "nom": "Hôtel (repos)",
+      "heure_debut": "",
+      "heure_fin": "",
+      "detail": "",
+      "lieu": "",
+      "participants": [
+        "ethan",
+        "manoli",
+        "kevin"
+      ],
+      "note": "",
+      "source": "Hotel : Ethan + Manoli + Kevin"
+    },
+    {
+      "id": "e23",
+      "date": "2026-09-04",
+      "type": "navette_retour",
+      "nom": "",
+      "heure_debut": "11:30",
+      "heure_fin": "11:50",
+      "detail": "",
+      "lieu": "",
+      "participants": [
+        "pierre",
+        "magali",
+        "valerie",
+        "titouan"
+      ],
+      "note": "",
+      "source": "Navette retour 11:30 Titouan + Pierre + Magali + Valérie"
+    },
+    {
+      "id": "e24",
+      "date": "2026-09-04",
+      "type": "navette_depart",
+      "nom": "",
+      "heure_debut": "16:40",
+      "heure_fin": "17:00",
+      "detail": "Piscine",
+      "lieu": "",
+      "participants": [
+        "magali",
+        "valerie",
+        "ethan",
+        "manoli",
+        "titouan"
+      ],
+      "note": "",
+      "source": "Navette piscine 16:40 Magali + Ethan + Manoli + Titouan + Valérie"
+    },
+    {
+      "id": "e25",
+      "date": "2026-09-04",
+      "type": "entrainement",
+      "nom": "",
+      "heure_debut": "17:30",
+      "heure_fin": "19:00",
+      "detail": "Piscine",
+      "lieu": "",
+      "participants": [
+        "magali",
+        "ethan",
+        "manoli",
+        "titouan",
+        "valerie"
+      ],
+      "note": "",
+      "source": "Séance 17:30-19:00"
+    },
+    {
+      "id": "e26",
+      "date": "2026-09-04",
+      "type": "navette_retour",
+      "nom": "",
+      "heure_debut": "19:15",
+      "heure_fin": "19:35",
+      "detail": "",
+      "lieu": "",
+      "participants": [
+        "magali",
+        "valerie",
+        "ethan",
+        "manoli",
+        "titouan"
+      ],
+      "note": "",
+      "source": "Navette retour 19:15"
+    },
+    {
+      "id": "e27",
+      "date": "2026-09-05",
+      "type": "navette_depart",
+      "nom": "",
+      "heure_debut": "07:30",
+      "heure_fin": "07:50",
+      "detail": "3km Knockout Sprint Hommes",
+      "lieu": "",
+      "participants": [
+        "pierre",
+        "magali",
+        "valerie",
+        "ethan",
+        "titouan"
+      ],
+      "note": "",
+      "source": "Navette 3km KO H 7:30 Ethan + Titouan + Magali + Pierre + Valérie"
+    },
+    {
+      "id": "e28",
+      "date": "2026-09-05",
+      "type": "navette_depart",
+      "nom": "",
+      "heure_debut": "09:30",
+      "heure_fin": "09:50",
+      "detail": "3km Knockout Sprint Femmes",
+      "lieu": "",
+      "participants": [
+        "kevin",
+        "manoli"
+      ],
+      "note": "",
+      "source": "Navette 3km KO F 9:30 Manoli + Kévin"
+    },
+    {
+      "id": "e29",
+      "date": "2026-09-05",
+      "type": "course",
+      "nom": "",
+      "heure_debut": "10:00",
+      "heure_fin": "10:20",
+      "detail": "3km Knockout Sprint Hommes",
+      "lieu": "",
+      "participants": [
+        "ethan",
+        "titouan"
+      ],
+      "note": "",
+      "source": "Départ course 3km KO H 10:00 : Ethan + Titouan"
+    },
+    {
+      "id": "e30",
+      "date": "2026-09-05",
+      "type": "navette_retour",
+      "nom": "",
+      "heure_debut": "12:00",
+      "heure_fin": "12:20",
+      "detail": "",
+      "lieu": "",
+      "participants": [
+        "kevin",
+        "ethan",
+        "titouan"
+      ],
+      "note": "",
+      "source": "Navette retour 3km KO H 12:00 Ethan + Titouan + Kévin"
+    },
+    {
+      "id": "e31",
+      "date": "2026-09-05",
+      "type": "navette_retour",
+      "nom": "",
+      "heure_debut": "15:00",
+      "heure_fin": "15:20",
+      "detail": "",
+      "lieu": "",
+      "participants": [
+        "pierre",
+        "magali",
+        "valerie",
+        "manoli"
+      ],
+      "note": "",
+      "source": "Navette retour 3km KO F 15:00 Manoli + Magali + Pierre + Valérie"
+    },
+    {
+      "id": "e32",
+      "date": "2026-09-06",
+      "type": "autre",
+      "nom": "Retour vers Buenos Aires",
+      "heure_debut": "",
+      "heure_fin": "",
+      "detail": "",
+      "lieu": "",
+      "participants": "tous",
+      "note": "",
+      "source": "Départ navette retour buenos aires"
+    }
+  ]
+}

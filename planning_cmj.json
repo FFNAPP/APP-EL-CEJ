@@ -86,8 +86,8 @@
       "date": "2026-09-02",
       "type": "navette_depart",
       "nom": "",
-      "heure_debut": "08:40",
-      "heure_fin": "",
+      "heure_debut": "08:15",
+      "heure_fin": "08:30",
       "detail": "Piscine",
       "lieu": "",
       "participants": "tous",
@@ -99,8 +99,8 @@
       "date": "2026-09-02",
       "type": "entrainement",
       "nom": "",
-      "heure_debut": "09:30",
-      "heure_fin": "11:00",
+      "heure_debut": "09:00",
+      "heure_fin": "10:30",
       "detail": "Piscine",
       "lieu": "",
       "participants": "tous",
@@ -112,8 +112,8 @@
       "date": "2026-09-02",
       "type": "autre",
       "nom": "Visite site de compétition",
-      "heure_debut": "11:00",
-      "heure_fin": "",
+      "heure_debut": "10:45",
+      "heure_fin": "11:30",
       "detail": "",
       "lieu": "",
       "participants": "tous",
@@ -125,12 +125,12 @@
       "date": "2026-09-02",
       "type": "navette_retour",
       "nom": "",
-      "heure_debut": "11:15",
-      "heure_fin": "11:35",
+      "heure_debut": "11:40",
+      "heure_fin": "11:55",
       "detail": "",
       "lieu": "",
       "participants": "tous",
-      "note": "Horaire à confirmer : 11h15 ou 12h15 selon le fichier source.",
+      "note": "",
       "source": "Navette retour 11:15 ou 12:15"
     },
     {
@@ -361,23 +361,6 @@
       "source": "Navette 7,5km 6:40 Titouan + Pierre + Magali + Valérie"
     },
     {
-      "id": "e22",
-      "date": "2026-09-04",
-      "type": "autre",
-      "nom": "Hôtel (repos)",
-      "heure_debut": "",
-      "heure_fin": "",
-      "detail": "",
-      "lieu": "",
-      "participants": [
-        "ethan",
-        "manoli",
-        "kevin"
-      ],
-      "note": "",
-      "source": "Hotel : Ethan + Manoli + Kevin"
-    },
-    {
       "id": "e23",
       "date": "2026-09-04",
       "type": "navette_retour",
@@ -550,6 +533,194 @@
       "participants": "tous",
       "note": "",
       "source": "Départ navette retour buenos aires"
+    },
+    {
+      "id": "e1788308699763",
+      "date": "2026-09-02",
+      "type": "repas_hotel",
+      "nom": "",
+      "heure_debut": "12:30",
+      "heure_fin": "",
+      "detail": "",
+      "lieu": "",
+      "note": "",
+      "participants": "tous"
+    },
+    {
+      "id": "e1788308741597",
+      "date": "2026-09-02",
+      "type": "autre",
+      "nom": "Team leader meeting",
+      "heure_debut": "18:00",
+      "heure_fin": "19:00",
+      "detail": "",
+      "lieu": "",
+      "note": "",
+      "participants": [
+        "pierre"
+      ]
+    },
+    {
+      "id": "e1788308760779",
+      "date": "2026-09-02",
+      "type": "autre",
+      "nom": "Réunion d'équipe",
+      "heure_debut": "19:45",
+      "heure_fin": "20:15",
+      "detail": "",
+      "lieu": "",
+      "note": "",
+      "participants": "tous"
+    },
+    {
+      "id": "e1788308787313",
+      "date": "2026-09-02",
+      "type": "repas_hotel",
+      "nom": "",
+      "heure_debut": "20:15",
+      "heure_fin": "",
+      "detail": "",
+      "lieu": "",
+      "note": "",
+      "participants": "tous"
+    },
+    {
+      "id": "e1788308821113",
+      "date": "2026-09-03",
+      "type": "repas_hotel",
+      "nom": "",
+      "heure_debut": "12:30",
+      "heure_fin": "",
+      "detail": "",
+      "lieu": "",
+      "note": "",
+      "participants": [
+        "kevin",
+        "ethan",
+        "titouan"
+      ]
+    },
+    {
+      "id": "e1788308850996",
+      "date": "2026-09-03",
+      "type": "repas_hotel",
+      "nom": "",
+      "heure_debut": "15:20",
+      "heure_fin": "",
+      "detail": "",
+      "lieu": "",
+      "note": "",
+      "participants": [
+        "pierre",
+        "magali",
+        "valerie",
+        "manoli"
+      ]
+    },
+    {
+      "id": "e1788308869696",
+      "date": "2026-09-03",
+      "type": "repas_hotel",
+      "nom": "",
+      "heure_debut": "20:00",
+      "heure_fin": "",
+      "detail": "",
+      "lieu": "",
+      "note": "",
+      "participants": "tous"
+    },
+    {
+      "id": "e1788308885579",
+      "date": "2026-09-03",
+      "type": "autre",
+      "nom": "Réunion d'équipe",
+      "heure_debut": "19:45",
+      "heure_fin": "20:00",
+      "detail": "",
+      "lieu": "",
+      "note": "",
+      "participants": "tous"
+    },
+    {
+      "id": "e1788308905346",
+      "date": "2026-09-04",
+      "type": "repas_hotel",
+      "nom": "",
+      "heure_debut": "12:30",
+      "heure_fin": "",
+      "detail": "",
+      "lieu": "",
+      "note": "",
+      "participants": "tous"
+    },
+    {
+      "id": "e1788308924863",
+      "date": "2026-09-04",
+      "type": "autre",
+      "nom": "Réunion d'équipe",
+      "heure_debut": "16:15",
+      "heure_fin": "16:30",
+      "detail": "",
+      "lieu": "",
+      "note": "",
+      "participants": "tous"
+    },
+    {
+      "id": "e1788309016962",
+      "date": "2026-09-04",
+      "type": "repas_hotel",
+      "nom": "",
+      "heure_debut": "19:45",
+      "heure_fin": "",
+      "detail": "",
+      "lieu": "",
+      "note": "",
+      "participants": "tous"
+    },
+    {
+      "id": "e1788309049429",
+      "date": "2026-09-05",
+      "type": "repas_hotel",
+      "nom": "",
+      "heure_debut": "12:30",
+      "heure_fin": "",
+      "detail": "",
+      "lieu": "",
+      "note": "",
+      "participants": [
+        "kevin",
+        "ethan",
+        "titouan"
+      ]
+    },
+    {
+      "id": "e1788309072112",
+      "date": "2026-09-05",
+      "type": "repas_hotel",
+      "nom": "",
+      "heure_debut": "15:30",
+      "heure_fin": "",
+      "detail": "",
+      "lieu": "",
+      "note": "",
+      "participants": [
+        "pierre",
+        "magali",
+        "valerie",
+        "manoli"
+      ]
+    },
+    {
+      "id": "e1788309081779",
+      "date": "2026-09-05",
+      "type": "repas_hotel",
+      "nom": "",
+      "heure_debut": "20:00",
+      "heure_fin": "",
+      "detail": "",
+      "lieu": "",
+      "note": "",
+      "participants": "tous"
     }
   ]
 }

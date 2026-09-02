@@ -1,0 +1,1317 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Planning CMJ Eau Libre 2026</title>
+<style>
+  :root{
+    --bg:#f3f5f7;
+    --panel:#ffffff;
+    --panel-alt:#eef1f5;
+    --panel-alt-hover:#e3e8ee;
+    --line:#d7dee5;
+    --gold:#b8860b;
+    --gold-bg:#c9a227;
+    --ink:#16324d;
+    --text:#26333f;
+    --text-dim:#647585;
+    --danger:#b23b2e;
+    --danger-bg:#fbeae7;
+    --ok:#2f7a52;
+  }
+  *{box-sizing:border-box;}
+  html,body{margin:0;padding:0;}
+  body{
+    background:var(--bg);
+    color:var(--text);
+    font-family:"Segoe UI",Arial,sans-serif;
+    min-height:100vh;
+  }
+  h1,h2,h3{
+    font-family:"Georgia","Times New Roman",serif;
+    letter-spacing:.02em;
+    margin:0;
+  }
+  header{
+    background:var(--panel);
+    border-bottom:2px solid var(--gold-bg);
+    padding:18px 20px 14px;
+    position:sticky;
+    top:0;
+    z-index:20;
+  }
+  header .title-row{
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-start;
+    flex-wrap:wrap;
+    gap:10px;
+  }
+  header h1{font-size:22px;color:var(--ink);}
+  header .subtitle{color:var(--gold);font-size:13px;margin-top:4px;}
+  .top-actions{display:flex;gap:8px;flex-wrap:wrap;}
+  button{
+    font-family:inherit;
+    cursor:pointer;
+    border-radius:6px;
+    border:1px solid var(--line);
+    background:var(--panel-alt);
+    color:var(--text);
+    padding:8px 12px;
+    font-size:13px;
+    transition:background .15s,border-color .15s;
+  }
+  button:hover{background:var(--panel-alt-hover);border-color:var(--gold-bg);}
+  button.primary{background:var(--gold-bg);color:#2a2005;border-color:var(--gold-bg);font-weight:600;}
+  button.primary:hover{background:var(--gold);}
+  button.danger{border-color:var(--danger);color:var(--danger);}
+  button.danger:hover{background:var(--danger);color:#fff;}
+  button.small{padding:4px 8px;font-size:12px;}
+  input[type=file]{display:none;}
+  nav.tabs{
+    display:flex;
+    gap:4px;
+    padding:0 20px;
+    background:var(--panel);
+    border-bottom:1px solid var(--line);
+  }
+  nav.tabs button{
+    background:transparent;
+    border:none;
+    border-radius:0;
+    padding:12px 16px;
+    color:var(--text-dim);
+    font-size:14px;
+    border-bottom:3px solid transparent;
+  }
+  nav.tabs button.active{color:var(--ink);border-bottom-color:var(--gold-bg);}
+  nav.tabs button:hover{background:var(--panel-alt);}
+  main{max-width:980px;margin:0 auto;padding:20px;}
+  section.view{display:none;}
+  section.view.active{display:block;}
+  .day-block{margin-bottom:22px;}
+  .day-heading{
+    color:var(--gold);
+    font-size:15px;
+    text-transform:uppercase;
+    letter-spacing:.06em;
+    border-bottom:1px solid var(--line);
+    padding-bottom:6px;
+    margin-bottom:10px;
+  }
+  .event-card{
+    background:var(--panel);
+    border:1px solid var(--line);
+    border-radius:8px;
+    padding:10px 14px;
+    margin-bottom:8px;
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-start;
+    gap:12px;
+    box-shadow:0 1px 2px rgba(22,50,77,.05);
+  }
+  .event-main{flex:1;}
+  .type-row{display:flex;align-items:center;gap:8px;margin-bottom:4px;}
+  .type-chip{
+    display:inline-block;
+    font-size:11px;
+    font-weight:600;
+    padding:2px 9px;
+    border-radius:10px;
+    text-transform:uppercase;
+    letter-spacing:.03em;
+  }
+  .type-navette_depart, .type-navette_retour{background:#e4ecf7;color:#2b578f;}
+  .type-entrainement{background:#e2f3ee;color:#227a63;}
+  .type-echauffement{background:#fdecd8;color:#b5651d;}
+  .type-course{background:#fbe4e1;color:#b23b2e;}
+  .type-repas_hotel{background:#f5efe0;color:#8a6a14;}
+  .type-massage{background:#efe6f5;color:#6b3fa0;}
+  .type-autre{background:#eef1f5;color:#5b6b7a;}
+  .heure-chip{
+    font-family:"DM Mono",Consolas,monospace;
+    font-size:12px;
+    color:var(--ink);
+    background:var(--panel-alt);
+    border:1px solid var(--line);
+    border-radius:4px;
+    padding:1px 7px;
+  }
+  .event-libelle{font-size:14px;color:var(--ink);font-weight:600;}
+  .event-lieu{font-size:12px;color:var(--text-dim);margin-top:2px;}
+  .event-source{font-size:11px;color:var(--text-dim);margin-top:4px;font-style:italic;}
+  .badges{margin-top:6px;display:flex;flex-wrap:wrap;gap:5px;}
+  .badge{
+    background:var(--panel-alt);
+    border:1px solid var(--line);
+    border-radius:12px;
+    padding:2px 9px;
+    font-size:11px;
+    color:var(--text-dim);
+  }
+  .badge.tous{border-color:var(--gold-bg);color:var(--gold);}
+  .badge.warn{border-color:var(--danger);color:var(--danger);background:var(--danger-bg);}
+  .note{font-size:11px;color:var(--danger);margin-top:4px;}
+  .avec-label{font-size:12px;color:var(--text-dim);margin-top:5px;}
+  .event-actions{display:flex;flex-direction:column;gap:4px;}
+  .empty{color:var(--text-dim);font-size:13px;font-style:italic;padding:20px 0;}
+  select,input[type=text],input[type=date],input[type=time],textarea{
+    background:var(--panel);
+    border:1px solid var(--line);
+    color:var(--text);
+    border-radius:6px;
+    padding:8px 10px;
+    font-size:14px;
+    font-family:inherit;
+    width:100%;
+  }
+  label{font-size:12px;color:var(--text-dim);display:block;margin-bottom:4px;margin-top:12px;}
+  .toolbar{display:flex;justify-content:space-between;align-items:center;margin-bottom:16px;flex-wrap:wrap;gap:10px;}
+  .picker{display:flex;align-items:center;gap:10px;flex-wrap:wrap;}
+  .checkbox-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:6px;margin-top:6px;}
+  .checkbox-item{display:flex;align-items:center;gap:6px;font-size:13px;background:var(--panel-alt);border:1px solid var(--line);border-radius:6px;padding:6px 8px;}
+  .checkbox-item input{width:auto;}
+  .tous-toggle{display:flex;align-items:center;gap:8px;background:var(--panel-alt);border:1px solid var(--gold-bg);border-radius:6px;padding:8px 10px;margin-top:6px;}
+  .modal{position:fixed;inset:0;background:rgba(22,50,77,.45);display:flex;align-items:center;justify-content:center;z-index:50;padding:16px;}
+  .modal.hidden{display:none;}
+  .modal-box{background:var(--panel);border:1px solid var(--gold-bg);border-radius:10px;padding:20px;max-width:560px;width:100%;max-height:88vh;overflow-y:auto;box-shadow:0 8px 30px rgba(22,50,77,.25);}
+  .modal-box h2{font-size:17px;color:var(--ink);margin-bottom:4px;}
+  .modal-footer{display:flex;justify-content:flex-end;gap:8px;margin-top:18px;}
+  .draft-status{font-size:11px;color:var(--text-dim);margin-top:6px;}
+  .edit-row{background:var(--panel);border:1px solid var(--line);border-radius:8px;padding:10px 14px;margin-bottom:8px;display:flex;align-items:flex-start;gap:12px;}
+  .edit-row .move-col{display:flex;flex-direction:column;gap:2px;}
+  .warn-banner{background:var(--danger-bg);border:1px solid var(--danger);color:var(--danger);border-radius:6px;padding:8px 12px;font-size:12px;margin-bottom:14px;}
+  #f-nom-wrap.hidden{display:none;}
+  @media print{
+    header, nav.tabs, .toolbar, .event-actions, .edit-row .move-col, #view-team, #view-edit{display:none !important;}
+    body{background:#fff;color:#111;}
+    #view-individual.active{display:block !important;}
+    .event-card{background:#fff;border:1px solid #999;color:#111;break-inside:avoid;}
+    .event-libelle{color:#111;}
+    .day-heading{color:#111;border-bottom:1px solid #333;}
+    .badge{background:#f0f0f0;color:#333;border-color:#ccc;}
+    .type-chip{background:#eee !important;color:#111 !important;}
+    .heure-chip{background:#fff;border-color:#999;}
+    main{max-width:100%;}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="title-row">
+    <div>
+      <h1>Championnats du Monde Juniors Eau Libre 2026</h1>
+      <div class="subtitle">Santa Fe , Argentine 1er au 6 septembre 2026</div>
+    </div>
+    <div class="top-actions">
+      <button id="btn-export" title="Telecharge le JSON a jour, a committer dans le repo GitHub">Exporter JSON</button>
+      <button id="btn-import-trigger">Importer JSON</button>
+      <input type="file" id="btn-import" accept="application/json">
+      <button id="btn-reset" class="danger">Reinitialiser</button>
+    </div>
+  </div>
+  <div class="draft-status" id="draft-status"></div>
+</header>
+
+<nav class="tabs">
+  <button data-view="view-team" class="active">Vue equipe</button>
+  <button data-view="view-individual">Vue individuelle</button>
+  <button data-view="view-edit">Edition</button>
+</nav>
+
+<main>
+
+  <section class="view active" id="view-team">
+    <div id="team-content"></div>
+  </section>
+
+  <section class="view" id="view-individual">
+    <div class="toolbar">
+      <div class="picker">
+        <label style="margin:0;">Personne</label>
+        <select id="individual-select"></select>
+      </div>
+      <button id="btn-print" class="primary">Imprimer / Exporter PDF</button>
+    </div>
+    <div id="individual-content"></div>
+  </section>
+
+  <section class="view" id="view-edit">
+    <div class="toolbar">
+      <div></div>
+      <button id="btn-add-event" class="primary">+ Ajouter un evenement</button>
+    </div>
+    <div id="edit-content"></div>
+  </section>
+
+</main>
+
+<div class="modal hidden" id="event-modal">
+  <div class="modal-box">
+    <h2 id="modal-title">Evenement</h2>
+    <label>Date</label>
+    <input type="date" id="f-date">
+    <label>Type d'evenement</label>
+    <select id="f-type">
+      <option value="navette_depart">Depart navette</option>
+      <option value="entrainement">Entrainement</option>
+      <option value="echauffement">Echauffement</option>
+      <option value="course">Course</option>
+      <option value="repas_hotel">Repas hotel</option>
+      <option value="navette_retour">Retour navette</option>
+      <option value="massage">Massage</option>
+      <option value="autre">Autre</option>
+    </select>
+    <div id="f-nom-wrap">
+      <label>Nom de l'evenement</label>
+      <input type="text" id="f-nom" placeholder="ex: Reunion d'equipe, Team Leader's Meeting...">
+    </div>
+    <label>Heure de debut (optionnel)</label>
+    <input type="time" id="f-heure-debut">
+    <label>Heure de fin (optionnel — laisser vide pour afficher "?")</label>
+    <input type="time" id="f-heure-fin">
+    <label>Detail (optionnel)</label>
+    <input type="text" id="f-detail" placeholder="ex: 10km, Lac, Piscine (9h-10h30)...">
+    <label>Lieu / point de RDV (optionnel)</label>
+    <input type="text" id="f-lieu" placeholder="ex: Hall de l'hotel">
+    <div class="tous-toggle">
+      <input type="checkbox" id="f-tous">
+      <label style="margin:0;">Concerne tout le groupe</label>
+    </div>
+    <div id="checkbox-grid" class="checkbox-grid"></div>
+    <label>Note (optionnel)</label>
+    <textarea id="f-note" rows="2"></textarea>
+    <div class="modal-footer">
+      <button id="btn-cancel-modal">Annuler</button>
+      <button id="btn-save-modal" class="primary">Enregistrer</button>
+    </div>
+  </div>
+</div>
+
+<script>
+"use strict";
+
+var STORAGE_KEY = "cmj_planning_draft_2026_v1";
+
+var TYPE_LABELS = {
+  navette_depart: "Depart navette",
+  entrainement: "Entrainement",
+  echauffement: "Echauffement",
+  course: "Course",
+  repas_hotel: "Repas hotel",
+  navette_retour: "Retour navette",
+  massage: "Massage",
+  autre: "Autre"
+};
+
+var DEFAULT_DATA = {
+  "meta": {
+    "titre": "Championnats du Monde Juniors Eau Libre 2026",
+    "lieu": "Santa Fe, Argentine",
+    "derniere_maj": "2026-08-29"
+  },
+  "membres": [
+    {
+      "id": "pierre",
+      "nom": "Pierre HUI",
+      "role": "Staff"
+    },
+    {
+      "id": "magali",
+      "nom": "Magali MERINO",
+      "role": "Staff"
+    },
+    {
+      "id": "kevin",
+      "nom": "Kévin DEHEDIN",
+      "role": "Staff"
+    },
+    {
+      "id": "valerie",
+      "nom": "Valérie LABBE",
+      "role": "Staff"
+    },
+    {
+      "id": "ethan",
+      "nom": "Ethan PARKER",
+      "role": "Athlete"
+    },
+    {
+      "id": "manoli",
+      "nom": "Manoli CASSAR",
+      "role": "Athlete"
+    },
+    {
+      "id": "titouan",
+      "nom": "Titouan PARAT",
+      "role": "Athlete"
+    }
+  ],
+  "evenements": [
+    {
+      "id": "e01",
+      "date": "2026-09-01",
+      "type": "autre",
+      "nom": "Trajet Buenos Aires → Santa Fe / arrivée piscine",
+      "heure_debut": "",
+      "heure_fin": "",
+      "detail": "",
+      "lieu": "",
+      "participants": "tous",
+      "note": "",
+      "source": "Trajet BA - SF / arrivée piscine"
+    },
+    {
+      "id": "e02",
+      "date": "2026-09-01",
+      "type": "entrainement",
+      "nom": "",
+      "heure_debut": "17:30",
+      "heure_fin": "19:00",
+      "detail": "Piscine",
+      "lieu": "",
+      "participants": "tous",
+      "note": "",
+      "source": "Séance 17:30 - 19:00"
+    },
+    {
+      "id": "e03",
+      "date": "2026-09-01",
+      "type": "navette_retour",
+      "nom": "",
+      "heure_debut": "19:15",
+      "heure_fin": "",
+      "detail": "",
+      "lieu": "Hôtel",
+      "participants": "tous",
+      "note": "",
+      "source": "Navette vers l'hôtel 19:15"
+    },
+    {
+      "id": "e04",
+      "date": "2026-09-02",
+      "type": "navette_depart",
+      "nom": "",
+      "heure_debut": "08:40",
+      "heure_fin": "",
+      "detail": "Piscine",
+      "lieu": "",
+      "participants": "tous",
+      "note": "",
+      "source": "Navette piscine 8:40"
+    },
+    {
+      "id": "e05",
+      "date": "2026-09-02",
+      "type": "entrainement",
+      "nom": "",
+      "heure_debut": "09:30",
+      "heure_fin": "11:00",
+      "detail": "Piscine",
+      "lieu": "",
+      "participants": "tous",
+      "note": "",
+      "source": "Séance 9:30-11:00"
+    },
+    {
+      "id": "e06",
+      "date": "2026-09-02",
+      "type": "autre",
+      "nom": "Visite site de compétition",
+      "heure_debut": "11:00",
+      "heure_fin": "",
+      "detail": "",
+      "lieu": "",
+      "participants": "tous",
+      "note": "",
+      "source": "\"Visite site de compétition\" 11:00"
+    },
+    {
+      "id": "e07",
+      "date": "2026-09-02",
+      "type": "navette_retour",
+      "nom": "",
+      "heure_debut": "11:15",
+      "heure_fin": "",
+      "detail": "",
+      "lieu": "",
+      "participants": "tous",
+      "note": "Horaire à confirmer : 11h15 ou 12h15 selon le fichier source.",
+      "source": "Navette retour 11:15 ou 12:15"
+    },
+    {
+      "id": "e08",
+      "date": "2026-09-02",
+      "type": "navette_depart",
+      "nom": "",
+      "heure_debut": "16:40",
+      "heure_fin": "",
+      "detail": "Piscine",
+      "lieu": "",
+      "participants": "tous",
+      "note": "",
+      "source": "Navette piscine 16:40"
+    },
+    {
+      "id": "e09",
+      "date": "2026-09-02",
+      "type": "entrainement",
+      "nom": "",
+      "heure_debut": "17:30",
+      "heure_fin": "19:00",
+      "detail": "Piscine",
+      "lieu": "",
+      "participants": "tous",
+      "note": "",
+      "source": "Séance 17:30-19:00"
+    },
+    {
+      "id": "e10",
+      "date": "2026-09-02",
+      "type": "navette_retour",
+      "nom": "",
+      "heure_debut": "19:15",
+      "heure_fin": "",
+      "detail": "",
+      "lieu": "",
+      "participants": "tous",
+      "note": "",
+      "source": "Navette retour 19:15"
+    },
+    {
+      "id": "e11",
+      "date": "2026-09-03",
+      "type": "navette_depart",
+      "nom": "",
+      "heure_debut": "06:40",
+      "heure_fin": "",
+      "detail": "10km Hommes",
+      "lieu": "",
+      "participants": [
+        "ethan",
+        "pierre",
+        "magali",
+        "valerie"
+      ],
+      "note": "",
+      "source": "Navette 10km H 6:40 Ethan + Pierre + Magali + Valérie"
+    },
+    {
+      "id": "e12",
+      "date": "2026-09-03",
+      "type": "navette_depart",
+      "nom": "",
+      "heure_debut": "08:40",
+      "heure_fin": "",
+      "detail": "Piscine",
+      "lieu": "",
+      "participants": [
+        "titouan",
+        "kevin",
+        "manoli"
+      ],
+      "note": "",
+      "source": "Navette piscine 8:40 Titouan + Kévin + Manoli"
+    },
+    {
+      "id": "e13",
+      "date": "2026-09-03",
+      "type": "course",
+      "nom": "",
+      "heure_debut": "09:00",
+      "heure_fin": "",
+      "detail": "10km",
+      "lieu": "",
+      "participants": [
+        "ethan"
+      ],
+      "note": "",
+      "source": "Départ course 9:00 Ethan"
+    },
+    {
+      "id": "e14",
+      "date": "2026-09-03",
+      "type": "entrainement",
+      "nom": "",
+      "heure_debut": "09:30",
+      "heure_fin": "11:00",
+      "detail": "Piscine",
+      "lieu": "",
+      "participants": [
+        "titouan",
+        "kevin"
+      ],
+      "note": "",
+      "source": "Séance piscine 9:30-11:00 Titouan + Kevin"
+    },
+    {
+      "id": "e15",
+      "date": "2026-09-03",
+      "type": "navette_retour",
+      "nom": "",
+      "heure_debut": "12:00",
+      "heure_fin": "",
+      "detail": "",
+      "lieu": "",
+      "participants": [
+        "ethan",
+        "titouan",
+        "kevin"
+      ],
+      "note": "",
+      "source": "Navette retour Ethan + Titouan + Kévin 12:00"
+    },
+    {
+      "id": "e16",
+      "date": "2026-09-03",
+      "type": "course",
+      "nom": "",
+      "heure_debut": "12:00",
+      "heure_fin": "",
+      "detail": "10km",
+      "lieu": "",
+      "participants": [
+        "manoli"
+      ],
+      "note": "",
+      "source": "Départ course Manoli 12:00"
+    },
+    {
+      "id": "e17",
+      "date": "2026-09-03",
+      "type": "navette_retour",
+      "nom": "",
+      "heure_debut": "15:00",
+      "heure_fin": "",
+      "detail": "",
+      "lieu": "Hôtel",
+      "participants": [
+        "manoli",
+        "magali",
+        "pierre",
+        "valerie"
+      ],
+      "note": "",
+      "source": "Retour navette hotel 15:00 Manoli + Magali + Pierre + Valérie"
+    },
+    {
+      "id": "e18",
+      "date": "2026-09-03",
+      "type": "navette_depart",
+      "nom": "",
+      "heure_debut": "16:40",
+      "heure_fin": "",
+      "detail": "Piscine",
+      "lieu": "",
+      "participants": [
+        "magali",
+        "ethan",
+        "manoli",
+        "valerie"
+      ],
+      "note": "",
+      "source": "Navette piscine Magali + Ethan + Manoli + Valérie 16:40"
+    },
+    {
+      "id": "e19",
+      "date": "2026-09-03",
+      "type": "entrainement",
+      "nom": "",
+      "heure_debut": "17:30",
+      "heure_fin": "19:00",
+      "detail": "Piscine",
+      "lieu": "",
+      "participants": [
+        "magali",
+        "ethan",
+        "manoli",
+        "valerie"
+      ],
+      "note": "",
+      "source": "Séance 17:30-19:00"
+    },
+    {
+      "id": "e20",
+      "date": "2026-09-03",
+      "type": "navette_retour",
+      "nom": "",
+      "heure_debut": "19:15",
+      "heure_fin": "",
+      "detail": "",
+      "lieu": "",
+      "participants": [
+        "magali",
+        "ethan",
+        "manoli",
+        "valerie"
+      ],
+      "note": "",
+      "source": "Navette retour 19:15"
+    },
+    {
+      "id": "e21",
+      "date": "2026-09-04",
+      "type": "navette_depart",
+      "nom": "",
+      "heure_debut": "06:40",
+      "heure_fin": "",
+      "detail": "7,5km",
+      "lieu": "",
+      "participants": [
+        "titouan",
+        "pierre",
+        "magali",
+        "valerie"
+      ],
+      "note": "",
+      "source": "Navette 7,5km 6:40 Titouan + Pierre + Magali + Valérie"
+    },
+    {
+      "id": "e22",
+      "date": "2026-09-04",
+      "type": "autre",
+      "nom": "Hôtel (repos)",
+      "heure_debut": "",
+      "heure_fin": "",
+      "detail": "",
+      "lieu": "",
+      "participants": [
+        "ethan",
+        "manoli",
+        "kevin"
+      ],
+      "note": "",
+      "source": "Hotel : Ethan + Manoli + Kevin"
+    },
+    {
+      "id": "e23",
+      "date": "2026-09-04",
+      "type": "navette_retour",
+      "nom": "",
+      "heure_debut": "11:30",
+      "heure_fin": "",
+      "detail": "",
+      "lieu": "",
+      "participants": [
+        "titouan",
+        "pierre",
+        "magali",
+        "valerie"
+      ],
+      "note": "",
+      "source": "Navette retour 11:30 Titouan + Pierre + Magali + Valérie"
+    },
+    {
+      "id": "e24",
+      "date": "2026-09-04",
+      "type": "navette_depart",
+      "nom": "",
+      "heure_debut": "16:40",
+      "heure_fin": "",
+      "detail": "Piscine",
+      "lieu": "",
+      "participants": [
+        "magali",
+        "ethan",
+        "manoli",
+        "titouan",
+        "valerie"
+      ],
+      "note": "",
+      "source": "Navette piscine 16:40 Magali + Ethan + Manoli + Titouan + Valérie"
+    },
+    {
+      "id": "e25",
+      "date": "2026-09-04",
+      "type": "entrainement",
+      "nom": "",
+      "heure_debut": "17:30",
+      "heure_fin": "19:00",
+      "detail": "Piscine",
+      "lieu": "",
+      "participants": [
+        "magali",
+        "ethan",
+        "manoli",
+        "titouan",
+        "valerie"
+      ],
+      "note": "",
+      "source": "Séance 17:30-19:00"
+    },
+    {
+      "id": "e26",
+      "date": "2026-09-04",
+      "type": "navette_retour",
+      "nom": "",
+      "heure_debut": "19:15",
+      "heure_fin": "",
+      "detail": "",
+      "lieu": "",
+      "participants": [
+        "magali",
+        "ethan",
+        "manoli",
+        "titouan",
+        "valerie"
+      ],
+      "note": "",
+      "source": "Navette retour 19:15"
+    },
+    {
+      "id": "e27",
+      "date": "2026-09-05",
+      "type": "navette_depart",
+      "nom": "",
+      "heure_debut": "07:30",
+      "heure_fin": "",
+      "detail": "3km Knockout Sprint Hommes",
+      "lieu": "",
+      "participants": [
+        "ethan",
+        "titouan",
+        "magali",
+        "pierre",
+        "valerie"
+      ],
+      "note": "",
+      "source": "Navette 3km KO H 7:30 Ethan + Titouan + Magali + Pierre + Valérie"
+    },
+    {
+      "id": "e28",
+      "date": "2026-09-05",
+      "type": "navette_depart",
+      "nom": "",
+      "heure_debut": "09:30",
+      "heure_fin": "",
+      "detail": "3km Knockout Sprint Femmes",
+      "lieu": "",
+      "participants": [
+        "manoli",
+        "kevin"
+      ],
+      "note": "",
+      "source": "Navette 3km KO F 9:30 Manoli + Kévin"
+    },
+    {
+      "id": "e29",
+      "date": "2026-09-05",
+      "type": "course",
+      "nom": "",
+      "heure_debut": "10:00",
+      "heure_fin": "",
+      "detail": "3km Knockout Sprint Hommes",
+      "lieu": "",
+      "participants": [
+        "ethan",
+        "titouan"
+      ],
+      "note": "",
+      "source": "Départ course 3km KO H 10:00 : Ethan + Titouan"
+    },
+    {
+      "id": "e30",
+      "date": "2026-09-05",
+      "type": "navette_retour",
+      "nom": "",
+      "heure_debut": "12:00",
+      "heure_fin": "",
+      "detail": "",
+      "lieu": "",
+      "participants": [
+        "ethan",
+        "titouan",
+        "kevin"
+      ],
+      "note": "",
+      "source": "Navette retour 3km KO H 12:00 Ethan + Titouan + Kévin"
+    },
+    {
+      "id": "e31",
+      "date": "2026-09-05",
+      "type": "navette_retour",
+      "nom": "",
+      "heure_debut": "15:00",
+      "heure_fin": "",
+      "detail": "",
+      "lieu": "",
+      "participants": [
+        "manoli",
+        "magali",
+        "pierre",
+        "valerie"
+      ],
+      "note": "",
+      "source": "Navette retour 3km KO F 15:00 Manoli + Magali + Pierre + Valérie"
+    },
+    {
+      "id": "e32",
+      "date": "2026-09-06",
+      "type": "autre",
+      "nom": "Retour vers Buenos Aires",
+      "heure_debut": "",
+      "heure_fin": "",
+      "detail": "",
+      "lieu": "",
+      "participants": "tous",
+      "note": "",
+      "source": "Départ navette retour buenos aires"
+    }
+  ]
+};
+var STATE = null;
+var editingEventId = null;
+
+function cloneData(obj){ return JSON.parse(JSON.stringify(obj)); }
+
+function loadState(){
+  var raw = localStorage.getItem(STORAGE_KEY);
+  if(raw){
+    try{
+      STATE = JSON.parse(raw);
+      return;
+    }catch(e){
+      console.warn("Brouillon local illisible, retour aux donnees d'origine.");
+    }
+  }
+  STATE = cloneData(DEFAULT_DATA);
+}
+
+function saveDraft(){
+  localStorage.setItem(STORAGE_KEY, JSON.stringify(STATE));
+  var el = document.getElementById("draft-status");
+  var now = new Date();
+  el.textContent = "Brouillon enregistre sur cet appareil a " + now.toLocaleTimeString("fr-FR") +
+    " - pensez a cliquer sur \"Exporter JSON\" puis a le committer dans le repo GitHub pour publier les changements.";
+}
+
+function getMember(id){
+  for(var i=0;i<STATE.membres.length;i++){
+    if(STATE.membres[i].id === id) return STATE.membres[i];
+  }
+  return null;
+}
+
+function memberName(id){
+  var m = getMember(id);
+  return m ? m.nom : id;
+}
+
+function formatDateFR(iso){
+  var d = new Date(iso + "T00:00:00");
+  var s = d.toLocaleDateString("fr-FR", { weekday:"long", day:"numeric", month:"long", year:"numeric" });
+  return s.charAt(0).toUpperCase() + s.slice(1);
+}
+
+function sortedDates(){
+  var set = {};
+  STATE.evenements.forEach(function(e){ set[e.date] = true; });
+  return Object.keys(set).sort();
+}
+
+function heureKey(evt){
+  return evt.heure_debut && evt.heure_debut.length ? evt.heure_debut : "99:99";
+}
+
+function eventsForDate(date){
+  var list = STATE.evenements.filter(function(e){ return e.date === date; });
+  var indexed = list.map(function(e, i){ return { e:e, i:i }; });
+  indexed.sort(function(a, b){
+    var ah = heureKey(a.e), bh = heureKey(b.e);
+    if(ah !== bh) return ah < bh ? -1 : 1;
+    return a.i - b.i;
+  });
+  return indexed.map(function(x){ return x.e; });
+}
+
+function typeLabel(evt){
+  if(evt.type === "autre") return "Autre";
+  return TYPE_LABELS[evt.type] || evt.type;
+}
+
+function titleLine(evt){
+  if(evt.type === "autre") return evt.nom || "(sans nom)";
+  var base = TYPE_LABELS[evt.type] || evt.type;
+  return evt.detail ? base + " – " + evt.detail : base;
+}
+
+function renderBadges(evt){
+  var html = "";
+  if(evt.participants === "tous"){
+    html += '<span class="badge tous">Tous</span>';
+  } else if(Array.isArray(evt.participants) && evt.participants.length){
+    evt.participants.forEach(function(id){
+      html += '<span class="badge">' + memberName(id) + '</span>';
+    });
+  } else {
+    html += '<span class="badge warn">Personne assigne</span>';
+  }
+  return html;
+}
+
+function renderEventBody(evt){
+  var html = "";
+  html += '<div class="type-row"><span class="type-chip type-' + evt.type + '">' + typeLabel(evt) + '</span>';
+  if(evt.heure_debut){
+    var hfin = evt.heure_fin && evt.heure_fin.length ? evt.heure_fin : "?";
+    html += '<span class="heure-chip">' + evt.heure_debut + ' \u2192 ' + hfin + '</span>';
+  } else if(evt.heure_fin && evt.heure_fin.length){
+    html += '<span class="heure-chip">\u2192 ' + evt.heure_fin + '</span>';
+  }
+  html += '</div>';
+  var title = titleLine(evt);
+  if(title){ html += '<div class="event-libelle">' + title + '</div>'; }
+  if(evt.lieu){ html += '<div class="event-lieu">RDV : ' + evt.lieu + '</div>'; }
+  return html;
+}
+
+// ---------- VUE EQUIPE ----------
+function renderTeamView(){
+  var container = document.getElementById("team-content");
+  var dates = sortedDates();
+  if(dates.length === 0){
+    container.innerHTML = '<div class="empty">Aucun evenement pour le moment.</div>';
+    return;
+  }
+  var html = "";
+  dates.forEach(function(date){
+    html += '<div class="day-block"><div class="day-heading">' + formatDateFR(date) + '</div>';
+    eventsForDate(date).forEach(function(evt){
+      html += '<div class="event-card"><div class="event-main">';
+      html += renderEventBody(evt);
+      html += '<div class="badges">' + renderBadges(evt) + '</div>';
+      if(evt.note){ html += '<div class="note">' + evt.note + '</div>'; }
+      html += '</div></div>';
+    });
+    html += '</div>';
+  });
+  container.innerHTML = html;
+}
+
+// ---------- VUE INDIVIDUELLE ----------
+function populateIndividualSelect(){
+  var sel = document.getElementById("individual-select");
+  sel.innerHTML = "";
+  STATE.membres.forEach(function(m){
+    var opt = document.createElement("option");
+    opt.value = m.id;
+    opt.textContent = m.nom + " (" + m.role + ")";
+    sel.appendChild(opt);
+  });
+}
+
+function renderCoParticipants(evt, selfId){
+  if(evt.participants === "tous"){
+    return '<div class="avec-label">Avec tout le groupe</div>';
+  }
+  if(!Array.isArray(evt.participants)) return "";
+  var others = evt.participants.filter(function(id){ return id !== selfId; });
+  if(others.length === 0) return "";
+  return '<div class="avec-label">Avec : ' + others.map(memberName).join(", ") + '</div>';
+}
+
+function renderIndividualView(){
+  var sel = document.getElementById("individual-select");
+  var memberId = sel.value;
+  var container = document.getElementById("individual-content");
+  if(!memberId){ container.innerHTML = ""; return; }
+
+  var dates = sortedDates();
+  var html = "<h2 style='color:var(--gold);font-size:16px;margin-bottom:14px;'>Planning individuel - " + memberName(memberId) + "</h2>";
+  var any = false;
+
+  dates.forEach(function(date){
+    var dayEvents = eventsForDate(date).filter(function(e){
+      return e.participants === "tous" || (Array.isArray(e.participants) && e.participants.indexOf(memberId) !== -1);
+    });
+    if(dayEvents.length === 0) return;
+    any = true;
+    html += '<div class="day-block"><div class="day-heading">' + formatDateFR(date) + '</div>';
+    dayEvents.forEach(function(evt){
+      html += '<div class="event-card"><div class="event-main">';
+      html += renderEventBody(evt);
+      html += renderCoParticipants(evt, memberId);
+      html += '</div></div>';
+    });
+    html += '</div>';
+  });
+
+  if(!any){ html += '<div class="empty">Aucun evenement assigne a cette personne.</div>'; }
+  container.innerHTML = html;
+}
+
+// ---------- EDITION ----------
+function renderEditView(){
+  var container = document.getElementById("edit-content");
+  var dates = sortedDates();
+  if(dates.length === 0){
+    container.innerHTML = '<div class="empty">Aucun evenement. Cliquez sur "Ajouter un evenement".</div>';
+    return;
+  }
+  var html = "";
+  dates.forEach(function(date){
+    var list = eventsForDate(date);
+    html += '<div class="day-block"><div class="day-heading">' + formatDateFR(date) + '</div>';
+    list.forEach(function(evt, idxInDay){
+      var upDisabled = idxInDay === 0 || heureKey(list[idxInDay-1]) !== heureKey(evt);
+      var downDisabled = idxInDay === list.length-1 || heureKey(list[idxInDay+1]) !== heureKey(evt);
+      html += '<div class="edit-row" data-id="' + evt.id + '">';
+      html += '<div class="move-col">';
+      html += '<button class="small" onclick="moveEvent(\'' + evt.id + '\',-1)" ' + (upDisabled ? 'disabled' : '') + '>&uarr;</button>';
+      html += '<button class="small" onclick="moveEvent(\'' + evt.id + '\',1)" ' + (downDisabled ? 'disabled' : '') + '>&darr;</button>';
+      html += '</div>';
+      html += '<div class="event-main">';
+      html += renderEventBody(evt);
+      html += '<div class="badges">' + renderBadges(evt) + '</div>';
+      if(evt.note){ html += '<div class="note">' + evt.note + '</div>'; }
+      if(evt.source){ html += '<div class="event-source">Texte Excel d\'origine : ' + evt.source + '</div>'; }
+      html += '</div>';
+      html += '<div class="event-actions">';
+      html += '<button class="small" onclick="openEventModal(\'' + evt.id + '\')">Modifier</button>';
+      html += '<button class="small danger" onclick="deleteEvent(\'' + evt.id + '\')">Supprimer</button>';
+      html += '</div></div>';
+    });
+    html += '</div>';
+  });
+  container.innerHTML = html;
+}
+
+function moveEvent(id, direction){
+  var evt = STATE.evenements.find(function(e){ return e.id === id; });
+  if(!evt) return;
+  var sorted = eventsForDate(evt.date);
+  var pos = sorted.findIndex(function(e){ return e.id === id; });
+  var targetPos = pos + direction;
+  if(targetPos < 0 || targetPos >= sorted.length) return;
+  var targetEvt = sorted[targetPos];
+  if(heureKey(evt) !== heureKey(targetEvt)){
+    alert("Impossible de reordonner : les horaires sont differents. Modifiez plutot l'heure de l'evenement.");
+    return;
+  }
+  var gi = STATE.evenements.indexOf(evt);
+  var gt = STATE.evenements.indexOf(targetEvt);
+  STATE.evenements[gi] = targetEvt;
+  STATE.evenements[gt] = evt;
+  saveDraft();
+  renderEditView();
+}
+
+function deleteEvent(id){
+  var evt = STATE.evenements.find(function(e){ return e.id === id; });
+  if(!evt) return;
+  if(!confirm('Supprimer cet evenement ("' + typeLabel(evt) + (titleLine(evt) ? " - " + titleLine(evt) : "") + '") ?')) return;
+  STATE.evenements = STATE.evenements.filter(function(e){ return e.id !== id; });
+  saveDraft();
+  renderAll();
+}
+
+function buildCheckboxGrid(selectedIds){
+  var grid = document.getElementById("checkbox-grid");
+  grid.innerHTML = "";
+  STATE.membres.forEach(function(m){
+    var wrap = document.createElement("div");
+    wrap.className = "checkbox-item";
+    var cb = document.createElement("input");
+    cb.type = "checkbox";
+    cb.value = m.id;
+    cb.id = "cb-" + m.id;
+    if(selectedIds.indexOf(m.id) !== -1) cb.checked = true;
+    var lbl = document.createElement("label");
+    lbl.setAttribute("for", cb.id);
+    lbl.style.margin = "0";
+    lbl.textContent = m.nom;
+    wrap.appendChild(cb);
+    wrap.appendChild(lbl);
+    grid.appendChild(wrap);
+  });
+}
+
+function toggleNomField(){
+  var type = document.getElementById("f-type").value;
+  var wrap = document.getElementById("f-nom-wrap");
+  if(type === "autre"){ wrap.classList.remove("hidden"); }
+  else { wrap.classList.add("hidden"); }
+}
+
+function openEventModal(id){
+  editingEventId = id || null;
+  var modal = document.getElementById("event-modal");
+  var evt = id ? STATE.evenements.find(function(e){ return e.id === id; }) : null;
+
+  document.getElementById("modal-title").textContent = id ? "Modifier l'evenement" : "Nouvel evenement";
+  document.getElementById("f-date").value = evt ? evt.date : (sortedDates()[0] || "");
+  document.getElementById("f-type").value = evt ? evt.type : "echauffement";
+  document.getElementById("f-nom").value = evt ? (evt.nom || "") : "";
+  document.getElementById("f-heure-debut").value = evt ? (evt.heure_debut || "") : "";
+  document.getElementById("f-heure-fin").value = evt ? (evt.heure_fin || "") : "";
+  document.getElementById("f-detail").value = evt ? (evt.detail || "") : "";
+  document.getElementById("f-lieu").value = evt ? (evt.lieu || "") : "";
+  document.getElementById("f-note").value = evt ? (evt.note || "") : "";
+  toggleNomField();
+
+  var isTous = evt ? evt.participants === "tous" : false;
+  document.getElementById("f-tous").checked = isTous;
+  var selectedIds = (evt && Array.isArray(evt.participants)) ? evt.participants : [];
+  buildCheckboxGrid(selectedIds);
+  toggleCheckboxGrid();
+
+  modal.classList.remove("hidden");
+}
+
+function toggleCheckboxGrid(){
+  var tous = document.getElementById("f-tous").checked;
+  document.getElementById("checkbox-grid").style.opacity = tous ? "0.35" : "1";
+  var boxes = document.querySelectorAll("#checkbox-grid input");
+  boxes.forEach(function(b){ b.disabled = tous; });
+}
+
+function closeModal(){
+  document.getElementById("event-modal").classList.add("hidden");
+  editingEventId = null;
+}
+
+function saveModal(){
+  var date = document.getElementById("f-date").value;
+  var type = document.getElementById("f-type").value;
+  var nom = document.getElementById("f-nom").value.trim();
+  var heure_debut = document.getElementById("f-heure-debut").value;
+  var heure_fin = document.getElementById("f-heure-fin").value;
+  var detail = document.getElementById("f-detail").value.trim();
+  var lieu = document.getElementById("f-lieu").value.trim();
+  var note = document.getElementById("f-note").value.trim();
+  var tous = document.getElementById("f-tous").checked;
+
+  if(!date || !type){
+    alert("La date et le type sont obligatoires.");
+    return;
+  }
+  if(type === "autre" && !nom){
+    alert("Merci de nommer l'evenement (type \"Autre\").");
+    return;
+  }
+
+  var participants;
+  if(tous){
+    participants = "tous";
+  } else {
+    participants = [];
+    document.querySelectorAll("#checkbox-grid input:checked").forEach(function(cb){
+      participants.push(cb.value);
+    });
+  }
+
+  if(editingEventId){
+    var evt = STATE.evenements.find(function(e){ return e.id === editingEventId; });
+    evt.date = date;
+    evt.type = type;
+    evt.nom = type === "autre" ? nom : "";
+    evt.heure_debut = heure_debut;
+    evt.heure_fin = heure_fin;
+    evt.detail = detail;
+    evt.lieu = lieu;
+    evt.note = note;
+    evt.participants = participants;
+  } else {
+    var newId = "e" + Date.now();
+    STATE.evenements.push({
+      id:newId, date:date, type:type, nom: type === "autre" ? nom : "",
+      heure_debut:heure_debut, heure_fin:heure_fin, detail:detail, lieu:lieu, note:note, participants:participants
+    });
+  }
+
+  saveDraft();
+  closeModal();
+  renderAll();
+}
+
+// ---------- EXPORT / IMPORT / RESET ----------
+function exportJSON(){
+  var blob = new Blob([JSON.stringify(STATE, null, 2)], { type:"application/json" });
+  var url = URL.createObjectURL(blob);
+  var a = document.createElement("a");
+  a.href = url;
+  a.download = "planning_cmj.json";
+  document.body.appendChild(a);
+  a.click();
+  document.body.removeChild(a);
+  URL.revokeObjectURL(url);
+}
+
+function importJSON(file){
+  var reader = new FileReader();
+  reader.onload = function(e){
+    try{
+      var parsed = JSON.parse(e.target.result);
+      if(!parsed.membres || !parsed.evenements){
+        alert("Fichier invalide : les cles 'membres' et 'evenements' sont attendues.");
+        return;
+      }
+      STATE = parsed;
+      saveDraft();
+      renderAll();
+      alert("Import reussi.");
+    }catch(err){
+      alert("Impossible de lire ce fichier JSON : " + err.message);
+    }
+  };
+  reader.readAsText(file);
+}
+
+function resetToDefault(){
+  if(!confirm("Reinitialiser le planning aux donnees d'origine (issues du fichier Excel) ? Le brouillon actuel sera perdu.")) return;
+  STATE = cloneData(DEFAULT_DATA);
+  saveDraft();
+  renderAll();
+}
+
+// ---------- NAVIGATION ----------
+function switchView(viewId){
+  document.querySelectorAll("section.view").forEach(function(s){ s.classList.remove("active"); });
+  document.getElementById(viewId).classList.add("active");
+  document.querySelectorAll("nav.tabs button").forEach(function(b){
+    b.classList.toggle("active", b.getAttribute("data-view") === viewId);
+  });
+  if(viewId === "view-individual") renderIndividualView();
+}
+
+function renderAll(){
+  renderTeamView();
+  populateIndividualSelect();
+  renderIndividualView();
+  renderEditView();
+}
+
+// ---------- INIT ----------
+document.addEventListener("DOMContentLoaded", function(){
+  loadState();
+  renderAll();
+  saveDraft();
+
+  document.querySelectorAll("nav.tabs button").forEach(function(b){
+    b.addEventListener("click", function(){ switchView(b.getAttribute("data-view")); });
+  });
+
+  document.getElementById("btn-export").addEventListener("click", exportJSON);
+  document.getElementById("btn-import-trigger").addEventListener("click", function(){
+    document.getElementById("btn-import").click();
+  });
+  document.getElementById("btn-import").addEventListener("change", function(e){
+    if(e.target.files && e.target.files[0]) importJSON(e.target.files[0]);
+  });
+  document.getElementById("btn-reset").addEventListener("click", resetToDefault);
+
+  document.getElementById("individual-select").addEventListener("change", renderIndividualView);
+  document.getElementById("btn-print").addEventListener("click", function(){ window.print(); });
+
+  document.getElementById("btn-add-event").addEventListener("click", function(){ openEventModal(null); });
+  document.getElementById("btn-cancel-modal").addEventListener("click", closeModal);
+  document.getElementById("btn-save-modal").addEventListener("click", saveModal);
+  document.getElementById("f-tous").addEventListener("change", toggleCheckboxGrid);
+  document.getElementById("f-type").addEventListener("change", toggleNomField);
+});
+</script>
+</body>
+</html>
